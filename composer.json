@@ -37,7 +37,10 @@
         "bower-asset/blueimp-file-upload" : "*",
         "bower-asset/editor.md": "*",
         "creocoder/yii2-flysystem": "*",
-        "qiniu/php-sdk": "^7.1"
+        "qiniu/php-sdk": "^7.1",
+        "warrence/yii2-kartikgii": "dev-master",
+        "kartik-v/yii2-dynagrid": "dev-master"
+	
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",

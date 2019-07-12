@@ -10,7 +10,7 @@ namespace common\components;
 
 
 use common\models\Module;
-use yii\base\Object;
+use yii\base\BaseObject;
 use Yii;
 use yii\helpers\Json;
 
@@ -23,7 +23,7 @@ use yii\helpers\Json;
  * @property string $keywords
  * @property string $package
  */
-abstract class PackageInfo extends Object
+abstract class PackageInfo extends BaseObject
 {
     public $info = [
         'author' => '',

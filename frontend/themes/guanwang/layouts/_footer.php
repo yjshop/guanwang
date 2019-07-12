@@ -27,7 +27,7 @@ use yii\helpers\Url;
     </div>
     <div class="am-u-md-2">
       <p class="tit tel-hide">关注几何线</p>
-      <img src="/storage/images/weixin.jpg" class="weixin">
+      <img src="<?php echo Url::to('@web/storage/images/weixin.jpg'); ?>" class="weixin">
     </div>
     <div class="am-u-md-3">
       <div>

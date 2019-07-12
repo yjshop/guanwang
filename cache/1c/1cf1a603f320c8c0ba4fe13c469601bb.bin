@@ -1,0 +1,89 @@
+a:2:{i:0;a:2:{i:0;s:3528:"            <div class="am-u-md-6 am-u-sm-12 ">
+      <div class="box-top ">
+        <h3>运营学堂</h3>
+      </div>
+      <div class="news-box ">
+        <ul>
+            
+           <a class="update " href="/article/view?id=354 ">
+            <div class="img-box ">
+               <img src="storage/images/news01.jpg" alt="商家为何要尽早搭建小程序商城？">
+            </div>
+            <p>商家为何要尽早搭建小程序商城？</p></a> 
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=352 ">免费小程序商城如何制作？</a>
+           <span class="time ">2018-10-30</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=351 ">小程序商城如何让商家盈利</a>
+           <span class="time ">2018-10-29</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=345 ">小程序商城的搭建与优势</a>
+           <span class="time ">2018-10-24</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=344 ">如何省钱省力推广自己的小程序商城？</a>
+           <span class="time ">2018-10-23</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=339 ">微信小程序商城分销的优势</a>
+           <span class="time ">2018-10-18</span>
+           </li>
+             
+                  </ul> 
+      </div>
+        <div class="box-footer ">
+          <a href="/article?cate=study">更多>></a>
+        </div>
+      </div>
+        <div class="am-u-md-6 am-u-sm-12 ">
+      <div class="box-top ">
+        <h3>官方动态</h3>
+      </div>
+      <div class="news-box ">
+        <ul>
+            
+           <a class="update " href="/article/view?id=365 ">
+            <div class="img-box ">
+               <img src="storage/images/news01.jpg" alt="几何线微信商城系统2019年第三周开发动态">
+            </div>
+            <p>几何线微信商城系统2019年第三周开发动态</p></a> 
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=363 ">几何线商城系统2019年第二周开发动态</a>
+           <span class="time ">2019-01-22</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=361 ">2019年第一周几何线微信商城模块更新日志</a>
+           <span class="time ">2019-01-09</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=360 ">几何线小程序商城系统2018年最后一周开发更新日志</a>
+           <span class="time ">2019-01-02</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=359 ">2018年11月17-11月25程序更新日志</a>
+           <span class="time ">2018-12-25</span>
+           </li>
+             
+            
+                      <li class="news-des "> <a href="/article/view?id=350 ">几何线小程序商城系统开放测试啦！</a>
+           <span class="time ">2018-10-29</span>
+           </li>
+             
+                  </ul> 
+      </div>
+        <div class="box-footer ">
+          <a href="/article?cate=%E7%B3%BB%E7%BB%9F%E5%8A%A8%E6%80%81">更多>></a>
+        </div>
+      </div>
+                ";i:1;N;}i:1;O:24:"yii\caching\DbDependency":5:{s:2:"db";s:2:"db";s:3:"sql";s:40:"SELECT MAX(updated_at) FROM {{%article}}";s:6:"params";a:0:{}s:4:"data";a:1:{s:15:"MAX(updated_at)";s:10:"1548420493";}s:8:"reusable";b:0;}}

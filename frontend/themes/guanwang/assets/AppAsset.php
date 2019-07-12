@@ -15,12 +15,14 @@ class AppAsset extends AssetBundle
         'style/style.min.css',
         'style/swiper.min.css',
         'style/phone.min.css',
-
+        'style/style1.css',
+ 
     ];
     public $js = [
         'js/amazeui.min.js',
         'js/modernizr.min.js',
         'js/amazeui.ie8polyfill.min.js',
+        'js/swiper.min.js'
        
     ];
     public $depends = [

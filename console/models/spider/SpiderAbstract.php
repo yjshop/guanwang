@@ -9,9 +9,9 @@ use common\models\Gather;
 use common\models\Spider;
 use yii\base\Exception;
 use Goutte\Client;
-use yii\base\Object;
+use yii\base\BaseObject;
 
-class SpiderAbstract extends Object
+class SpiderAbstract extends  BaseObject
 {
     public $spiderName = '';
     private $_url;

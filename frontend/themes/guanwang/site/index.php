@@ -4,118 +4,239 @@ use common\models\Article;
 /* @var $this yii\web\View */
 ?>
  <!-- 主体 -->
-    <div class="banner am-g">
+     <div class="banner am-g">
+  
+    <div class="swiper-container">
+    <div class="swiper-wrapper">
+       <div class="swiper-slide">
+    
+      <div class="am-g ">
         <div class="am-u-md-4 banner-l">
-            <img alt="易扩展，模块化设计，安全性高，插件丰富" src="storage/images/idx-banner.png">
-        </div>
-        <div class="am-u-md-8 banner-r">
-            <h1>国内领先开源小程序商城系统</h1>
-            <span>安全稳定</span><span>快速拥有</span><span>助您畅享电商红利</span>
-        </div>
+          <img alt="易扩展，模块化设计，安全性高，插件丰富" src="/storage/images/banner02.jpg">
+      </div>
+      <div class="am-u-md-8 banner-r">
+          <h1>国内领先开源小程序商城系统</h1>
+          <span>安全稳定</span><span>快速拥有</span><span>助您畅享电商红利</span>
+      </div>
+    
+      </div>
+    </div> 
+      <div class="swiper-slide"><img src="/storage/images/banner03.jpg"></div>
+    <div class="swiper-slide"><img src="/storage/images/banner02.jpg"></div>
+
+      <!-- <div class="swiper-pagination"></div> -->
     </div>
-    <div class="bg-two-components">
-        <div class="media-show bg-one">
-            <div class="am-container">
-                <div class="am-g">
-                    <div class="am-u-md-6 am-u-sm-12 box-l box-word">
-                        <img src="storage/images/squary.svg" alt="">
-                        <h3>小程序商城</h3>
-                        <p class="desc">帮你轻松玩转社交电商</p>
-                        <div class="detail">
-                            <p>提供多样店铺模板，快速搭建网上商城</p>
-                            <p>从渠道打通、会员管理到精准客户营销，全方位覆盖经营场景</p>
-                            <p>提供安全可靠的技术支持，你只需专注发展你的业务</p>
-                        </div>
-                        <div class="btn">
-                            <a href="javascript:;" class="btn-one" data-am-modal="{target: '#test', closeViaDimmer: 0,}">免费试用</a>
-                            <a href="/Index/product.html" class="btn-two">功能介绍</a>
-                        </div>
-                    </div>
-                    <div class="am-u-md-6 am-u-sm-12 box-img-box">
-                        <img src="storage/images/xcx.png" class="am-img-responsive">
-                    </div>
-                </div>
-            </div>
+
+       <div class="banner-footer">
+        <div class="am-container">
+        <div class="am-g">
+          <div class="am-u-lg-4 footer-style"><a href=""><h3>新零售线下商城系统</h3>
+        <p>线下门店拓客神器</p>
+
+          </a></div>
+          <div class="am-u-lg-4 footer-style"><a href=""><h3>云商城系统</h3>
+            <p>打造专属"SAAS云商城"</p></a></div>
+          <div class="am-u-lg-4 footer-style"><a href=""><h3>移动营销系统</h3>
+            <p>搭建各种入驻模式平台</p></a></div>
         </div>
+      </div>
+    </div>
+    </div>
+</div>
+
+
+<!-- 解决方案 -->
+
+<div class="solution-methods">
+  <div class="am-container">
+    <h1 class="big-title">解决方案</h1>
+      <div class="line"></div>
+       
+ <!--  <div class="am-u-lg-4">
+    <div class="am-thumbnail">
+      <img src="images/system1.png" alt=""/>
+      <div class="am-thumbnail-caption">
+        <h3>微商城</h3>
+        <p>无缝接入微信，对接微信登录及支付功能</p>
+       
+      </div>
+    </div>
+  </div> -->
+<div class="am-g">
+<div class="am-u-lg-4">
+
+    <div class="am-thumbnail">
+   
+      <div class="am-thumbnail-caption">
+        <h3>微商城</h3>
+        <p>无缝接入微信，对接微信登录及支付功能</p>
+       
+      </div>
+
+       <div class="shadow">
+         <h2>duo</h2>
+         <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
+         <a href="">了解详情</a>
+
+       </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+<div class="am-g">
+<div class="am-u-lg-4">
+    <div class="am-thumbnail">
+     
+      <div class="am-thumbnail-caption">
+        <h3>微商城</h3>
+        <p>无缝接入微信，对接微信登录及支付功能</p>
+       
+      </div>
+         <div class="shadow">
+         <h2>duo</h2>
+         <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
+         <a href="">了解详情</a>
+
+       </div>
+    </div>
+  </div>
+
+
+</div>
+
+  </div>
+</div>
+
+ <!-- 优势 -->
+    <div class="bg-two-components">
         <div class="xcx-goodness bg-fff">
-            <h1 class="big-title">小程序优势</h1>
+            <h1 class="big-title">功能优势</h1>
             <div class="line"></div>
             <div class="am-container">
                 <ul class="am-g">
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img"><i class="iconfont icon-yonghuguanli"></i></div>
+                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/coupon.png'); ?>"></div>
                             <div>
-                                <h3>日活跃9亿用户</h3>
-                                <p>微信用户多，粘性高，在微信里开发产品更容易触达用户</p>
+                                <h3>优惠券</h3>
+                                <p>含折多种优惠方式,下单直接抵扣,价格超实惠</p>
                             </div>
                         </div>
                     </li>
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img" "><i class="iconfont icon-search "></i></div>
+                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/miaosha.png'); ?>"></div>
               <div>
-                <h3>关键词搜索</h3>
-                <p>用关键字模糊搜索，9亿用户发现你的小程序</p>
+                <h3>限时秒杀</h3>
+                <p>多种营销玩法，提升流量和销量</p>
               </div>
 
             </div>
           </li>
           <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img ""><i class="iconfont icon-fenxiang"></i></div>
+              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/fenxiao.png'); ?>"></div>
                             <div>
-                                <h3>分享好友和群</h3>
-                                <p>好友和群成员，通过你的分享，发现你的小程序</p>
+                                <h3>三级分销</h3>
+                                <p>以客推客，打造自己的微分销商城</p>
                             </div>
                         </div>
                     </li>
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img" "><i class="iconfont icon-fujin1 "></i></div>
+                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/shipping.png'); ?>"></div>
               <div>
-                <h3>附近5公里</h3>
-                <p>5公里内的微信用户，随时发现你的小程序</p>
+                <h3>物流追踪</h3>
+                <p>可在地图上追踪物流信息</p>
               </div>
             </div>
           </li>
           <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img ""><i class="iconfont icon-louti"></i></div>
+              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/red.png'); ?>"></div>
                             <div>
-                                <h3>无需下载用完即走</h3>
+                                <h3>红包</h3>
+                                <p>多种红包现金信息，包括微信红包、qq红包、现金红包等</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="am-u-md-3">
+                        <div class="xcx-goodness-box">
+                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/recharge.png');?>"></div>
+              <div>
+                <h3>充值/提现</h3>
+                <p>线上一键充值/提现，方便快捷</p>
+              </div>
+
+            </div>
+          </li>
+          <li class="am-u-md-3 ">
+            <div class="xcx-goodness-box ">
+              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/pay.png'); ?>"></div>
+                            <div>
+                                <h3>多种支付方式</h3>
+                                <p>支持微信、支付宝等多种支付方式，灵活快捷</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="am-u-md-3">
+                        <div class="xcx-goodness-box">
+                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/share.png'); ?>"></div>
+              <div>
+                <h3>一键分享</h3>
+                <p>好友和群成员，通过你的分享，发现你的小程序</p>
+              </div>
+            </div>
+          </li>
+               <li class="am-u-md-3 ">
+            <div class="xcx-goodness-box ">
+              <div class="tc icon-img " ><img src="<?php echo Url::to('@web/storage/images/safe.png'); ?>"></div>
+                            <div>
+                                <h3>安全/稳定</h3>
+                                <p>国际认证安全管理</p>
+                            </div>
+                        </div>
+                    </li>
+                         <li class="am-u-md-3 ">
+            <div class="xcx-goodness-box ">
+              <div class="tc icon-img " ><img src="<?php echo Url::to('@web/storage/images/jifen.png'); ?>"></div>
+                            <div>
+                                <h3>积分</h3>
                                 <p>推广小程序，只需要用户扫码即可,减少了用户的耐心损耗</p>
                             </div>
                         </div>
                     </li>
-                    <li class="am-u-md-3">
-                        <div class="xcx-goodness-box">
-                            <div class="tc icon-img" "><i class="iconfont icon-qian "></i></div>
-              <div>
-                <h3>开发成本低</h3>
-                <p>节省两个平台的开发成本，节省大量时间和人力</p>
-              </div>
-
-            </div>
-          </li>
-          <li class="am-u-md-3 ">
+                         <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img ""><i class="iconfont icon-lianjie"></i></div>
+              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/kefu.png'); ?>"></div>
                             <div>
-                                <h3>公众号互绑</h3>
-                                <p>可以在微信、在APP各种环境下打开使用，灵活快捷</p>
+                                <h3>即时客服</h3>
+                                <p>提供即通讯能力，如单聊、群聊、发语音、发图片、等</p>
                             </div>
                         </div>
                     </li>
-                    <li class="am-u-md-3">
-                        <div class="xcx-goodness-box">
-                            <div class="tc icon-img" "><i class="iconfont icon-duxiangDDRzuigaopinshuaineicun "></i></div>
-              <div>
-                <h3>不占内存</h3>
-                <p>安装时不需要占用手机内存空间</p>
-              </div>
-            </div>
-          </li>
+
+                         <li class="am-u-md-3 ">
+            <div class="xcx-goodness-box ">
+              <div class="tc icon-img " ><img src="<?php echo Url::to('@web/storage/images/cloud.png'); ?>"></div>
+                            <div>
+                                <h3>云通信</h3>
+                                <p>自动发送营销短信、验证码</p>
+                            </div>
+                        </div>
+                    </li>
+
+          
+
+             
+          
+
+
         </ul>
     </div>
   </div>
@@ -125,14 +246,14 @@ use common\models\Article;
       <div class="line "></div>
       <div>
         <ul>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="生鲜行业小程序商城解决方案 " src="storage/images/shengxian.png "><p>生鲜</p></li>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="餐饮行业小程序商城解决方案 " src="storage/images/canyin.png "><p>餐饮</p></li>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="婚庆行业小程序商城解决方案 " src="storage/images/hunqing.png "><p>婚庆</p></li>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="美业行业小程序商城解决方案 " src="storage/images/meiye.png "><p>美业</p></li>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="酒店行业小程序商城解决方案 " src="storage/images/jiudian.png "><p>酒店</p></li>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="家居行业小程序商城解决方案 " src="storage/images/jiaju.jpg "><p>家居</p></li>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="服饰行业小程序商城解决方案 " src="storage/images/fushi.png "><p>服饰</p></li>
-          <li class="am-u-md-3 am-u-sm-4 "><img alt="母婴行业小程序商城解决方案 " src="storage/images/muying.png "><p>母婴</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="生鲜行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/shengxian.png');?>"><p>生鲜</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="餐饮行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/canyin.png'); ?>"><p>餐饮</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="婚庆行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/hunqing.png'); ?>"><p>婚庆</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="美业行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/meiye.png'); ?>"><p>美业</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="酒店行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/jiudian.png'); ?>"><p>酒店</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="家居行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/jiaju.jpg'); ?>"><p>家居</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="服饰行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/fushi.png'); ?>"><p>服饰</p></li>
+          <li class="am-u-md-3 am-u-sm-4 "><img alt="母婴行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/muying.png'); ?>"><p>母婴</p></li>
         </ul>
       </div>
     </div> 
@@ -189,44 +310,150 @@ use common\models\Article;
     </div>
   </div>
 </div>
+
+<!-- 资讯中心 -->
 <div class="news ">
   <h1 class="big-title ">资讯中心</h1>
   <div class="line "></div>
   <div class="am-container ">
-    <?php if ($this->beginCache('category-article-list', ['dependency' => ['class' => 'yii\caching\DbDependency', 'sql' => "SELECT MAX(updated_at) FROM {{%article}}"]])): ?>
-        <?php foreach ($categories as $category):?>
-    <div class="am-u-md-6 am-u-sm-12 ">
-      <div class="box-top ">
-        <h3><?= $category->title ?></h3>
-      </div>
-      <div class="news-box ">
-        <ul>
-          <?php
-          $list = Article::find()->published()->andWhere(['category_id' =>$category->id])->orderBy('id desc')->limit(6)->all();
-        
-          foreach ($list as $key=> $item) :?>  
-           <?php if($key==0):?><a class="update " href="<?= Url::to(['/article/view', 'id' => $item->id]) ?> ">
-            <div class="img-box ">
-               <img src="storage/images/news01.jpg" alt="<?= $item->title ?>">
-            </div>
-            <p><?= $item->title ?></p></a> 
-           <?php else:?>
-           <li class="news-des "> <a href="<?= Url::to(['/article/view', 'id' => $item->id]) ?> "><?= $item->title ?></a>
-           <span class="time "><?= Yii::$app->formatter->asDatetime($item->created_at, 'php:Y-m-d') ?></span>
-           </li>
-           <?php endif;?>  
-          <?php endforeach; ?>
-        </ul> 
-      </div>
-        <div class="box-footer ">
-          <a href="<?= Url::to(['/article/index', 'cate' => $category->slug]) ?>">更多>></a>
-        </div>
-      </div>
-    <?php endforeach;?>
-            <?php $this->endCache();endif; ?>
-</div>
-</div>
 
+    <div class="am-u-md-4 am-u-sm-12 ">
+      <div class="box-top ">
+        <h3>运营学堂</h3>
+      </div>
+      <div class="news-box1 ">
+        
+          <div class="img-box ">
+              <a class="update " href="https://www.jihexian.com/article/detail/id/373.html"><img src="<?php echo Url::to('@web/storage/images/news01.jpg'); ?>" alt="钦州小程序制作公司，钦州电商小程序 "></a>
+          </div>
+          <h4> <a class="update " href="https://www.jihexian.com/article/detail/id/373.html">钦州小程序制作公司，钦州电商小程序 </a></h4>
+          <p class="desc">随着小程序的流量越来越大，很多公司和商家都考虑上线一款小程序</p>
+       
+  <div class="box-footer ">
+        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
+
+      </div>
+      
+
+        <div class="box-top ">
+        <h3>产品解答</h3>
+        </div>
+        <div class="news-box2">
+       
+        
+          <ul>
+            <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/372.html">几何线商城小程序新模板上线啦，快来看看如何升级吧</a></li>
+        </ul>        
+        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/369.html">钦州微信小程序制作开发，扶贫商城，小程序商城</a></li>
+          </ul>
+          <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/282.html">如何选择一款微信商城系统？</a></li>
+        </ul>        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/280.html">如何运营好小程序（实操干货）</a></li>
+        </ul>        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/276.html">微信商城系统的优势</a></li>
+        </ul>     
+
+             <div class="box-footer ">
+        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
+        </div>
+
+        </div>
+
+       <div class="am-u-md-4 am-u-sm-12 ">
+      <div class="box-top ">
+        <h3>运营学堂</h3>
+      </div>
+      <div class="news-box1 ">
+       
+          <div class="img-box ">
+               <a class="update " href=""><img src="<?php echo Url::to('@web/storage/images/news02.jpg'); ?>" alt="钦州小程序制作公司，钦州电商小程序 "></a>
+          </div>
+          <h4> <a class="update " href="">钦州小程序制作公司，钦州电商小程序</a></h4>
+          <p class="desc">随着小程序的流量越来越大，很多公司和商家都考虑上线一款小程序</p>
+        </a>
+
+  <div class="box-footer ">
+        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
+
+      </div>
+      
+
+        <div class="box-top ">
+        <h3>产品解答</h3>
+        </div>
+        <div class="news-box2">
+       
+        
+          <ul>
+            <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/372.html">几何线商城小程序新模板上线啦，快来看看如何升级吧</a></li>
+        </ul>        
+        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/369.html">钦州微信小程序制作开发，扶贫商城，小程序商城</a><span class="time ">2019-06-01</span></li>
+          </ul>
+          <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/282.html">如何选择一款微信商城系统？</a></li>
+        </ul>        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/280.html">如何运营好小程序（实操干货）</a></li>
+        </ul>        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/276.html">微信商城系统的优势</a></li>
+        </ul>     
+
+             <div class="box-footer ">
+        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
+        </div>
+
+        </div>
+
+         <div class="am-u-md-4 am-u-sm-12 ">
+      <div class="box-top ">
+        <h3>运营学堂</h3>
+      </div>
+      <div class="news-box1 ">
+        
+          <div class="img-box ">
+            <a class="update " href="">  <img src="<?php echo Url::to('@web/storage/images/nopic.jpg'); ?>" alt="钦州小程序制作公司，钦州电商小程序 "></a>
+          </div>
+          <h4><a class="update " href=""> 钦州小程序制作公司，钦州电商小程序</a></h4>
+          <p class="desc">随着小程序的流量越来越大，很多公司和商家都考虑上线一款小程序</p>
+        
+
+         <div class="box-footer ">
+        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
+
+      </div>
+      
+
+        <div class="box-top ">
+        <h3>产品解答</h3>
+        </div>
+        <div class="news-box2">
+       
+        
+          <ul>
+            <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/372.html">几何线商城小程序新模板上线啦，快来看看如何升级吧</a></li>
+        </ul>        
+        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/369.html">钦州微信小程序制作开发，扶贫商城，小程序商城</a></li>
+          </ul>
+          <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/282.html">如何选择一款微信商城系统？</a></li>
+        </ul>        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/280.html">如何运营好小程序（实操干货）</a></li>
+        </ul>        <ul>
+          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/276.html">微信商城系统的优势</a></li>
+        </ul>     
+
+             <div class="box-footer ">
+        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
+        </div>
+
+        </div>
+    
+    </div>    
+  </div>
+</div>
 <div class="friendlink">
   <div class="am-container">
   <div class="am-u-sm-12">
@@ -242,7 +469,14 @@ use common\models\Article;
   margin-right: 5px;
 }
 </style>
-
-
-
-    <!-- /主体 -->
+<!-- /主体 -->
+<?php
+$this->registerJs(<<<JS
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+JS
+);
+?>
