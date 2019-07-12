@@ -32,3 +32,6 @@ dump.rdb
 
 # env
 /.env
+cache
+web/assets
+web/admin/assets

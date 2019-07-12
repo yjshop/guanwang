@@ -316,140 +316,43 @@ use common\models\Article;
   <h1 class="big-title ">资讯中心</h1>
   <div class="line "></div>
   <div class="am-container ">
+          
+     <?php foreach ($categories as $key => $value): ?>
 
-    <div class="am-u-md-4 am-u-sm-12 ">
+      <div class="am-u-md-4 am-u-sm-12 ">
       <div class="box-top ">
-        <h3>运营学堂</h3>
+        <h3><?=$value['title']?></h3>
       </div>
-      <div class="news-box1 ">
+        <?php $article=Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
+         <?php if($key<3):?>
+      <div class="news-box1">
+        
         
           <div class="img-box ">
-              <a class="update " href="https://www.jihexian.com/article/detail/id/373.html"><img src="<?php echo Url::to('@web/storage/images/news01.jpg'); ?>" alt="钦州小程序制作公司，钦州电商小程序 "></a>
+               <a class="update " href="<?=Url::to(['article/view','id'=>$article[0]['id']])?>"><img src="<?php echo Url::to('@web/storage/images/news02.jpg'); ?>" alt="<?=$article[0]['title']?> "></a>
           </div>
-          <h4> <a class="update " href="https://www.jihexian.com/article/detail/id/373.html">钦州小程序制作公司，钦州电商小程序 </a></h4>
-          <p class="desc">随着小程序的流量越来越大，很多公司和商家都考虑上线一款小程序</p>
+          <h4> <a class="update " href=""><?=$article[0]['title']?></a></h4>
+          <p class="desc"><?=$article[0]['title']?></p>
+         <?php else:?>
+          <div class="news-box ">
+            
+          <!--列表-->
+         <?php foreach ($article as $kk=>$vo):?>
+          <ul>
+            <li class="news-des "> <a href="<?=Url::to(['article/view','id'=>$vo['id']])?>"><?=$vo['title']?></a></li>
+         </ul>  
+         <?php endforeach;?>   
+          
+         <?php endif;?>
+
+        <div class="box-footer ">
+        <a href="<?=Url::to('article/index',array('cate'=>$value['slug']))?>">更多&gt;&gt;</a> </div>
+
+         </div>
+        </div>
+    <?php endforeach; ?>
        
-  <div class="box-footer ">
-        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
-
-      </div>
-      
-
-        <div class="box-top ">
-        <h3>产品解答</h3>
-        </div>
-        <div class="news-box2">
        
-        
-          <ul>
-            <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/372.html">几何线商城小程序新模板上线啦，快来看看如何升级吧</a></li>
-        </ul>        
-        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/369.html">钦州微信小程序制作开发，扶贫商城，小程序商城</a></li>
-          </ul>
-          <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/282.html">如何选择一款微信商城系统？</a></li>
-        </ul>        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/280.html">如何运营好小程序（实操干货）</a></li>
-        </ul>        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/276.html">微信商城系统的优势</a></li>
-        </ul>     
-
-             <div class="box-footer ">
-        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
-        </div>
-
-        </div>
-
-       <div class="am-u-md-4 am-u-sm-12 ">
-      <div class="box-top ">
-        <h3>运营学堂</h3>
-      </div>
-      <div class="news-box1 ">
-       
-          <div class="img-box ">
-               <a class="update " href=""><img src="<?php echo Url::to('@web/storage/images/news02.jpg'); ?>" alt="钦州小程序制作公司，钦州电商小程序 "></a>
-          </div>
-          <h4> <a class="update " href="">钦州小程序制作公司，钦州电商小程序</a></h4>
-          <p class="desc">随着小程序的流量越来越大，很多公司和商家都考虑上线一款小程序</p>
-        </a>
-
-  <div class="box-footer ">
-        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
-
-      </div>
-      
-
-        <div class="box-top ">
-        <h3>产品解答</h3>
-        </div>
-        <div class="news-box2">
-       
-        
-          <ul>
-            <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/372.html">几何线商城小程序新模板上线啦，快来看看如何升级吧</a></li>
-        </ul>        
-        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/369.html">钦州微信小程序制作开发，扶贫商城，小程序商城</a><span class="time ">2019-06-01</span></li>
-          </ul>
-          <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/282.html">如何选择一款微信商城系统？</a></li>
-        </ul>        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/280.html">如何运营好小程序（实操干货）</a></li>
-        </ul>        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/276.html">微信商城系统的优势</a></li>
-        </ul>     
-
-             <div class="box-footer ">
-        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
-        </div>
-
-        </div>
-
-         <div class="am-u-md-4 am-u-sm-12 ">
-      <div class="box-top ">
-        <h3>运营学堂</h3>
-      </div>
-      <div class="news-box1 ">
-        
-          <div class="img-box ">
-            <a class="update " href="">  <img src="<?php echo Url::to('@web/storage/images/nopic.jpg'); ?>" alt="钦州小程序制作公司，钦州电商小程序 "></a>
-          </div>
-          <h4><a class="update " href=""> 钦州小程序制作公司，钦州电商小程序</a></h4>
-          <p class="desc">随着小程序的流量越来越大，很多公司和商家都考虑上线一款小程序</p>
-        
-
-         <div class="box-footer ">
-        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
-
-      </div>
-      
-
-        <div class="box-top ">
-        <h3>产品解答</h3>
-        </div>
-        <div class="news-box2">
-       
-        
-          <ul>
-            <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/372.html">几何线商城小程序新模板上线啦，快来看看如何升级吧</a></li>
-        </ul>        
-        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/369.html">钦州微信小程序制作开发，扶贫商城，小程序商城</a></li>
-          </ul>
-          <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/282.html">如何选择一款微信商城系统？</a></li>
-        </ul>        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/280.html">如何运营好小程序（实操干货）</a></li>
-        </ul>        <ul>
-          <li class="news-des "> <a href="https://www.jihexian.com/article/detail/id/276.html">微信商城系统的优势</a></li>
-        </ul>     
-
-             <div class="box-footer ">
-        <a href="https://www.jihexian.com/article/index/category/66.html">更多&gt;&gt;</a> </div>
-        </div>
-
-        </div>
     
     </div>    
   </div>
