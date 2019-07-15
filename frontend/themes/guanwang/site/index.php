@@ -258,13 +258,12 @@ use common\models\Article;
   <h1 class="big-title ">成功案例</h1>
   <div class="line "></div>
   <ul class="anli-pc ">
-  <?php foreach ($case as $ki => $vv): ?> 
-
+  <?php foreach ($case as $vv): ?> 
     <li class="am-u-md-3 am-u-sm-4 ">
       <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>">
       <div class="code-img-box ">
         <div>
-          <img alt="<?=$vv['title']?>" src="">
+          <img alt="<?=$vv['title']?>" src="<?= $vv['qr_code'] ?>">
           <p class="name"><?=$vv['title']?></p>
           <p>微信扫码查看案例</p>
         </div>
@@ -274,7 +273,6 @@ use common\models\Article;
   </ul>
   
   <ul class="anli-phone ">
-   
        <li class="am-u-md-4 am-u-sm-4 ">
       <img src="">
       <p>几何线</p>

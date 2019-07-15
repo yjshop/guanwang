@@ -31,7 +31,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'target_category')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'target_category_url')->textInput(['maxlength' => true]) ?>
-
+   
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success btn-flat btn-block' : 'btn btn-primary btn-flat block']) ?>
     </div>

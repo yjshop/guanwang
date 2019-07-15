@@ -18,6 +18,7 @@ use Yii;
 use yii\base\InvalidParamException;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "{{%article}}".
@@ -82,9 +83,22 @@ class Article extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['category_id', 'status', 'view'], 'filter', 'filter' => 'intval'],
             ['module', 'string'],
-            ['cover', 'safe']
+            [['qr_code','cover'],'safe'],
         ];
     }
+    
+    public function upload()
+    {
+        if ($this->validate()) {
+            foreach ($this->imageFiles as $file) {
+                $file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     public function setCategory($attribute, $params)
     {
         $this->category = Category::find()->where(['id' => $this->$attribute])->select('title')->scalar();
@@ -123,7 +137,8 @@ class Article extends \yii\db\ActiveRecord
             'is_hot' => '热门',
             'is_best' => '精华',
             'module' => '文档类型',
-            'content' => '内容'
+            'content' => '内容',
+            'qr_code'=>'二维码'
         ];
     }
     public function attributeHints()
