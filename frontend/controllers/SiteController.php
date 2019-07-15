@@ -65,12 +65,18 @@ class SiteController extends Controller
                 ]
             ]
         ]);
-        $categories = Category::find()->orderBy('sort asc')->limit(2)->all();
+        //cateories
+        $categories = Category::find()->orderBy('sort asc')->limit(6)->all();
+        
+        //case
+        $case=Article::find()->published()->where(['category_id'=>71,'is_top'=>1])->notTrashed()->all();
+    
         $hotTags = TagService::hot();
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'categories' => $categories,
-            'hotTags' => $hotTags
+            'hotTags' => $hotTags,
+            'case' => $case,
         ]);
     }
 

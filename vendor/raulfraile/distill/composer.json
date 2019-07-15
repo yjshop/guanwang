@@ -1,0 +1,44 @@
+{
+    "name": "raulfraile/distill",
+    "description": "Smart compressed files extractor",
+    "keywords": [
+        "compression", "extractor", "zip", "gzip", "phar", "rar",
+        "tar.gz", "xz", "tar.xz", "bzip2", "bzip", "7zip", "cab",
+        "epub", "unzip", "bz2", "tgz", "strategy", "archive"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raul Fraile",
+            "email": "raulfraile@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Distill\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Distill\\Tests\\": "tests/" }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "pimple/pimple": "~3.0",
+        "symfony/filesystem": "~2.4|^3.0",
+        "symfony/process": "~2.4|^3.0"
+    },
+    "require-dev": {
+        "raulfraile/ladybug": "~1.0",
+        "mockery/mockery": "0.9.1",
+        "symfony/finder": "~2.4|^3.0"
+    },
+    "suggest": {
+        "ext-zip": "Allows to uncompress zip files using ZipArchive",
+        "ext-rar": "Allows to uncompress rar files using RarArchive"
+    },
+    "archive": {
+        "exclude": ["/tests", "/examples", "/.travis.yml", "CONTRIBUTING.md"]
+    },
+    "support": {
+        "issues": "https://github.com/raulfraile/distill/issues"
+    },
+    "minimum-stability": "stable"
+}

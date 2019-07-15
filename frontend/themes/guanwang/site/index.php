@@ -231,12 +231,6 @@ use common\models\Article;
                         </div>
                     </li>
 
-          
-
-             
-          
-
-
         </ul>
     </div>
   </div>
@@ -264,21 +258,21 @@ use common\models\Article;
   <h1 class="big-title ">成功案例</h1>
   <div class="line "></div>
   <ul class="anli-pc ">
-       
-          <li class="am-u-md-3 am-u-sm-4 ">
-      <img src="">
+  <?php foreach ($case as $ki => $vv): ?> 
+
+    <li class="am-u-md-3 am-u-sm-4 ">
+      <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>">
       <div class="code-img-box ">
         <div>
-          <img alt="客户案例：几何线 " src="">
-          <p class="name">几何线</p>
+          <img alt="<?=$vv['title']?>" src="">
+          <p class="name"><?=$vv['title']?></p>
           <p>微信扫码查看案例</p>
         </div>
       </div>
     </li>
-
-  
-
+ <?php endforeach; ?>    	
   </ul>
+  
   <ul class="anli-phone ">
    
        <li class="am-u-md-4 am-u-sm-4 ">
@@ -323,16 +317,16 @@ use common\models\Article;
       <div class="box-top ">
         <h3><?=$value['title']?></h3>
       </div>
-        <?php $article=Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
+        <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
          <?php if($key<3):?>
-      <div class="news-box1">
-        
-        
+        <div class="news-box1">
           <div class="img-box ">
                <a class="update " href="<?=Url::to(['article/view','id'=>$article[0]['id']])?>"><img src="<?php echo Url::to('@web/storage/images/news02.jpg'); ?>" alt="<?=$article[0]['title']?> "></a>
           </div>
+          
           <h4> <a class="update " href=""><?=$article[0]['title']?></a></h4>
           <p class="desc"><?=$article[0]['title']?></p>
+          
          <?php else:?>
           <div class="news-box ">
             
@@ -344,7 +338,7 @@ use common\models\Article;
          <?php endforeach;?>   
           
          <?php endif;?>
-
+         
         <div class="box-footer ">
         <a href="<?=Url::to('article/index',array('cate'=>$value['slug']))?>">更多&gt;&gt;</a> </div>
 
