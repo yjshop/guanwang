@@ -60,7 +60,6 @@ class ArticleController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'category' => $category,
-       
             'hotTags' => $hotTags
         ]);
     }
@@ -110,7 +109,9 @@ class ArticleController extends Controller
         $hots = ArticleService::hots($model->category_id);
         // 上下一篇
         $next = Article::find()->andWhere(['>', 'id', $id])->one();
+
         $prev = Article::find()->andWhere(['<', 'id', $id])->orderBy('id desc')->one();
+
         return $this->render($model->module . '/view', [
             'model' => $model,
             'hots' => $hots,
