@@ -278,7 +278,7 @@ use common\models\Article;
       <p>几何线</p>
      </li>
   </ul>
-  <p class="more">更多案例</p>
+  <div class="more"><a href=""><button type="button" class="am-btn am-btn-primary">了解更多>></button></a></div>
 </div> 
 
 
