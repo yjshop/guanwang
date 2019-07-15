@@ -372,6 +372,21 @@ $this->registerJs(<<<JS
         el: '.swiper-pagination',
       },
     });
+  //案例二维码显示
+      $(".anli li").mouseover(function(){
+        $(this).children(".code-img-box").show()
+      })
+      $(".anli li").mouseout(function(){
+        $(this).children(".code-img-box").hide()
+      })
+
+    $('.am-thumbnail').mouseover(function(){
+      $(this).children('.shadow').show();
+    })
+    $('.am-thumbnail').mouseout(function(){
+      $(this).children('.shadow').hide();
+    })
+
 JS
 );
 ?>
