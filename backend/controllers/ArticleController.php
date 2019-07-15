@@ -13,6 +13,8 @@ use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
+use yii\web\UploadedFile;
+use app\models\QrCode;
 
 /**
  * ArticleController implements the CRUD actions for Article model.
@@ -152,6 +154,7 @@ class ArticleController extends Controller
     public function actionCreate($module = 'base')
     {
         $model = new Article();
+        //$qr_code = new QrCode(); 
         $model->status = Article::STATUS_ACTIVE;
         $model->module = $module;
         $moduleModelClass = $model->findModuleClass($module);
@@ -161,9 +164,13 @@ class ArticleController extends Controller
         if (Yii::$app->request->isPost) {
             $transaction = Yii::$app->db->beginTransaction();
             try{
-                $model->load(Yii::$app->request->post());
+                $data=Yii::$app->request->post();  
+                $data['Article']['qr_code']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
+                $model->load($data);    
                 $model->save();
+             
                 if($model->hasErrors()) {
+                   
                     throw new Exception('操作失败');
                 }
                 $moduleModel->load(Yii::$app->request->post());
@@ -189,12 +196,14 @@ class ArticleController extends Controller
             $articleModuleItem['url'] = ['/article/create', 'module' => $articleModule->name];
             $articleModuleItem['active'] = $module == $articleModule->name;
             $articleModuleItems[] = $articleModuleItem;
-        }
+        }   
+        
         return $this->render('create', [
             'model' => $model,
             'moduleModel' => $moduleModel,
             'module' => $module,
-            'articleModuleItems' => $articleModuleItems
+            'articleModuleItems' => $articleModuleItems,
+            'model' => $model
         ]);
     }
 
@@ -215,7 +224,9 @@ class ArticleController extends Controller
         if (Yii::$app->request->isPost) {
             $transaction = Yii::$app->db->beginTransaction();
             try {
-                $model->load(Yii::$app->request->post());
+                $data=Yii::$app->request->post();
+                $data['Article']['qr_code']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
+                $model->load($data);
                 $model->save();
                 if($model->hasErrors()) {
                     throw new Exception('操作失败');
