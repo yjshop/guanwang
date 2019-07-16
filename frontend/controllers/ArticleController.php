@@ -14,7 +14,7 @@ use frontend\services\TagService;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-
+use yii;
 class ArticleController extends Controller
 {
     /**
@@ -64,6 +64,34 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function actionDemo(){
+        $query = Article::find()->published();
+        $query->andWhere(['in','category_id',[71,73,74]]);
+        $query->andWhere(['module'=>'photo']);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'published_at' => SORT_DESC
+                ],
+                'attributes' => [
+                    'published_at',
+                    'view'
+                ]
+            ],
+            'pagination' => [
+                'pageSize' => isset($params['per-page']) ? $params['per-page'] : 4,
+            ]
+            
+        ]);
+        
+      
+     return $this->render('demo', [
+            'dataProvider' => $dataProvider,
+        ]); 
+    }
+    
+    
     /**
      * 标签文章列表
      */
@@ -104,13 +132,14 @@ class ArticleController extends Controller
             throw new NotFoundHttpException('not found');
         }
         $model->addView();
-
+        yii::$app->session->set('module',$model->module);
         // sidebar
         $hots = ArticleService::hots($model->category_id);
         // 上下一篇
         $next = Article::find()->andWhere(['>', 'id', $id])->one();
 
         $prev = Article::find()->andWhere(['<', 'id', $id])->orderBy('id desc')->one();
+   
 
         return $this->render($model->module . '/view', [
             'model' => $model,

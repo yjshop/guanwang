@@ -154,7 +154,6 @@ class ArticleController extends Controller
     public function actionCreate($module = 'base')
     {
         $model = new Article();
-        //$qr_code = new QrCode(); 
         $model->status = Article::STATUS_ACTIVE;
         $model->module = $module;
         $moduleModelClass = $model->findModuleClass($module);
@@ -164,7 +163,8 @@ class ArticleController extends Controller
         if (Yii::$app->request->isPost) {
             $transaction = Yii::$app->db->beginTransaction();
             try{
-                $data=Yii::$app->request->post();  
+                //添加二维码
+                $data=Yii::$app->request->post();
                 $data['Article']['qr_code']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
                 $model->load($data);    
                 $model->save();
@@ -224,10 +224,12 @@ class ArticleController extends Controller
         if (Yii::$app->request->isPost) {
             $transaction = Yii::$app->db->beginTransaction();
             try {
+                //修改二维码
                 $data=Yii::$app->request->post();
                 $data['Article']['qr_code']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
                 $model->load($data);
                 $model->save();
+                
                 if($model->hasErrors()) {
                     throw new Exception('操作失败');
                 }

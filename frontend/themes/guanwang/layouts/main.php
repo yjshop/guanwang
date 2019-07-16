@@ -38,9 +38,8 @@ $this->registerMetaTag([
 <?php else: ?>
     <?= $this->render('_nav') ?>
 <?php endif; ?>
-<div class="container content-wrapper">
-   
-    <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
+
+    <?php if (!(new \Detection\MobileDetect())->isMobile() && yii::$app->session->get('module')!='photo'): ?>
     <div class="am-container mgt60">
     <?= Breadcrumbs::widget([
         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -49,7 +48,7 @@ $this->registerMetaTag([
     <?php endif; ?>
     <?= \common\widgets\Alert::widget()?>
     <?= $content ?>
-</div>
+
 <?= $this->render('_footer') ?>
 <?php if(Yii::$app->user->isGuest): ?>
     <?= $this->render('_login') ?>
