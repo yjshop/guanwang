@@ -13,8 +13,6 @@ use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
-use yii\web\UploadedFile;
-use app\models\QrCode;
 
 /**
  * ArticleController implements the CRUD actions for Article model.

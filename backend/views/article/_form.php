@@ -32,6 +32,7 @@ use common\modules\attachment\widgets\SingleWidget;
                     <?= $form->field($model, 'cover')->widget(SingleWidget::className()) ?>   
                     <?= $form->field($model, 'qr_code')->widget(SingleWidget::className()) ?>
                     <?= $form->field($model, 'description')->textarea()?>
+                    
                     <?php foreach ($moduleModel->formAttributes() as $attribute): ?>
                         <?= $form->field($moduleModel, $attribute)->widget(\common\widgets\dynamicInput\DynamicInputWidget::className(), ['type' => $moduleModel->getAttributeType($attribute), 'data' => $moduleModel->getAttributeItems($attribute), 'options' => $moduleModel->getAttributeOptions($attribute)]) ?>
                     <?php endforeach; ?>
