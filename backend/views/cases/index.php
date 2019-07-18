@@ -25,10 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title',
                    // 'cover',
                     'qr_cover',
-                    'create_time:datetime',
+                    //'create_time:datetime',
                     // 'update_time:datetime',
                   
-                     'category_id',
+                   // 'category_id', 
                         [
                             'class' => 'backend\widgets\grid\SwitcherColumn',
                             'attribute' => 'is_top'
@@ -38,10 +38,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             'attribute' => 'status'
                         ],
                     // 'desc',
-                    // 'cetagory',
+                  
                     // 'content',
-
-                    ['class' => 'yii\grid\ActionColumn'],
+                        ['class' => 'yii\grid\ActionColumn'],
                 ],
             ]); ?>
         </div>

@@ -64,32 +64,7 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function actionDemo(){
-        $query = Article::find()->published();
-        $query->andWhere(['in','category_id',[71,73,74]]);
-        $query->andWhere(['module'=>'photo']);
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'sort' => [
-                'defaultOrder' => [
-                    'published_at' => SORT_DESC
-                ],
-                'attributes' => [
-                    'published_at',
-                    'view'
-                ]
-            ],
-            'pagination' => [
-                'pageSize' => isset($params['per-page']) ? $params['per-page'] : 4,
-            ]
-            
-        ]);
-        
-      
-     return $this->render('demo', [
-            'dataProvider' => $dataProvider,
-        ]); 
-    }
+
     
     
     /**

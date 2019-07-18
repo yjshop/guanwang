@@ -1,35 +1,38 @@
-  <!--  头部banner -->
- <div class="banner am-g">
-    
- </div>
- 
+<?php
 
- <div class="example-box example-wrap">
- 	<div class="am-container">
+?>
+<!--  头部banner -->
+<div class="banner am-g">
 
- 		<h1 class="big-title">客户案例</h1>
+</div>
+
+
+<div class="example-box example-wrap">
+<div class="am-container">
+
+<h1 class="big-title">客户案例</h1>
 <p>国内知名品牌企业都选择几何线商城的产品和服务</p>
 
 
- 		<div class="exam-box-btn">
- 			<button type="button" class="am-btn  am-btn-primary am-btn-lg ">全部</button>
- 			<button type="button" class="am-btn  am-btn-primary am-btn-lg ">单商户</button>
- 			<button type="button" class="am-btn  am-btn-primary am-btn-lg ">分销</button>
- 			<button type="button" class="am-btn  am-btn-primary am-btn-lg ">多商户</button>
- 			<button type="button" class="am-btn  am-btn-primary am-btn-lg ">直销</button>
- 			<button type="button" class="am-btn  am-btn-primary am-btn-lg ">小程序</button>
- 		</div>
+<div class="exam-box-btn">
+<button type="button" class="am-btn  am-btn-primary am-btn-lg ">全部</button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg ">单商户</button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg ">分销</button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg ">多商户</button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg ">直销</button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg ">小程序</button>
+</div>
 
 <div class="anli">
- 	
- 	<ul class="anli-pc ">
-   
-      <?= \yii\widgets\ListView::widget([
-        'dataProvider' => $dataProvider,
-        'itemView' => '_item',
-        'layout' => "{items}",
-     
-    ]) ?>
+
+<ul class="anli-pc ">
+
+<?= \yii\widgets\ListView::widget([
+    'dataProvider' => $dataProvider,
+    'itemView' => '_item',
+    'layout' => "{items}",
+    
+]) ?>
     
   </ul>
 </div>

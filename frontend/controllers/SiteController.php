@@ -10,6 +10,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Url;
 use yii\web\Controller;
+use common\models\Cases;
 
 /**
  * Site controller.
@@ -66,9 +67,10 @@ class SiteController extends Controller
             ]
         ]);
         //cateories
-        $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all();
+       $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all();
         //case
-        $case=Article::find()->where(['category_id'=>71,'is_top'=>1])->notTrashed()->limit(8)->all();
+       //$case=Article::find()->where(['category_id'=>71,'is_top'=>1])->notTrashed()->limit(8)->all();
+        $case = Cases::find()->limit(8)->all();
         $hotTags = TagService::hot();
         return $this->render('index', [
             'dataProvider' => $dataProvider,

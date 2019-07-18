@@ -161,12 +161,10 @@ class ArticleController extends Controller
         if (Yii::$app->request->isPost) {
             $transaction = Yii::$app->db->beginTransaction();
             try{
-                //添加二维码
+              
                 $data=Yii::$app->request->post();
-                $data['Article']['qr_code']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
                 $model->load($data);    
                 $model->save();
-             
                 if($model->hasErrors()) {
                    
                     throw new Exception('操作失败');
@@ -224,7 +222,6 @@ class ArticleController extends Controller
             try {
                 //修改二维码
                 $data=Yii::$app->request->post();
-                $data['Article']['qr_code']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
                 $model->load($data);
                 $model->save();
                 

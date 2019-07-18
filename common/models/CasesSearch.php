@@ -19,7 +19,7 @@ class CasesSearch extends Cases
     {
         return [
             [['id', 'create_time', 'update_time', 'status', 'category_id', 'is_top'], 'integer'],
-            [['title', 'cover', 'qr_cover', 'desc', 'cetagory', 'content'], 'safe'],
+            [['title', 'cover', 'qr_cover', 'desc', 'content'], 'safe'],
         ];
     }
 
@@ -49,7 +49,11 @@ class CasesSearch extends Cases
                 'defaultOrder' => [
                     'id' => SORT_DESC
                 ]
-            ]
+            ],
+            /* 'pagination' => [
+                'pageSize' => 1,
+            ], */
+            
         ]);
 
         $this->load($params);
@@ -73,7 +77,6 @@ class CasesSearch extends Cases
             ->andFilterWhere(['like', 'cover', $this->cover])
             ->andFilterWhere(['like', 'qr_cover', $this->qr_cover])
             ->andFilterWhere(['like', 'desc', $this->desc])
-            ->andFilterWhere(['like', 'cetagory', $this->cetagory])
             ->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;

@@ -39,7 +39,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'desc') ?>
 
-    <?php // echo $form->field($model, 'cetagory') ?>
+    
 
     <?php // echo $form->field($model, 'content') ?>
 

@@ -260,11 +260,11 @@ use common\models\Article;
   <ul class="anli-pc ">
   <?php foreach ($case as $vv): ?> 
     <li class="am-u-md-3 am-u-sm-4 ">
-      <a href="<?=Url::to(['article/view','id'=>$vv['id']])?>"> <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>"></a>
+      <a href="<?=Url::to(['cases/index','id'=>$vv['id']])?>"> <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>"></a>
       <div class="code-img-box ">
         <div>
-          <a href="<?=Url::to(['article/view','id'=>$vv['id']])?>"><img alt="<?=$vv['title']?>" src="<?= $vv['qr_code'] ?>"></a>
-          <p class="name"><a href="<?=Url::to(['article/view','id'=>$vv['id']])?>"><?=$vv['title']?></a></p>
+          <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><img alt="<?=$vv['title']?>" src="<?= $vv['qr_cover'] ?>"></a>
+          <p class="name"><a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><?=$vv['title']?></a></p>
           <p>微信扫码查看案例</p>
         </div>
       </div>
@@ -278,7 +278,7 @@ use common\models\Article;
       <p>几何线</p>
      </li>
   </ul>
-  <div class="more"><a href=""><a type="button" href="<?=Url::to(['article/demo'])?>" class="am-btn am-btn-primary">了解更多>></a></a></div>
+  <div class="more"><a href=""><a type="button" href="<?=Url::to(['cases/index'])?>" class="am-btn am-btn-primary">了解更多>></a></a></div>
 </div> 
 
 

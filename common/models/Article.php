@@ -9,8 +9,6 @@ use common\behaviors\PushBehavior;
 use common\behaviors\SoftDeleteBehavior;
 use common\behaviors\TagBehavior;
 use common\behaviors\VoteBehavior;
-use common\models\article\Base;
-use common\models\article\Exhibition;
 use common\models\query\ArticleQuery;
 use common\modules\attachment\behaviors\UploadBehavior;
 use common\modules\user\behaviors\UserBehavior;
@@ -82,7 +80,7 @@ class Article extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['category_id', 'status', 'view'], 'filter', 'filter' => 'intval'],
             ['module', 'string'],
-            [['qr_code','cover'],'safe'],
+            [['cover'],'safe'],
         ];
     }
     
@@ -126,7 +124,6 @@ class Article extends \yii\db\ActiveRecord
             'is_best' => '精华',
             'module' => '文档类型',
             'content' => '内容',
-            'qr_code'=>'二维码'
         ];
     }
     public function attributeHints()

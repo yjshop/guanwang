@@ -8,6 +8,7 @@ use common\models\CasesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\CaseCategory;
 
 /**
  * CasesController implements the CRUD actions for Cases model.
@@ -78,9 +79,14 @@ class CasesController extends Controller
     public function actionCreate()
     {
         $model = new Cases();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->Id]);
+            
+            /* $data=Yii::$app->request->post();
+            $data['Cases']['cover']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
+            $data['Cases']['qr_cover']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
+            $model->load($data);
+            $model->save(); */
+            
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -97,12 +103,14 @@ class CasesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $data = CaseCategory::findAll($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->Id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'data' =>$data,
             ]);
         }
     }

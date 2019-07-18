@@ -30,7 +30,7 @@ use common\modules\attachment\widgets\SingleWidget;
                     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
                     <?= $form->field($model, 'category_id')->dropDownList(Category::getDropDownList(Tree::build(Category::lists($model->module)))) ?>
                     <?= $form->field($model, 'cover')->widget(SingleWidget::className()) ?>   
-                    <?= $form->field($model, 'qr_code')->widget(SingleWidget::className()) ?>
+                 
                     <?= $form->field($model, 'description')->textarea()?>
                     
                     <?php foreach ($moduleModel->formAttributes() as $attribute): ?>

@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'category_id',
             'is_top',
             'desc',
-            'cetagory',
+          
             'content',
         ],
     ]) ?>
