@@ -42,7 +42,6 @@ class CasesSearch extends Cases
     public function search($params)
     {
         $query = Cases::find();
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [
@@ -50,9 +49,9 @@ class CasesSearch extends Cases
                     'id' => SORT_DESC
                 ]
             ],
-            /* 'pagination' => [
-                'pageSize' => 1,
-            ], */
+            'pagination' => [
+            'pageSize' => 4,
+            ], 
             
         ]);
 

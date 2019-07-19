@@ -33,9 +33,9 @@ use common\models\Cases;
 	<div class="am-container">
 		<ul class="am-g">
 		
-		<?php foreach ($top as $vo):?>
+		<?php foreach ($top2 as $vo):?>
 			<li class="am-u-lg-3"><a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> <div class="am-thumbnail">
-     		<div class="img-cover"> <img src="<?=$vo['cover']?>" alt=""/></div>
+     		<div class="img-cover"> <img src="<?=$vo['cover']?>" alt=<?=$vo['title']?>/></div>
      			 <h3 class="am-thumbnail-caption"><?=$vo['title']?></h3>
      			 <p></p>
     			</div>

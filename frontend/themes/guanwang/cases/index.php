@@ -38,12 +38,13 @@
 </div>
    <!-- 分页开始 -->
             <div class="page">
+            
       <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
-    <?= \yii\widgets\LinkPager::widget([
-        'pagination' => $dataProvider->pagination
-    ]); ?>
-    <?php else:?>
-    <?= \yii\widgets\LinkPager::widget([
+      <?= \yii\widgets\LinkPager::widget([
+       'pagination' => $dataProvider->pagination
+       ]); ?>
+      <?php else:?>
+      <?= \yii\widgets\LinkPager::widget([
         'pagination' => $dataProvider->pagination,
         'nextPageLabel' => '下一页',
         'prevPageLabel' => '上一页',
@@ -51,8 +52,8 @@
         'prevPageCssClass' => 'previous',
         'nextPageCssClass' => 'next',
         'options' => ['class' => 'pager'],
-    ]); ?>
-    <?php endif;?>
+      ]); ?>
+      <?php endif;?>
             </div>
 
 

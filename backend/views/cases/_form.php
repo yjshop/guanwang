@@ -2,7 +2,6 @@
 
 use common\helpers\Tree;
 use common\modules\attachment\widgets\SingleWidget;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\CaseCategory;

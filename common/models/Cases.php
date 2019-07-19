@@ -47,8 +47,8 @@ class Cases extends \yii\db\ActiveRecord
                     ActiveRecord::EVENT_BEFORE_UPDATE => ['update_time'],
                 ],
             ],
-            //自定义字段，存贮在其他数据库
             
+            //自定义字段，文件路径放在其他数据库。
             [
                 'class' => UploadBehavior::className(),
                 'attribute' => 'cover',
@@ -97,20 +97,4 @@ class Cases extends \yii\db\ActiveRecord
             'content' => '内容',
         ];
     }
-    /* public function addView()
-    {
-        $cache = \Yii::$app->cache;
-        $key = 'cases:view:'.$this->id;
-        $view = $cache->get($key);
-        if ($view !== false) {
-            if ($view >= 20) {
-                $this->updateCounters(['view' => $view + 1]);
-                $cache->delete($key);
-            } else {
-                $cache->set($key, ++$view);
-            }
-        } else {
-            $cache->set($key, 1);
-        }
-    } */
 }

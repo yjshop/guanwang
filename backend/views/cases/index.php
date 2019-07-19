@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id',
                     'title',
                    // 'cover',
-                    'qr_cover',
+                    //'qr_cover',
                     //'create_time:datetime',
                     // 'update_time:datetime',
                   

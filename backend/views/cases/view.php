@@ -15,19 +15,27 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'title',
-            'cover',
-            'qr_cover',
+            [
+                'label' => '封面',
+                'value' =>$model->cover,
+                'format' => 'image',
+            ],
+            [
+                'label' => '二维码',
+                'value' =>$model->qr_cover,
+                'format' => 'image',
+            ],
             'create_time:datetime',
             'update_time:datetime',
             'status',
             'category_id',
             'is_top',
             'desc',
-          
             'content',
         ],
+        'template' => '<tr><th>{label}</th><td>{value}</td></tr>',
+        'options' => ['class' => 'table table-striped table-bordered detail-view'],
     ]) ?>
     </div>
 </div>
