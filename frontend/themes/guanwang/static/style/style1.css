@@ -422,6 +422,7 @@ padding: 0 0 30px 0;
 
 
 .pro-expert .am-thumbnail{
+
 	padding: 20px 0;
 	/*box-shadow: 5px 5px 10px 1px #BEBEBE;*/
 	box-shadow: 3px 3px 2px 1px #d0d0d0;
@@ -533,4 +534,12 @@ color: #8E8E8E;
     background-color: #0e90d2;
     border-color: #0e90d2;
 	
+}
+
+
+/*案例详情*/
+.detail-wrap .banner{
+
+			min-height: 400px;
+			background-image: url(../images/banner_index_3_0118.png);
 }
