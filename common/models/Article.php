@@ -9,8 +9,6 @@ use common\behaviors\PushBehavior;
 use common\behaviors\SoftDeleteBehavior;
 use common\behaviors\TagBehavior;
 use common\behaviors\VoteBehavior;
-use common\models\article\Base;
-use common\models\article\Exhibition;
 use common\models\query\ArticleQuery;
 use common\modules\attachment\behaviors\UploadBehavior;
 use common\modules\user\behaviors\UserBehavior;
@@ -82,9 +80,11 @@ class Article extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['category_id', 'status', 'view'], 'filter', 'filter' => 'intval'],
             ['module', 'string'],
-            ['cover', 'safe']
+            [['cover'],'safe'],
         ];
     }
+    
+ 
     public function setCategory($attribute, $params)
     {
         $this->category = Category::find()->where(['id' => $this->$attribute])->select('title')->scalar();
@@ -123,7 +123,7 @@ class Article extends \yii\db\ActiveRecord
             'is_hot' => '热门',
             'is_best' => '精华',
             'module' => '文档类型',
-            'content' => '内容'
+            'content' => '内容',
         ];
     }
     public function attributeHints()

@@ -38,7 +38,7 @@ class UploadBehavior extends BaseAttachAttribute
 
         if (!$this->owner->isNewRecord) {
             $value = $this->getAttachments();
-            if ($this->multiple == false) {
+            if ($this->multiple == false) { //单条
                 $value = array_shift($value);
             }
         }
@@ -58,12 +58,16 @@ class UploadBehavior extends BaseAttachAttribute
         }
         $this->value = $value;
     }
-
+    
+    /**
+             * 获取附件列表信息
+     * @return \common\modules\attachment\models\Attachment[]
+     */
     public function getAttachments()
     {
         $attachmentIndex = AttachmentIndex::find()->where([
-            'entity_id' =>  $this->getEntityId(),
-            'entity' => $this->getEntity(),
+            'entity_id' =>  $this->getEntityId(),//模式数据的id
+            'entity' => $this->getEntity(),//模型  
             'attribute' => $this->attribute
         ])->all();
         $attachmentIds = ArrayHelper::getColumn($attachmentIndex, 'attachment_id');

@@ -161,9 +161,12 @@ class ArticleController extends Controller
         if (Yii::$app->request->isPost) {
             $transaction = Yii::$app->db->beginTransaction();
             try{
-                $model->load(Yii::$app->request->post());
+              
+                $data=Yii::$app->request->post();
+                $model->load($data);    
                 $model->save();
                 if($model->hasErrors()) {
+                   
                     throw new Exception('操作失败');
                 }
                 $moduleModel->load(Yii::$app->request->post());
@@ -189,12 +192,14 @@ class ArticleController extends Controller
             $articleModuleItem['url'] = ['/article/create', 'module' => $articleModule->name];
             $articleModuleItem['active'] = $module == $articleModule->name;
             $articleModuleItems[] = $articleModuleItem;
-        }
+        }   
+        
         return $this->render('create', [
             'model' => $model,
             'moduleModel' => $moduleModel,
             'module' => $module,
-            'articleModuleItems' => $articleModuleItems
+            'articleModuleItems' => $articleModuleItems,
+            'model' => $model
         ]);
     }
 
@@ -215,8 +220,11 @@ class ArticleController extends Controller
         if (Yii::$app->request->isPost) {
             $transaction = Yii::$app->db->beginTransaction();
             try {
-                $model->load(Yii::$app->request->post());
+                //修改二维码
+                $data=Yii::$app->request->post();
+                $model->load($data);
                 $model->save();
+                
                 if($model->hasErrors()) {
                     throw new Exception('操作失败');
                 }

@@ -100,6 +100,7 @@ $menuGroups = MenuHelper::getAssignedMenu(Yii::$app->user->id, null, function ($
 
         <div class="navbar-collapse collapse" role="navigation">
             <ul class="navbar-nav nav">
+        
                 <?php foreach ($menuGroups as $key => $menuGroup) : ?>
                     <li <?php if ($key == 0) {echo 'class="active"';} ?>><a href="#menu-group-<?= $menuGroup['id'] ?> " data-toggle="tab"><?= Html::icon($menuGroup['icon']) ?> <?= $menuGroup['name'] ?></a></li>
                 <?php endforeach; ?>

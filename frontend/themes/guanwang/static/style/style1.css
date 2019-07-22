@@ -274,6 +274,9 @@
 }
 
 
+
+
+
 /*功能介绍*/
 .product-wrap .banner{
 
@@ -542,4 +545,51 @@ color: #8E8E8E;
 
 			min-height: 400px;
 			background-image: url(../images/banner_index_3_0118.png);
+<<<<<<< HEAD
+=======
+}
+
+
+.detail-box{
+	margin-bottom: 2rem;
+}
+.detail-box article{
+
+	margin: 50px 0;
+	background-color: #FCFCFC;
+	/*padding-left: 1rem;*/
+	/*border: 1px solid #E0E0E0;*/
+}
+.more-cases ul{
+	margin-top: 2rem;
+}
+.more-cases li{
+	position: relative;
+	overflow: hidden;
+
+	height: 300px;
+	
+}
+.more-cases  .img-cover{
+	overflow: hidden;
+}
+.more-cases li img{
+	width: 100%;
+	height: 150px;
+	object-fit:cover;
+}
+.more-cases li p{
+	padding: .8rem;
+}
+.detail-box .am-article-meta{
+	margin: 1.6rem 0;
+}
+.detail-box .am-article-lead{
+	margin-bottom: 3rem;
+}
+
+.scaletexiao{
+	transform: scale(1.1);
+	transition: all .1s;
+>>>>>>> df71601de4acb042d888a3b0e4269127db028598
 }

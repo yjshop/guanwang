@@ -14,7 +14,7 @@ use frontend\services\TagService;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-
+use yii;
 class ArticleController extends Controller
 {
     /**
@@ -60,11 +60,13 @@ class ArticleController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'category' => $category,
-       
             'hotTags' => $hotTags
         ]);
     }
 
+
+    
+    
     /**
      * 标签文章列表
      */
@@ -105,12 +107,15 @@ class ArticleController extends Controller
             throw new NotFoundHttpException('not found');
         }
         $model->addView();
-
+        yii::$app->session->set('module',$model->module);
         // sidebar
         $hots = ArticleService::hots($model->category_id);
         // 上下一篇
         $next = Article::find()->andWhere(['>', 'id', $id])->one();
+
         $prev = Article::find()->andWhere(['<', 'id', $id])->orderBy('id desc')->one();
+   
+
         return $this->render($model->module . '/view', [
             'model' => $model,
             'hots' => $hots,

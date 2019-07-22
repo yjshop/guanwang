@@ -15,6 +15,7 @@ use common\modules\attachment\widgets\SingleWidget;
 /* @var $form backend\widgets\ActiveForm */
 ?>
     <?php $form = ActiveForm::begin([
+        'options' => ['enctype' => 'multipart/form-data'],
         'enableClientValidation' => false,
         'enableAjaxValidation' => true
     ]); ?>
@@ -27,11 +28,11 @@ use common\modules\attachment\widgets\SingleWidget;
                 <div class="tab-pane active" id="tab_1">
 
                     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-
                     <?= $form->field($model, 'category_id')->dropDownList(Category::getDropDownList(Tree::build(Category::lists($model->module)))) ?>
-
+                    <?= $form->field($model, 'cover')->widget(SingleWidget::className()) ?>   
+                 
                     <?= $form->field($model, 'description')->textarea()?>
-
+                    
                     <?php foreach ($moduleModel->formAttributes() as $attribute): ?>
                         <?= $form->field($moduleModel, $attribute)->widget(\common\widgets\dynamicInput\DynamicInputWidget::className(), ['type' => $moduleModel->getAttributeType($attribute), 'data' => $moduleModel->getAttributeItems($attribute), 'options' => $moduleModel->getAttributeOptions($attribute)]) ?>
                     <?php endforeach; ?>
@@ -51,8 +52,10 @@ use common\modules\attachment\widgets\SingleWidget;
                             'pluginOptions' => ['autoclose' => true]
                         ]
                     ) ?>
-                    <?= $form->field($model, 'cover')->widget(SingleWidget::className()) ?>
+                 
 
+                 
+                  
                     <?= $form->field($model, 'commentEnabled')->checkbox(['label' => '开启评论']) ?>
 
                     <?= $form->field($model, 'is_top')->checkbox() ?>
