@@ -69,8 +69,8 @@ class SiteController extends Controller
         //cateories
        $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all();
         //case
-       //$case=Article::find()->where(['category_id'=>71,'is_top'=>1])->notTrashed()->limit(8)->all();
-        $case = Cases::find()->limit(8)->all();
+       //$article=Article::find()->where(['category_id'=>71,'is_top'=>1])->notTrashed()->limit(8)->all();
+       $case = Cases::find()->where(['is_top'=>1])->limit(4)->all();
         $hotTags = TagService::hot();
         return $this->render('index', [
             'dataProvider' => $dataProvider,
