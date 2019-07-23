@@ -7,26 +7,28 @@ use yii\web\NotFoundHttpException;
 class CasesController extends Controller
 {
     /**
-     * @api {get} /v1/articles 文章列表
+     * @api 
      * @apiVersion 1.0.0
      * @apiName index
-     * @apiGroup Article
-     *
-     * @apiParam {Integer} [cid] 分类ID.
-     * @apiParam {String} [module]  模块类型
+     * @apiGroup
      *
      */
     public function actionIndex($cid = null, $module = null)
     {
-        $query = cases::find()
-        ->andFilterWhere(['status' => 1]);
+        $query = cases::find()->Where(['status' => 1]);
         $dataProvider = new ActiveDataProvider([
                 'query' => $query,
                 'sort' => [
                         'defaultOrder' => [
                                 'id' => SORT_DESC
                         ]
-                ]
+                ],
+                'pagination' => [
+
+               'defaultPageSize' => 8,
+               'validatePage'=>false,
+
+            ], 
         ]);
         return $dataProvider;
     }
@@ -34,7 +36,6 @@ class CasesController extends Controller
      * @api
      * @apiVersion 1.0.0
      * @apiName view
-     * @apiGroup Article
      *
      */
     public function actionView($id)

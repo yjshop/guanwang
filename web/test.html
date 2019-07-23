@@ -2,18 +2,42 @@
 <html>
 <head>
 	<title></title>
+	<meta charset="utf-8">
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 </head>
-<body>
-		<script type="text/javascript">
-			$(function(){
-				var jqxhr=$.ajax('http://www.test.com/cases?page=6&per-page=4',{
-					dataType:'json'
 
-				})
-				console.log(jqxhr);
-			})
-			
+<body>
+
+
+		<script type="text/javascript">
+			var JSONstr=null;
+			var imgData=[];
+		
+
+   $.ajax('http://www.test.com/api/v1/cases/index', {
+    dataType: 'json'
+	}).done(function (data) {
+	
+	    console.log(data.items);
+	    $.each(data.items,function(index,value){
+	    	
+	    	imgData.push(value.cover);
+	    })
+	    console.log(imgData);
+	  imgLoad()
+		
+	}).fail(function (xhr, status) {
+	   
+	}).always(function () {
+
+	   
+	});
+
+
+
+
+
+
 		</script>
 </body>
 </html>

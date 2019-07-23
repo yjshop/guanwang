@@ -50,11 +50,11 @@ if ($model->is_top == 1)
             //'status',
             [
                 'label' =>'分类',
-                'value' =>$top,
+                'value' =>$model->category_id,
             ],
             [
                 'label' =>'置顶',
-                'value' =>$cetagory,
+                'value' =>$model->top,
             ],
             'desc',
             'content',
