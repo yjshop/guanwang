@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use Egulias\EmailValidator\Warning\LabelTooLong;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Cases */
@@ -9,6 +10,20 @@ use yii\widgets\DetailView;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cases'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$jinyong;
+$top;
+if($model->category_id == 1)
+{
+    $jinyong = "禁用";
+}else {
+    $jinyong = "不禁用";
+}
+if ($model->is_top == 1)
+{
+    $top = "置顶";
+}else{
+    $top = "不置顶";
+}
 ?>
 <div class="box box-primary">
     <div class="box-body">
@@ -28,9 +43,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'create_time:datetime',
             'update_time:datetime',
-            'status',
-            'category_id',
-            'is_top',
+            [
+               'label' =>'禁用状态',
+                'value' =>$jinyong,  
+            ],
+            //'status',
+            [
+                'label' =>'分类',
+                'value' =>$top,
+            ],
+            [
+                'label' =>'置顶',
+                'value' =>$cetagory,
+            ],
             'desc',
             'content',
         ],

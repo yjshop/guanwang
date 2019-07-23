@@ -22,10 +22,5 @@ class Article extends \common\models\Article
         ]);
     }
 
-    public function extraFields()
-    {
-        return [
-            'data'
-        ];
-    }
+  
 }

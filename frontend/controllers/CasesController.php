@@ -35,7 +35,7 @@ class CasesController extends Controller{
     public function actionIndex(){
        $data['status']=1;
        $p= new CasesSearch();
-       $dataProvider=$p->search($data);
+       $dataProvider=$p->search1($data);
        return $this->render('index',[
            'dataProvider'=>$dataProvider,
        ]); 

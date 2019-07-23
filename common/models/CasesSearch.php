@@ -50,7 +50,9 @@ class CasesSearch extends Cases
                 ]
             ],
             'pagination' => [
+
             'defaultPageSize' => 8,
+
             ], 
             
         ]);
@@ -78,6 +80,24 @@ class CasesSearch extends Cases
             ->andFilterWhere(['like', 'desc', $this->desc])
             ->andFilterWhere(['like', 'content', $this->content]);
 
+        return $dataProvider;
+    }
+    
+    public function search1($params)
+    {
+        $query = Cases::find();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC
+                ]
+            ],
+            'pagination' => [
+                'pageSize' => 4,
+            ],
+            
+        ]);  
         return $dataProvider;
     }
 }
