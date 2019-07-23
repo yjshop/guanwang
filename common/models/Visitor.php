@@ -64,7 +64,7 @@ class Visitor extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'id' => '序号',
             'admin' => '责任人',
             'tel' => '电话号码',
             'company' => '公司或企业',

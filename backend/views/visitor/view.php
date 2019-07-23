@@ -25,9 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'qq',
             'weixin',
             'email:email',
-            'created_at',
-            'updated_at',
-            'status',
+            'created_at:datetime',
+            'updated_at:datetime',
+            //'status',
         ],
     ]) ?>
     </div>

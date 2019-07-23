@@ -25,17 +25,18 @@ $this->params['breadcrumbs'][] = $this->title;
                     'admin',
                     'tel',
                     'company',
-                    'domain',
+                    //'domain',
                     // 'app_id',
-                    'class',
+                    //'class',
                     'qq',
                     'weixin',
                     'email:email',
-                    'created_at',
+                    //'created_at',
                     // 'updated_at',
             [
                 'class' => 'backend\widgets\grid\SwitcherColumn',
-                'attribute' => 'status'
+                'attribute' => 'status',
+                'enableSorting' => false
             ],
 
                     ['class' => 'yii\grid\ActionColumn'],
