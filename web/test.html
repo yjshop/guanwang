@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+		<script type="text/javascript">
+			$(function(){
+				var jqxhr=$.ajax('http://www.test.com/cases?page=6&per-page=4',{
+					dataType:'json'
+
+				})
+				console.log(jqxhr);
+			})
+			
+		</script>
+</body>
+</html>
