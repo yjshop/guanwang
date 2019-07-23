@@ -50,7 +50,11 @@ class CasesSearch extends Cases
                 ]
             ],
             'pagination' => [
-            'pageSize' => 10,
+
+            'defaultPageSize' => 8,
+            'validatePage'=>false,
+
+
             ], 
             
         ]);

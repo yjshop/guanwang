@@ -50,8 +50,10 @@ if ($model->is_top == 1)
             ],
             //'status',
             [
+
                 'label' =>'置顶',
                 'value' =>$top,
+
             ],
             'desc',
             'content',
