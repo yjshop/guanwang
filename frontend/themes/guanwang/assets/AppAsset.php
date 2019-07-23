@@ -16,7 +16,9 @@ class AppAsset extends AssetBundle
         'style/swiper.min.css',
         'style/phone.min.css',
         'style/style1.css',
- 
+        
+        'style/authorization.css',
+        'style/main.min.css',
     ];
     public $js = [
         'js/amazeui.min.js',
