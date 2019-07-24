@@ -810,58 +810,71 @@
 
 
 
-<!-- 侧边客服 -->
-
-<div class="sideBox">
+<!-- 侧边客服 --> 
+<!-- 新加的 -->
+<div class="sideBox am-show-lg-only">
   
   <ul>
     
     <li><img src="images/QQ.png">
-        <div class="sideBox-mes">
-          
-          
-        </div>
 
-
-    </li>
-    <li><img src="images/电话.png"></li>
-    <li><img src="images/二维码.png"></li>
+      <a  href="" class="sideBox-1"style="display: none;">
+    
+        <div><img src="images/qq2.png"></div>
+        <p>咨询在线客服</p>
+        </a>  
     
 
 
+    </li>
+    <li><img src="images/电话.png">
 
+          <a  href="" class="sideBox-2" style="display: none;">
+    
+        <div><img src="images/电话 (1).png" ></div>
+       <div><p>服务热线</p>
+        <p>0777-1234567</p>
+      </div>
+        </a>  
+
+
+    </li>
+    <li><img src="images/二维码.png">
+
+        <div  class="sideBox-3" style="display: none;">
+    
+        <div><img src="images/gzh.jpg"></div>
+      
+        <p>几何线公众号</p>
+        </div>  
+
+    </li>
   </ul>
-
-
-
 </div>
+<!-- /新加的 -->
 <!-- /侧边客服 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 </div>    
 
 
-
-
 <script type="text/javascript">
-    
+  //客服js
+    var ele='.sideBox-';
+    $('.sideBox li').hover(function(){
+       
+         ele='.sideBox-'+($(this).index()+1);
+      
+        $(ele).stop().show();
+      
+    },function(){
+         ele='.sideBox-'+($(this).index()+1);
+          setTimeout(function(){
+            $(ele).stop().hide();
+          },100)
+
+    });
 
  
 

@@ -257,7 +257,7 @@ use common\models\Article;
  <div class="anli am-container ">
   <h1 class="big-title ">成功案例</h1>
   <div class="line "></div>
-  <ul class="anli-pc ">
+  <ul class="anli-pc">
   <?php foreach ($case as $vv): ?> 
     <li class="am-u-md-3 am-u-sm-4 ">
       <a href="<?=Url::to(['cases/index','id'=>$vv['id']])?>"> <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>"></a>

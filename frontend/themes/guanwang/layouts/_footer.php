@@ -45,3 +45,65 @@ use yii\helpers\Url;
             <p><?= Yii::$app->config->get('SITE_ICP')?></p>
         </div> -->
 </footer>
+
+<!-- 二维码显示 -->
+<div style="position: fixed;right: 0;top:45%;" class="am-show-sm-only">
+  <div style="padding: 10px;background-color: #fff;">
+    <img width="100" src="<?php echo Url::to('@web/storage/images/miniQrcode.jpg') ?>">
+    <div style="width: 100px;text-align: center;background-color: #fff;">微信长按体验</div>
+  </div>
+</div>
+
+
+
+<!-- 侧边客服 --> 
+<!-- 新加的 -->
+<div class="sideBox am-show-lg-only">
+  
+  <ul>
+    
+    <li><img src="<?php echo Url::to('@web/storage/images/QQ.png') ?>">
+
+      <a  href="" class="sideBox-1"style="display: none;">
+    
+        <div><img src="<?php echo Url::to('@web/storage/images/qq2.png') ?>"></div>
+        <p>咨询在线客服</p>
+        </a>  
+   </li>
+    <li><img src="<?php echo Url::to('@web/storage/images/phone2.png') ?>">
+
+          <a  href="" class="sideBox-2" style="display: none;">
+    
+        <div><img src="<?php echo Url::to('@web/storage/images/phone1.png') ?>" ></div>
+       <div><p>服务热线</p>
+        <p>0777-1234567</p>
+      </div>
+        </a>  
+    </li>
+    <li><img src="<?php echo Url::to('@web/storage/images/qr_code.png') ?>">
+
+        <div  class="sideBox-3" style="display: none;">
+    
+        <div><img src="<?php echo Url::to('@web/storage/images/gzh.jpg') ?>"></div>
+      
+        <p>几何线公众号</p>
+        </div>  
+    </li>
+  </ul>
+</div>
+<!-- /新加的 -->
+<!-- /侧边客服 -->
+</div> 
+<?php  
+$this->registerJs(<<<JS
+  //客服js
+    $('.sideBox li').hover(function(){
+        console.log($(this).index());
+        var ele='.sideBox-'+($(this).index()+1);
+        console.log(ele);
+        $(ele).toggle();
+      
+    });
+JS
+); 
+?>
