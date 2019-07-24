@@ -54,7 +54,7 @@ if ($model->is_top == 1)
             ],
             [
                 'label' =>'置顶',
-                'value' =>$model->top,
+                'value' =>$model->,
             ],
             'desc',
             'content',
