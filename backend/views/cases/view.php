@@ -10,9 +10,9 @@ use Egulias\EmailValidator\Warning\LabelTooLong;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cases'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-$jinyong;
-$top;
-if($model->category_id == 1)
+$jinyong ='';
+$top = '';
+if($model->status == 1)
 {
     $jinyong = "禁用";
 }else {
@@ -31,6 +31,7 @@ if ($model->is_top == 1)
         'model' => $model,
         'attributes' => [
             'title',
+            'category_id',
             [
                 'label' => '封面',
                 'value' =>$model->cover,
@@ -49,12 +50,12 @@ if ($model->is_top == 1)
             ],
             //'status',
             [
-                'label' =>'分类',
-                'value' =>$model->category_id,
-            ],
-            [
+
                 'label' =>'置顶',
-                'value' =>$model->,
+
+                'value' =>$top,
+
+
             ],
             'desc',
             'content',

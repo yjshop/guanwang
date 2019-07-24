@@ -4,14 +4,21 @@
 	color: #0e90d2 !important;
 }
 
+<<<<<<< HEAD
 
 /*侧边客服*/
+=======
+<<<<<<< HEAD
+
+/*客服*/
+>>>>>>> 64b08f5266af0ef5ddf17d8e6b740196ca3f2581
 
 .sideBox{
 	position: fixed;
 	right: 5px;
 	top:45%;
 }
+<<<<<<< HEAD
 
 .sideBox ul li {
 	width: 50px;height: 50px;
@@ -125,6 +132,14 @@
 
 
 
+=======
+.sideBox ul li{
+	width: 50px;height: 50px;
+	margin: 10px 0;
+	background-color: pink;
+}
+
+>>>>>>> 64b08f5266af0ef5ddf17d8e6b740196ca3f2581
 /*轮播图*/
 .banner{
 	position: relative;

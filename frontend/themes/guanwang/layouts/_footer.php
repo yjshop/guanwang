@@ -14,7 +14,7 @@ use yii\helpers\Url;
         <li class="tit">支持</li>
         <li><a href="/Index/faq.html">FAQ问题</a></li>
         <!-- <li><a href="">帮助中心</a></li> -->
-        <li><a href="/Index/authorization.html">授权查询</a></li>
+        <li><a href="<?php echo Url::to('visitor/index'); ?>">授权查询</a></li>
       </ul>
     </div>
     <div class="am-u-md-2 tel-hide">
