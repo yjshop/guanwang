@@ -343,12 +343,10 @@ use common\models\Article;
          </div>
         </div>
     <?php endforeach; ?>
-       
-       
-    
     </div>    
   </div>
 </div>
+
 <div class="friendlink">
   <div class="am-container">
   <div class="am-u-sm-12">

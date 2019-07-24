@@ -14,9 +14,9 @@ $jinyong ='';
 $top = '';
 if($model->status == 1)
 {
-    $jinyong = "禁用";
-}else {
     $jinyong = "不禁用";
+}else {
+    $jinyong = "禁用";
 }
 if ($model->is_top == 1)
 {

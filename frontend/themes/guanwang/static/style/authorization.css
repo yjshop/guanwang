@@ -52,12 +52,12 @@ max-width: 800px;
 margin: 0 auto;
 }
 .btn-success {
-color: #fff !important;
-background-color: #6293cd !important;
-border-color: #5787c0 !important;
+color: #fff;
+background-color: #6293cd;
+border-color: #5787c0;
 }
 .btn-success:hover{
-	background-color: #5787c0 !important;
+	background-color: #5787c0;
 }
 .search-text{
 	margin-top: 20px;
