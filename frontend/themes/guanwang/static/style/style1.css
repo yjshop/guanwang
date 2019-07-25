@@ -142,7 +142,6 @@
 
 
 .banner .banner-footer{
-
 	position: absolute;
 	z-index: 100;
 	bottom: 0;
@@ -152,10 +151,11 @@
 .banner .banner-footer a{
 	color: white;
 	padding: 20px 60px 0;
+	text-decoration: none;
 }
 .banner .banner-footer p{
-
 	padding-top: 5px;
+	color: white;
 }
 .banner .banner-footer .footer-style{
 	border: 1px solid rgba(255, 255, 255, 0.2);
@@ -275,7 +275,7 @@
 .news .news-box1{
 	padding: 10px;
     border: 1px solid #fff;
-    border-bottom: 2px solid #fff
+    border-bottom: 2px solid #fff;
 }
 
 
@@ -331,7 +331,10 @@
 	padding: 10px 10px 0px 10px;
     border: 1px solid #fff;
     border-bottom: 2px solid #fff;
-    
+}
+
+.news .news-box2 a{
+	text-decoration: none;
 }
 .news .news-box2 ul{
 	background-color:rgb(240, 240, 240);
@@ -343,6 +346,7 @@
 .news .box-footer a{
 	background-color:  rgb(0,153,255);
 	padding:5px 10px;
+	text-decoration: none;
 }
 .news .box-footer{
 
@@ -397,6 +401,7 @@ ul.anli-pc li{
 
 .anli-pc li .code-img-box .name a{
 	color: white;
+	text-decoration: none;
 }
 .anli-pc li .code-img-box .name a:hover{
 	color: white;

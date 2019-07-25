@@ -315,19 +315,18 @@ use common\models\Article;
       <div class="box-top ">
         <h3><?=$value['title']?></h3>
       </div>
-        <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
+      <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
          <?php if($key<3):?>
         <div class="news-box1">
-          <div class="img-box ">
-               <a class="update " href="<?=Url::to(['article/view','id'=>$article[0]['id']])?>"><img src="<?php echo Url::to('@web/storage/images/news02.jpg'); ?>" alt="<?=$article[0]['title']?> "></a>
-          </div>
-          
-          <h4> <a class="update " href=""><?=$article[0]['title']?></a></h4>
-          <p class="desc"><?=$article[0]['title']?></p>
-          
+               <a class="update " href="<?=Url::to(['article/view','id'=>$article[0]['id']])?>">
+               <div class="img-box ">
+                   <img src="<?php echo Url::to('@web/storage/images/news02.jpg'); ?>" alt="<?=$article[0]['title']?> ">
+               </div>
+               <h4> <a class="update " href=""><?=$article[0]['title']?></a></h4>
+               <p class="desc"><?=$article[0]['title']?></p>
+               </a>
          <?php else:?>
-          <div class="news-box ">
-            
+          <div class="news-box2">   
           <!--列表-->
          <?php foreach ($article as $kk=>$vo):?>
           <ul>
