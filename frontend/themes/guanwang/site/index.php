@@ -2,6 +2,14 @@
 use yii\helpers\Url;
 use common\models\Article;
 /* @var $this yii\web\View */
+echo "
+<style type = 'text/css'>
+.solution-methods .am-thumbnail{
+background-image: url(storage/images/system1.png);
+}
+</style>
+";
+
 ?>
  <!-- 主体 -->
      <div class="banner am-g">
@@ -12,7 +20,7 @@ use common\models\Article;
     
       <div class="am-g ">
         <div class="am-u-md-4 banner-l">
-          <img alt="易扩展，模块化设计，安全性高，插件丰富" src="/storage/images/banner02.jpg">
+          <img alt="易扩展，模块化设计，安全性高，插件丰富" src="<?= $carouselitem[0]['image'] ?>">
       </div>
       <div class="am-u-md-8 banner-r">
           <h1>国内领先开源小程序商城系统</h1>
@@ -21,8 +29,8 @@ use common\models\Article;
     
       </div>
     </div> 
-      <div class="swiper-slide"><img src="/storage/images/banner03.jpg"></div>
-    <div class="swiper-slide"><img src="/storage/images/banner02.jpg"></div>
+      <div class="swiper-slide"><img src="<?= $carouselitem[1]['image'] ?>"></div>
+    <div class="swiper-slide"><img src="<?= $carouselitem[2]['image'] ?>"></div>
 
       <!-- <div class="swiper-pagination"></div> -->
     </div>
@@ -64,52 +72,91 @@ use common\models\Article;
   </div> -->
 <div class="am-g">
 <div class="am-u-lg-4">
-
-    <div class="am-thumbnail">
-   
+    <div class="am-thumbnail">   
       <div class="am-thumbnail-caption">
         <h3>微商城</h3>
-        <p>无缝接入微信，对接微信登录及支付功能</p>
-       
+        <p>无缝接入微信，对接微信登录及支付功能</p>       
       </div>
-
        <div class="shadow">
          <h2>duo</h2>
          <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
          <a href="">了解详情</a>
-
        </div>
     </div>
   </div>
-
-
-
-
-</div>
-
-
-<div class="am-g">
+  
 <div class="am-u-lg-4">
     <div class="am-thumbnail">
-     
       <div class="am-thumbnail-caption">
         <h3>微商城</h3>
-        <p>无缝接入微信，对接微信登录及支付功能</p>
-       
+        <p>无缝接入微信，对接微信登录及支付功能</p>     
       </div>
          <div class="shadow">
          <h2>duo</h2>
          <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
          <a href="">了解详情</a>
-
        </div>
-    </div>
+    </div> 
   </div>
 
+<div class="am-u-lg-4">
+    <div class="am-thumbnail">
+      <div class="am-thumbnail-caption">
+        <h3>微商城</h3>
+        <p>无缝接入微信，对接微信登录及支付功能</p>     
+      </div>
+         <div class="shadow">
+         <h2>duo</h2>
+         <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
+         <a href="">了解详情</a>
+       </div>
+    </div> 
+  </div>
+
+<div class="am-u-lg-4">
+    <div class="am-thumbnail">
+      <div class="am-thumbnail-caption">
+        <h3>微商城</h3>
+        <p>无缝接入微信，对接微信登录及支付功能</p>     
+      </div>
+         <div class="shadow">
+         <h2>duo</h2>
+         <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
+         <a href="">了解详情</a>
+       </div>
+    </div> 
+  </div>
+  
+  <div class="am-u-lg-4">
+    <div class="am-thumbnail">
+      <div class="am-thumbnail-caption">
+        <h3>微商城</h3>
+        <p>无缝接入微信，对接微信登录及支付功能</p>     
+      </div>
+         <div class="shadow">
+         <h2>duo</h2>
+         <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
+         <a href="">了解详情</a>
+       </div>
+    </div> 
+  </div>
+  
+  <div class="am-u-lg-4">
+    <div class="am-thumbnail">
+      <div class="am-thumbnail-caption">
+        <h3>微商城</h3>
+        <p>无缝接入微信，对接微信登录及支付功能</p>     
+      </div>
+         <div class="shadow">
+         <h2>duo</h2>
+         <p>快速打造您自己的入驻大型平台，深度支持同城资讯、城市生活、酒店出行、商圈、商场等多种业态，抢占流量先机</p>
+         <a href="">了解详情</a>
+       </div>
+    </div> 
+  </div>
 
 </div>
-
-  </div>
+ </div>
 </div>
 
  <!-- 优势 -->
@@ -121,7 +168,7 @@ use common\models\Article;
                 <ul class="am-g">
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/coupon.png'); ?>"></div>
+                            <div class="tc icon1-img"><img src="<?php echo Url::to('@web/storage/images/coupon.png'); ?>"></div>
                             <div>
                                 <h3>优惠券</h3>
                                 <p>含折多种优惠方式,下单直接抵扣,价格超实惠</p>
@@ -130,7 +177,7 @@ use common\models\Article;
                     </li>
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/miaosha.png'); ?>"></div>
+                            <div class="tc icon1-img"><img src="<?php echo Url::to('@web/storage/images/miaosha.png'); ?>"></div>
               <div>
                 <h3>限时秒杀</h3>
                 <p>多种营销玩法，提升流量和销量</p>
@@ -140,7 +187,7 @@ use common\models\Article;
           </li>
           <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/fenxiao.png'); ?>"></div>
+              <div class="tc icon1-img "><img src="<?php echo Url::to('@web/storage/images/fenxiao.png'); ?>"></div>
                             <div>
                                 <h3>三级分销</h3>
                                 <p>以客推客，打造自己的微分销商城</p>
@@ -149,7 +196,7 @@ use common\models\Article;
                     </li>
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/shipping.png'); ?>"></div>
+                            <div class="tc icon1-img"><img src="<?php echo Url::to('@web/storage/images/shipping.png'); ?>"></div>
               <div>
                 <h3>物流追踪</h3>
                 <p>可在地图上追踪物流信息</p>
@@ -158,7 +205,7 @@ use common\models\Article;
           </li>
           <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/red.png'); ?>"></div>
+              <div class="tc icon1-img "><img src="<?php echo Url::to('@web/storage/images/red.png'); ?>"></div>
                             <div>
                                 <h3>红包</h3>
                                 <p>多种红包现金信息，包括微信红包、qq红包、现金红包等</p>
@@ -167,7 +214,7 @@ use common\models\Article;
                     </li>
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/recharge.png');?>"></div>
+                            <div class="tc icon1-img"><img src="<?php echo Url::to('@web/storage/images/recharge.png');?>"></div>
               <div>
                 <h3>充值/提现</h3>
                 <p>线上一键充值/提现，方便快捷</p>
@@ -177,7 +224,7 @@ use common\models\Article;
           </li>
           <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/pay.png'); ?>"></div>
+              <div class="tc icon1-img "><img src="<?php echo Url::to('@web/storage/images/pay.png'); ?>"></div>
                             <div>
                                 <h3>多种支付方式</h3>
                                 <p>支持微信、支付宝等多种支付方式，灵活快捷</p>
@@ -186,7 +233,7 @@ use common\models\Article;
                     </li>
                     <li class="am-u-md-3">
                         <div class="xcx-goodness-box">
-                            <div class="tc icon-img"><img src="<?php echo Url::to('@web/storage/images/share.png'); ?>"></div>
+                            <div class="tc icon1-img"><img src="<?php echo Url::to('@web/storage/images/share.png'); ?>"></div>
               <div>
                 <h3>一键分享</h3>
                 <p>好友和群成员，通过你的分享，发现你的小程序</p>
@@ -195,7 +242,7 @@ use common\models\Article;
           </li>
                <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img " ><img src="<?php echo Url::to('@web/storage/images/safe.png'); ?>"></div>
+              <div class="tc icon1-img " ><img src="<?php echo Url::to('@web/storage/images/safe.png'); ?>"></div>
                             <div>
                                 <h3>安全/稳定</h3>
                                 <p>国际认证安全管理</p>
@@ -204,7 +251,7 @@ use common\models\Article;
                     </li>
                          <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img " ><img src="<?php echo Url::to('@web/storage/images/jifen.png'); ?>"></div>
+              <div class="tc icon1-img " ><img src="<?php echo Url::to('@web/storage/images/jifen.png'); ?>"></div>
                             <div>
                                 <h3>积分</h3>
                                 <p>推广小程序，只需要用户扫码即可,减少了用户的耐心损耗</p>
@@ -213,7 +260,7 @@ use common\models\Article;
                     </li>
                          <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img "><img src="<?php echo Url::to('@web/storage/images/kefu.png'); ?>"></div>
+              <div class="tc icon1-img "><img src="<?php echo Url::to('@web/storage/images/kefu.png'); ?>"></div>
                             <div>
                                 <h3>即时客服</h3>
                                 <p>提供即通讯能力，如单聊、群聊、发语音、发图片、等</p>
@@ -223,7 +270,7 @@ use common\models\Article;
 
                          <li class="am-u-md-3 ">
             <div class="xcx-goodness-box ">
-              <div class="tc icon-img " ><img src="<?php echo Url::to('@web/storage/images/cloud.png'); ?>"></div>
+              <div class="tc icon1-img " ><img src="<?php echo Url::to('@web/storage/images/cloud.png'); ?>"></div>
                             <div>
                                 <h3>云通信</h3>
                                 <p>自动发送营销短信、验证码</p>
@@ -320,7 +367,7 @@ use common\models\Article;
         <div class="news-box1">
                <a class="update " href="<?=Url::to(['article/view','id'=>$article[0]['id']])?>">
                <div class="img-box ">
-                   <img src="<?php echo Url::to('@web/storage/images/news02.jpg'); ?>" alt="<?=$article[0]['title']?> ">
+                   <img src="<?php echo Url::to('@web/storage/images/news01.jpg'); ?>" alt="<?=$article[0]['title']?> ">
                </div>
                <h4> <a class="update " href=""><?=$article[0]['title']?></a></h4>
                <p class="desc"><?=$article[0]['title']?></p>

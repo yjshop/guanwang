@@ -11,6 +11,8 @@ use yii\data\ActiveDataProvider;
 use yii\helpers\Url;
 use yii\web\Controller;
 use common\models\Cases;
+use common\models\Carousel;
+use api\modules\v1\models\CarouselItem;
 
 /**
  * Site controller.
@@ -70,12 +72,15 @@ class SiteController extends Controller
        $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all();
         //case
        $case = Cases::find()->where(['is_top'=>1,'status'=>1])->limit(8)->all();
+       //carousel
+       $carouselitem = CarouselItem::find()->where(['status'=>1])->orderBy('sort asc')->limit(3)->all();
         $hotTags = TagService::hot();
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'categories' => $categories,
             'hotTags' => $hotTags,
             'case' => $case,
+            'carouselitem'=> $carouselitem,
         ]);
     }
 
