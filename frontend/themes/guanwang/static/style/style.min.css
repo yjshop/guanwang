@@ -1,3 +1,4 @@
+
 body,
 ol,
 ul,
@@ -127,6 +128,9 @@ img {
 .mgt60 {
     margin-top: 30px;
     padding-left: 15px;
+}
+.mgt60 li{
+    float: left;
 }
 
 .line {
@@ -1161,8 +1165,8 @@ header li ul.child {
     max-width: 100% !important;
 }
 
-.detail-r .update {
-    border: 1px solid #e5e5e5;
+.update {
+    border: 1px solid #ffffff;
 }
 
 .detail-r .update .hd {
@@ -1199,6 +1203,7 @@ header li ul.child {
     white-space: nowrap;
     overflow: hidden;
     display: block;
+    text-decoration: none;
 }
 
 .detail-r .update .bd ul li a:hover {

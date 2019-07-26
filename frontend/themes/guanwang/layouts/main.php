@@ -39,13 +39,8 @@ $this->registerMetaTag([
     <?= $this->render('_nav') ?>
 <?php endif; ?>
 
-    <?php if (!(new \Detection\MobileDetect())->isMobile() && yii::$app->session->get('module')!='photo'): ?>
-    <div class="am-container mgt60">
-    <?= Breadcrumbs::widget([
-        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-    ]) ?>
-     </div>
-    <?php endif; ?>
+<!-- 原先的导航兰位置 -->
+
     <?= \common\widgets\Alert::widget()?>
     <?= $content ?>
 

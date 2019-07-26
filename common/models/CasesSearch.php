@@ -87,7 +87,7 @@ class CasesSearch extends Cases
     
     public function search1($params)
     {
-        $query = Cases::find();
+        $query = Cases::find()->where(['status'=>1]);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [

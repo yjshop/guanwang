@@ -32,7 +32,7 @@ class CasesController extends Controller{
         ]); 
     }
 
-    public function actionIndex(){
+    public function actionIndex(){  
        $data['status']=1;
        $p= new CasesSearch();
        $dataProvider=$p->search1($data);
