@@ -9,6 +9,7 @@
 /* @var $pages yii\data\Pagination */
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\Breadcrumbs;
 
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => $model->category, 'url' => ['/article/index', 'cate' => \common\models\Category::find()->where(['id' => $model->category_id])->select('slug')->scalar()]];
@@ -18,6 +19,22 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
 
   <!-- /头部 -->
     <!-- 主体 -->
+    <div class="banner-img">
+  		<img src="<?php echo Url::to('@web/storage/images/banner02.jpg'); ?>" alt="">
+    <div class="page-title">资讯中心</div>
+    
+<!--导航栏   -->
+    <?php if (!(new \Detection\MobileDetect())->isMobile() && yii::$app->session->get('module')!='photo'): ?>
+    <div class="am-container mgt60">
+    <?= Breadcrumbs::widget([
+        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+    ]) ?>
+     </div>
+    <?php endif; ?>
+<!--导航栏 end  -->
+    
+	</div>
+	
     <div class="am-container news-detail">
       
         <div class="am-u-md-9">

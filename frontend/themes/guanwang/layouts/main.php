@@ -30,6 +30,17 @@ $this->registerMetaTag([
     <link type="image/x-icon" href="<?= Yii::getAlias('@web') ?>favicon.ico" rel="shortcut icon">
     <script>var SITE_URL = '<?= Yii::$app->request->hostInfo . Yii::$app->request->baseUrl ?>';</script>
     <?php $this->head() ?>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8a5588d8eede714bace1071c11806362";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+       
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -39,13 +50,8 @@ $this->registerMetaTag([
     <?= $this->render('_nav') ?>
 <?php endif; ?>
 
-    <?php if (!(new \Detection\MobileDetect())->isMobile() && yii::$app->session->get('module')!='photo'): ?>
-    <div class="am-container mgt60">
-    <?= Breadcrumbs::widget([
-        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-    ]) ?>
-     </div>
-    <?php endif; ?>
+<!-- 原先的导航兰位置 -->
+
     <?= \common\widgets\Alert::widget()?>
     <?= $content ?>
 

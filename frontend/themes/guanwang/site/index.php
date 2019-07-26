@@ -408,6 +408,7 @@ background-image: url(storage/images/system1.png);
   margin-right: 5px;
 }
 </style>
+</div>
 <!-- /主体 -->
 <?php
 $this->registerJs(<<<JS
