@@ -1,9 +1,11 @@
 <?php
 
+use yii\helpers\Url;
+
 ?>
 <!--  头部banner -->
 <div class="banner am-g">
-
+<img src="<?php echo Url::to('@web/storage/images/banner_index_3_0118.png'); ?>">
 </div>
 
 

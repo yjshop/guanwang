@@ -51,7 +51,7 @@ class CasesSearch extends Cases
             ],
             'pagination' => [
 
-            'defaultPageSize' => 8,
+            'defaultPageSize' => 16,
             'validatePage'=>false,
 
 
@@ -96,7 +96,7 @@ class CasesSearch extends Cases
                 ]
             ],
             'pagination' => [
-                'pageSize' => 4,
+                'pageSize' => 8,
             ],
             
         ]);  

@@ -1314,7 +1314,6 @@ output {
     line-height: 1.428571429;
     color: #555
 }
-
 .form-control {
     display: block;
     width: 100%;
@@ -2112,10 +2111,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     margin-bottom: 0
 }
 .input-group-lg>.form-control, .input-group-lg>.input-group-addon, .input-group-lg>.input-group-btn>.btn {
-
-    height: 46px !important;
-    padding: 10px 16px !important;
-
+    height: 46px;
+    padding: 10px 16px;
     font-size: 18px;
     line-height: 1.33;
     border-radius: 6px
