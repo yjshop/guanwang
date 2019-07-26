@@ -11,9 +11,19 @@
 	position: fixed;
 	right: 5px;
 	top:45%;
+	z-index: 1000;
 }
 
 .sideBox ul li {
+	width: 50px;height: 50px;
+	position: relative;
+
+}
+.sideBox ul li:hover{
+	width: 280px;
+}
+
+.sideBox ul li .sideBox-0{
 	width: 50px;height: 50px;
 	margin: 10px 0;
 	background-color: #353535;
@@ -21,10 +31,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
-
+	
+	
 }
-.sideBox ul li img{
+
+.sideBox-current{
+	position: relative;
+	right: -230px;
+}
+.sideBox ul li .sideBox-0 img{
 	width: 50%;
 	height: 50%;
 }
@@ -1104,6 +1119,11 @@ height: 100%;
 }
 .anli-m li img{
 	width: 100%;
+
+
+}
+.anli-m li:hover{
+	box-shadow: 0 0 5px #9D9D9D;
 
 
 }
