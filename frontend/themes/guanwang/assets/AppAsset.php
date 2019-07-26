@@ -10,7 +10,7 @@ class AppAsset extends AssetBundle
     public $sourcePath = '@frontend/themes/guanwang/static';
     public $css = [
         'style/amazeui.min.css',
-        'style/icon/iconfont.css',
+        'style/iconfont.css',
     
         'style/style.min.css',
         'style/swiper.min.css',
