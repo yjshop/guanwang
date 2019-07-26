@@ -4,23 +4,26 @@
 	color: #0e90d2 !important;
 }
 
-<<<<<<< HEAD
 
 /*侧边客服*/
-=======
-<<<<<<< HEAD
-
-/*客服*/
->>>>>>> 64b08f5266af0ef5ddf17d8e6b740196ca3f2581
 
 .sideBox{
 	position: fixed;
 	right: 5px;
 	top:45%;
+	z-index: 1000;
 }
-<<<<<<< HEAD
 
 .sideBox ul li {
+	width: 50px;height: 50px;
+	position: relative;
+
+}
+.sideBox ul li:hover{
+	width: 280px;
+}
+
+.sideBox ul li .sideBox-0{
 	width: 50px;height: 50px;
 	margin: 10px 0;
 	background-color: #353535;
@@ -28,10 +31,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
-
+	
+	
 }
-.sideBox ul li img{
+
+.sideBox-current{
+	position: relative;
+	right: -230px;
+}
+.sideBox ul li .sideBox-0 img{
 	width: 50%;
 	height: 50%;
 }
@@ -132,14 +140,6 @@
 
 
 
-=======
-.sideBox ul li{
-	width: 50px;height: 50px;
-	margin: 10px 0;
-	background-color: pink;
-}
-
->>>>>>> 64b08f5266af0ef5ddf17d8e6b740196ca3f2581
 /*轮播图*/
 .banner{
 	position: relative;
@@ -1119,6 +1119,11 @@ height: 100%;
 }
 .anli-m li img{
 	width: 100%;
+
+
+}
+.anli-m li:hover{
+	box-shadow: 0 0 5px #9D9D9D;
 
 
 }
