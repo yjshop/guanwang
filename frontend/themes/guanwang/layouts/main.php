@@ -31,7 +31,8 @@ $this->registerMetaTag([
     <script>var SITE_URL = '<?= Yii::$app->request->hostInfo . Yii::$app->request->baseUrl ?>';</script>
     <?php $this->head() ?>
     
-<script>
+    <?php   
+$this->registerJs(<<<JS
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -39,8 +40,11 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>
-       
+
+JS
+);
+?>    
+      
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -64,6 +68,7 @@ var _hmt = _hmt || [];
 <?php if (isset($this->blocks['js'])): ?>
     <?= $this->blocks['js'] ?>
 <?php endif; ?>
+
 </body>
 </html>
 <?php $this->endPage() ?>
