@@ -21,10 +21,13 @@ class DefaultController extends Controller
 
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider(['query' => Book::find()]);
-        return $this->render('index', [
-            'dataProvider' => $dataProvider
-        ]);
+        $book = Book::find()->all();
+        return $this->render('index', ['book' => $book]);
+        
+//         $dataProvider = new ActiveDataProvider(['query' => Book::find()]);
+//         return $this->render('index', [
+//             'dataProvider' => $dataProvider
+//         ]);
     }
 
     public function actionView($id)
@@ -36,7 +39,7 @@ class DefaultController extends Controller
         if ($model == null) {
             throw new NotFoundHttpException('书不存在');
         }
-        $model->addView();
+        //$model->addView();
         return $this->render('view', [
             'model' => $model
         ]);

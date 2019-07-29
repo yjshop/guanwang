@@ -58,19 +58,20 @@ use yii\helpers\Url;
 
 <!-- 侧边客服 --> 
 <!-- 新加的 -->
-<div class="sideBox am-show-lg-only">
+<!-- <div class="sideBox am-show-lg-only"> -->
   
-  <ul>
+ <!--  <ul> -->
     
-    <li><img src="<?php echo Url::to('@web/storage/images/QQ.png') ?>">
+ <!--    <li><img src="<?php echo Url::to('@web/storage/images/QQ.png') ?>">
 
       <a  href="" class="sideBox-1"style="display: none;">
     
         <div><img src="<?php echo Url::to('@web/storage/images/qq2.png') ?>"></div>
         <p>咨询在线客服</p>
         </a>  
-   </li>
-    <li><img src="<?php echo Url::to('@web/storage/images/phone2.png') ?>">
+   </li> -->
+
+<!--     <li><img src="<?php echo Url::to('@web/storage/images/phone2.png') ?>">
 
           <a  href="" class="sideBox-2" style="display: none;">
     
@@ -79,8 +80,8 @@ use yii\helpers\Url;
         <p>0777-1234567</p>
       </div>
         </a>  
-    </li>
-    <li><img src="<?php echo Url::to('@web/storage/images/qr_code.png') ?>">
+    </li> -->
+ <!--    <li><img src="<?php echo Url::to('@web/storage/images/qr_code.png') ?>">
 
         <div  class="sideBox-3" style="display: none;">
     
@@ -90,18 +91,69 @@ use yii\helpers\Url;
         </div>  
     </li>
   </ul>
+</div> -->
+
+
+
+
+
+
+<div class="sideBox am-show-lg-only">
+  
+  <ul>
+    
+<!--     <li>
+      <div class="sideBox-0 ">
+      <img src="<?php echo Url::to('@web/storage/images/QQ.png') ?>">
+      </div>
+      <a href="" class="sideBox-1" style="display: none;">
+    
+        <div><img src="<?php echo Url::to('@web/storage/images/qq2.png') ?>"></div>
+        <p>咨询在线客服</p>
+        </a>  
+    
+
+
+    </li> -->
+    <li>  <div class="sideBox-0 "><img src="<?php echo Url::to('@web/storage/images/phone2.png') ?>"></div>
+
+          <a href="" class="sideBox-2" style="display: none;">
+    
+        <div><img src="<?php echo Url::to('@web/storage/images/phone1.png') ?>" ></div>
+       <div><p>服务热线</p>
+        <p>0777-1234567</p>
+      </div>
+        </a>  
+
+
+    </li>
+    <li>  
+<div class="sideBox-0 ">
+     <img src="<?php echo Url::to('@web/storage/images/qr_code.png') ?>">
 </div>
+        <div class="sideBox-3" style="display: none;">
+    
+        <div><img src="<?php echo Url::to('@web/storage/images/gzh.jpg') ?>"></div>
+      
+        <p>几何线公众号</p>
+        </div>  
+
+    </li>
+  </ul>
+</div>
+
 <!-- /新加的 -->
 <!-- /侧边客服 -->
 </div> 
 <?php  
 $this->registerJs(<<<JS
   //客服js
+    var ele='.sideBox-';
     $('.sideBox li').hover(function(){
-        console.log($(this).index());
-        var ele='.sideBox-'+($(this).index()+1);
-        console.log(ele);
-        $(ele).toggle();
+          $(this).parent().find('.sideBox-0').toggleClass('sideBox-current');
+         ele='.sideBox-'+($(this).index()+2);
+          
+        $(ele).stop().toggle();
       
     });
 JS
