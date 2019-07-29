@@ -102,7 +102,7 @@ use yii\helpers\Url;
   
   <ul>
     
-    <li>
+<!--     <li>
       <div class="sideBox-0 ">
       <img src="<?php echo Url::to('@web/storage/images/QQ.png') ?>">
       </div>
@@ -114,7 +114,7 @@ use yii\helpers\Url;
     
 
 
-    </li>
+    </li> -->
     <li>  <div class="sideBox-0 "><img src="<?php echo Url::to('@web/storage/images/phone2.png') ?>"></div>
 
           <a href="" class="sideBox-2" style="display: none;">
@@ -151,7 +151,7 @@ $this->registerJs(<<<JS
     var ele='.sideBox-';
     $('.sideBox li').hover(function(){
           $(this).parent().find('.sideBox-0').toggleClass('sideBox-current');
-         ele='.sideBox-'+($(this).index()+1);
+         ele='.sideBox-'+($(this).index()+2);
           
         $(ele).stop().toggle();
       
