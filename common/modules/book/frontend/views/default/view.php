@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = Html::encode($model->book_name); */
 	      </div>
       	<div class="content">
       	   <p style="line-height: 2em; text-indent: 2em;">
-      	   <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><?php echo ''; ?></span></strong></p>
+      	   <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><?=$model['content']?></span></strong></p>
       	   <p style="line-height: 2em; text-indent: 2em;"></p>
       	   <p style="text-align: center;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0);">感谢您使用几何线小程序商城系统，如在使用过程中遇见系统故障等问题，</span></strong></p>
       	   <p style="line-height: 2em; text-indent: 2em;">

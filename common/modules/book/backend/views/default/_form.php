@@ -18,8 +18,11 @@ use backend\widgets\ActiveForm;
         <?= $form->field($model, 'book_name') ?>
 
         <?= $form->field($model, 'book_cover')->widget(\common\modules\attachment\widgets\SingleWidget::className()) ?>
+        
+        <?= $form->field($model, 'book_description')->textInput(['maxlength' => true]) ?>
+        
+        <?= $form->field($model, 'content')->widget(\common\widgets\EditorWidget::className(), $model->isNewRecord ? ['type' => request('editor') ? : config('page_editor_type')] : ['isMarkdown' => 0]) ?>
 
-        <?= $form->field($model, 'book_description')->widget(\common\widgets\editor\editormd\Editormd::className(), ['clientOptions' => ['watch' => true, 'height' => 1000]]) ?>
 
         <div class="form-group">
             <?= Html::submitButton('保存', ['class' => 'btn bg-maroon btn-flat btn-block']) ?>
