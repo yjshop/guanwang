@@ -15,3 +15,20 @@
   	    </ul>
   	</div>
   </div>
+
+<?php  
+$this->registerJs(<<<JS
+      
+
+      $(".help-box-l>ul>li a").click(function(){
+        if($(this).next().is(":hidden")){
+          $(this).next().slideDown();
+          $(this).find(".icon-dayuhao").css({"transform":"rotate(180deg)","-webkit-transform":"rotate(180deg)"});
+        }else{
+          $(this).next().slideUp();
+          $(this).find(".icon-dayuhao").css({"transform":"rotate(360deg)","-webkit-transform":"rotate(360deg)"});
+        }
+      })
+JS
+); 
+?>
