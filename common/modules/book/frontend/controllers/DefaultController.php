@@ -21,8 +21,24 @@ class DefaultController extends Controller
 
     public function actionIndex()
     {
-        $book = Book::find()->all();
-        return $this->render('index', ['book' => $book]);
+        
+        
+        if(Yii::$app->request->isPost){
+            $msg=Yii::$app->request->post('bk');
+            $book=Book::find()->where(['or',['like','book_name',$msg],['like','book_description',$msg],['like','content',$msg]])->all();
+            return $this->render('index',[
+                'book'=>$book,
+                'msg'=>$msg,
+            ]);
+            
+        }else{
+            $msg ="";
+            $book = Book::find()->all();
+            return $this->render('index', [
+                'book' => $book,
+                'msg'=>$msg
+            ]);
+        }
         
 //         $dataProvider = new ActiveDataProvider(['query' => Book::find()]);
 //         return $this->render('index', [
@@ -44,7 +60,8 @@ class DefaultController extends Controller
             'model' => $model
         ]);
     }
-
+    
+    
     public function actionChapter($id)
     {
         /**
