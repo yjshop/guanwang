@@ -259,6 +259,12 @@ header li ul.child {
     min-height: 484px;
     background-color: #012c47;
 }
+.banner1 {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f6fb), to(#e4e7ef));
+    background-image: linear-gradient(to bottom, #000519, #012c47);
+    min-height: 330px;
+    background-color: #012c47;
+}
 
 .banner .banner-l img {
     width: 100%;

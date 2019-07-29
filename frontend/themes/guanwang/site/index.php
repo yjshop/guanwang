@@ -369,7 +369,8 @@ background-image: url(storage/images/system1.png);
                <div class="img-box ">
                    <img src="<?php echo Url::to('@web/storage/images/news01.jpg'); ?>" alt="<?=$article[0]['title']?> ">
                </div>
-               <h4> <a class="update " href=""><?=$article[0]['title']?></a></h4>
+               
+						<h4> <?=$article[0]['title']?></h4>
                <p class="desc"><?=$article[0]['title']?></p>
                </a>
          <?php else:?>

@@ -142,12 +142,13 @@
 
 
 /*轮播图*/
-.banner{
-	position: relative;
-}
 .banner .banner-l img{
 	margin-top: 50px;
 }
+.banner1{
+	position: relative;
+}
+
 .banner .banner-r{
 	padding: 100px 300px 150px 20px;
 }
@@ -854,7 +855,7 @@ color: #8E8E8E;
 	height: 250px;
 	max-height: 250px;
 }
-.tap{
+.news-list-main .tab{
 	margin-top: 0px;
 	margin-bottom: 10px;
 }

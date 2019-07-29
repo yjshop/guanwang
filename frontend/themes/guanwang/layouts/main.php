@@ -31,19 +31,7 @@ $this->registerMetaTag([
     <script>var SITE_URL = '<?= Yii::$app->request->hostInfo . Yii::$app->request->baseUrl ?>';</script>
     <?php $this->head() ?>
     
-    <?php   
-$this->registerJs(<<<JS
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?8a5588d8eede714bace1071c11806362";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-
-JS
-);
-?>    
+   
       
 </head>
 <body>

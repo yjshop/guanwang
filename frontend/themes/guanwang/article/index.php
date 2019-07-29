@@ -34,7 +34,7 @@ if(isset($category)) {
 
 
 
-<div class="am-container news-list">
+<div class="am-container news-list news-list-main">
   <div class="am-u-md-9 am-u-sm-12">
    
          
