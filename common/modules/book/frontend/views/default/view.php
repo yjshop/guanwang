@@ -13,7 +13,6 @@
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
 use yii\helpers\Markdown;
-use common\modules\book\models\Book;
 
 /* $this->title = $model->book_name;
 $this->params['breadcrumbs'][] = ['label' => 'wiki', 'url' => ['/book/default/index']];
@@ -32,7 +31,7 @@ $this->params['breadcrumbs'][] = Html::encode($model->book_name); */
   		<div class="detail-tit">
 	        <h1><?=$model['book_name']?></h1>
 	        <p>
-	          <span class="time"><?=$model['created_at']?></span>
+	          <span class="time"><?= $model['created_at']?></span>
 	        </p>
 	      </div>
       	<div class="content">

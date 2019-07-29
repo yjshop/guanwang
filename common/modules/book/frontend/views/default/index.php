@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
 /**
  * Created by PhpStorm.
@@ -13,7 +14,6 @@ use yii\helpers\Url;
  */
 $this->title = 'wiki';
 $this->params['breadcrumbs'][] = 'wiki';
-
 ?>
 <?php echo $this->render('search') ?>
 
@@ -26,20 +26,20 @@ $this->params['breadcrumbs'][] = 'wiki';
   		    	<div class="bd">    	
         	<ul class="list-items help-lists">
         	
-        	<?php foreach ($book as $bk): ?>
+        	<?php foreach ($books as $bk): ?>
           	<li class="list-item">
               <a href="<?= Url::to(['default/view','id'=>$bk['id']]) ?>">
                 <div class="am-g">
                     <div class="am-u-md-3 am-u-sm-3">
                       <div class="img-box">
-                        <img src="<?= $bk['book_cover'];?>">
+                        <img src="<?= $bk['book_cover']; ?>">
                       </div>
                     </div>
                     <div class="am-u-md-9 am-u-sm-9 item-r">
                           <h2><?= $bk['book_name']?></h2>
                           <p><?= $bk['book_description']?></p>
                          <div class="list-footer">
-                           <span class="time am-margin-right-sm list-footer-hd"><?=$bk['created_at'] ?></span>                         
+                           <span class="time am-margin-right-sm list-footer-hd"><?=$bk['created_at']?></span>                         
                         </div>
                       </div>
                   </div>
@@ -47,6 +47,7 @@ $this->params['breadcrumbs'][] = 'wiki';
              </li>
             <?php endforeach; ?>
            </ul>
+           <?= LinkPager::widget(['pagination' => $pagination]) ?>
       	</div>
    </div>
 <div class="page">

@@ -8,7 +8,7 @@
       <h1 class="help-tit">帮助中心</h1>
       <div class="am-input-group" style="width: 100%;">
       	<form action="" method="post" style="display: table;width:100%;">
-        <input type="text" name="bk" class="am-form-field" value="" placeholder="请用关键词进行检索">
+        <input type="text" name="bk" class="am-form-field" value="<?php $msg ?>" placeholder="请用关键词进行检索">
         <input name="_csrf" type="hidden" value="<?=yii::$app->request->csrfToken?>">
         <span class="am-input-group-btn">
           <button class="am-btn am-btn-default" type="submit"><span class="am-icon-search"></span>

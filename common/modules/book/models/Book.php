@@ -115,5 +115,4 @@ class Book extends \yii\db\ActiveRecord
         }
         return $total;
     }
-
 }

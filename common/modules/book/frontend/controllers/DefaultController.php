@@ -7,7 +7,7 @@
  */
 
 namespace common\modules\book\frontend\controllers;
-
+use yii\data\Pagination;
 
 use common\modules\book\models\Book;
 use common\modules\book\models\BookChapter;
@@ -25,18 +25,43 @@ class DefaultController extends Controller
         
         if(Yii::$app->request->isPost){
             $msg=Yii::$app->request->post('bk');
-            $book=Book::find()->where(['or',['like','book_name',$msg],['like','book_description',$msg],['like','content',$msg]])->all();
+            $book=Book::find()->where(['or',['like','book_name',$msg],['like','book_description',$msg],['like','content',$msg]])->orderBy('id desc');
+            
+            $pagination = new Pagination([
+                'defaultPageSize' => 5,
+                'totalCount' => $book->count(),
+            ]);
+            
+            $books = $book
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+            
             return $this->render('index',[
-                'book'=>$book,
+                'books'=>$books,
                 'msg'=>$msg,
+                'pagination'=>$pagination,
             ]);
             
         }else{
+            
             $msg ="";
-            $book = Book::find()->all();
+            $book = Book::find();//->orderBy('id desc')->all();
+            
+            $pagination = new Pagination([
+                'defaultPageSize' => 5,
+                'totalCount' => $book->count(),
+            ]);
+            
+            $books = $book->orderBy('id desc')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+            
             return $this->render('index', [
-                'book' => $book,
-                'msg'=>$msg
+                'books' => $books,
+                'msg'=>$msg,
+               'pagination'=>$pagination,
             ]);
         }
         
