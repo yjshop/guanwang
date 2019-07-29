@@ -42,8 +42,9 @@ class Book extends \yii\db\ActiveRecord
         return [
             [['book_author'], 'integer'],
             [['book_name'], 'string', 'max' => 50],
-            [['book_cover', 'book_link'], 'string', 'max' => 255],
+            [['book_link'], 'string', 'max' => 255],
             [['book_description'], 'string', 'max' => 1000],
+            [['book_cover'],'safe']
         ];
     }
 
@@ -55,7 +56,7 @@ class Book extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'book_name' => '书名',
-            'book_cover' => '书封面',
+            'book_cover' => '文档封面',
             'book_author' => '作者',
             'book_description' => '书简介',
             'book_link' => '书外链',

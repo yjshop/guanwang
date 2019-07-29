@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = 'wiki';
                 <div class="am-g">
                     <div class="am-u-md-3 am-u-sm-3">
                       <div class="img-box">
-                        <img src="<?php echo ''; ?>">
+                        <img src="<?= $bk['book_cover'];?>">
                       </div>
                     </div>
                     <div class="am-u-md-9 am-u-sm-9 item-r">

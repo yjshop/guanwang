@@ -39,8 +39,7 @@ $this->params['breadcrumbs'][] = Html::encode($model->book_name); */
       	   <p style="line-height: 2em; text-indent: 2em;">
       	   <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><?php echo ''; ?></span></strong></p>
       	   <p style="line-height: 2em; text-indent: 2em;"></p>
-      	   <p style="text-align: center;"><p style="line-height: 2em; text-indent: 2em;">
-      	   <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0);">感谢您使用几何线小程序商城系统，如在使用过程中遇见系统故障等问题，</span></strong></p>
+      	   <p style="text-align: center;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0);">感谢您使用几何线小程序商城系统，如在使用过程中遇见系统故障等问题，</span></strong></p>
       	   <p style="line-height: 2em; text-indent: 2em;">
            <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0);">咨询热线：0777—2110336，我们将竭诚为您服务！</span></strong></p>
            <p><br></p>    	
