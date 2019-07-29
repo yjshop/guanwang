@@ -832,15 +832,22 @@ color: #8E8E8E;
 	margin: 20px 0;
 }
 
-.detail-r .search .am-input-group .am-form-field, .am-input-group-btn>.am-btn{
+.news-list-main .detail-r .search .am-input-group .am-form-field,.news-list-main .detail-r .search .am-input-group-btn>.am-btn{
 	height: 35px;
 }
 
+/*.banner1 .detail-r .search .search-box .am-input-group .am-form-field, .am-input-group-btn>.am-btn{
 
-.detail-r .search .search-box .am-input-group .am-form-field, .am-input-group-btn>.am-btn{
-	height: 35px;
+}*/
+
+
+/*.detail-r .search .search-box .am-input-group .am-form-field, .am-input-group-btn>.am-btn{
+	height: 100%;
 }
-
+*/
+.search-box .am-icon-search{
+	color: white;
+}
 
 
 /*新闻中心*/
