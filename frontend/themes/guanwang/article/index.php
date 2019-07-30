@@ -1,5 +1,4 @@
 <?php
-use yii\helpers\Html;
 use yii\helpers\Url;
 use common\models\Category;
 /* @var $this yii\web\View */
@@ -17,28 +16,16 @@ if(isset($category)) {
 }
 
 ?>
-<div class="news-list">
-     <!--  幻灯片开始-->
-   <div class="am-slider am-slider-default article-swiper" data-am-flexslider>
+<div class="am-container news-list">
+  <div class="am-u-md-9 am-u-sm-12">
+      <!--  幻灯片开始-->
+            <div class="am-slider am-slider-default" data-am-flexslider>
                 <ul class="am-slides">
                     <li><img src="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg" /></li>
                     <li><img src="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg" /></li>
                 </ul>
             </div>
-
-   <!--   幻灯片结束 -->
-</div>
-
-
-
-
-
-
-<div class="am-container news-list news-list-main">
-  <div class="am-u-md-9 am-u-sm-12">
-   
-         
-         
+            <!--   幻灯片结束 -->
             <div class="tab">
             <?php 
               $nav= Category::find()->orderBy('sort asc')->limit(8)->all();
