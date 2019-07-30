@@ -139,6 +139,17 @@ use yii\helpers\Url;
         </div>  
 
     </li>
+
+          <li>  
+<div class="sideBox-0 ">
+     <img src="<?php echo Url::to('@web/storage/images/rtop.png') ?>">
+</div>
+</li>
+
+
+
+
+
   </ul>
 </div>
 
@@ -150,12 +161,23 @@ $this->registerJs(<<<JS
   //客服js
     var ele='.sideBox-';
     $('.sideBox li').hover(function(){
+
+        
           $(this).parent().find('.sideBox-0').toggleClass('sideBox-current');
+            if($(this).index()<2){
          ele='.sideBox-'+($(this).index()+2);
-          
         $(ele).stop().toggle();
-      
+      }
     });
+
+     $('.sideBox li').click(function(){
+        if($(this).index()==2){
+      $('html, body').stop().animate({scrollTop:0}, 500);
+            }
+      });
+     
+      
+
 JS
 ); 
 ?>
