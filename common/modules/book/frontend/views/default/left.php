@@ -10,7 +10,7 @@ use yii\helpers\Url;
 				  <ul class="child" style="display:block">
   				  <li><a href="<?= Url::to(['default/index']); ?>" style="color:#31b3a4;background-color:#f5f5f5">系统操作教程</a></li>  				  </ul>
   			   </li><li>
-				  <a href="#"><i class="iconfont icon-zhidao"></i>微信<span class="iconfont icon-dayuhao"></span></a>
+				  <a href="javascript:;"><i class="iconfont icon-zhidao"></i>微信<span class="iconfont icon-dayuhao"></span></a>
 				  <ul class="child" style="display:block">
   				  <li><a href="<?= Url::to(['default/index']); ?>" style="">小程序</a></li><li><a href="<?= Url::to(['default/index']); ?>" style="">公众号</a></li>  				  </ul>
   	    </li>  		

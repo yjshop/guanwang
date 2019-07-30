@@ -73,7 +73,7 @@ class SiteController extends Controller
         //case
        $case = Cases::find()->where(['is_top'=>1,'status'=>1])->limit(8)->all();
        //carousel
-       $carouselitem = CarouselItem::find()->where(['status'=>1])->orderBy('sort asc')->limit(3)->all();
+       $carouselitem = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->limit(3)->all();
         $hotTags = TagService::hot();
         return $this->render('index', [
             'dataProvider' => $dataProvider,

@@ -1042,6 +1042,9 @@ header li ul.child {
     padding-right: 30px;
     height: 168px;
 }
+.list-items .list-item .item-r a{
+    text-decoration: none;
+}
 
 .help-lists .list-item .img-box {
     vertical-align: middle;
