@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
+use common\modules\book\models\Book;
 
 /**
  * Created by PhpStorm.
@@ -14,6 +15,7 @@ use yii\widgets\LinkPager;
  */
 $this->title = 'wiki';
 $this->params['breadcrumbs'][] = 'wiki';
+$book = new Book();
 ?>
 <?php echo $this->render('search',['msg'=>$msg]) ?>
 
@@ -39,7 +41,7 @@ $this->params['breadcrumbs'][] = 'wiki';
                           <h2><?= $bk['book_name']?></h2>
                           <p><?= $bk['book_description']?></p>
                          <div class="list-footer">
-                           <span class="time am-margin-right-sm list-footer-hd"><?=$bk['created_at']?></span>                         
+                           <span class="time am-margin-right-sm list-footer-hd"><?=$book->zhuan($bk['created_at'])?></span>                         
                         </div>
                       </div>
                   </div>

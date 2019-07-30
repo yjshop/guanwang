@@ -6,7 +6,7 @@ use common\models\Cases;
 ?>
  <!--  头部banner -->
  <div class="banner am-g">
-    
+<img src="<?=$tou['image'] ?>">   
  </div>
 
 

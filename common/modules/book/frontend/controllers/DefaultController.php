@@ -76,13 +76,15 @@ class DefaultController extends Controller
         /**
          * @var Book $model
          */
+        $msg ="";
         $model = Book::findOne($id);
         if ($model == null) {
             throw new NotFoundHttpException('书不存在');
         }
         //$model->addView();
         return $this->render('view', [
-            'model' => $model
+            'model' => $model,
+            'msg'=>$msg,
         ]);
     }
     

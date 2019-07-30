@@ -58,7 +58,7 @@ class Book extends \yii\db\ActiveRecord
             'id' => 'ID',
             'book_name' => '文档名称',
             'book_cover' => '文档封面',
-            'book_author' => '作者',
+            'book_author' => '文档作者',
             'book_description' => '教程内容介绍',
             'book_link' => '书外链',
             'created_at' => '创建时间',
@@ -114,5 +114,9 @@ class Book extends \yii\db\ActiveRecord
             $total += $chapter->getCommentTotal();
         }
         return $total;
+    }
+    
+    public function zhuan($data){
+        return Yii::$app->formatter->asDatetime($data);
     }
 }
