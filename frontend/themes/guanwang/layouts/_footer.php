@@ -6,7 +6,7 @@ use yii\helpers\Url;
 <footer>
   <div class="am-g am-container box">
     <div class="am-u-md-3 tc">
-      <a href="#" class="logo"></a>
+      <a href="#" class="logo" style =" background: url(<?php echo Url::to('@web/storage/images/buttom_logo.png');?>) no-repeat left top;) "></a>
       <p class="des">几何线，微信小程序系统、支付宝小程序系统开发商</p>
     </div>
     <div class="am-u-md-2 tel-hide">

@@ -15,7 +15,7 @@ use yii\widgets\LinkPager;
 $this->title = 'wiki';
 $this->params['breadcrumbs'][] = 'wiki';
 ?>
-<?php echo $this->render('search') ?>
+<?php echo $this->render('search',['msg'=>$msg]) ?>
 
 <div class="am-container help">
   

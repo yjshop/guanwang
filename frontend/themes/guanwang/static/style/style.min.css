@@ -1293,7 +1293,6 @@ footer .logo {
     width: 54px;
     height: 54px;
     margin: 0 auto 10px;
-    background: url(../../../storage/images/buttom_logo.png) no-repeat left top;
 }
 
 footer .des {
@@ -1373,6 +1372,7 @@ footer .qq {
     padding: 15px 14px;
     position: relative;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .help-box-l>ul>li span {

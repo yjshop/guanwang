@@ -139,8 +139,11 @@
  }
 
 
-
-
+/*百度商桥
+*/
+#newBridge .nb-icon-base{
+	right:5px !important;
+}
 /*轮播图*/
 .banner .banner-l img{
 	margin-top: 50px;
