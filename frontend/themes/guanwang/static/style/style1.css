@@ -192,7 +192,7 @@
 }
 
 .banner .banner-footer a:hover p,h3{
-	color: #0e90d2;
+	color: #31b3a4;
 }
 
 
@@ -881,6 +881,24 @@ color: #8E8E8E;
 	color: white;
 }
 
+/*文章详情*/
+
+.news-detail .am-input-group .am-form-field:first-child{
+	height: 38px;
+}
+
+.news-detail .search .am-icon-search{
+	color: white;
+}
+
+
+.list-footer{
+	position: relative;
+}
+.list-footer ul li{
+	position: relative;
+	top: 10px;
+}
 
 /*帮助中心*/
 .list-items li h2{
@@ -898,6 +916,37 @@ color: #8E8E8E;
 .list-items li p{
 	margin:0;
 }
+
+
+/*联系我们*/
+   	.addr-wrap{
+    		background-color: #F5F5F5;
+    	}
+    	.addr-wrap .left{
+    		background-color: #FCFCFC;
+    		padding: 2rem 20px;
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+    		flex-wrap: wrap;
+    	}
+    	.addr-wrap .left .left-img img{
+    		width: 180px;
+    		height: 180px;
+    	}
+    	.addr-wrap .concern{
+    		margin: 20px 0;
+    	}
+    	.addr-wrap .detail{
+    		border-top: 1px solid #d0d0d0; 
+    		padding-top: 10px;
+    	}
+    	.addr-wrap .right{
+    		background-color: #FCFCFC;
+    		padding: 20px 0px;
+    	}
+
+    	
 
 /*手机端*/
 @media only screen and (max-width: 800px){
