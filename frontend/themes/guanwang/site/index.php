@@ -363,7 +363,7 @@ background-image: url(storage/images/system1.png);
         <h3><?=$value['title']?></h3>
       </div>
       <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
-         <?php if($key<3):?>
+         <?php if($key<3&&!empty($article)):?>
         <div class="news-box1">
                <a class="update " href="<?=Url::to(['article/view','id'=>$article[0]['id']])?>">
                <div class="img-box ">

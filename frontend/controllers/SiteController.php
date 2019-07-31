@@ -83,6 +83,10 @@ class SiteController extends Controller
             'carouselitem'=> $carouselitem,
         ]);
     }
+    
+    public function actionShangpin(){
+        return $this->render('shangpin');
+    }
 
     /**
      * 网站地图，百度搜索引擎爬虫用.
