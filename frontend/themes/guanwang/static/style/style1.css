@@ -872,6 +872,15 @@ color: #8E8E8E;
 }
 
 
+.news-list .am-input-group .am-form-field:first-child{
+	height: 38px;
+}
+
+.news-list .search .am-icon-search{
+	color: white;
+}
+
+
 /*帮助中心*/
 .list-items li h2{
 	margin:10px 0;
