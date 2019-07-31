@@ -505,7 +505,7 @@ header li ul.child {
     -o-transition: all 0.4s ease-in-out;
 }
 
-.xcx-goodness li:hover .icon-img {
+.xcx-goodness li:hover .icon-img img{
     -webkit-transform: rotate(360deg) scale(1.2);
     -moz-transform: rotate(360deg) scale(1.2);
     -ms-transform: rotate(360deg) scale(1.2);

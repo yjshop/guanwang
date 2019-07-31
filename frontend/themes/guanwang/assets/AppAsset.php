@@ -24,7 +24,8 @@ class AppAsset extends AssetBundle
         'js/amazeui.min.js',
         'js/modernizr.min.js',
         'js/amazeui.ie8polyfill.min.js',
-        'js/swiper.min.js'
+        'js/swiper.min.js',
+        'js/app.js'
        
     ];
     public $depends = [

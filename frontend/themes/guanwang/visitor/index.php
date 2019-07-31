@@ -49,6 +49,6 @@
         </div>
     </div>
     
-    <script type="text/javascript">
+<script type="text/javascript">
 
 </script>
