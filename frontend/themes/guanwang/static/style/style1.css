@@ -347,8 +347,21 @@
 	margin: 0;
 	font-weight: 700;
 	color:rgb(102, 102, 102);
-	border-left: 5px solid rgb(0,153,255);
+	border-left: 5px solid #31b3a4;
 	padding-left: 10px;
+	position: relative;
+}
+.news .box-top h3 a{
+	padding: 5px 10px;
+    background-color: #31b3a4;
+    color: #fff;
+    border-radius: 5px;
+    position: relative;
+    right: -188px;
+    top: 0px;
+}
+.news .box-top h3 a:hover{
+color: white;
 }
 .news .news-box2{
 	padding: 10px 10px 0px 10px;
@@ -369,7 +382,7 @@
 	padding:0 10px;
 }
 .news .box-footer a{
-	background-color:  rgb(0,153,255);
+	
 	padding:5px 10px;
 	text-decoration: none;
 }
@@ -418,7 +431,9 @@
 			position: relative;
 
 }
-
+.advantage{
+	min-height: 600px
+}
 ul.anli-pc li{
 	height: 427px;
 }
@@ -946,8 +961,13 @@ color: #8E8E8E;
     		padding: 20px 0px;
     	}
 
-    	
 
+/*关于我们*/
+
+.layout .am-slider-default .am-viewport{
+	min-height: 500px;
+	height: 500px;
+}
 /*手机端*/
 @media only screen and (max-width: 800px){
 
