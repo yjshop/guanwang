@@ -21,8 +21,8 @@ use yii\helpers\Url;
 <button type="button" class="am-btn  am-btn-primary am-btn-lg "><a href="<?= Url::to(['cases/index','category_id'=>2]) ?>">单商户</a></button>
 <button type="button" class="am-btn  am-btn-primary am-btn-lg "><a href="<?= Url::to(['cases/index','category_id'=>3]) ?>">微商城</a></button>
 <button type="button" class="am-btn  am-btn-primary am-btn-lg "><a href="<?= Url::to(['cases/index','category_id'=>1]) ?>">多商户</a></button>
-<button type="button" class="am-btn  am-btn-primary am-btn-lg ">直销</button>
-<button type="button" class="am-btn  am-btn-primary am-btn-lg "><a href="">小程序</a></button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg "><a href="<?= Url::to(['cases/index','category_id'=>4]) ?>">直销</a></button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg "><a href="<?= Url::to(['cases/index','category_id'=>5]) ?>">小程序</a></button>
 </div>
 
 <div class="anli">
