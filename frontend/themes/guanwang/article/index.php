@@ -32,8 +32,10 @@ if(isset($category)) {
               $nav= Category::find()->orderBy('sort asc')->limit(8)->all();
              foreach ($nav as $key=> $item):
              ?>
+                
                 <a href="<?= Url::to(['/article/index', 'cate' => $item->slug]) ?>" <?php if(isset($category)&&($item->slug==$category->slug)):?> class="active"  <?php endif;?> ><?=$item->title?></a> 
-              <?php endforeach;?>
+            
+             <?php endforeach;?>
             </div>
 
    <?= \yii\widgets\ListView::widget([
@@ -42,10 +44,11 @@ if(isset($category)) {
         'layout' => "{items}",
         'options' => ['class' => 'list-items bt-s'],
         'itemOptions' => ['class' => 'list-item']
-    ]) ?>
+    ])
+   ?>
     
       <!-- 分页开始 -->
-            <div class="page">
+   <div class="page">
       <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
     <?= \yii\widgets\LinkPager::widget([
         'pagination' => $dataProvider->pagination
@@ -61,7 +64,7 @@ if(isset($category)) {
         'options' => ['class' => 'pager'],
     ]); ?>
     <?php endif;?>
-            </div>
+    </div>
     
 
 </div>
@@ -92,7 +95,7 @@ if(isset($category)) {
                        }  
                         foreach ($recommentList as $item):
                         ?>
-                        <li><a href="<?= Url::to(['/article/view', 'id' => $item->id]) ?>" title="<?= $item->title ?>" target="_blank"><?= $item->title ?></a></li>
+                        <li><a href="<?= Url::to(['/article/detail', 'id' => $item->id]) ?>" title="<?= $item->title ?>" target="_blank"><?= $item->title ?></a></li>
                         <?php endforeach; ?>
                         </ul>
                     </div>
@@ -124,8 +127,8 @@ if(isset($category)) {
                             ?>
                             <?php if($item->cover):?>
                             <li>
-                                <a href="<?= Url::to(['/article/view', 'id' => $item->id]) ?>">
-                                <div><img src="<?=Html::img($item->cover, ['width' => 300, 'height' => 140])?>"></div>
+                                <a href="<?= Url::to(['/article/detail', 'id' => $item->id]) ?>">
+                                <div></div>
                                 <p><?= $item->title ?></p>
                               </a>
                             </li>

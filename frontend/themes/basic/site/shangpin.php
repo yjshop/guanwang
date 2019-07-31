@@ -284,10 +284,6 @@ use yii\helpers\Url;
 
 
 
-
-
-
-
 <!-- 服务支持 -->
 <div class="pro-support">
 	<div class="am-container">
@@ -325,3 +321,9 @@ use yii\helpers\Url;
 </style>
 ';
 ?>
+<?php
+$this->registerJs(<<<JS
+
+JS
+);
+ ?>

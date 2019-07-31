@@ -24,4 +24,14 @@ class PageController extends Controller
             'page' => $page,
         ]);
     }
+    
+    public function actionIntelligence()
+    {
+        return $this->render('intelligence');
+    }
+    
+    public function actionCall()
+    {
+        return $this->render('call');
+    }
 }

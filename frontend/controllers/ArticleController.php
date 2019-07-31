@@ -100,7 +100,7 @@ class ArticleController extends Controller
      * @return string
      * @throws NotFoundHttpException
      */
-    public function actionView($id)
+    public function actionDetail($id)
     {
         $model = Article::find()->published()->andWhere(['id' => $id])->one();
         if ($model === null) {
@@ -116,7 +116,7 @@ class ArticleController extends Controller
         $prev = Article::find()->andWhere(['<', 'id', $id])->orderBy('id desc')->one();
    
 
-        return $this->render($model->module . '/view', [
+        return $this->render($model->module . '/Detail', [
             'model' => $model,
             'hots' => $hots,
             'next' => $next,
