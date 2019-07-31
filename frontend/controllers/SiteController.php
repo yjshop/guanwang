@@ -84,6 +84,10 @@ class SiteController extends Controller
         ]);
     }
     
+    public function actionProduct(){
+        return $this->render('product');
+    }
+    
     public function actionShangpin(){
         return $this->render('shangpin');
     }
