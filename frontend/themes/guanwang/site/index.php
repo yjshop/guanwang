@@ -55,21 +55,12 @@ background-image: url(storage/images/system1.png);
 
 <!-- 解决方案 -->
 
-<div class="solution-methods">
+<!-- <div class="solution-methods">
   <div class="am-container">
     <h1 class="big-title">解决方案</h1>
       <div class="line"></div>
        
- <!--  <div class="am-u-lg-4">
-    <div class="am-thumbnail">
-      <img src="images/system1.png" alt=""/>
-      <div class="am-thumbnail-caption">
-        <h3>微商城</h3>
-        <p>无缝接入微信，对接微信登录及支付功能</p>
-       
-      </div>
-    </div>
-  </div> -->
+
 <div class="am-g">
 <div class="am-u-lg-4">
     <div class="am-thumbnail">   
@@ -157,7 +148,7 @@ background-image: url(storage/images/system1.png);
 
 </div>
  </div>
-</div>
+</div> -->
 
  <!-- 优势 -->
     <div class="bg-two-components">
