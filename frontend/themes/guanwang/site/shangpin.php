@@ -1,9 +1,11 @@
 <?php
+use yii\helpers\Url;
+
 ?>
 <div class="product-wrap">
    <!--  轮播图 -->
     <div class="banner am-g">
-  <img src="images/P8`YY6`Z}(J7N2NE84XE5ME.png">
+  <img src="<?php echo Url::to('@web/storage/images/P8`YY6`Z}(J7N2NE84XE5ME.png'); ?>">
 <!--     <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -53,32 +55,32 @@
 	<div class="am-container">
 		<div class="am-g">
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="images/火箭.png"><h2>流畅度</h2></div>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/huojian.png'); ?>"><h2>流畅度</h2></div>
 				<p>超流畅app原生开发</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="images/功能管理.png"><h2>功能性</h2></div>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/gongneng.png'); ?>"><h2>功能性</h2></div>
 				<p>超流畅app原生开发</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="images/品质.png"><h2>品质感</h2></div>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinzhi.png'); ?>"><h2>品质感</h2></div>
 				<p>精致的界面与完善的流程</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="images/拓展.png"><h2>拓展性</h2></div>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/tuozhan.png'); ?>"><h2>拓展性</h2></div>
 				<p>支持开源与源码选购</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="images/品牌.png"><h2>品牌性</h2></div>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinpai.png'); ?>"><h2>品牌性</h2></div>
 				<p>域名服务器及品牌独立</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="images/售后.png"><h2>售后技术</h2></div>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/shouhou.png'); ?>"><h2>售后技术</h2></div>
 				<p>6*12h售后保障</p>
 
 			</div>
@@ -108,22 +110,22 @@
 
 	<ul class="plug-img ">
 		<li>
-			<img src="images/[OZAGEA)RZ(W1)4XPM32_$Q.png">
+			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png'); ?>">
 		</li>
 		<li>
-			<img src="images/[OZAGEA)RZ(W1)4XPM32_$Q.png">
+			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png');?>">
 		</li>
 		<li>
-			<img src="images/[OZAGEA)RZ(W1)4XPM32_$Q.png">
+			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png');?>">
 		</li>
 		<li>
-			<img src="images/[OZAGEA)RZ(W1)4XPM32_$Q.png">
+			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png');?>">
 		</li>
 
 	</ul>
 
   <div class="plug-img am-show-sm-only">
-    <img src="images/huiyuan1.jpg">
+    <img src="<?php echo Url::to('@web/storage/images/huiyuan1.jpg');?>">
   </div>
 </div>
 </div>
@@ -137,11 +139,11 @@
 
  <div class="swiper-container swiper3">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/anli1.jpg"></div>
-      <div class="swiper-slide"><img src="images/anli1.jpg"></div>
-      <div class="swiper-slide"><img src="images/anli1.jpg"></div>
-      <div class="swiper-slide"><img src="images/anli1.jpg"></div>
-      <div class="swiper-slide"><img src="images/anli1.jpg"></div>
+      <div class="swiper-slide"><img src="<?php echo Url::to('@web/storage/images/anli1.jpg');?>"></div>
+      <div class="swiper-slide"><img src="<?php echo Url::to('@web/storage/images/anli1.jpg');?>"></div>
+      <div class="swiper-slide"><img src="<?php echo Url::to('@web/storage/images/anli1.jpg');?>"></div>
+      <div class="swiper-slide"><img src="<?php echo Url::to('@web/storage/images/anli1.jpg');?>"></div>
+      <div class="swiper-slide"><img src="<?php echo Url::to('@web/storage/images/anli1.jpg');?>"></div>
       
     </div>
   </div>
@@ -163,10 +165,10 @@
 
     	  <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" ><img src="images/an2.jpg"></div>
-      <div class="swiper-slide" ><img src="images/an2.jpg"></div>
-      <div class="swiper-slide" ><img src="images/an2.jpg"></div>
-      <div class="swiper-slide" ><img src="images/an2.jpg"></div>
+      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
+      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
+      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
+      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
@@ -208,7 +210,7 @@
           </div>
         </div>
         <div class="am-u-md-7 tr" style="text-align: right;">
-          <img src="images/talent-marketing-x2.png">
+          <img src="<?php echo Url::to('@web/storage/images/talent-marketing-x2.png');?>">
         </div>
       </div>
     </div>
@@ -219,7 +221,7 @@
     <div class="am-container">
       <div class="am-g">
         <div class="am-u-md-8 tl">
-          <img src="images/dingdan00.png">
+          <img src="<?php echo Url::to('@web/storage/images/dingdan00.png');?>">
         </div>
         <div class="am-u-md-4">
           <div class="word word-r">
@@ -246,26 +248,26 @@
 	<div class="am-g">
   <div class="am-u-lg-3 am-u-sm-6">
     <div class="am-thumbnail">
-      <img src="images/明星.png" alt=""/>
+      <img src="<?php echo Url::to('@web/storage/images/mingxing.png');?>" alt=""/>
       <figcaption class="am-thumbnail-caption">国内知名创业解决方案服务商</figcaption>
     </div>
   </div>
 
   <div class="am-u-lg-3  am-u-sm-6">
     <a href="#" class="am-thumbnail">
-      <img src="images/人.png" alt=""/>
+      <img src="<?php echo Url::to('@web/storage/images/ren.png');?>" alt=""/>
       <figcaption class="am-thumbnail-caption">100+开发人员</figcaption>
     </a>
   </div>
   <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
-      <img src="images/客户.png" alt=""/>
+      <img src="<?php echo Url::to('@web/storage/images/kehu.png');?>" alt=""/>
       <figcaption class="am-thumbnail-caption">5000+商业用户</figcaption>
     </figure>
   </div>
    <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
-      <img src="images/心.png" alt=""/>
+      <img src="<?php echo Url::to('@web/storage/images/xin.png');?>" alt=""/>
       <figcaption class="am-thumbnail-caption">7 x 12h售后支持</figcaption>
     </figure>
   </div>
@@ -293,17 +295,17 @@
 	<p class="p1">我们珍惜您每一次在线问询，有问必答，用专业的态度，贴心的服务。让您真正感受到我们与众的不同！</p>
 <div class="am-g">
 	<div class="am-u-lg-4 am-u-sm-4">
-		<div class="sup-img"><img src="images/合作 (1).png"></div>
+		<div class="sup-img"><img src="<?php echo Url::to('@web/storage/images/hezuo.png');?>"></div>
 		<h2>小程序申请</h2>
 		<p class="am-hide-sm-only">小程序制作从提出需求到小程序制作报价，再到小程序制作，每一步都是规范和专业的</p>
 	</div>
 	<div class="am-u-lg-4 am-u-sm-4">
-		<div class="sup-img"><img src="images/常见问题.png"></div>
+		<div class="sup-img"><img src="<?php echo Url::to('@web/storage/images/wenti.png');?>"></div>
 		<h2>常见问题</h2>
 		<p class="am-hide-sm-only">什么是小程序定制，你们的报价如何，等小程序建设常见问题</p>
 	</div>
 	<div class="am-u-lg-4 am-u-sm-4">
-		<div class="sup-img"><img src="images/保障 (2).png"></div>
+		<div class="sup-img"><img src="<?php echo Url::to('@web/storage/images/baozhang.png');?>"></div>
 		<h2>售后保障</h2>
 		<p class="am-hide-sm-only">小程序制作不难，难的是一如既往的热情和服务支持。我们知道：做小程序就是做服务，就是做售后</p>
 	</div>
@@ -322,4 +324,85 @@
 }
 </style>
 ';
+?>
+
+
+<?php  
+$this->registerJs(<<<JS
+ 
+
+    //详细的订单管理轮播图
+     var swiper = new Swiper('.dingdan .swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+
+     
+
+
+
+      $(".help-box-l>ul>li a").click(function(){
+        if($(this).next().is(":hidden")){
+          $(this).next().slideDown();
+          $(this).find(".icon-dayuhao").css({"transform":"rotate(180deg)","-webkit-transform":"rotate(180deg)"});
+        }else{
+          $(this).next().slideUp();
+          $(this).find(".icon-dayuhao").css({"transform":"rotate(360deg)","-webkit-transform":"rotate(360deg)"});
+        }
+      })
+
+
+      //案例二维码显示
+      $(".anli li").mouseover(function(){
+        $(this).children(".code-img-box").show()
+      })
+      $(".anli li").mouseout(function(){
+        $(this).children(".code-img-box").hide()
+      })
+
+    $('.am-thumbnail').mouseover(function(){
+      $(this).children('.shadow').show();
+    })
+    $('.am-thumbnail').mouseout(function(){
+      $(this).children('.shadow').hide();
+    })
+
+
+
+     // 手机端插件轮播图
+
+        var swiper3 = new Swiper('.swiper3', {
+        roundLengths:true, 
+        initialSlide:1,
+        centeredSlides : true,
+        speed:600,
+      slidesPerView: "auto",
+      autoplay: 3000,
+      loop:true,
+      followFinger:false
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+    });
+
+      
+
+
+
+
+JS
+); 
 ?>

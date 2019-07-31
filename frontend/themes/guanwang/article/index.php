@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\helpers\Html;
 use common\models\Category;
 /* @var $this yii\web\View */
 /* @var $models array */

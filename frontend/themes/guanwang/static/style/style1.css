@@ -461,7 +461,7 @@ ul.anli-pc li{
 .pro-adv{
 
 	text-align: center;
-	margin:40px 0 20px 0;
+	margin:20px 0 20px 0;
 }
 .pro-adv img{
 	width: 40px;
@@ -472,6 +472,7 @@ ul.anli-pc li{
 .pro-adv-top{
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 .pro-adv-top h2{
 	line-height: 40px;
@@ -484,7 +485,7 @@ ul.anli-pc li{
 }
 .pro-adv p{
 	
-	padding-top: 10px;
+	padding-top: 0px;
 	color: #6C6C6C;
 }
 
