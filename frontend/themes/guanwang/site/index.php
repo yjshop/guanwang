@@ -351,7 +351,10 @@ background-image: url(storage/images/system1.png);
 
       <div class="am-u-md-4 am-u-sm-12 ">
       <div class="box-top ">
-        <h3><?=$value['title']?></h3>
+        <h3><?=$value['title']?>
+            <a href="<?=Url::to('article/index',array('cate'=>$value['slug']))?>">更多&gt;&gt;</a> 
+        </h3>
+        
       </div>
       <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
          <?php if($key<3&&!empty($article)):?>
@@ -374,8 +377,7 @@ background-image: url(storage/images/system1.png);
           
          <?php endif;?>
          
-        <div class="box-footer ">
-        <a href="<?=Url::to('article/index',array('cate'=>$value['slug']))?>">更多&gt;&gt;</a> </div>
+     
 
          </div>
         </div>

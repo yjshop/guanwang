@@ -9,7 +9,7 @@
   
   <?php echo $this->render('left'); ?>
   
-      <div class="am-u-md-10 lay-r" style="padding:30px 50px;">
+      <div class="am-u-md-10 lay-r" style="padding:10px 50px;">
     <div class="am-slider am-slider-default am-slider-carousel slider">
  
  
@@ -37,7 +37,7 @@
 					</div>
 				</div>
 				<div class='right am-u-md-8'>
-				<div style="width: 800px;height: 385px;"class=" addr-right " id="map_container"></div>
+				<div style="width: 100%;height: 460px;"class=" addr-right " id="map_container"></div>
 			   </div>
 		</div>
 	</div>
