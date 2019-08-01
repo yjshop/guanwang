@@ -726,17 +726,22 @@ color: #8E8E8E;
 
 
 .example-wrap .am-btn-primary:hover{
-	color: #fff;
+	color: #fff !important;
     background-color: #0e90d2;
     border-color: #0e90d2;
 }
-
+.example-wrap .am-btn-primary:hover a{
+	color: #fff !important;
+}
  .btn-active{
 	color: #fff!important;
     background-color: #0e90d2!important;
     border-color: #0e90d2!important;
 	
 }
+ .btn-active a{
+ 		color: #fff !important;
+ }
 /*.example-wrap .exam-box-btn .am-active{
 	color: #fff;
     background-color: #0e90d2;

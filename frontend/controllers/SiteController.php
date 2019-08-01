@@ -13,6 +13,7 @@ use yii\web\Controller;
 use common\models\Cases;
 use common\models\Carousel;
 use api\modules\v1\models\CarouselItem;
+use common\models\Page;
 
 /**
  * Site controller.
@@ -85,13 +86,19 @@ class SiteController extends Controller
     }
     
     public function actionProduct(){
+        CarouselItem::find()->where()->one();
+        
         return $this->render('product');
     }
     
-    public function actionShangpin(){
-        return $this->render('shangpin');
+    public function actionFaq(){
+        
+        $help = Page::find()->where(['use_layout'=>1,'slug' =>'help'])->orderBy('id asc')->all();
+        
+        return $this->render('faq',[
+            'help' => $help,
+        ]);
     }
-
     /**
      * 网站地图，百度搜索引擎爬虫用.
      *

@@ -12,16 +12,16 @@ use yii\helpers\Url;
     <div class="am-u-md-2 tel-hide">
       <ul>
         <li class="tit">支持</li>
-        <li><a href="/Index/faq.html">FAQ问题</a></li>
+        <li><a href="<?= Url::to(['site/faq'])?>">FAQ问题</a></li>
         <!-- <li><a href="">帮助中心</a></li> -->
-        <li><a href="<?php echo Url::to('visitor/index'); ?>">授权查询</a></li>
+        <li><a href="<?php echo Url::to(['visitor/index']); ?>">授权查询</a></li>
       </ul>
     </div>
     <div class="am-u-md-2 tel-hide">
       <ul>
         <li class="tit">关于我们</li>
-        <li><a href="/index/contact.html">联系我们</a></li>
-        <li><a href="/index/zhaopin.html">招聘信息</a></li>
+        <li><a href="<?= Url::to(['page/slug','slug'=>'aboutus'])?>">联系我们</a></li>
+<!--         <li><a href="/index/zhaopin.html">招聘信息</a></li>     -->
         <li><a rel="nofollow" href="http://shang.qq.com/wpa/qunwpa?idkey=0b70447a4e376c39e302c369172bfb0ea800251c50cdc450d94b3bfc0f08923b">加入QQ群</a></li>
       </ul>
     </div>

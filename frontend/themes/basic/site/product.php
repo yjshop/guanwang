@@ -6,43 +6,6 @@ use yii\helpers\Url;
    <!--  轮播图 -->
     <div class="banner am-g">
   <img src="<?php echo Url::to('@web/storage/images/P8`YY6`Z}(J7N2NE84XE5ME.png'); ?>">
-<!--     <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-
-        <div class="am-g ">
-          <div class="am-u-md-4 banner-l">
-            <img alt="易扩展，模块化设计，安全性高，插件丰富" src="./images/idx-banner.png">
-        </div>
-        <div class="am-u-md-8 banner-r">
-            <h1>国内领先开源小程序商城系统</h1>
-            <span>安全稳定</span><span>快速拥有</span><span>助您畅享电商红利</span>
-        </div>
-
-        </div>
-      </div>
-      <div class="swiper-slide"><img src="images/bann1.jpg"></div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div> -->
-
-      <!-- <div class="swiper-pagination"></div> -->
-    </div>
-
-      <!--  <div class="banner-footer">
-        <div class="am-container">
-        <div class="am-g">
-          <div class="am-u-lg-4 footer-style"><a href=""><h3>新零售线下商城系统</h3>
-        <p>线下门店拓客神器</p>
-
-          </a></div>
-          <div class="am-u-lg-4 footer-style"><a href=""><h3>云商城系统</h3>
-            <p>打造专属"SAAS云商城"</p></a></div>
-          <div class="am-u-lg-4 footer-style"><a href=""><h3>移动营销系统</h3>
-            <p>搭建各种入驻模式平台</p></a></div>
-        </div>
-      </div>
-    </div>
-    </div> -->
 </div>
 
 
