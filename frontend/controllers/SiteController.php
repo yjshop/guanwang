@@ -86,9 +86,21 @@ class SiteController extends Controller
     }
     
     public function actionProduct(){
-        CarouselItem::find()->where()->one();
         
-        return $this->render('product');
+       $head_img = CarouselItem::find()->where(['carousel_id'=>4,'status'=>1])->orderBy('sort asc')->one();
+       $market_img = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+       $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->limit(8)->orderBy('sort asc')->all();
+       $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();
+       $order_img = CarouselItem::find()->where(['carousel_id'=>8,'status'=>1])->orderBy('sort asc')->one();
+        
+        return $this->render('product',[
+            'head_img'=>$head_img,
+            'market_img'=>$market_img,
+            'detail_img'=>$detail_img,
+            'pay_img'=>$pay_img,
+            'order_img'=>$order_img,
+            
+        ]);
     }
     
     public function actionFaq(){

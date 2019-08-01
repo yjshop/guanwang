@@ -981,6 +981,20 @@ color: #8E8E8E;
 	min-height: 500px;
 	height: 500px;
 }
+
+
+
+/*常見問題*/
+
+.faq-question{
+	color:#08BF91;
+}
+.faq-title{
+	background: #08BF91;
+}
+.slide.page-heading {
+	background-color: #08BF91;
+}
 /*手机端*/
 @media only screen and (max-width: 800px){
 
