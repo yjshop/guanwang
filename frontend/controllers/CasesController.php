@@ -12,7 +12,8 @@ use yii;
 use common\models\Cases; 
 use common\models\CasesSearch;
 use common\models\CarouselItem;
-use common\models\Carousel;
+use function GuzzleHttp\Promise\all;
+use yii\data\ActiveDataProvider;
 class CasesController extends Controller{
     
     public function actionView(){
@@ -37,14 +38,40 @@ class CasesController extends Controller{
 
     public function actionIndex(){  
        $tou = CarouselItem::find()->where(['status'=>1,'carousel_id'=>2])->orderBy('sort asc')->one();
-        
-       $data['status']=1;
-       $p= new CasesSearch();
-       $dataProvider=$p->search1($data);
+
+       if(Yii:: $app->getRequest()->getQueryParam('category_id') != null)
+       {
+           $id = Yii:: $app->getRequest()->getQueryParam('category_id');
+           
+           $query = Cases::find()->where(['status'=>1,'category_id'=>$id]);
+           
+           $dataProvider = new ActiveDataProvider([
+               'query' => $query,
+               'sort' => [
+                   'defaultOrder' => [
+                       'id' => SORT_DESC
+                   ]
+               ],
+               'pagination' => [
+                   'pageSize' => 8,
+               ],   
+           ]);
+           return $this->render('index',[
+               'dataProvider'=>$dataProvider,
+               'tou'=>$tou,
+       ]);
+           
+       }else {
+           
+           $data['status']=1;
+           $p= new CasesSearch();
+           $dataProvider=$p->search1($data);
+           
        return $this->render('index',[
            'dataProvider'=>$dataProvider,
            'tou'=>$tou,
        ]); 
+       }
 
     }
 }

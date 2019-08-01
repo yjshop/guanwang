@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'qr_cover',
                     'create_time:datetime',
                     'update_time:datetime',           
-                   // 'category_id', 
+                    'category_id', 
                         [
                             'class' => 'backend\widgets\grid\SwitcherColumn',
                             'attribute' => 'is_top'
