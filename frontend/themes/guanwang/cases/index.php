@@ -8,7 +8,7 @@ $tou = CarouselItem::find()->where(['status'=>1,'carousel_id'=>2])->orderBy('sor
 $category =  CaseCategory::find()->orderBy('id asc')->all();
 ?>
 <!--  头部banner -->
-<div class="banner am-g">
+<div class="banner am-g" style="min-height: auto">
 <img src="<?=$tou['image'] ?>">
 </div>
 
