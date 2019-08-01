@@ -5,7 +5,7 @@
 <div class="am-container layout">
 
   <div class="am-g">
-  <?php echo $this->render('left'); ?>
+  <?php echo $this->render('left',['show'=>$show]); ?>
   
       <div class="am-u-md-10 lay-r" style="padding:30px 50px;">
     <div class="am-slider am-slider-default am-slider-carousel slider">

@@ -9,7 +9,7 @@ list($this->title, $this->params['SEO_SITE_KEYWORDS'], $this->params['SEO_SITE_D
 <div class="am-container layout">
   <div class="am-g">
       
-      <?php echo $this->render('left'); ?>
+      <?php echo $this->render('left',['show'=>$show]); ?>
       
       <div class="am-u-md-10">
         <div class="brief">

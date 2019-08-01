@@ -98,8 +98,7 @@ class SiteController extends Controller
             'market_img'=>$market_img,
             'detail_img'=>$detail_img,
             'pay_img'=>$pay_img,
-            'order_img'=>$order_img,
-            
+            'order_img'=>$order_img,    
         ]);
     }
     
