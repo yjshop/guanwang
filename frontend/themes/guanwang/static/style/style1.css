@@ -435,13 +435,16 @@ color: white;
 	min-height: 600px
 }
 ul.anli-pc li{
-	height: 427px;
+	height: 445px;
 }
-
+.anli-pc li .code-img-box{
+	border-radius: 10px;
+}
 
 .anli-pc li .code-img-box .name a{
 	color: white;
 	text-decoration: none;
+
 }
 .anli-pc li .code-img-box .name a:hover{
 	color: white;
@@ -665,7 +668,7 @@ color: #8E8E8E;
 
 
 
-/*案例页面*/
+/*成功案例*/
 
 
 .example-wrap .banner{
@@ -742,6 +745,11 @@ color: #8E8E8E;
     background-color: #0e90d2;
     border-color: #0e90d2;
 }*/
+
+.anli .anli-pc li>img{
+
+	height: 100%;
+}
 
 
 /*案例详情*/
@@ -1251,7 +1259,7 @@ height: 100%;
 
 
 
-/*客户案例*/
+/*成功案例*/
 
 .example-wrap .am-container{
 	padding: 0px;

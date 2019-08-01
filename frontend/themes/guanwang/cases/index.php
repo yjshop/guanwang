@@ -4,7 +4,7 @@ use yii\helpers\Url;
 
 ?>
 <!--  头部banner -->
-<div class="banner am-g">
+<div class="banner am-g" style="min-height: auto">
 <img src="<?=$tou['image'] ?>">
 </div>
 
