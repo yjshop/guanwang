@@ -63,7 +63,7 @@ class ArticleController extends Controller
             'hotTags' => $hotTags
         ]);
     }
-
+    
 
     
     
