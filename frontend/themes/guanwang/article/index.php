@@ -1,6 +1,6 @@
 <?php
-use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\helpers\Html;
 use common\models\Category;
 /* @var $this yii\web\View */
 /* @var $models array */
@@ -17,35 +17,25 @@ if(isset($category)) {
 }
 
 ?>
-<div class="news-list">
-     <!--  幻灯片开始-->
-   <div class="am-slider am-slider-default article-swiper" data-am-flexslider>
+<div class="am-container news-list">
+  <div class="am-u-md-9 am-u-sm-12">
+      <!--  幻灯片开始-->
+            <div class="am-slider am-slider-default" data-am-flexslider>
                 <ul class="am-slides">
                     <li><img src="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg" /></li>
                     <li><img src="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg" /></li>
                 </ul>
             </div>
-
-   <!--   幻灯片结束 -->
-</div>
-
-
-
-
-
-
-<div class="am-container news-list news-list-main">
-  <div class="am-u-md-9 am-u-sm-12">
-   
-         
-         
+            <!--   幻灯片结束 -->
             <div class="tab">
             <?php 
               $nav= Category::find()->orderBy('sort asc')->limit(8)->all();
              foreach ($nav as $key=> $item):
              ?>
+                
                 <a href="<?= Url::to(['/article/index', 'cate' => $item->slug]) ?>" <?php if(isset($category)&&($item->slug==$category->slug)):?> class="active"  <?php endif;?> ><?=$item->title?></a> 
-              <?php endforeach;?>
+            
+             <?php endforeach;?>
             </div>
 
    <?= \yii\widgets\ListView::widget([
@@ -54,10 +44,11 @@ if(isset($category)) {
         'layout' => "{items}",
         'options' => ['class' => 'list-items bt-s'],
         'itemOptions' => ['class' => 'list-item']
-    ]) ?>
+    ])
+   ?>
     
       <!-- 分页开始 -->
-            <div class="page">
+   <div class="page">
       <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
     <?= \yii\widgets\LinkPager::widget([
         'pagination' => $dataProvider->pagination
@@ -73,7 +64,7 @@ if(isset($category)) {
         'options' => ['class' => 'pager'],
     ]); ?>
     <?php endif;?>
-            </div>
+    </div>
     
 
 </div>
@@ -104,7 +95,7 @@ if(isset($category)) {
                        }  
                         foreach ($recommentList as $item):
                         ?>
-                        <li><a href="<?= Url::to(['/article/view', 'id' => $item->id]) ?>" title="<?= $item->title ?>" target="_blank"><?= $item->title ?></a></li>
+                        <li><a href="<?= Url::to(['/article/detail', 'id' => $item->id]) ?>" title="<?= $item->title ?>" target="_blank"><?= $item->title ?></a></li>
                         <?php endforeach; ?>
                         </ul>
                     </div>
@@ -136,8 +127,8 @@ if(isset($category)) {
                             ?>
                             <?php if($item->cover):?>
                             <li>
-                                <a href="<?= Url::to(['/article/view', 'id' => $item->id]) ?>">
-                                <div><img src="<?=Html::img($item->cover, ['width' => 300, 'height' => 140])?>"></div>
+                                <a href="<?= Url::to(['/article/detail', 'id' => $item->id]) ?>">
+                                <div></div>
                                 <p><?= $item->title ?></p>
                               </a>
                             </li>

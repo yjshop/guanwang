@@ -1,10 +1,14 @@
 <?php
 
+use common\models\CarouselItem;
+use common\models\CaseCategory;
 use yii\helpers\Url;
 
+$tou = CarouselItem::find()->where(['status'=>1,'carousel_id'=>2])->orderBy('sort asc')->one();
+$category =  CaseCategory::find()->orderBy('id asc')->all();
 ?>
 <!--  头部banner -->
-<div class="banner am-g">
+<div class="banner am-g" style="min-height: auto">
 <img src="<?=$tou['image'] ?>">
 </div>
 
@@ -17,12 +21,22 @@ use yii\helpers\Url;
 
 
 <div class="exam-box-btn">
-<button type="button" class="am-btn  am-btn-primary am-btn-lg ">全部</button>
-<button type="button" class="am-btn  am-btn-primary am-btn-lg ">单商户</button>
-<button type="button" class="am-btn  am-btn-primary am-btn-lg ">分销</button>
-<button type="button" class="am-btn  am-btn-primary am-btn-lg ">多商户</button>
-<button type="button" class="am-btn  am-btn-primary am-btn-lg ">直销</button>
-<button type="button" class="am-btn  am-btn-primary am-btn-lg ">小程序</button>
+
+<?php foreach ($category as $a): ?>
+<?php 
+$show = "";
+if ($id == $a['id']):
+{
+    $show = 'btn-active';
+}  
+?>
+<?php endif; ?>
+
+<button type="button" class="am-btn  am-btn-primary am-btn-lg <?php echo $show ?>"><a href="<?= Url::to(['cases/index','category_id'=>$a['id']]) ?>"><?=$a['title']?></a></button>
+
+<!-- btn-active -->
+<?php endforeach; ?>
+
 </div>
 
 <div class="anli">

@@ -29,7 +29,7 @@ $(function(){
   $('.close-btn').click(function(){	
 	 clearInterval(checkLoginId);
   }); 
-});
+
 function checkLogin(){
 	$.ajax({ 
 		type : "POST", //提交方式 
@@ -51,17 +51,18 @@ function checkLogin(){
 
      
 
-   $(function() {
 
-      $(".help-box-l>ul>li a").click(function(){
-        if($(this).next().is(":hidden")){
-          $(this).next().slideDown();
-          $(this).find(".icon-dayuhao").css({"transform":"rotate(180deg)","-webkit-transform":"rotate(180deg)"});
-        }else{
-          $(this).next().slideUp();
-          $(this).find(".icon-dayuhao").css({"transform":"rotate(360deg)","-webkit-transform":"rotate(360deg)"});
-        }
-      })
+
+	
+	      $(".help-box-l>ul>li a").hover(function(){
+	           if($(this).next().is(":hidden")){
+	             $(this).next().slideDown();
+	             $(this).find(".icon-dayuhao").css({"transform":"rotate(180deg)","-webkit-transform":"rotate(180deg)"});
+	           }else{
+	             $(this).next().slideUp();
+	             $(this).find(".icon-dayuhao").css({"transform":"rotate(360deg)","-webkit-transform":"rotate(360deg)"});
+	           }
+	         })
 
       //案例二维码显示
       $(".anli li").mouseover(function(){
@@ -78,7 +79,8 @@ function checkLogin(){
       $(this).children('.shadow').hide();
     })
 
-
+    
+    
 
 
 

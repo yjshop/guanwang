@@ -10,7 +10,7 @@ use yii\helpers\Html;
                              <?php if($model->cover):?>
                             <div class="img-box">
                            
-                                <a href="<?= Url::to(['article/view', 'id' => $model->id])?>">   <?=Html::img($model->cover, ['width' => 300, 'height' => 140]) ?></a>
+                                <a href="<?= Url::to(['article/view', 'id' => $model->id])?>">   <?=Html::img($model->cover, ['width' => 300]) ?></a>
                             </div>
                              <?php else:?>
                             <div class="news_list_left">
@@ -22,11 +22,11 @@ use yii\helpers\Html;
                           <?php endif;?>    
                           </div>
                             <div class="am-u-md-8 am-u-sm-8 item-r">
-                                 <a href="<?= Url::to(['article/view', 'id' => $model->id])?>">  <h2><?= $model->title?></h2></a>
-                                <div class="info"> <span class="time am-margin-right-sm "><a href="<?= Url::to(['/user/default/index', 'id' => $model->user_id]) ?>"><?= Html::icon('user')?> <?= $model->user->username?></a></span> <span class="time am-margin-right-sm "><?= Html::icon('clock-o')?> <?= Yii::$app->formatter->asDatetime($model->created_at, 'php:Y-m-d') ?></span>
+                                 <a href="<?= Url::to(['article/detail', 'id' => $model->id])?>">  <h2><?= $model->title?></h2></a>
+                                <div class="info"> <span class="time am-margin-right-sm "><?= Html::icon('clock-o')?> <?= Yii::$app->formatter->asDatetime($model->created_at, 'php:Y-m-d') ?></span>
                                     <span class="am-margin-right-sm"><?= Html::icon('eye')?> <?= $model->trueView?></span> <span class="am-margin-right-sm"><?= Html::icon('comments-o')?> <?= $model->commentTotal ?></span>
                                 </div>
-                                <p><a href="<?= Url::to(['article/view', 'id' => $model->id])?>"> <?= $model->description ?></a></p>
+                                <p><a href="<?= Url::to(['article/detail', 'id' => $model->id])?>"> <?= $model->description ?></a></p>
                                 <div class="list-footer">
                                     <ul class="tag-list">
                                      <?php foreach ($model->tags as $key=> $tag):?>
