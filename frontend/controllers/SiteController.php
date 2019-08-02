@@ -88,8 +88,13 @@ class SiteController extends Controller
         return $this->render('product');
     }
     
-    public function actionShangpin(){
-        return $this->render('shangpin');
+    public function actionFaq(){
+        
+        $help = Page::find()->where(['use_layout'=>1,'slug' =>'help'])->orderBy('id asc')->all();
+        
+        return $this->render('faq',[
+            'help' => $help,
+        ]);
     }
 
     /**
