@@ -11,34 +11,33 @@
  */
 
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
 $this->title = 'wiki';
 $this->params['breadcrumbs'][] = 'wiki';
 ?>
-<div class="banner-img">
-  <img src="/Public/Home/images/banner03.jpg" alt="">
-    <div class="page-title phone-help">帮助中心</div>
-    <div class="search-box">
-      <h1 class="help-tit">帮助中心</h1>
-      <div class="am-input-group" style="width: 100%;">
-      	<form action="" method="get" style="display: table;width:100%;">
-        <input type="text" name="title" class="am-form-field" placeholder="请用关键词进行检索">
-        <span class="am-input-group-btn">
-          <button class="am-btn am-btn-default" type="submit"><span class="am-icon-search"></span>
-        
-        
-      </button></span></form></div>
-      <!-- <p class="des">搜索热词：<a href="">小程序</a><a href="">支付</a><a href="">授权</a><a href="">提现</a></p> -->
-    </div>
+<?php echo $this->render('search',['msg'=>$msg]); ?>
+
+<div class="am-container help">
+
+<?php echo $this->render('left'); ?>
+
+<div class="am-u-md-9">
+  <div class="help-box-r">
+  		    	<div class="bd">    	
+        	<ul class="list-items help-lists am-g">
+        	<?php foreach ($books as $bk): ?>
+        	      <li class="am-u-md-3 am-u-sm-6">
+              		<a class="list-item" href="<?=Url::to(['default/view','id'=>$bk['id']]); ?>">
+               		<div class="help-cover"><img src="<?=$bk['book_cover']?>"></div>
+               		<div class="help-title"><p><?= $bk['book_name'] ?></p></div>
+                    </a>
+                  </li> 
+             <?php endforeach; ?>   
+           </ul>
+          <?= LinkPager::widget(['pagination' => $pagination]) ?>       
+      </div>
+   </div>
 </div>
-<?= \yii\widgets\ListView::widget([
-    'dataProvider' => $dataProvider,
-    'itemView' => '_item',
-    'layout' => '{items} {pager}',
-    'options' => [
-        'class' => 'row'
-    ],
-    'itemOptions' => [
-        'class' => 'col-xs-3'
-    ],
-]) ?>
+</div>
+

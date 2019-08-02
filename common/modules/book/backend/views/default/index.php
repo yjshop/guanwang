@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = '书';
             'dataProvider' => $dataProvider,
             'columns' => [
                 'id',
+                'category_id',
                 [
                     'attribute' => 'book_name',
                     'value' => function ($model) {

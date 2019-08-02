@@ -1,19 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: yidashi
- * Date: 2016/12/15
- * Time: 下午3:14
- */
-
-/**
- * @var \yii\web\View $this
- * @var common\modules\book\models\Book $book
- */
-use common\helpers\Tree;
-
-?>
 <?php 
+use common\helpers\Tree;
 $chapters = $book->chapters;
 $items = [];
 foreach ($chapters as $chapter) {
@@ -28,20 +14,13 @@ foreach ($chapters as $chapter) {
 }
 $menuItems = Tree::build($items, 'id', 'pid', 'items');
 ?>
-
-<div class="am-container help">
-
-<div class="am-u-md-3">
-  	 <?= \common\widgets\SideNavWidget::widget([
-            'items' => $menuItems,
+<div class="row">
+    <div class="col-md-3">
+        <?= \common\widgets\SideNavWidget::widget([
+            'items' => $menuItems
         ]) ?>
-  </div>
-
-
-<div class="am-u-md-9">
-  <div class="help-box-r">
-  		      <?= $content ?>
-   </div>
+    </div>
+    <div class="col-md-9">
+        <?= $content ?>
+    </div>
 </div>
-</div>
-

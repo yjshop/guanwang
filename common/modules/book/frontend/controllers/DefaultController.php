@@ -21,8 +21,6 @@ class DefaultController extends Controller
 
     public function actionIndex()
     {
-        
-        
         if(Yii::$app->request->isPost){
             $msg=Yii::$app->request->post('bk');
             $book=Book::find()->where(['or',['like','book_name',$msg],['like','book_description',$msg],['like','content',$msg]])->orderBy('id desc');
