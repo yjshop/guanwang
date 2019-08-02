@@ -13,6 +13,7 @@ use yii\web\Controller;
 use common\models\Cases;
 use common\models\Carousel;
 use api\modules\v1\models\CarouselItem;
+use common\models\Page;
 
 /**
  * Site controller.
@@ -85,7 +86,20 @@ class SiteController extends Controller
     }
     
     public function actionProduct(){
-        return $this->render('product');
+        
+       $head_img = CarouselItem::find()->where(['carousel_id'=>4,'status'=>1])->orderBy('sort asc')->one();
+       $market_img = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+       $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->limit(8)->orderBy('sort asc')->all();
+       $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();
+       $order_img = CarouselItem::find()->where(['carousel_id'=>8,'status'=>1])->orderBy('sort asc')->one();
+        
+        return $this->render('product',[
+            'head_img'=>$head_img,
+            'market_img'=>$market_img,
+            'detail_img'=>$detail_img,
+            'pay_img'=>$pay_img,
+            'order_img'=>$order_img,    
+        ]);
     }
     
     public function actionFaq(){
@@ -96,7 +110,6 @@ class SiteController extends Controller
             'help' => $help,
         ]);
     }
-
     /**
      * 网站地图，百度搜索引擎爬虫用.
      *

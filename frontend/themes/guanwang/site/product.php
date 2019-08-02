@@ -5,7 +5,7 @@ use yii\helpers\Url;
 <div class="product-wrap">
    <!--  轮播图 -->
     <div class="banner am-g">
-  <img src="<?php echo Url::to('@web/storage/images/P8`YY6`Z}(J7N2NE84XE5ME.png'); ?>">
+  <img src="<?=$head_img['image'] ?>">
 <!--     <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -109,19 +109,11 @@ use yii\helpers\Url;
 	</div>
 
 	<ul class="plug-img ">
+	<?php foreach ($market_img as $mun): ?>
 		<li>
-			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png'); ?>">
+			<img src="<?= $mun['image'] ?>">
 		</li>
-		<li>
-			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png');?>">
-		</li>
-		<li>
-			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png');?>">
-		</li>
-		<li>
-			<img src="<?php echo Url::to('@web/storage/images/[OZAGEA)RZ(W1)4XPM32_$Q.png');?>">
-		</li>
-
+	<?php endforeach;?>
 	</ul>
 
   <div class="plug-img am-show-sm-only">
@@ -165,16 +157,9 @@ use yii\helpers\Url;
 
     	  <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
-      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
-      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
-      <div class="swiper-slide" ><img src="<?php echo Url::to('@web/storage/images/an2.jpg');?>"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div>
+    <?php foreach ($detail_img as $num1): ?>
+      <div class="swiper-slide" ><img src="<?=$num1['image']?>"></div>
+    <?php endforeach;?>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -210,7 +195,7 @@ use yii\helpers\Url;
           </div>
         </div>
         <div class="am-u-md-7 tr" style="text-align: right;">
-          <img src="<?php echo Url::to('@web/storage/images/talent-marketing-x2.png');?>">
+          <img src="<?= $pay_img['image']?>">
         </div>
       </div>
     </div>
@@ -221,7 +206,7 @@ use yii\helpers\Url;
     <div class="am-container">
       <div class="am-g">
         <div class="am-u-md-8 tl">
-          <img src="<?php echo Url::to('@web/storage/images/dingdan00.png');?>">
+          <img src="<?= $order_img['image']?>">
         </div>
         <div class="am-u-md-4">
           <div class="word word-r">
