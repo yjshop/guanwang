@@ -56,9 +56,9 @@ class Book extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'book_name' => '文档名称',
-            'book_cover' => '文档封面',
-            'book_author' => '文档作者',
+            'book_name' => '书本名称',
+            'book_cover' => '书本封面',
+            'book_author' => '书本作者',
             'book_description' => '教程内容介绍',
             'book_link' => '书外链',
             'created_at' => '创建时间',

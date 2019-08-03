@@ -14,10 +14,23 @@ use common\modules\book\models\Book;
 use common\modules\book\models\BookChapter;
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 
 class DefaultController extends Controller
 {
+    
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
 
     public function actions()
     {
@@ -53,9 +66,10 @@ class DefaultController extends Controller
             Yii::$app->session->setFlash('success', '保存成功');
             return $this->redirect('index');
         }
-        return $this->render('create', [
+     
+      return $this->render('create', [
             'model' => $model
-        ]);
+        ]); 
     }
 
     public function actionView($id)

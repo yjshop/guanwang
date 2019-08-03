@@ -15,11 +15,12 @@ use yii\helpers\HtmlPurifier;
 use yii\helpers\Markdown;
 
 $this->title = $model->chapter_name;
-$this->params['breadcrumbs'][] = ['label' => 'wiki', 'url' => ['/book/default/index']];
-$this->params['breadcrumbs'][] = ['label' => $model->book->book_name, 'url' => ['/book/default/view', 'id' => $model->book->id]];
+$this->params['breadcrumbs'][] = ['label' => 'wiki', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->book->book_name, 'url' => ['view', 'id' => $model->book->id]];
 $this->params['breadcrumbs'][] = Html::encode($model->chapter_name);
 ?>
-<?php $this->beginContent(__DIR__ . '/_layout.php', ['book' => $model->book]) ?>
+
+<?php $this->beginContent('@frontend/themes/basic/book/default/_layout.php', ['book' => $model->book]) ?>
 <div class="view-title">
     <h1><?= Html::encode($model->chapter_name) ?></h1>
 </div>

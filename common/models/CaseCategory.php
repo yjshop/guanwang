@@ -55,16 +55,14 @@ class CaseCategory extends \yii\db\ActiveRecord
     }
     
     //下拉列表的方法----------------
-    public static function lists($module = null)
+    public static function lists()
     {
-        $list = Yii::$app->cache->get(['shopCategoryList', $module]);
+        $list = Yii::$app->cache->get('casesCategoryList');
         if ($list === false) {
             $query = static::find();
-            if ($module) {
-                $query->where(new Expression("FIND_IN_SET('{$module}', module) "));
-            }
+            
             $list = $query->asArray()->all();
-            Yii::$app->cache->set(['shopCategoryList', $module], $list, 0, new TagDependency(['tags' => ['shopCategoryList']]));
+            Yii::$app->cache->set('casesCategoryList', $list);
         }
         return $list;
     }

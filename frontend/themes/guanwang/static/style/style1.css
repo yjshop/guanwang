@@ -1,10 +1,12 @@
-/*
+﻿/*
 公共样式*/
  a:focus,a:hover{
 	color: #31b3a4 !important;
 	text-decoration: none!important;
 }
-
+[class*=am-u-]:last-child{
+	float: left !important;
+}
 
 /*侧边客服*/
 
@@ -360,8 +362,9 @@
     right: -188px;
     top: 0px;
 }
-.news .box-top h3 a:hover{
-color: white;
+.news .box-top h3 a:hover {
+    color: white !important;
+    background-color: #009393;
 }
 .news .news-box2{
 	padding: 10px 10px 0px 10px;
@@ -982,8 +985,6 @@ color: #8E8E8E;
 	height: 500px;
 }
 
-
-
 /*常見問題*/
 
 .faq-question{
@@ -995,8 +996,87 @@ color: #8E8E8E;
 .slide.page-heading {
 	background-color: #08BF91;
 }
+
+/*帮助中心*/
+.help-box-r  .help-lists{
+	padding: 0 20px 20px 20px;
+}
+.list-items li{
+	padding: 0 20px 20px;
+	box-shadow:none;
+	border: none;
+	    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+    -moz-interpolation-mode: bicubic;
+    -webkit-interpolation-mode: bicubic;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
+
+.help-box-r  .help-lists li a{
+	display: block;
+	       border: 1px solid #cdcdcd;
+
+
+
+}
+.help-box-r  .help-lists .list-item{
+	height: 320px;
+	
+	
+}
+.help-box-r  .help-lists .list-item img{
+	width: 100%;
+	height: 100%;
+
+}
+.help-box-r  .help-lists .list-item .help-cover{
+	height: 80%;
+}
+.list-items li p{
+	font-size: 18px;
+	padding-left: 5px;
+}
+
+
+
+
+
 /*手机端*/
 @media only screen and (max-width: 800px){
+
+
+
+
+/*帮助中心*/
+.list-items li{
+	padding: 5px;
+}
+
+.help-box-r  .help-lists .list-item{
+	height: 200px;
+	
+	
+}
+.help-box-r .help-lists{
+	padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .anli-phone p{
