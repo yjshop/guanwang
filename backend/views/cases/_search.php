@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 ?>
 <div class="box box-primary">
     <div class="box-header">
-        <h2 class="box-title">cases搜索</h2>
+        <h2 class="box-title">搜索</h2>
         <div class="box-tools"><button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" data-original-title="" title=""><i class="fa fa-minus"></i></button></div>
     </div>
     <div class="box-body">

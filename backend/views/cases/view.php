@@ -8,7 +8,7 @@ use Egulias\EmailValidator\Warning\LabelTooLong;
 /* @var $model common\models\Cases */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cases'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '案例'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $jinyong ='';
 $top = '';

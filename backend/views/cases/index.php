@@ -2,16 +2,18 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use common\models\CaseCategory;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CasesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Cases');
+$this->title = Yii::t('app', '案例列表');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $this->beginBlock('content-header') ?>
-<?= $this->title . ' ' . Html::a(Yii::t('app', 'Create Cases'), ['create'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
+<?= $this->title . ' ' . Html::a(Yii::t('app', '创建案例'), ['create'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
+<?= Html::a(Yii::t('app', '添加分类'), ['category'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
 <?php $this->endBlock() ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -21,23 +23,46 @@ $this->params['breadcrumbs'][] = $this->title;
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
         'columns' => [
-                    'id',
+                    [
+                        'attribute'=>'id',
+                        'contentOptions' => [
+                            'width'=>'50'
+                        ]
+                    ],
                     'title',
-                   // 'cover',
+                    // 'cover',
                     //'qr_cover',
-                    'create_time:datetime',
-                    'update_time:datetime',           
-                    //'category_id', 
+                    //'create_time:datetime',
+                    'update_time:datetime', 
+            
+                        [
+                            'attribute'=>'category_id',
+                            'value'=>'caseCategory.title',
+                            'filter'=>CaseCategory::find()
+                            ->select(['title','id'])
+                            ->orderBy('id')
+                            ->indexBy('id')
+                            ->column(),
+                        ],
+            
+                        'desc',
+            
                         [
                             'class' => 'backend\widgets\grid\SwitcherColumn',
-                            'attribute' => 'is_top'
+                            'attribute' => 'is_top',
+                            'contentOptions' => [
+                                'width'=>'50'
+                            ]
                         ],
+            
                         [
                             'class' => 'backend\widgets\grid\SwitcherColumn',
-                            'attribute' => 'status'
-                        ],
-                    // 'desc',    
-                    // 'content',
+                            'attribute' => 'status',
+                            'contentOptions' => [
+                                'width'=>'60'
+                            ]
+                        ],    
+                        //'content',
                         ['class' => 'yii\grid\ActionColumn'],
                 ],
             ]); ?>

@@ -58,6 +58,15 @@ class CasesController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    
+    public function actionCategory()
+    {
+       
+       $category = CaseCategory::find(); 
+        return $this->render('category',[
+            'category'=>$category,
+        ]);
+    }
 
     /**
      * Displays a single Cases model.
