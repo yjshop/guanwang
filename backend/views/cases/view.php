@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use Egulias\EmailValidator\Warning\LabelTooLong;
+use common\models\CaseCategory;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Cases */
@@ -24,6 +25,7 @@ if ($model->is_top == 1)
 }else{
     $top = "不置顶";
 }
+$category = CaseCategory::find()->where(['id'=>$model->category_id])->one();
 ?>
 <div class="box box-primary">
     <div class="box-body">
@@ -31,7 +33,10 @@ if ($model->is_top == 1)
         'model' => $model,
         'attributes' => [
             'title',
-            'category_id',
+            [
+                'attribute'=>'category_id',
+                'value'=>$category['title'],
+            ],
             [
                 'label' => '封面',
                 'value' =>$model->cover,

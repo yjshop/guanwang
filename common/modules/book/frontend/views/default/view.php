@@ -4,7 +4,7 @@ use yii\helpers\HtmlPurifier;
 use yii\helpers\Markdown;
 
 $this->title = $model->book_name;
-$this->params['breadcrumbs'][] = ['label' => 'wiki', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '帮助文档', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->book_name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Html::encode($model->book_name);
 ?>
