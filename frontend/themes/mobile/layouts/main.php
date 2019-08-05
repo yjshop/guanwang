@@ -55,7 +55,7 @@ JS
 <?= $this->render('_header') ?>
 
 
-<!--删除的面包屑位置-->
+<!-- 原先的导航兰位置 -->
 
     <?= \common\widgets\Alert::widget()?>
     <?= $content ?>

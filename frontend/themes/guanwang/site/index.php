@@ -359,7 +359,7 @@ background-image: url(storage/images/system1.png);
       <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
          <?php if($key<3&&!empty($article)):?>
         <div class="news-box1">
-               <a class="update " href="<?=Url::to(['article/view','id'=>$article[0]['id']])?>">
+               <a class="update " href="<?=Url::to(['article/detail','id'=>$article[0]['id']])?>">
                <div class="img-box ">
                    <img src="<?php echo Url::to('@web/storage/images/news01.jpg'); ?>" alt="<?=$article[0]['title']?> ">
                </div>
@@ -371,7 +371,7 @@ background-image: url(storage/images/system1.png);
           <!--列表-->
          <?php foreach ($article as $kk=>$vo):?>
           <ul>
-            <li class="news-des "> <a href="<?=Url::to(['article/view','id'=>$vo['id']])?>"><?=$vo['title']?></a></li>
+            <li class="news-des "> <a href="<?=Url::to(['article/detail','id'=>$vo['id']])?>"><?=$vo['title']?></a></li>
          </ul>  
          <?php endforeach;?>   
           
