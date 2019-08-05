@@ -474,11 +474,15 @@ ul.anli-pc li{
 
 
 
-/*功能介绍*/
+/*产品中心*/
+
 .product-wrap .banner{
-
-
-	background-image: url(../images/1-1P60Q02524A5.jpg);
+	height: 500px;
+	min-height: 500px;
+}
+.product-wrap .banner img{
+	height: 100%;
+	width: 100%;
 }
 .pro-adv{
 
@@ -1255,10 +1259,7 @@ header .iconfont{
 .product-wrap .banner{
 	height: 200px;
 }
-.product-wrap .banner img{
-	height: 100%;
-	width: 100%;
-}
+
 .pro-adv p{
 	height: 64px;
 }
@@ -1478,5 +1479,11 @@ height: 100%;
 
 ins{
 	display: none!important;
+}
+
+
+/*授权中心*/
+.search-block{
+	width: 80%;
 }
 }

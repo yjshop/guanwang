@@ -20,7 +20,7 @@ $category =  CaseCategory::find()->orderBy('id asc')->all();
 <p>国内知名品牌企业都选择几何线商城的产品和服务</p>
 
 
-<div class="exam-box-btn">
+<div class="exam-box-btn am-hide-sm-only">
 
 <?php foreach ($category as $a): ?>
 <?php 
