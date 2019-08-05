@@ -15,6 +15,6 @@ $this->params['breadcrumbs'][] = Html::encode($model->book_name);
 </div>
 <div class="view-content"><?= HtmlPurifier::process(Markdown::process($model->firstChapter->chapter_body)) ?></div>
 <!-- 评论   -->
-<?//= \frontend\widgets\comment\CommentWidget::widget(['model' =>$model->firstChapter]) ?>
+ <!-- \frontend\widgets\comment\CommentWidget::widget(['model' =>$model->firstChapter])  -->
 <?php $this->endContent() ?>
 <?php $this->registerJs("$('.view-content a').attr('target', '_blank');") ?>

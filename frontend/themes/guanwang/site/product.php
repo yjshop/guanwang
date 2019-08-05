@@ -153,36 +153,30 @@ use yii\helpers\Url;
 
  <!--    	  <div class="swiper-container">
     <div class="swiper-wrapper">
-    <?php foreach ($detail_img as $num1): ?>
-      <div class="swiper-slide" ><img src="<?=$num1['image']?>"></div>
-    <?php endforeach;?>
+   
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div>
     </div>
    
     <div class="swiper-pagination"></div>
+  </div>
   </div> -->
 
 
 
 <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;controlNav&quot;:&quot;thumbnails&quot;}'>
   <ul class="am-slides">
-    <li data-thumb="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg">
-      <img src="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg">
+     <?php foreach ($detail_img as $num1): ?>
+    <li data-thumb="<?=$num1['image']?>">
+      <img src="<?=$num1['image']?>">
     </li>
-    <li data-thumb="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg">
-      <img src="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg">
-    </li>
-    <li data-thumb="http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg">
-      <img src="http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg">
-    </li>
-    <li data-thumb="http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg">
-      <img src="http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg">
-    </li>
+    <?php endforeach;?>
   </ul>
 </div>
-
-
-
-
 
 
 
