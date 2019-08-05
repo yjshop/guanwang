@@ -62,9 +62,9 @@ class CasesController extends Controller
     public function actionCategory()
     {
        
-       $category = CaseCategory::find(); 
+       //$category = CaseCategory::find(); 
         return $this->render('category',[
-            'category'=>$category,
+            
         ]);
     }
 

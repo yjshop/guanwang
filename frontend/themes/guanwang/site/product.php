@@ -160,13 +160,17 @@ use yii\helpers\Url;
     <?php foreach ($detail_img as $num1): ?>
       <div class="swiper-slide" ><img src="<?=$num1['image']?>"></div>
     <?php endforeach;?>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
   </div>
-
-
-
+  
          <!--  <img src="images/dingdan00.png"> -->
         </div>
         <div class="am-u-md-4">
