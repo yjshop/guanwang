@@ -22,10 +22,7 @@ class VisitorController extends Controller
                 'domain'=>$domain, 
             ]);
         }else{
-            $domain = "";
-            return $this->render('index',[
-                'domain'=>$domain,
-            ]);
+            return $this->render('index');
         }
          
     }

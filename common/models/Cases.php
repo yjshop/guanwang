@@ -90,11 +90,17 @@ class Cases extends \yii\db\ActiveRecord
             'create_time' => '创建时间',
             'update_time' => '更新时间',
             'status' => '状态',
-            'category_id' => '分类ID',
+            'category_id' => '分类',
             'is_top' => '置顶',
             'desc' => '描述',
             'cetagory' => '分类',
             'content' => '内容',
         ];
     }
+    public function getCaseCategory(){
+        // hasOne要求返回两个参数 第一个参数是关联表的类名 第二个参数是两张表的关联关系
+        // 这里id是casesCategory表的id, 关联cases表的id
+        return $this->hasOne(CaseCategory::className(), ['id' => 'category_id']);
+    }
 }
+  

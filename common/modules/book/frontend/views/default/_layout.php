@@ -36,8 +36,7 @@ $menuItems = Tree::build($items, 'id', 'pid', 'items');
             'items' => $menuItems,
         ]) ?>
   </div>
-
-
+  
 <div class="am-u-md-9">
   <div class="help-box-r">
   		      <?= $content ?>

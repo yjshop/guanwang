@@ -15,6 +15,8 @@ class CasesSearch extends Cases
     /**
      * @inheritdoc
      */
+    public $title;
+    
     public function rules()
     {
         return [
@@ -63,7 +65,7 @@ class CasesSearch extends Cases
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
 
@@ -81,6 +83,8 @@ class CasesSearch extends Cases
             ->andFilterWhere(['like', 'qr_cover', $this->qr_cover])
             ->andFilterWhere(['like', 'desc', $this->desc])
             ->andFilterWhere(['like', 'content', $this->content]);
+        
+        $query->andFilterWhere(['like', 'title', $this->title]) ;
 
         return $dataProvider;
     }

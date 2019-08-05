@@ -6,11 +6,11 @@ use yii\helpers\Html;
 /* @var $model common\models\Cases */
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
-    'modelClass' => 'Cases',
+    'modelClass' => '案例',
 ]) . ' ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cases'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '案列列表'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = Yii::t('app', '更新');
 ?>
 <div class="cases-update">
 

@@ -10,6 +10,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use backend\widgets\ActiveForm;
 use common\helpers\Tree;
+use common\modules\attachment\widgets\SingleWidget;
 use common\modules\book\models\BookCategory;
 
 ?>
@@ -21,7 +22,9 @@ use common\modules\book\models\BookCategory;
         
         <?= $form->field($model, 'category_id')->dropDownList(BookCategory::getDropDownList(Tree::build(BookCategory::lists()))) ?>
         
-        <?= $form->field($model, 'book_cover')->widget(\common\modules\attachment\widgets\SingleWidget::className()) ?>
+       <!--   $form->field($model, 'book_cover')->widget(\common\modules\attachment\widgets\SingleWidget::className())  -->
+        
+        <?= $form->field($model, 'book_cover')->widget(SingleWidget::className()) ?> 
         
         <?= $form->field($model, 'book_description')->textInput(['maxlength' => true]) ?>
         
