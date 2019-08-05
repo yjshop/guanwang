@@ -124,7 +124,7 @@ use yii\helpers\Url;
 
 
 
-<div class="pro-plug-m am-show-sm-only">
+<!-- <div class="pro-plug-m am-show-sm-only">
   <h1 class="big-title">丰富的营销插件</h1>
 <p>丰富的营销插件扩展让你的平台不管需求如何、体量多大，都能轻松组合应对</p>
 
@@ -140,11 +140,7 @@ use yii\helpers\Url;
     </div>
   </div>
 
-
-
-
-
-</div>
+</div> -->
 
 
 <div class="feature">
@@ -152,14 +148,12 @@ use yii\helpers\Url;
   <div class="dingdan bg-two-components">
     <div class="am-container">
       <div class="am-g">
-        <div class="am-u-md-8 tl">
+        <div class="am-u-md-6 tl">
 
 
-    	  <div class="swiper-container">
+ <!--    	  <div class="swiper-container">
     <div class="swiper-wrapper">
-    <?php foreach ($detail_img as $num1): ?>
-      <div class="swiper-slide" ><img src="<?=$num1['image']?>"></div>
-    <?php endforeach;?>
+   
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
@@ -167,10 +161,25 @@ use yii\helpers\Url;
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div>
       <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div>
     </div>
-    <!-- Add Pagination -->
+   
     <div class="swiper-pagination"></div>
   </div>
-  
+  </div> -->
+
+
+
+<div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;controlNav&quot;:&quot;thumbnails&quot;}'>
+  <ul class="am-slides">
+     <?php foreach ($detail_img as $num1): ?>
+    <li data-thumb="<?=$num1['image']?>">
+      <img src="<?=$num1['image']?>">
+    </li>
+    <?php endforeach;?>
+  </ul>
+</div>
+
+
+
          <!--  <img src="images/dingdan00.png"> -->
         </div>
         <div class="am-u-md-4">
@@ -321,22 +330,22 @@ $this->registerJs(<<<JS
  
 
     //详细的订单管理轮播图
-     var swiper = new Swiper('.dingdan .swiper-container', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows : true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
+    //  var swiper = new Swiper('.dingdan .swiper-container', {
+    //   effect: 'coverflow',
+    //   grabCursor: true,
+    //   centeredSlides: true,
+    //   slidesPerView: 'auto',
+    //   coverflowEffect: {
+    //     rotate: 50,
+    //     stretch: 0,
+    //     depth: 100,
+    //     modifier: 1,
+    //     slideShadows : true,
+    //   },
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //   },
+    // });
 
      
 

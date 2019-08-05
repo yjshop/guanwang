@@ -47,12 +47,12 @@ use yii\helpers\Url;
 </footer>
 
 <!-- 二维码显示 -->
-<div style="position: fixed;right: 0;top:45%;" class="am-show-sm-only">
+<!-- <div style="position: fixed;right: 0;top:45%;" class="am-show-sm-only">
   <div style="padding: 10px;background-color: #fff;">
     <img width="100" src="<?php echo Url::to('@web/storage/images/miniQrcode.jpg') ?>">
     <div style="width: 100px;text-align: center;background-color: #fff;">微信长按体验</div>
   </div>
-</div>
+</div> -->
 
 
 
