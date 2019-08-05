@@ -474,11 +474,15 @@ ul.anli-pc li{
 
 
 
-/*功能介绍*/
+/*产品中心*/
+
 .product-wrap .banner{
-
-
-	background-image: url(../images/1-1P60Q02524A5.jpg);
+	height: 500px;
+	min-height: 500px;
+}
+.product-wrap .banner img{
+	height: 100%;
+	width: 100%;
 }
 .pro-adv{
 
@@ -895,8 +899,8 @@ color: #8E8E8E;
 
 }
 .am-slider-default .am-viewport{
-	height: 250px;
-	max-height: 250px;
+	height: 200px;
+	max-height: 200px;
 }
 .news-list-main .tab{
 	margin-top: 0px;
@@ -1064,19 +1068,43 @@ color: #8E8E8E;
 
 
 
+
+
+
+.feature .am-slider-default .am-viewport ul li img{
+	height: 100%;
+	width: auto;
+	margin: auto;
+}
+
+
+
+
+
+@media screen and (min-width: 970px){
+
+.feature .am-slider-default .am-viewport ul li{
+	height: 600px;
+}
 .feature .am-slider-default .am-viewport{
-	height: 500px;
-	max-height: 500px;
+	height: 600px;
+	max-height: 600px;
 }
 .tl{
 	padding:0 100px;
-	margin-top: 80px;
+	
+}
+
+.feature .am-slider-default .am-control-thumbs{
+	padding: 0 80px;
 }
 
 
-
-
-
+.feature .am-slider-default .am-control-thumbs li img {
+    height: 120px;
+    width: auto;
+}
+}
 
 
 
@@ -1087,6 +1115,7 @@ color: #8E8E8E;
 
 
 /*帮助中心*/
+
 .list-items li{
 	padding: 5px;
 }
@@ -1243,22 +1272,41 @@ header .iconfont{
 
 /*产品中心*/
 
-
+.product-wrap{
+	margin-top: 60px;
+}
 .tl{
 	padding:0;
-	margin-top: 80px;
+	margin-top: 20px;
+}
+
+.feature .am-slider-default .am-viewport{
+	height: 500px;
+	max-height: 500px;
+}
+
+.feature .am-slider-default .am-viewport ul li{
+	height: 500px;
+}
+
+.feature .am-slider-default .am-control-thumbs{
+	padding: 0 60px;
 }
 
 
+.feature .am-slider-default .am-control-thumbs li img {
+    height: 100px;
+    width: auto;
+}
 
 
 .product-wrap .banner{
 	height: 200px;
+	max-height: 200px;
+	min-height:200px;
+	margin-top: 30px;
 }
-.product-wrap .banner img{
-	height: 100%;
-	width: 100%;
-}
+
 .pro-adv p{
 	height: 64px;
 }
@@ -1478,5 +1526,11 @@ height: 100%;
 
 ins{
 	display: none!important;
+}
+
+
+/*授权中心*/
+.search-block{
+	width: 80%;
 }
 }
