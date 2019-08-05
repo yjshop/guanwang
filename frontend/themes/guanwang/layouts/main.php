@@ -51,11 +51,9 @@ JS
 </head>
 <body>
 <?php $this->beginBody() ?>
-<?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
+
 <?= $this->render('_header') ?>
-<?php else: ?>
-    <?= $this->render('_nav') ?>
-<?php endif; ?>
+
 
 <!-- 原先的导航兰位置 -->
 

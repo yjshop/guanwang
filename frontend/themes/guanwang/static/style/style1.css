@@ -1040,6 +1040,42 @@ color: #8E8E8E;
 	padding-left: 5px;
 }
 
+/*
+文档详情*/
+.help-box-r .view-title h1{
+	font-size: 24px;
+	margin-bottom: 30px;
+	margin-top: 0px;
+}
+
+.help{
+	min-height: 500px;
+}
+
+
+
+
+/*产品中心*/
+.am-slider-default{
+	background-color: inherit;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+}
+
+
+
+.feature .am-slider-default .am-viewport{
+	height: 500px;
+	max-height: 500px;
+}
+.tl{
+	padding:0 100px;
+	margin-top: 80px;
+}
+
+
+
+
 
 
 
@@ -1063,19 +1099,6 @@ color: #8E8E8E;
 .help-box-r .help-lists{
 	padding: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1218,7 +1241,14 @@ header .iconfont{
 
 
 
-/*产品介绍*/
+/*产品中心*/
+
+
+.tl{
+	padding:0;
+	margin-top: 80px;
+}
+
 
 
 
@@ -1440,4 +1470,13 @@ height: 100%;
 }
 .faq-header{
 	margin-bottom: 10px;
+}
+
+.am-nav>li.am-active>a, .am-nav>li.am-active>a:focus, .am-nav>li.am-active>a:hover{
+	background-color:#31b3a4;
+}
+
+ins{
+	display: none!important;
+}
 }
