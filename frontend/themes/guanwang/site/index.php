@@ -407,11 +407,11 @@ background-image: url(storage/images/system1.png);
 <!-- /主体 -->
 <?php
 $this->registerJs(<<<JS
-//    var swiper = new Swiper('.swiper-container', {
-//       pagination: {
-//         el: '.swiper-pagination',
-//       },
-//     });
+   var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
 
 //   var checkLoginId = 0;
 //   $('.login').click(function(){

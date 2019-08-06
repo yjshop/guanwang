@@ -293,14 +293,14 @@ background-image: url(storage/images/system1.png);
       <div class="line "></div>
       <div>
         <ul>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="生鲜行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/shengxian.png')?>"<p>生鲜</p></li>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="餐饮行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/canyin.png')?>"<p>餐饮</p></li>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="婚庆行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/hunqing.png')?>"<p>婚庆</p></li>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="美业行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/meiye.png')?>"<p>美业</p></li>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="酒店行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/jiudian.png')?>"<p>酒店</p></li>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="家居行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/jiaju.jpg')?>"<p>家居</p></li>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="服饰行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/fushi.png')?>"<p>服饰</p></li>
-          <li class="am-u-md-3 am-u-sm-6 "><img alt="母婴行业小程序商城解决方案 " src=".<?php echo Url::to('@web/storage/images/muying.png')?>"<p>母婴</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="生鲜行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/shengxian.png')?>"><p>生鲜</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="餐饮行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/canyin.png')?>"><p>餐饮</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="婚庆行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/hunqing.png')?>"><p>婚庆</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="美业行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/meiye.png')?>"><p>美业</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="酒店行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/jiudian.png')?>"><p>酒店</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="家居行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/jiaju.jpg')?>"><p>家居</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="服饰行业小程序商城解决方案 " src="<?php echo Url::to('@web/storage/images/fushi.png')?>"><p>服饰</p></li>
+          <li class="am-u-md-3 am-u-sm-6 "><img alt="母婴行业小程序商城解决方案 " src=".<?php echo Url::to('@web/storage/images/muying.png')?>"><p>母婴</p></li>
         </ul>
       </div>
     </div> 
@@ -405,6 +405,17 @@ background-image: url(storage/images/system1.png);
 <?php
 $this->registerJs(<<<JS
 
+      // 轮播图
+
+    var swiper1 = new Swiper('.swiper1', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+
+
+
+  
 
   //案例轮播图
        var swiper2 = new Swiper('.swiper2', {
