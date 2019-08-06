@@ -1,12 +1,5 @@
 ﻿/*
 公共样式*/
-
-a{
-	color: black;
-}
-.am-with-topbar-fixed-top{
-	padding-top: 80px;
-}
  a:focus,a:hover{
 	color: #31b3a4 !important;
 	text-decoration: none!important;
@@ -481,16 +474,11 @@ ul.anli-pc li{
 
 
 
-/*产品中心*/
-
+/*功能介绍*/
 .product-wrap .banner{
-	height: 500px;
-	min-height: 500px;
-}
-.product-wrap .banner img{
-	height: 100%;
-	width: 100%;
 
+
+	background-image: url(../images/1-1P60Q02524A5.jpg);
 }
 .pro-adv{
 
@@ -900,8 +888,6 @@ color: #8E8E8E;
 
 /*新闻中心*/
 .news-list{
-
-
 	margin-top: 30px;
 }
 .news-list .article-swiper{
@@ -909,8 +895,8 @@ color: #8E8E8E;
 
 }
 .am-slider-default .am-viewport{
-	height: 200px;
-	max-height: 200px;
+	height: 250px;
+	max-height: 250px;
 }
 .news-list-main .tab{
 	margin-top: 0px;
@@ -993,18 +979,6 @@ color: #8E8E8E;
 
 
 /*关于我们*/
-/*.lay-l {
-	border: none;
-}
-.lay-l ul li{
-	
-	border: 1px solid #E9E9E9;
-	border-top: none;
-	text-align:left;
-}
-.lay-l ul li:first-child{
-	border-top: 1px solid #E9E9E9;
-}*/
 
 .layout .am-slider-default .am-viewport{
 	min-height: 500px;
@@ -1079,67 +1053,13 @@ color: #8E8E8E;
 }
 
 
-
-
-/*产品中心*/
-.am-slider-default{
-	background-color: inherit;
-	box-shadow:none;
-	-webkit-box-shadow:none;
-}
-
-
-
-
-
-
-.feature .am-slider-default .am-viewport ul li img{
-	height: 100%;
-	width: auto;
-	margin: auto;
-}
-
-
-
-
-
-@media screen and (min-width: 970px){
-
-.feature .am-slider-default .am-viewport ul li{
-	height: 600px;
-}
-.feature .am-slider-default .am-viewport{
-	height: 600px;
-	max-height: 600px;
-}
-.tl{
-	padding:0 100px;
-	
-}
-
-.feature .am-slider-default .am-control-thumbs{
-	padding: 0 80px;
-}
-
-
-.feature .am-slider-default .am-control-thumbs li img {
-    height: 120px;
-    width: auto;
-}
-}
-
-
-
 /*手机端*/
 @media only screen and (max-width: 800px){
 
 
-.banner{
-	min-height: 200px !important;
-}
+
 
 /*帮助中心*/
-
 .list-items li{
 	padding: 5px;
 }
@@ -1152,6 +1072,19 @@ color: #8E8E8E;
 .help-box-r .help-lists{
 	padding: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1284,7 +1217,7 @@ header .iconfont{
 	padding: 10px 0;
 }
 .am-with-topbar-fixed-top{
-	padding-top: 58px;
+	padding-top: 30px;
 }
 
 .xcx-goodness{
@@ -1294,49 +1227,17 @@ header .iconfont{
 
 
 
-/*产品中心*/
+/*产品介绍*/
 
-/*.product-wrap{
-	margin-top: 60px;
-}*/
-.tl{
-	padding:0;
-	margin-top: 20px;
-}
-
-.feature>div{
-	padding: 30px 0;
-}
-.feature .word:first-child{
-	padding-top: 30px;
-}
-.feature .am-slider-default .am-viewport{
-	height: 500px;
-	max-height: 500px;
-}
-
-.feature .am-slider-default .am-viewport ul li{
-	height: 500px;
-}
-
-.feature .am-slider-default .am-control-thumbs{
-	padding: 0 60px;
-}
-
-
-.feature .am-slider-default .am-control-thumbs li img {
-    height: 100px;
-    width: auto;
-}
 
 
 .product-wrap .banner{
 	height: 200px;
-	max-height: 200px;
-	min-height:200px;
-
 }
-
+.product-wrap .banner img{
+	height: 100%;
+	width: 100%;
+}
 .pro-adv p{
 	height: 64px;
 }
@@ -1459,9 +1360,8 @@ header .iconfont{
 	max-height: 200px;
 }
 
-.banner img{
-width: 100%;
-height: 200px;
+.banner img{width: 100%;
+height: 100%;
 
 }
 
@@ -1549,100 +1449,4 @@ height: 200px;
 }
 .faq-header{
 	margin-bottom: 10px;
-}
-
-.am-nav>li.am-active>a, .am-nav>li.am-active>a:focus, .am-nav>li.am-active>a:hover{
-	background-color:#31b3a4;
-}
-
-ins{
-	display: none!important;
-}
-
-
-/*授权中心*/
-.search-block{
-	width: 80%;
-}
-
-
-/*新闻中心*/
-
-.detail-r .update .bd ul li a{
-	color: #666;
-}
-.news-list{
-	margin-top: 0;
-	padding-top: 0;
-}
-
-
-.tab {
-   margin-top: 0px;
-    margin-bottom: 30px;
-    white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
-}
-
-
-.info{
-	padding: 6px 0 4px 0;
-}
-.info span{
-	font-size: 12px;
-}
-.list-items li p {
-    font-size: 12px;
-    min-height: 16px;
-    
-}
-.news-list  [class*=am-u-]:first-child{
-	padding: 0;
-
-}
-
-.list-items li{
-	border-bottom:1px dashed #cdcdcd;
-	padding: 1.5rem 0;
-	    box-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
-}
-
-.news_list_left .date{
-
-	font-size: 3rem;
-}
-.news_list_left .year{
-	font-size: 1.2rem;
-	line-height:2rem;
-}
-.news_list_left .editor{
-	font-size: 1.2rem;
-	line-height: 2.5rem;
-}
-
-ul.tag-list{
-	display: flex;
-}
-.tag{
-	    padding: .2em .5em;
-}
-
-
-.lay-l {
-	border: none;
-}
-.lay-l ul li{
-	line-height: 2rem;
-	border: 1px solid #E9E9E9;
-	border-top: none;
-	text-align:left;
-}
-.lay-l ul li:first-child{
-	border-top: 1px solid #E9E9E9;
-}
-.lay-l ul li a{
-	font-size: 1.4rem;
-}
-
 }

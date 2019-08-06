@@ -148,58 +148,26 @@ use yii\helpers\Url;
   <div class="dingdan bg-two-components">
     <div class="am-container">
       <div class="am-g">
-
-   <div class="am-u-md-4 am-show-sm-only">
-          <div class="word ">
-            <h2>订单流程</h2>
-            <p>下单</p>
-            <p>支付</p>
-            <p>点评</p>
-           <!--  <p>售后申请</p>
-            <p>退货</p> -->
-          </div>
-        </div>
+        <div class="am-u-md-8 tl">
 
 
-
-        <div class="am-u-md-6 tl">
-
-
- <!--    	  <div class="swiper-container">
+    	  <div class="swiper-container">
     <div class="swiper-wrapper">
-   
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div>
+    <?php foreach ($detail_img as $num1): ?>
+      <div class="swiper-slide" ><img src="<?=$num1['image']?>"></div>
+    <?php endforeach;?>
     </div>
-   
+    <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
   </div>
-  </div> -->
-
-
-
-<!-- <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;controlNav&quot;:&quot;thumbnails&quot;}'> -->
-  <div data-am-widget="slider" class="am-slider  am-slider-default" data-am-slider='{&quot;controlNav&quot;:false}'>
-  <ul class="am-slides">
-     <?php foreach ($detail_img as $num1): ?>
-    <li data-thumb="<?=$num1['image']?>">
-      <img src="<?=$num1['image']?>">
-    </li>
-    <?php endforeach;?>
-  </ul>
-</div>
 
 
 
          <!--  <img src="images/dingdan00.png"> -->
         </div>
-        <div class="am-u-md-4 am-hide-sm-only">
+        <div class="am-u-md-4">
           <div class="word word-r">
-            <h2>订单流程</h2>
+            <h2>详细的订单管理</h2>
             <p>下单</p>
             <p>支付</p>
             <p>点评</p>
@@ -345,22 +313,22 @@ $this->registerJs(<<<JS
  
 
     //详细的订单管理轮播图
-    //  var swiper = new Swiper('.dingdan .swiper-container', {
-    //   effect: 'coverflow',
-    //   grabCursor: true,
-    //   centeredSlides: true,
-    //   slidesPerView: 'auto',
-    //   coverflowEffect: {
-    //     rotate: 50,
-    //     stretch: 0,
-    //     depth: 100,
-    //     modifier: 1,
-    //     slideShadows : true,
-    //   },
-    //   pagination: {
-    //     el: '.swiper-pagination',
-    //   },
-    // });
+     var swiper = new Swiper('.dingdan .swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
 
      
 

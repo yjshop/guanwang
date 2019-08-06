@@ -7,11 +7,8 @@ use yii\helpers\Url;
 $tou = CarouselItem::find()->where(['status'=>1,'carousel_id'=>2])->orderBy('sort asc')->one();
 $category =  CaseCategory::find()->orderBy('id asc')->all();
 ?>
-
-
-
 <!--  头部banner -->
-<div class="banner am-g">
+<div class="banner am-g" style="min-height: auto">
 <img src="<?=$tou['image'] ?>">
 </div>
 
@@ -23,7 +20,7 @@ $category =  CaseCategory::find()->orderBy('id asc')->all();
 <p>国内知名品牌企业都选择几何线商城的产品和服务</p>
 
 
-<div class="exam-box-btn am-hide-sm-only">
+<div class="exam-box-btn">
 
 <?php foreach ($category as $a): ?>
 <?php 

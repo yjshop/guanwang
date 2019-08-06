@@ -30,4 +30,3 @@ use yii\helpers\Url;
       </div> 
     </div>
 </header>
-<!-- <div style="width: 100%;height: 80px;" class="am-hide-sm-only"></div> -->
