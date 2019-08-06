@@ -55,8 +55,15 @@ JS
 <?= $this->render('_header') ?>
 
 
-<!-- 原先的导航兰位置 -->
-
+<!--删除的面包屑位置-->
+     <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
+    <div class="am-container mgt60">
+    <?= Breadcrumbs::widget([
+        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+    ]) ?>
+     </div>
+    <?php endif; ?>
+<!--面包屑end -->
     <?= \common\widgets\Alert::widget()?>
     <?= $content ?>
 

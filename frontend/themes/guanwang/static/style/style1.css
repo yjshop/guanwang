@@ -483,6 +483,7 @@ ul.anli-pc li{
 
 /*产品中心*/
 
+
 .product-wrap .banner{
 	height: 500px;
 	min-height: 500px;
@@ -490,7 +491,6 @@ ul.anli-pc li{
 .product-wrap .banner img{
 	height: 100%;
 	width: 100%;
-
 }
 .pro-adv{
 
@@ -1296,6 +1296,7 @@ header .iconfont{
 
 /*产品中心*/
 
+
 /*.product-wrap{
 	margin-top: 60px;
 }*/
@@ -1321,8 +1322,22 @@ header .iconfont{
 
 .feature .am-slider-default .am-control-thumbs{
 	padding: 0 60px;
+
 }
 
+.feature .am-slider-default .am-viewport ul li{
+	height: 500px;
+}
+
+.feature .am-slider-default .am-control-thumbs{
+	padding: 0 60px;
+}
+
+
+.feature .am-slider-default .am-control-thumbs li img {
+    height: 100px;
+    width: auto;
+}
 
 .feature .am-slider-default .am-control-thumbs li img {
     height: 100px;
@@ -1566,6 +1581,7 @@ ins{
 }
 
 
+
 /*新闻中心*/
 
 .detail-r .update .bd ul li a{
@@ -1644,5 +1660,6 @@ ul.tag-list{
 .lay-l ul li a{
 	font-size: 1.4rem;
 }
+
 
 }

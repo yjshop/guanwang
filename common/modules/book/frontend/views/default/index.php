@@ -14,7 +14,7 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
 $this->title = 'wiki';
-$this->params['breadcrumbs'][] = 'wiki';
+$this->params['breadcrumbs'][] = '帮助文档';
 ?>
 <div class="am-container help">
 
