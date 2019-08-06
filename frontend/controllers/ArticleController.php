@@ -26,6 +26,50 @@ class ArticleController extends Controller
      */
     public function actionIndex($cate = null, $module = null)
     {
+        // 热门标签
+        $hotTags = TagService::hot();
+        
+        //如果搜索条件存在
+        if(Yii::$app->request->isPost)
+        {
+            $title=Yii::$app->request->post('title');
+            $query = Article::find()->where(['like','title',$title])->published();
+            $category = null;
+            if (!empty($cate)) {
+                $category = Category::findByIdOrSlug($cate);
+                if (empty($category)) {
+                    throw new NotFoundHttpException('分类不存在');
+                }
+                $query = $query->andFilterWhere(['category_id' => $category->id]);
+            }
+            
+            $query->andFilterWhere(['module' => $module]);
+            $dataProvider = new ActiveDataProvider([
+                'query' => $query,
+                'sort' => [
+                    'defaultOrder' => [
+                        'published_at' => SORT_DESC
+                    ],
+                    'attributes' => [
+                        'published_at',
+                        'view'
+                    ]
+                ],
+                'pagination' => [
+                    'pageSize' => isset($params['per-page']) ? $params['per-page'] : 10,
+                ]
+                
+            ]);
+            
+            return $this->render('index', [
+                'dataProvider' => $dataProvider,
+                'category' => $category,
+                'hotTags' => $hotTags
+            ]);
+                    
+        }else {
+        //搜索条件不存在
+        
         $query = Article::find()->published();
         $category = null;
         if (!empty($cate)) {
@@ -35,8 +79,6 @@ class ArticleController extends Controller
             }
             $query = $query->andFilterWhere(['category_id' => $category->id]);
         }
-        
-      
         
         $query->andFilterWhere(['module' => $module]);
         $dataProvider = new ActiveDataProvider([
@@ -52,16 +94,16 @@ class ArticleController extends Controller
             ],
             'pagination' => [
                 'pageSize' => isset($params['per-page']) ? $params['per-page'] : 10,
-               ]
-                
+            ]
+            
         ]);
-        // 热门标签
-        $hotTags = TagService::hot();
+        
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'category' => $category,
             'hotTags' => $hotTags
         ]);
+    }
     }
     
 
@@ -100,8 +142,10 @@ class ArticleController extends Controller
      * @return string
      * @throws NotFoundHttpException
      */
-    public function actionDetail($id)
+    public function actionDetail()
     {
+        $id = Yii::$app->request->get('id');
+        
         $model = Article::find()->published()->andWhere(['id' => $id])->one();
         if ($model === null) {
             throw new NotFoundHttpException('not found');
@@ -110,6 +154,7 @@ class ArticleController extends Controller
         yii::$app->session->set('module',$model->module);
         // sidebar
         $hots = ArticleService::hots($model->category_id);
+        
         // 上下一篇
         $next = Article::find()->andWhere(['>', 'id', $id])->one();
 
