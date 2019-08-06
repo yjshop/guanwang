@@ -12,7 +12,7 @@ background-image: url(storage/images/system1.png);
 
 ?>
  <!-- 主体 -->
-     <div class="banner am-g">
+    <div class="banner am-g">
   
     <div class="swiper-container">
     <div class="swiper-wrapper">
