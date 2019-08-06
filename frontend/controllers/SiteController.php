@@ -71,6 +71,8 @@ class SiteController extends Controller
         ]);
         //cateories
        $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all();
+       //手机端分类
+       $phone = Category::find()->orderBy('id asc')->limit(2)->asArray()->all();
         //case
        $case = Cases::find()->where(['is_top'=>1,'status'=>1])->limit(8)->all();
        //carousel
@@ -81,6 +83,7 @@ class SiteController extends Controller
             'categories' => $categories,
             'hotTags' => $hotTags,
             'case' => $case,
+            'phone'=>$phone,
             'carouselitem'=> $carouselitem,
         ]);
     }

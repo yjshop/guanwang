@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\themes\guanwang;
+namespace frontend\themes\mobile;
 
 use Yii;
 
@@ -8,17 +8,17 @@ class Theme extends \frontend\themes\Theme
 {
     public $info = [
         'author' => 'wsyone|pengpeng',
-        'id' => 'guanwang',
+        'id' => 'mobile',
         'name' => 'jihexian',
         'version' => 'v1.0',
-        'description' => 'jihexian主题',
+        'description' => '官网手机主题',
         'keywords' => '经典'
     ];
 
     public function bootstrap()
     {
         Yii::$container->set('yii\bootstrap\BootstrapAsset', [
-            'sourcePath' => '@frontend/themes/guanwang/static',
+            'sourcePath' => '@frontend/themes/mobile/static',
             'css' => [
                 YII_ENV_DEV ? 'css/bootstrap.css' : 'css/bootstrap.min.css',
             ]

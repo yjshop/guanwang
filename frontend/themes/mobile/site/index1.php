@@ -298,7 +298,7 @@ background-image: url(storage/images/system1.png);
   <ul class="anli-pc">
   <?php foreach ($case as $vv): ?> 
     <li class="am-u-md-3 am-u-sm-4 ">
-      <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"> <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>"></a>
+      <a href="<?=Url::to(['cases/index','id'=>$vv['id']])?>"> <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>"></a>
       <div class="code-img-box ">
         <div>
           <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><img alt="<?=$vv['title']?>" src="<?= $vv['qr_cover'] ?>"></a>
@@ -352,14 +352,12 @@ background-image: url(storage/images/system1.png);
       <div class="am-u-md-4 am-u-sm-12 ">
       <div class="box-top ">
         <h3><?=$value['title']?>
-            <a href="<?=Url::to(['article/index','cate'=>$value['slug']])?>">更多&gt;&gt;</a> 
+            <a href="<?=Url::to('article/index',array('cate'=>$value['slug']))?>">更多&gt;&gt;</a> 
         </h3>
         
       </div>
       <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
-
          <?php if($key<3&&!empty($article)):?>
-         	
         <div class="news-box1">
                <a class="update " href="<?=Url::to(['article/detail','id'=>$article[0]['id']])?>">
                <div class="img-box ">
