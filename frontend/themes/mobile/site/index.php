@@ -307,14 +307,8 @@ background-image: url(storage/images/system1.png);
   </div>
 </div>
 
-
-
-
-
-
-
 <!-- 成功案例 -->
- <div class="anli am-container index-anli-bg">
+ <div class="anli am-container index-anli-bg" style ="background-image: url('/storage/images/anlia.png');">
   <h1 class="big-title ">成功案例</h1>
   <div class="line "></div>
   <div class="anli-phone ">
