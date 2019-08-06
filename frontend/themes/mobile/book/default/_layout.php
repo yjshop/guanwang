@@ -11,7 +11,6 @@
  * @var common\modules\book\models\Book $book
  */
 ?>
-
 <div class="row">
     <div class="col-md-3">
         <?= \common\widgets\SideNavWidget::widget([
