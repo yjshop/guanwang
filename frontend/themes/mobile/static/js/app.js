@@ -5,11 +5,7 @@
 
 $(function(){  
 
-	    var swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
+
 
 
   var checkLoginId = 0;

@@ -9,7 +9,7 @@
   
   <?php echo $this->render('left',['show'=>$show]); ?>
   
-      <div class="am-u-md-10 lay-r" style="padding:10px 50px;">
+      <div class="am-u-md-10 lay-r">
     <div class="am-slider am-slider-default am-slider-carousel slider">
  
  
