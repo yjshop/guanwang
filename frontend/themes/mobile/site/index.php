@@ -406,3 +406,28 @@ background-image: url(storage/images/system1.png);
     </div>    
   </div>
 </div>
+
+
+<?php
+$this->registerJs(<<<JS
+
+
+  //案例轮播图
+       var swiper2 = new Swiper('.swiper2', {
+        roundLengths:true, 
+        initialSlide:1,
+        centeredSlides : true,
+        speed:600,
+      slidesPerView: "auto",
+      autoplay: 3000,
+      loop:true,
+      followFinger:false
+     
+    });
+
+
+
+
+JS
+);
+?>
