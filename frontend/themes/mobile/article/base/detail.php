@@ -49,15 +49,15 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
             <div class="news-page clearfloat">
             
                  <?php if ($prev != null): ?>
-                            <a href="<?= Url::to(['view', 'id' => $prev->id]) ?>"><span class="iconfont icon-zuojiantou"></span><span>上一篇</span></a>
+                            <a href="<?= Url::to(['detail', 'id' => $prev->id]) ?>"><span class="iconfont icon-zuojiantou"></span><span>上一篇</span></a>
                         <?php else: ?>
                             <a href="javascript:;"><span class="iconfont icon-zuojiantou"></span><span>已经是第一篇</span> </a>
                         <?php endif; ?>
                         <a href="<?=Url::to(['/article/index', 'cate' => \common\models\Category::find()->where(['id' => $model->category_id])->select('slug')->scalar()])?>"><span class="iconfont icon-liebiao"></span><span>返回列表</span></a>
                         <?php if ($next != null): ?>
-                            <a href="<?= Url::to(['view', 'id' => $next->id]) ?>"><span>下一篇</span><span class="iconfont icon-zuojiantou1"></span></a>
+                            <a href="<?= Url::to(['detail', 'id' => $next->id]) ?>"><span>下一篇</span><span class="iconfont icon-zuojiantou1"></span></a>
                         <?php else: ?>
-                          <a href="javascript:;"><span>已经是最后一篇 </span><span class="iconfont icon-zuojiantou1"></span></a>
+                          <a href="javascript:;"><span>没有了 </span><span class="iconfont icon-zuojiantou1"></span></a>
                         <?php endif; ?>
             </div>
            <!--  分享 -->

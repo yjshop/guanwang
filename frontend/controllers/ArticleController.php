@@ -143,7 +143,7 @@ class ArticleController extends Controller
      * @throws NotFoundHttpException
      */
     public function actionDetail()
-    {
+    {  
         $id = Yii::$app->request->get('id');
         
         $model = Article::find()->published()->andWhere(['id' => $id])->one();
