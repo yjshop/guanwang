@@ -113,7 +113,7 @@ $this->registerJs(<<<JS
     //已经进行第一次请求
     var flag2=false;
 
-   $.ajax('http://www.guangwang.com/api/v1/cases/index?per-page=2&page=1', {
+   $.ajax('/api/v1/cases/index?per-page=2&page=1', {
     dataType: 'json'
   }).done(function (data) {
 
