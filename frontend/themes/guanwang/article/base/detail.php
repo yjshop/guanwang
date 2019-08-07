@@ -88,7 +88,7 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
                     <div class="bd">
                         <ul>
                       <?php foreach ($hots as $item):?>
-                        <li><?= Html::a($item->title, ['/article/view', 'id' => $item->id])?></li>
+                        <li><?= Html::a($item->title, ['/article/detail', 'id' => $item->id])?></li>
                     <?php endforeach;?>
                            
                         </ul>

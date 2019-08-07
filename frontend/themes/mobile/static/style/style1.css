@@ -199,9 +199,10 @@ a{
 
 .banner .banner-footer h3{
 	font-size: 20px;
+	color:w;
 }
 
-.banner .banner-footer a:hover p,h3{
+.banner .banner-footer a:hover p,.banner .banner-footer a:hover h3{
 	color: #31b3a4;
 }
 

@@ -69,7 +69,7 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
             <div class="detail-r">
                 <div class="search">
                     <div class="am-input-group" style="width: 100%;">
-                        <form action="" method="get" style="display: table;width:100%;">
+                        <form action="<?=Url::to(['article/index'])?>" method="get" style="display: table;width:100%;">
                             <input type="text" name="title" class="am-form-field" placeholder="请用关键词进行检索">
                             <span class="am-input-group-btn">
                             <button class="am-btn am-btn-default" type="submit"><span class="am-icon-search"></span>
@@ -87,7 +87,7 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
                     <div class="bd">
                         <ul>
                       <?php foreach ($hots as $item):?>
-                        <li><?= Html::a($item->title, ['/article/view', 'id' => $item->id])?></li>
+                        <li><?= Html::a($item->title, ['/article/detail', 'id' => $item->id])?></li>
                     <?php endforeach;?>
                            
                         </ul>
