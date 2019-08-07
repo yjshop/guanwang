@@ -853,7 +853,7 @@ ul.anli-pc li {
     height: 80%;
 }
 .list-items li p {
-    font-size: 18px;
+    font-size: 12px;
     padding-left: 5px;
 }
 /*
@@ -879,6 +879,25 @@ ul.anli-pc li {
     width: auto;
     margin: auto;
 }
+
+
+
+
+a.update:hover p,a.update:hover h4{
+    color: #31b3a4;
+    text-decoration: none!important;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 970px) {
     .feature .am-slider-default .am-viewport ul li {
         height: 600px;
@@ -929,7 +948,7 @@ ul.anli-pc li {
         padding: 0;
     }
     .banner .swiper-container {
-        height: 240px;
+        height: 180px;
     }
     .solution-methods {
         padding: 10px 0 20px;
@@ -1026,7 +1045,7 @@ ul.anli-pc li {
         padding-top: 58px;
     }
     .xcx-goodness {
-        padding: 20px 0 0 0;
+        padding: 0;
     }
     /*产品中心*/
     /*.product-wrap{
@@ -1325,5 +1344,9 @@ ul.anli-pc li {
         margin: 10px 0;
         width: 100%;
         text-align: center;
+    }
+
+    .detail-tit h1{
+    	line-height: 30px;
     }
 }
