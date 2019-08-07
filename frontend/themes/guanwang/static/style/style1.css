@@ -164,8 +164,9 @@ ul li a.sideBox-2 div img {
 }
 .banner .banner-footer h3 {
     font-size: 20px;
+    color:#fff;
 }
-.banner .banner-footer a:hover p, h3 {
+.banner .banner-footer a:hover p, .banner .banner-footer a:hover h3 {
     color: #31b3a4;
 }
 .banner {

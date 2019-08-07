@@ -18,7 +18,7 @@
              <form action="" method="POST" class="ng-pristine ng-valid">
                         <div class="search-block m_20">
                             <div class="input-group input-group">
-                                <input name="domain" type="text" class="form-control" wt-autofocus="" value="" placeholder="请输入您要查询的域名或者小程序的ID" style="font-size: 12px;">
+                                <input name="domain" type="text" class="form-control" wt-autofocus="" value="" placeholder="请输入要查询的域名或小程序的ID" style="font-size: 12px;">
                                 <input name="_csrf" type="hidden" value="<?=yii::$app->request->csrfToken?>">
                                 <span class="input-group-btn">
                                     <button class="btn btn-success" type="submit"> &nbsp;点击查询&nbsp; </button>

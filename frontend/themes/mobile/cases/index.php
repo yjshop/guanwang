@@ -129,7 +129,6 @@ $this->registerJs(<<<JS
     var flag=1;
     //已经进行第一次请求
     var flag2=false;
-   
 
    $.ajax('/api/v1/cases/index?per-page=2&page=1', {
     dataType: 'json',
@@ -138,6 +137,7 @@ $this->registerJs(<<<JS
       $("#loading").html('加载中...');
       
     }
+
   }).done(function (data) {
 
      //第一次请求已完成
