@@ -30,10 +30,9 @@ $this->registerMetaTag([
     <link type="image/x-icon" href="<?= Yii::getAlias('@web') ?>favicon.ico" rel="shortcut icon">
     <script>var SITE_URL = '<?= Yii::$app->request->hostInfo . Yii::$app->request->baseUrl ?>';</script>
     <?php $this->head() ?>
- 
+<!--    商桥      -->
 <?php    
 $this->registerJs(<<<JS
-
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");

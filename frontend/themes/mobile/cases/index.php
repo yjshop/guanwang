@@ -62,7 +62,7 @@ if ($id == $a['id']):
   <div id="loading"></div>
 </div>
    <!-- 分页开始 -->
-            <div class="page am-hide-sm-only" >
+    <div class="page am-hide-sm-only" >
 
       <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
       <?=\yii\widgets\LinkPager::widget([
@@ -79,7 +79,7 @@ if ($id == $a['id']):
     'options'          => ['class' => 'pager'],
 ]);?>
       <?php endif;?>
-            </div>
+     </div>
 
 
   </div>
