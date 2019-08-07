@@ -72,11 +72,15 @@ if(isset($category)) {
             <div class="detail-r">
                 <div class="search">
                     <div class="am-input-group" style="width: 100%;">
-                        <form action="" method="get" style="display: table;width:100%;">
+                        <form action="" method="POST" style="display: table;width:100%;">
                             <input type="text" name="title" class="am-form-field" placeholder="请用关键词进行检索">
+                            <input name="_csrf" type="hidden" value="<?=yii::$app->request->csrfToken?>">
                             <span class="am-input-group-btn">
-          <button class="am-btn am-btn-default" type="submit"><span class="am-icon-search"></span>
-                            </button></span></form>
+                            <button class="am-btn am-btn-default" type="submit">
+                            <span class="am-icon-search"></span>
+                            </button>
+                            </span>
+                        </form>
                     </div>
                     <!-- <p class="des">搜索热词：<a href="">小程序</a><a href="">支付</a><a href="">授权</a><a href="">提现</a></p> -->
                 </div>

@@ -9,6 +9,7 @@
 /* @var $pages yii\data\Pagination */
 use yii\helpers\Html;
 use yii\helpers\Url;
+use GuzzleHttp\Psr7\Uri;
 
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => $model->category, 'url' => ['/article/index', 'cate' => \common\models\Category::find()->where(['id' => $model->category_id])->select('slug')->scalar()]];
@@ -49,15 +50,15 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
             <div class="news-page clearfloat">
             
                  <?php if ($prev != null): ?>
-                            <a href="<?= Url::to(['view', 'id' => $prev->id]) ?>"><span class="iconfont icon-zuojiantou"></span><span>上一篇</span></a>
+                            <a href="<?= Url::to(['detail', 'id' => $prev->id]) ?>"><span class="iconfont icon-zuojiantou"></span><span>上一篇</span></a>
                         <?php else: ?>
                             <a href="javascript:;"><span class="iconfont icon-zuojiantou"></span><span>已经是第一篇</span> </a>
                         <?php endif; ?>
                         <a href="<?=Url::to(['/article/index', 'cate' => \common\models\Category::find()->where(['id' => $model->category_id])->select('slug')->scalar()])?>"><span class="iconfont icon-liebiao"></span><span>返回列表</span></a>
                         <?php if ($next != null): ?>
-                            <a href="<?= Url::to(['view', 'id' => $next->id]) ?>"><span>下一篇</span><span class="iconfont icon-zuojiantou1"></span></a>
+                            <a href="<?= Url::to(['detail', 'id' => $next->id]) ?>"><span>下一篇</span><span class="iconfont icon-zuojiantou1"></span></a>
                         <?php else: ?>
-                          <a href="javascript:;"><span>已经是最后一篇 </span><span class="iconfont icon-zuojiantou1"></span></a>
+                          <a href="javascript:;"><span>没有了 </span><span class="iconfont icon-zuojiantou1"></span></a>
                         <?php endif; ?>
             </div>
            <!--  分享 -->
@@ -69,7 +70,7 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
             <div class="detail-r">
                 <div class="search">
                     <div class="am-input-group" style="width: 100%;">
-                        <form action="" method="get" style="display: table;width:100%;">
+                        <form action="<?=Url::to(['article/index'])?>" method="get" style="display: table;width:100%;">
                             <input type="text" name="title" class="am-form-field" placeholder="请用关键词进行检索">
                             <span class="am-input-group-btn">
                             <button class="am-btn am-btn-default" type="submit"><span class="am-icon-search"></span>
