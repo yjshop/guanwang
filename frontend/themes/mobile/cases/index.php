@@ -59,9 +59,10 @@ if ($id == $a['id']):
   <ul class="anli-m am-show-sm-only">
 
   </ul>
+  <div id="loading"></div>
 </div>
    <!-- 分页开始 -->
-            <div class="page">
+            <div class="page am-hide-sm-only" >
 
       <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
       <?=\yii\widgets\LinkPager::widget([
@@ -130,11 +131,18 @@ $this->registerJs(<<<JS
     var flag2=false;
 
    $.ajax('/api/v1/cases/index?per-page=2&page=1', {
-    dataType: 'json'
+    dataType: 'json',
+    beforeSend:function(){
+      
+      $("#loading").html('加载中...');
+      
+    }
+
   }).done(function (data) {
 
      //第一次请求已完成
       flag2=true;
+      $("#loading").empty();
 
 
       next=data._links.next;
@@ -166,9 +174,15 @@ $this->registerJs(<<<JS
       if(flag2&&message.currentPage<message.pageCount){
         imgData=[];
       $.ajax(next.href, {
-    dataType: 'json'
+    dataType: 'json',
+     beforeSend:function(){
+      
+      $("#loading").html('加载中...');
+      
+    }
   }).done(function (data) {
 
+      $("#loading").empty();
       next=data._links.next;
       message=data._meta;
 
@@ -183,6 +197,8 @@ $this->registerJs(<<<JS
   }).always(function () {
 
   });
+}else{
+   $("#loading").html('没有更多案例了 ^_^');
 }
 
 

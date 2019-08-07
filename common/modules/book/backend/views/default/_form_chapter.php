@@ -15,7 +15,7 @@ use yii\helpers\Html;
 
 <?= $form->field($model, 'chapter_name') ?>
 
-<? // $form->field($model, 'chapter_body')->widget(\common\widgets\editor\editormd\Editormd::className(), ['clientOptions' => ['watch' => true, 'height' => 1000]]) ?>
+ <!--  $form->field($model, 'chapter_body')->widget(\common\widgets\editor\editormd\Editormd::className(), ['clientOptions' => ['watch' => true, 'height' => 1000]])  -->
 
 <?= $form->field($model, 'chapter_body')->widget(\common\widgets\EditorWidget::className(), $model->isNewRecord ? ['type' => request('editor') ? : config('page_editor_type')] : ['isMarkdown' => 0]) ?>
 
