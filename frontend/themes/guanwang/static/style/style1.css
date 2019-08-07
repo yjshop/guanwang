@@ -890,6 +890,16 @@ a.update:hover p,a.update:hover h4{
 
 
 
+.tag{
+    border-color: #31b3a4;
+    background-color: #31b3a4;
+}
+
+a.tag:hover{
+	color: white !important;
+	background-color: #007979 !important;
+	 border-color: #007979 !important;
+}
 
 
 
@@ -1202,9 +1212,20 @@ a.update:hover p,a.update:hover h4{
     .example-box .big-title {
         font-size: 18px;
     }
-    .example-box p {
+     .example-box p {
         font-size: 12px;
+        padding: 10px 0 10px 0;
     }
+
+    .example-wrap .anli{
+        padding: 0;
+    }
+    
+
+
+
+
+    
     .anli-m {
         width: 100%;
     }
@@ -1349,4 +1370,9 @@ a.update:hover p,a.update:hover h4{
     .detail-tit h1{
     	line-height: 30px;
     }
+
+     .am-input-group-btn>.am-btn{
+    	height: 38px;
+    }
+
 }

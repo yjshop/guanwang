@@ -1187,7 +1187,14 @@ ul.anli-pc li {
     }
     .example-box p {
         font-size: 12px;
+        padding: 10px 0 10px 0;
     }
+
+    .example-wrap .anli{
+        padding: 0;
+    }
+
+
     .anli-m {
         width: 100%;
     }
@@ -1332,5 +1339,10 @@ ul.anli-pc li {
 
     .detail-tit h1{
     	line-height: 30px;
+    }
+
+
+    .am-input-group-btn>.am-btn{
+    	height: 38px;
     }
 }
