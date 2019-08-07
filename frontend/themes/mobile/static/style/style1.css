@@ -791,10 +791,10 @@ ul.anli-pc li {
 }
 /*关于我们*/
 
-/*.lay-l {
-    border: none;
+.lay-l {
+    border-bottom: none;
 }
-.lay-l ul li{
+/*.lay-l ul li{
     
     border: 1px solid #E9E9E9;
     border-top: none;
