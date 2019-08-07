@@ -4,15 +4,15 @@ use common\models\CarouselItem;
 use common\models\CaseCategory;
 use yii\helpers\Url;
 
-$tou = CarouselItem::find()->where(['status'=>1,'carousel_id'=>2])->orderBy('sort asc')->one();
-$category =  CaseCategory::find()->orderBy('id asc')->all();
+$tou      = CarouselItem::find()->where(['status' => 1, 'carousel_id' => 2])->orderBy('sort asc')->one();
+$category = CaseCategory::find()->orderBy('id asc')->all();
 ?>
 
 
 
 <!--  头部banner -->
 <div class="banner am-g">
-<img src="<?=$tou['image'] ?>">
+<img src="<?=$tou['image']?>">
 </div>
 
 
@@ -26,19 +26,19 @@ $category =  CaseCategory::find()->orderBy('id asc')->all();
 <div class="exam-box-btn am-hide-sm-only">
 
 <?php foreach ($category as $a): ?>
-<?php 
+<?php
 $show = "";
 if ($id == $a['id']):
-{
-    $show = 'btn-active';
-}  
-?>
-<?php endif; ?>
+    {
+        $show = 'btn-active';
+    }
+    ?>
+  <?php endif;?>
 
-<button type="button" class="am-btn  am-btn-primary am-btn-lg <?php echo $show ?>"><a href="<?= Url::to(['cases/index','category_id'=>$a['id']]) ?>"><?=$a['title']?></a></button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg <?php echo $show ?>"><a href="<?=Url::to(['cases/index', 'category_id' => $a['id']])?>"><?=$a['title']?></a></button>
 
 <!-- btn-active -->
-<?php endforeach; ?>
+<?php endforeach;?>
 
 </div>
 
@@ -46,42 +46,61 @@ if ($id == $a['id']):
 
 <ul class="anli-pc ">
 
-<?= \yii\widgets\ListView::widget([
+<?=\yii\widgets\ListView::widget([
     'dataProvider' => $dataProvider,
-    'itemView' => '_item',
-    'layout' => "{items}",
-    
-]) ?>
-    
+    'itemView'     => '_item',
+    'layout'       => "{items}",
+
+])?>
+
+  </ul>
+
+
+  <ul class="anli-m am-show-sm-only">
+
   </ul>
 </div>
    <!-- 分页开始 -->
             <div class="page">
-            
+
       <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
-      <?= \yii\widgets\LinkPager::widget([
-       'pagination' => $dataProvider->pagination
-       ]); ?>
-      <?php else:?>
-      <?= \yii\widgets\LinkPager::widget([
-        'pagination' => $dataProvider->pagination,
-        'nextPageLabel' => '下一页',
-        'prevPageLabel' => '上一页',
-        'maxButtonCount' => 0,
-        'prevPageCssClass' => 'previous',
-        'nextPageCssClass' => 'next',
-        'options' => ['class' => 'pager'],
-      ]); ?>
+      <?=\yii\widgets\LinkPager::widget([
+    'pagination' => $dataProvider->pagination,
+]);?>
+      <?php else: ?>
+      <?=\yii\widgets\LinkPager::widget([
+    'pagination'       => $dataProvider->pagination,
+    'nextPageLabel'    => '下一页',
+    'prevPageLabel'    => '上一页',
+    'maxButtonCount'   => 0,
+    'prevPageCssClass' => 'previous',
+    'nextPageCssClass' => 'next',
+    'options'          => ['class' => 'pager'],
+]);?>
       <?php endif;?>
             </div>
 
 
- 	</div>
+  </div>
  </div>
 
- <?php
+
+
+
+
+
+
+
+<?php
 $this->registerJs(<<<JS
- 
+
+
+   $('.anli-m').masonry({
+
+      itemSelector:'.anli-box',
+
+    });
+
   //案例二维码显示
       $(".anli li").mouseover(function(){
         $(this).children(".code-img-box").show()
@@ -96,6 +115,124 @@ $this->registerJs(<<<JS
     $('.am-thumbnail').mouseout(function(){
       $(this).children('.shadow').hide();
     })
+
+  if($(window).width()<=600){
+    // 首次加载
+    var JSONstr=null;
+    var imgData=[];
+    //下一页
+    var next;
+    //其他信息
+    var message;
+    //滑动锁定
+    var flag=1;
+    //已经进行第一次请求
+    var flag2=false;
+
+   $.ajax('http://www.guangwang.com/api/v1/cases/index?per-page=2&page=1', {
+    dataType: 'json'
+  }).done(function (data) {
+
+     //第一次请求已完成
+      flag2=true;
+
+
+      next=data._links.next;
+      message=data._meta;
+
+      $.each(data.items,function(index,value){
+
+        imgData.push(value.cover);
+      })
+       imgLoad(imgData);
+
+  }).fail(function (xhr, status) {
+
+  }).always(function () {
+
+  });
+
+
+  //滑动加载
+  $(window).scroll(function(){
+
+
+            if(((flag==1)&&$(document).scrollTop()+100)>=$(document).height()-$(window).height()-$('footer').height()){
+
+               flag--;
+
+
+              // 是否还有新的图片没加载进来
+      if(flag2&&message.currentPage<message.pageCount){
+        imgData=[];
+      $.ajax(next.href, {
+    dataType: 'json'
+  }).done(function (data) {
+
+      next=data._links.next;
+      message=data._meta;
+
+      $.each(data.items,function(index,value){
+
+        imgData.push(value.cover);
+      })
+       imgLoad(imgData);
+
+  }).fail(function (xhr, status) {
+
+  }).always(function () {
+
+  });
+}
+
+
+
+            }
+
+         });
+
+      //将图片输出到页面，data为存储图片路径的数组
+function imgLoad(data){
+
+            //滑动时只加载一次
+            flag=0;
+
+            for(var i=0;i<data.length;i++){
+
+              itemss=$('<li class="anli-box"><img src="'+data[i]+'"></li>');
+
+              $('.anli-m').append(itemss).masonry( 'appended',itemss);
+
+            }
+          $('.anli-m').imagesLoaded().progress(function(){
+
+          $('.anli-m').masonry('layout');
+         })
+          flag=1;
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 JS
 );
