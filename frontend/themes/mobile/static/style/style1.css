@@ -905,6 +905,8 @@ ul.anli-pc li {
         height: 180px;
     }
     /*帮助中心*/
+
+
     .list-items li {
         padding: 5px;
     }
@@ -914,6 +916,14 @@ ul.anli-pc li {
     .help-box-r .help-lists {
         padding: 5px;
     }
+
+
+
+
+
+
+
+
     .anli-phone p {
         margin-top: 0;
     }
@@ -1263,6 +1273,9 @@ ul.anli-pc li {
     .search-block {
         width: 80%;
     }
+
+
+  
     /*新闻中心*/
     .detail-r .update .bd ul li a {
         color: #666;
@@ -1315,6 +1328,7 @@ ul.anli-pc li {
     }
     .lay-l {
         border: none;
+        margin-bottom: 0px;
     }
     .lay-l ul li {
         line-height: 2rem;
@@ -1339,5 +1353,22 @@ ul.anli-pc li {
     }
     .am-input-group-btn>.am-btn {
         height: 38px;
+    }
+
+
+
+
+
+      .help-box-r .help-lists li{
+
+        padding: 1rem .5rem;
+        box-shadow: none;
+        border-bottom: none;
+    }
+
+
+    .help [class*=am-u-]{
+         padding-left: 0 !important;
+        padding-right: 0  !important;
     }
 }

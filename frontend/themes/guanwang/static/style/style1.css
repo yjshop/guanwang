@@ -1351,4 +1351,9 @@ a.tag:hover {
     .am-input-group-btn>.am-btn {
         height: 38px;
     }
+    .help-box-r .help-lists li {
+        padding: 1rem .5rem;
+        box-shadow: none;
+        border-bottom: none;
+    }
 }
