@@ -59,7 +59,7 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {
+    {  
         $dataProvider = new ActiveDataProvider([
             'query' => Article::find()->published(),
             'sort' => [
@@ -69,22 +69,27 @@ class SiteController extends Controller
                 ]
             ]
         ]);
-        //cateories
-       $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all();
-       //手机端分类
-       $phone = Category::find()->orderBy('id asc')->limit(2)->asArray()->all();
+        if (!(new \Detection\MobileDetect())->isMobile())
+        {
+           $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->limit(3)->all();
+           $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all(); 
+        }else {
+            //手机端分类
+            $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>9])->orderBy('sort asc')->limit(3)->all();
+            $categories = Category::find()->orderBy('id asc')->limit(2)->asArray()->all();
+        }
+  
+       
         //case
        $case = Cases::find()->where(['is_top'=>1,'status'=>1])->limit(8)->all();
        //carousel
-       $carouselitem = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->limit(3)->all();
         $hotTags = TagService::hot();
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'categories' => $categories,
             'hotTags' => $hotTags,
             'case' => $case,
-            'phone'=>$phone,
-            'carouselitem'=> $carouselitem,
+            'image'=> $image,
         ]);
     }
     

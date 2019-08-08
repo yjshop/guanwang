@@ -5,12 +5,14 @@ use common\models\Cases;
 use kartik\helpers\Html;
 /* @var $this yii\web\View */
 ?> 
-
- <!--  头部banner -->
- <div class="banner am-g">
+<!--  头部banner -->
+<?php if(empty($tou)):?>
+<!-- 不显示 -->
+<?php else: ?>
+<div class="banner am-g">
 <img src="<?=$tou['image'] ?>">   
- </div>
-
+</div>
+<?php endif; ?>
 
 <!-- 案例介绍 -->
 <div class="detail-box">

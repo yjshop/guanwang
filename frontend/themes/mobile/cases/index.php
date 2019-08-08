@@ -1,19 +1,17 @@
 <?php
-
-use common\models\CarouselItem;
-use common\models\CaseCategory;
 use yii\helpers\Url;
-
-$tou      = CarouselItem::find()->where(['status' => 1, 'carousel_id' => 2])->orderBy('sort asc')->one();
-$category = CaseCategory::find()->orderBy('id asc')->all();
 ?>
 
 
 
 <!--  头部banner -->
+<?php if(empty($tou)):?>
+<!-- 不显示 -->
+<?php else: ?>
 <div class="banner am-g">
-<img src="<?=$tou['image']?>">
+<img src="<?=$tou['image'] ?>">   
 </div>
+<?php endif; ?>
 
 
 <div class="example-box example-wrap">

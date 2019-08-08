@@ -1,12 +1,6 @@
 <?php
-
-use common\models\CarouselItem;
-use common\models\CaseCategory;
 use yii\helpers\Url;
 use function Qiniu\setWithoutEmpty;
-
-$tou      = CarouselItem::find()->where(['status' => 1, 'carousel_id' => 2])->orderBy('sort asc')->one();
-$category = CaseCategory::find()->orderBy('id asc')->all();
 ?>
 
 

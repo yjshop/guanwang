@@ -16,9 +16,9 @@ background-image: url(storage/images/system1.png);
     <div class="banner am-g">
     <div class="swiper-container swiper1">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="<?= $carouselitem[0]['image'] ?>"></div>
-      <div class="swiper-slide"><img src="<?= $carouselitem[1]['image'] ?>"></div>
-      <div class="swiper-slide"><img src="<?= $carouselitem[2]['image'] ?>"></div>
+    <?php foreach ($image as $img): ?>
+      <div class="swiper-slide"><img src="<?= $img['image'] ?>"></div>
+    <?php endforeach; ?>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -308,7 +308,7 @@ background-image: url(storage/images/system1.png);
 </div>
 
 <!-- 成功案例 -->
- <div class="anli am-container index-anli-bg" style ="background-image: url('<?php echo Url::to('@web/storage/images/anlia.png') ?>');">
+ <div class="anli am-container index-anli-bg" style ="background-image: url('<?php echo Url::to('@web/storage/images/anlia01.png') ?>');">
   <h1 class="big-title ">成功案例</h1>
   <div class="line "></div>
   <div class="anli-phone ">
@@ -359,7 +359,7 @@ background-image: url(storage/images/system1.png);
   <h1 class="big-title ">资讯中心</h1>
   <div class="line "></div>
   <div class="am-container ">
-  <?php foreach ($phone as $key => $value): ?>
+  <?php foreach ($categories as $key => $value): ?>
     <div class="am-u-md-4 am-u-sm-12 ">
       <div class="box-top ">
         <h3><?=$value['title']?></h3>
