@@ -19,15 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php echo GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [
-
-        'id',
         'key',
         'title',
-        [
-            'class' => 'backend\widgets\grid\SwitcherColumn',
-            'attribute' => 'status',
-            'reload' => 0
-        ],
         [
             'class' => 'yii\grid\ActionColumn',
             'template'=>'{update} {delete}'
