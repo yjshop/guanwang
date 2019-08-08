@@ -718,9 +718,9 @@ ul.anli-pc li {
 .news-list .article-swiper {
     height: 250px;
 }
-.am-slider-default .am-viewport {
-    height: 200px;
-    max-height: 200px;
+.am-slider-b2 .am-viewport {
+    height: 300px;
+    max-height: 300px;
 }
 .news-list-main .tab {
     margin-top: 0px;
@@ -1393,4 +1393,10 @@ ul.anli-pc li {
     text-align: center;
 
      }
+
+
+     .am-slider-b2 .am-viewport {
+  height: 180px;
+    max-height: 180px;
+}
 }

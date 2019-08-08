@@ -708,12 +708,12 @@ ul.anli-pc li {
 /*新闻中心*/
 
 .news-list {
-    margin-top: 30px;
+    margin-top: 0px;
 }
 .news-list .article-swiper {
     height: 250px;
 }
-.am-slider-default .am-viewport {
+.am-slider-b2 .am-viewport {
     height: 300px;
     max-height: 300px;
 }
@@ -1374,4 +1374,8 @@ a.tag:hover {
     text-align: center;
 
      }
+
+       .am-slider-b2 .am-viewport {
+    height: 180px;
+    max-height: 180px;
 }
