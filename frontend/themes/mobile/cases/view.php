@@ -2,14 +2,9 @@
 use yii\helpers\Url;
 use common\models\Article;
 use common\models\Cases;
+use kartik\helpers\Html;
 /* @var $this yii\web\View */
-?>
- 
-<?php echo "
- <link href='../frontend/themes/mobile/static/style/style1.css' rel='stylesheet' type='text/css' />
-";?>
-
-
+?> 
 
  <!--  头部banner -->
  <div class="banner am-g">

@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\Url;
+
 ?>
     <div class="slide page-heading">
         <div class="container">
@@ -29,7 +31,7 @@
                                 <b>友情提示：</b>
                                 <p>1、为了您的合法权益，请购买正版程序</p>
                                 <p>2、购买正版授权，享受官方贴心服务，技术问题再无后顾之忧！</p>
-                                <p>3、盗版程序有风险，使用需谨慎！<a href="http://www.jihexian.com/article/detail/id/79.html" target="_blank">详情查看&gt;</a></p>
+                                <p>3、盗版程序有风险，使用需谨慎！<a href="<?= Url::to(['article/detail','id'=>79]) ?>" target="_blank">详情查看&gt;</a></p>
                                 <?php else:?>
                                  <p><?=$label?></p>
                                 <?php endif;?>
