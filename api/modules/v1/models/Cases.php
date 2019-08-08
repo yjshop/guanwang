@@ -18,6 +18,7 @@ class Cases extends   \common\models\Cases
                 'qr_cover' => function ($model) {
                 return ArrayHelper::getValue($model, 'qr_cover.url', '');
                 }
+            
                 ]);
     }
     

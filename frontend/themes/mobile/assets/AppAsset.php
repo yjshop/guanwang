@@ -10,7 +10,6 @@ class AppAsset extends AssetBundle
     public $css        = [
         'style/amazeui.min.css',
         'style/iconfont.css',
-
         'style/style.min.css',
         'style/swiper.min.css',
         'style/phone.min.css',
