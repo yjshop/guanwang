@@ -46,9 +46,9 @@ class CasesController extends Controller{
            
            if($id != 1)
            {
-           $query = Cases::find()->where(['status'=>1,'category_id'=>$id]);
+           $query = Cases::find()->where(['status'=>1,'category_id'=>$id])->orderBy('id asc')->limit(3);
            }else {
-           $query = Cases::find()->where(['status'=>1]);
+           $query = Cases::find()->where(['status'=>1])->orderBy('id asc')->limit(3);
            }
            $dataProvider = new ActiveDataProvider([
                'query' => $query,

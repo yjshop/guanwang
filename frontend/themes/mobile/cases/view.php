@@ -4,9 +4,7 @@ use common\models\Article;
 use common\models\Cases;
 use kartik\helpers\Html;
 /* @var $this yii\web\View */
-?>
-
-
+?> 
 
  <!--  头部banner -->
  <div class="banner am-g">
@@ -41,15 +39,15 @@ use kartik\helpers\Html;
 		<ul class="am-slides">
 		
 		<?php foreach ($top2 as $vo):?>
-			<li><!-- <a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> -->
+			<li> <a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> 
      		 <img src="<?=$vo['cover']?>" alt=<?=$vo['title']?>/>
 
-     		   <!--  <div class="am-slider-desc"><?=$vo['title']?></div> -->
+     		    <div class="am-slider-desc"><?=$vo['title']?></div>
 
 
      			 
     			
-    			<!-- </a> -->
+    			</a>
 			</li>
        <?php endforeach;?>
 
