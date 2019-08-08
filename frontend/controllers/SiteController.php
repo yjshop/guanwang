@@ -94,8 +94,12 @@ class SiteController extends Controller
     }
     
     public function actionProduct(){
-        
-       $head_img = CarouselItem::find()->where(['carousel_id'=>4,'status'=>1])->orderBy('sort asc')->one();
+        if (!(new \Detection\MobileDetect())->isMobile())
+        {
+            $head_img = CarouselItem::find()->where(['carousel_id'=>4,'status'=>1])->orderBy('sort asc')->one();
+        }else{
+            $head_img = CarouselItem::find()->where(['carousel_id'=>12,'status'=>1])->orderBy('sort asc')->one();
+        }
        $market_img = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
        $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->limit(4)->orderBy('sort asc')->all();
        $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();
