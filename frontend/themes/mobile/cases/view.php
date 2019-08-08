@@ -4,6 +4,13 @@ use common\models\Article;
 use common\models\Cases;
 /* @var $this yii\web\View */
 ?>
+ 
+<?php echo "
+ <link href='../frontend/themes/mobile/static/style/style1.css' rel='stylesheet' type='text/css' />
+";?>
+
+
+
  <!--  头部banner -->
  <div class="banner am-g">
 <img src="<?=$tou['image'] ?>">   
@@ -37,15 +44,15 @@ use common\models\Cases;
 		<ul class="am-slides">
 		
 		<?php foreach ($top2 as $vo):?>
-			<li><!-- <a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> -->
+			<li> <a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> 
      		 <img src="<?=$vo['cover']?>" alt=<?=$vo['title']?>/>
 
-     		   <!--  <div class="am-slider-desc"><?=$vo['title']?></div> -->
+     		    <div class="am-slider-desc"><?=$vo['title']?></div>
 
 
      			 
     			
-    			<!-- </a> -->
+    			</a>
 			</li>
        <?php endforeach;?>
 

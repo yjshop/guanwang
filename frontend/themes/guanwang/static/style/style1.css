@@ -632,10 +632,7 @@ ul.anli-pc li {
 .more-cases ul {
     margin-top: 2rem;
 }
-/*.more-cases li {
-    position: relative;
-    overflow: hidden;
-}*/
+
 .more-cases .img-cover {
     overflow: hidden;
 }
@@ -910,6 +907,13 @@ a.tag:hover {
         height: 120px;
         width: auto;
     }
+
+    .more-cases li {
+    position: relative;
+    overflow: hidden;
+        }
+
+
 }
 /*手机端*/
 
@@ -1357,4 +1361,17 @@ a.tag:hover {
         box-shadow: none;
         border-bottom: none;
     }
+
+
+     .case-list .am-slider-desc{
+                    font-size: 16px;
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: -25px;
+    line-height: 30px;
+    text-align: center;
+
+     }
 }
