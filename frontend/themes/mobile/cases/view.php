@@ -2,9 +2,12 @@
 use yii\helpers\Url;
 use common\models\Article;
 use common\models\Cases;
+use kartik\helpers\Html;
 /* @var $this yii\web\View */
 ?>
-<?php $this->registerCssFile("@web/frontend/themes/mobile/static/style/style1.css");?>
+
+
+
  <!--  头部banner -->
  <div class="banner am-g">
 <img src="<?=$tou['image'] ?>">   
