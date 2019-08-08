@@ -1,3 +1,8 @@
+﻿
+/*手机端*/
+
+
+
 /*
 公共样式*/
 
@@ -632,10 +637,7 @@ ul.anli-pc li {
 .more-cases ul {
     margin-top: 2rem;
 }
-.more-cases li {
-    position: relative;
-    overflow: hidden;
-}
+
 .more-cases .img-cover {
     overflow: hidden;
 }

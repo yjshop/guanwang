@@ -121,6 +121,8 @@ $this->registerJs(<<<JS
     // 首次加载
     var JSONstr=null;
     var imgData=[];
+    
+
     //下一页
     var next;
     //其他信息
@@ -150,7 +152,7 @@ $this->registerJs(<<<JS
 
       $.each(data.items,function(index,value){
 
-        imgData.push(value.cover);
+         imgData.push({cover:value.cover,id:value.id});
       })
        imgLoad(imgData);
 
@@ -188,7 +190,7 @@ $this->registerJs(<<<JS
 
       $.each(data.items,function(index,value){
 
-        imgData.push(value.cover);
+        imgData.push({cover:value.cover,id:value.id});
       })
        imgLoad(imgData);
 
@@ -212,10 +214,10 @@ function imgLoad(data){
 
             //滑动时只加载一次
             flag=0;
-
+            console.log(data);
             for(var i=0;i<data.length;i++){
 
-              itemss=$('<li class="anli-box"><img src="'+data[i]+'"></li>');
+              itemss=$('<li class="anli-box"><a href="/cases/view?id='+data[i].id+'"><img src="'+data[i].cover+'"></a></li>');
 
               $('.anli-m').append(itemss).masonry( 'appended',itemss);
 
