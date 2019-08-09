@@ -877,9 +877,7 @@ ul.anli-pc li {
     margin: auto;
 }
 
-.feature .dingdan .tl .am-slider ul li{
-   /* position: relative;*/
-}
+
 .feature .dingdan .tl .am-slider ul li p{
       font-size: 30px;
     position: relative;
@@ -1392,4 +1390,9 @@ a.tag:hover {
        .am-slider-b2 .am-viewport {
     height: 180px;
     max-height: 180px;
+}
+
+.feature .dingdan .tl .am-slider ul li p{
+    font-size: 22px;
+}
 }
