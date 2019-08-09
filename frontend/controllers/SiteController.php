@@ -94,12 +94,14 @@ class SiteController extends Controller
     }
     
     public function actionProduct(){
+        //判断是否是手机端
         if (!(new \Detection\MobileDetect())->isMobile())
         {
             $head_img = CarouselItem::find()->where(['carousel_id'=>4,'status'=>1])->orderBy('sort asc')->one();
         }else{
             $head_img = CarouselItem::find()->where(['carousel_id'=>12,'status'=>1])->orderBy('sort asc')->one();
         }
+        
         if(!empty(yii::$app->request->getQueryString('market_id')))
         {
             $market_id = yii::$app->getRequest()->getQueryParam('market_id');   
