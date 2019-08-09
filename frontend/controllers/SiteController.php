@@ -106,7 +106,7 @@ class SiteController extends Controller
         }else{
             $market_id = 5;
         }
-        $market_img = CarouselItem::find()->where(['carousel_id'=>$market_id,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+       $market_img = CarouselItem::find()->where(['carousel_id'=>$market_id,'status'=>1])->limit(4)->orderBy('sort asc')->all();
        $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->orderBy('sort asc')->all();
        $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();
        $order_img = CarouselItem::find()->where(['carousel_id'=>8,'status'=>1])->orderBy('sort asc')->one();
