@@ -48,15 +48,6 @@ return array (
       '@hscstudio/cart' => $vendorDir . '/hscstudio/yii2-cart',
     ),
   ),
-  'yiisoft/yii2-jui' => 
-  array (
-    'name' => 'yiisoft/yii2-jui',
-    'version' => '2.0.7.0',
-    'alias' => 
-    array (
-      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
-    ),
-  ),
   'creocoder/yii2-flysystem' => 
   array (
     'name' => 'creocoder/yii2-flysystem',
@@ -211,6 +202,15 @@ return array (
       '@yii/queue/sync' => $vendorDir . '/yiisoft/yii2-queue/src/drivers/sync',
       '@yii/queue/sqs' => $vendorDir . '/yiisoft/yii2-queue/src/drivers/sqs',
       '@yii/queue/stomp' => $vendorDir . '/yiisoft/yii2-queue/src/drivers/stomp',
+    ),
+  ),
+  'kartik-v/yii2-dynagrid' => 
+  array (
+    'name' => 'kartik-v/yii2-dynagrid',
+    'version' => '1.5.1.0',
+    'alias' => 
+    array (
+      '@kartik/dynagrid' => $vendorDir . '/kartik-v/yii2-dynagrid/src',
     ),
   ),
 );
