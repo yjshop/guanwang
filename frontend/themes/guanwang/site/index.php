@@ -33,8 +33,8 @@ background-image: url(storage/images/system1.png);
           </a></div>
           <div class="am-u-lg-4 footer-style"><a href=""><h3>云商城系统</h3>
             <p>打造专属"SAAS云商城"</p></a></div>
-          <div class="am-u-lg-4 footer-style"><a href=""><h3>移动营销系统</h3>
-            <p>搭建各种入驻模式平台</p></a></div>
+          <div class="am-u-lg-4 footer-style"><a href=""><h3>多端融合</h3>
+            <p>一键搭建H5+微信公众号+小程序商城</p></a></div>
         </div>
       </div>
     </div>
@@ -151,7 +151,7 @@ background-image: url(storage/images/system1.png);
                             <div class="tc icon1-img icon-img "><img src="<?php echo Url::to('@web/storage/images/coupon.png'); ?>"></div>
                             <div>
                                 <h3>优惠券</h3>
-                                <p>含折多种优惠方式,下单直接抵扣,价格超实惠</p>
+                                <p>含折多种优惠方式,下单直接抵扣,营销好帮手</p>
                             </div>
                         </div>
                     </li>
@@ -160,7 +160,7 @@ background-image: url(storage/images/system1.png);
                             <div class="tc icon1-img icon-img"><img src="<?php echo Url::to('@web/storage/images/miaosha.png'); ?>"></div>
               <div>
                 <h3>限时秒杀</h3>
-                <p>多种营销玩法，提升流量和销量</p>
+                <p>给用户带来秒杀购物体验，提升流量和销量</p>
               </div>
 
             </div>
@@ -188,7 +188,7 @@ background-image: url(storage/images/system1.png);
               <div class="tc icon1-img icon-img "><img src="<?php echo Url::to('@web/storage/images/red.png'); ?>"></div>
                             <div>
                                 <h3>红包</h3>
-                                <p>多种红包现金信息，包括微信红包、qq红包、现金红包等</p>
+                                <p>包含有新人红包、站内分享红包，帮助您吸引流量</p>
                             </div>
                         </div>
                     </li>
@@ -207,7 +207,7 @@ background-image: url(storage/images/system1.png);
               <div class="tc icon1-img icon-img "><img src="<?php echo Url::to('@web/storage/images/pay.png'); ?>"></div>
                             <div>
                                 <h3>多种支付方式</h3>
-                                <p>支持微信、支付宝等多种支付方式，灵活快捷</p>
+                                <p>支持微信、支付宝、余额等多种支付方式，灵活快捷</p>
                             </div>
                         </div>
                     </li>
@@ -216,7 +216,7 @@ background-image: url(storage/images/system1.png);
                             <div class="tc icon1-img icon-img"><img src="<?php echo Url::to('@web/storage/images/share.png'); ?>"></div>
               <div>
                 <h3>一键分享</h3>
-                <p>好友和群成员，通过你的分享，发现你的小程序</p>
+                <p>一键将程序分享到微信朋友圈、好友、群聊，流量来得就是这么简单</p>
               </div>
             </div>
           </li>
@@ -225,7 +225,7 @@ background-image: url(storage/images/system1.png);
               <div class="tc icon1-img icon-img " ><img src="<?php echo Url::to('@web/storage/images/safe.png'); ?>"></div>
                             <div>
                                 <h3>安全/稳定</h3>
-                                <p>国际认证安全管理</p>
+                                <p>5年以上开发经验、严格测试、大量用户的实践</p>
                             </div>
                         </div>
                     </li>
@@ -234,7 +234,7 @@ background-image: url(storage/images/system1.png);
               <div class="tc icon1-img icon-img " ><img src="<?php echo Url::to('@web/storage/images/jifen.png'); ?>"></div>
                             <div>
                                 <h3>积分</h3>
-                                <p>推广小程序，只需要用户扫码即可,减少了用户的耐心损耗</p>
+                                <p>购物获得积分，积分可进行抵扣，促进用户消费欲望</p>
                             </div>
                         </div>
                     </li>
@@ -253,7 +253,7 @@ background-image: url(storage/images/system1.png);
               <div class="tc icon1-img icon-img " ><img src="<?php echo Url::to('@web/storage/images/cloud.png'); ?>"></div>
                             <div>
                                 <h3>云通信</h3>
-                                <p>自动发送营销短信、验证码</p>
+                                <p>自动发送营销短信、验证码短信</p>
                             </div>
                         </div>
                     </li>

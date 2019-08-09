@@ -22,13 +22,13 @@ use yii\helpers\Url;
 	<div class="am-container">
 		<div class="am-g">
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/huojian.png'); ?>"><h2>流畅度</h2></div>
-				<p>超流畅app原生开发</p>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/huojian.png'); ?>"><h2>用户体验感</h2></div>
+				<p>精心优化，设计符合现代操作习惯</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/gongneng.png'); ?>"><h2>功能性</h2></div>
-				<p>超流畅app原生开发</p>
+				<p>功能丰富多样，完全满足电子商务运营的需求</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
@@ -38,17 +38,17 @@ use yii\helpers\Url;
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/tuozhan.png'); ?>"><h2>拓展性</h2></div>
-				<p>支持开源与源码选购</p>
+				<p>支持开源与源码选购，支持二次开发与定制</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinpai.png'); ?>"><h2>品牌性</h2></div>
-				<p>域名服务器及品牌独立</p>
+				<p>全站内容自主控制，树立自己的品牌</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/shouhou.png'); ?>"><h2>售后技术</h2></div>
-				<p>6*12h售后保障</p>
+				<p>6*12h售后保障，版本更新迭代</p>
 
 			</div>
 
@@ -70,9 +70,11 @@ use yii\helpers\Url;
 <div class="am-container">
 	
 	<div class="plug-btn  ">
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="1">限时秒杀></button>
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="2">三级分销</button>
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="3">优惠券</button>
+
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>5]); ?>">限时秒杀</a>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>13]); ?>">三级分销</a>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>14]); ?>">优惠券</a>
+
 	</div>
 
 	<ul class="plug-img ">
@@ -155,7 +157,7 @@ use yii\helpers\Url;
      <?php foreach ($detail_img as $num1): ?>
     <li data-thumb="<?=$num1['image']?>">
       <img src="<?=$num1['image']?>">
-      <p></p>
+      <p>订单页面</p>
     </li>
     <?php endforeach;?>
   </ul>
@@ -249,7 +251,7 @@ use yii\helpers\Url;
    <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/xin.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">7 x 12h售后支持</figcaption>
+      <figcaption class="am-thumbnail-caption">6 x 12h售后支持</figcaption>
     </figure>
   </div>
 </div>

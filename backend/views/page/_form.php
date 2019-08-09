@@ -1,11 +1,17 @@
 <?php
 
+use common\helpers\Tree;
+use common\models\PageCategory;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use yii\base\Object;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Page */
 /* @var $form yii\widgets\ActiveForm */
+$pp = PageCategory::find()->all();
+$category = ArrayHelper::map($pp, 'id', 'name');
 ?>
 
 <div class="box box-primary">
@@ -14,7 +20,8 @@ use yii\widgets\ActiveForm;
     <div class="col-lg-9">
         <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
         <?php if ($model->isNewRecord): ?>
-            <?= Html::dropDownList('choose-editor', request('editor') ? : config('page_editor_type'), config('editor_type_list'), ['id' => 'choose-editor']) ?>
+         <?=  $form->field($model, 'category_id')->dropDownList($category,['prompt'=>'选择分类']); ?>
+        <?= Html::dropDownList('choose-editor', request('editor') ? : config('page_editor_type'), config('editor_type_list'), ['id' => 'choose-editor']) ?>
         <?php endif; ?>
         <?= $form->field($model, 'content')->widget(\common\widgets\EditorWidget::className(), $model->isNewRecord ? ['type' => request('editor') ? : config('page_editor_type')] : ['isMarkdown' => $model->markdown]) ?>
 

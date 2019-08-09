@@ -71,11 +71,11 @@ class SiteController extends Controller
         ]);
         if (!(new \Detection\MobileDetect())->isMobile())
         {
-           $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->limit(3)->all();
+           $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->all();
            $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all(); 
         }else {
             //手机端分类
-            $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>9])->orderBy('sort asc')->limit(3)->all();
+            $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>9])->orderBy('sort asc')->all();
             $categories = Category::find()->orderBy('id asc')->limit(2)->asArray()->all();
         }
   
@@ -100,8 +100,14 @@ class SiteController extends Controller
         }else{
             $head_img = CarouselItem::find()->where(['carousel_id'=>12,'status'=>1])->orderBy('sort asc')->one();
         }
-       $market_img = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
-       $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+        if(!empty(yii::$app->request->getQueryString('market_id')))
+        {
+            $market_id = yii::$app->getRequest()->getQueryParam('market_id');   
+        }else{
+            $market_id = 5;
+        }
+       $market_img = CarouselItem::find()->where(['carousel_id'=>$market_id,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+       $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->orderBy('sort asc')->all();
        $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();
        $order_img = CarouselItem::find()->where(['carousel_id'=>8,'status'=>1])->orderBy('sort asc')->one();
         

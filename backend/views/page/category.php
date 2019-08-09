@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'title') ?>
+        <?= $form->field($model, 'name') ?>
     
         <div class="form-group">
             <?= Html::submitButton('添加分类', ['class' => 'btn btn-primary']) ?>
@@ -18,4 +18,3 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div><!-- _category -->
-
