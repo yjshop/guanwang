@@ -1,6 +1,6 @@
 <?php
+use common\models\CarouselItem;
 use yii\helpers\Url;
-
 ?>
 <div class="product-wrap">
    <!--  轮播图 -->
@@ -71,9 +71,9 @@ use yii\helpers\Url;
 	
 	<div class="plug-btn  ">
 
-		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>5]); ?>">限时秒杀</a>
-		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>13]); ?>">三级分销</a>
-		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>14]); ?>">优惠券</a>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>5]); ?>">限时秒杀</a>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>13]); ?>">三级分销</a>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>14]); ?>">优惠券</a>
 
 	</div>
 

@@ -104,9 +104,9 @@ class SiteController extends Controller
         
         if(!empty(yii::$app->request->getQueryString('market_id')))
         {
-            $market_id = yii::$app->getRequest()->getQueryParam('market_id');   
+           $market_id = yii::$app->getRequest()->getQueryParam('market_id');   
         }else{
-            $market_id = 5;
+           $market_id = 5;
         }
        $market_img = CarouselItem::find()->where(['carousel_id'=>$market_id,'status'=>1])->limit(4)->orderBy('sort asc')->all();
        $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->orderBy('sort asc')->all();
