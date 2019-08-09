@@ -147,11 +147,12 @@ use yii\helpers\Url;
 
 
 <!-- <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;controlNav&quot;:&quot;thumbnails&quot;}'> -->
-  <div data-am-widget="slider" class="am-slider  am-slider-default" data-am-slider='{&quot;controlNav&quot;:false}'>
+ <div data-am-widget="slider" class="am-slider  am-slider-default" data-am-slider='{&quot;controlNav&quot;:false}'>
   <ul class="am-slides">
      <?php foreach ($detail_img as $num1): ?>
     <li data-thumb="<?=$num1['image']?>">
       <img src="<?=$num1['image']?>">
+      <p><?= $num1['caption'] ?></p>
     </li>
     <?php endforeach;?>
   </ul>

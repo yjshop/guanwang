@@ -69,7 +69,7 @@ use yii\helpers\Url;
 
 <div class="am-container">
 	
-	<div class="plug-btn  ">
+<!-- 	<div class="plug-btn  ">
 
 		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>5]); ?>">限时秒杀</a>
 		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>13]); ?>">三级分销</a>
@@ -78,12 +78,60 @@ use yii\helpers\Url;
 	</div>
 
 	<ul class="plug-img ">
-	<?php foreach ($market_img as $mun): ?>
+	<?php// foreach ($market_img as $mun): ?>
 		<li>
-			<img src="<?= $mun['image'] ?>">
+			<img src="<?// $mun['image'] ?>">
 		</li>
-	<?php endforeach;?>
+	<?php// endforeach;?>
 	</ul>
+ -->
+
+<div class="am-tabs" data-am-tabs>
+  <ul class="am-tabs-nav am-nav am-nav-tabs">
+    <li class="am-active"><a href="javascript: void(0)">限时秒杀</a></li>
+    <li><a href="javascript: void(0)">三级分销</a></li>
+    <li><a href="javascript: void(0)">优惠券</a></li>
+  </ul>
+
+  <div class="am-tabs-bd">
+
+    <div class="am-tab-panel am-active">
+      <div class="am-g">
+<?php foreach ($img1 as $mun): ?>
+  <div class="col-sm-4">
+    <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
+  </div>
+<?php endforeach;?> 
+</div>
+    </div>
+
+
+    <div class="am-tab-panel">
+      <div class="am-g">
+<?php foreach ($img2 as $mun): ?>
+  <div class="col-sm-4">
+    <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
+  </div>
+<?php endforeach;?>
+
+</div>
+    </div>
+
+  <div class="am-tab-panel">
+      <div class="am-g">
+<?php foreach ($img3 as $mun): ?>
+  <div class="col-sm-4">
+    <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
+  </div>
+<?php endforeach;?>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
 
   <div class="plug-img am-show-sm-only">
     <img src="<?php echo Url::to('@web/storage/images/huiyuan1.jpg');?>">
