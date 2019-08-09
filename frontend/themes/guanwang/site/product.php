@@ -157,7 +157,7 @@ use yii\helpers\Url;
      <?php foreach ($detail_img as $num1): ?>
     <li data-thumb="<?=$num1['image']?>">
       <img src="<?=$num1['image']?>">
-      <p>订单页面</p>
+      <p><?= $num1['caption'] ?></p>
     </li>
     <?php endforeach;?>
   </ul>
