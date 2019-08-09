@@ -102,9 +102,9 @@ class SiteController extends Controller
             $head_img = CarouselItem::find()->where(['carousel_id'=>12,'status'=>1])->orderBy('sort asc')->one();
         }
         
-        $img1 = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(3)->orderBy('sort asc')->all();
-        $img2 = CarouselItem::find()->where(['carousel_id'=>13,'status'=>1])->limit(3)->orderBy('sort asc')->all();
-        $img3 = CarouselItem::find()->where(['carousel_id'=>14,'status'=>1])->limit(3)->orderBy('sort asc')->all();
+        $img1 = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+        $img2 = CarouselItem::find()->where(['carousel_id'=>13,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+        $img3 = CarouselItem::find()->where(['carousel_id'=>14,'status'=>1])->limit(4)->orderBy('sort asc')->all();
 
        $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->orderBy('sort asc')->all();
        $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();

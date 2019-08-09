@@ -68,23 +68,6 @@ use yii\helpers\Url;
 <p>丰富的营销插件扩展让你的平台不管需求如何、体量多大，都能轻松组合应对</p>
 
 <div class="am-container">
-	
-<!-- 	<div class="plug-btn  ">
-
-		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>5]); ?>">限时秒杀</a>
-		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>13]); ?>">三级分销</a>
-		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['product','market_id'=>14]); ?>">优惠券</a>
-
-	</div>
-
-	<ul class="plug-img ">
-	<?php// foreach ($market_img as $mun): ?>
-		<li>
-			<img src="<?// $mun['image'] ?>">
-		</li>
-	<?php// endforeach;?>
-	</ul>
- -->
 
 <div class="am-tabs" data-am-tabs>
   <ul class="am-tabs-nav am-nav am-nav-tabs">
@@ -98,7 +81,7 @@ use yii\helpers\Url;
     <div class="am-tab-panel am-active">
       <div class="am-g">
 <?php foreach ($img1 as $mun): ?>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
     <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
   </div>
 <?php endforeach;?> 
@@ -109,7 +92,7 @@ use yii\helpers\Url;
     <div class="am-tab-panel">
       <div class="am-g">
 <?php foreach ($img2 as $mun): ?>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
     <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
   </div>
 <?php endforeach;?>
@@ -120,7 +103,7 @@ use yii\helpers\Url;
   <div class="am-tab-panel">
       <div class="am-g">
 <?php foreach ($img3 as $mun): ?>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
     <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
   </div>
 <?php endforeach;?>
