@@ -70,7 +70,7 @@ use yii\helpers\Url;
 <div class="am-container">
 	
 	<div class="plug-btn  ">
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="1">限时秒杀</button>
+		<button type="button" class="am-btn  am-btn-primary st-btn" value="1">限时秒杀></button>
 		<button type="button" class="am-btn  am-btn-primary st-btn" value="2">三级分销</button>
 		<button type="button" class="am-btn  am-btn-primary st-btn" value="3">优惠券</button>
 	</div>
@@ -155,6 +155,7 @@ use yii\helpers\Url;
      <?php foreach ($detail_img as $num1): ?>
     <li data-thumb="<?=$num1['image']?>">
       <img src="<?=$num1['image']?>">
+      <p></p>
     </li>
     <?php endforeach;?>
   </ul>
@@ -329,7 +330,12 @@ $this->registerJs(<<<JS
     //   },
     // });
 
-     
+
+
+
+
+
+
 
 
 
