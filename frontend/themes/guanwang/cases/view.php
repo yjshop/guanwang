@@ -5,9 +5,13 @@ use common\models\Cases;
 /* @var $this yii\web\View */
 ?>
  <!--  头部banner -->
- <div class="banner am-g">
+<?php if(empty($tou)):?>
+
+<?php else: ?>
+<div class="banner am-g">
 <img src="<?=$tou['image'] ?>">   
- </div>
+</div>
+<?php endif; ?>
 
 
 <!-- 案例介绍 -->

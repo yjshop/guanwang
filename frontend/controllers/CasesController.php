@@ -19,7 +19,15 @@ use common\models\Page;
 class CasesController extends Controller{
     
     public function actionView(){
-        $tou = CarouselItem::find()->where(['carousel_id'=>3])->orderBy('sort asc')->one();
+        
+        if (!(new \Detection\MobileDetect())->isMobile())
+        {
+            $tou = CarouselItem::find()->where(['carousel_id'=>3,'status'=>1])->orderBy('sort asc')->one();
+        }else {
+            //手机端
+            $tou = CarouselItem::find()->where(['carousel_id'=>3,'status'=>9])->orderBy('sort asc')->one();
+        }
+           
         $id=yii::$app->request->get('id');
         $data= Cases::find()->where(['status'=>1,'id'=>$id])->one();
         $top1= Cases::find()->where(['status'=>1])->all();
@@ -39,16 +47,23 @@ class CasesController extends Controller{
     }
 
     public function actionIndex(){  
-     
+        if (!(new \Detection\MobileDetect())->isMobile())
+        {
+          $tou = CarouselItem::find()->where(['status' => 1, 'carousel_id' => 2])->orderBy('sort asc')->one();
+        }else {
+            //手机端
+          $tou = CarouselItem::find()->where(['status' => 1, 'carousel_id' => 10])->orderBy('sort asc')->one();
+        }
+        $category = CaseCategory::find()->orderBy('id asc')->all(); 
        if(Yii:: $app->getRequest()->getQueryParam('category_id') != null)
        {
            $id = Yii:: $app->getRequest()->getQueryParam('category_id');
            
            if($id != 1)
            {
-           $query = Cases::find()->where(['status'=>1,'category_id'=>$id]);
+           $query = Cases::find()->where(['status'=>1,'category_id'=>$id])->orderBy('id asc')->limit(3);
            }else {
-           $query = Cases::find()->where(['status'=>1]);
+           $query = Cases::find()->where(['status'=>1])->orderBy('id asc')->limit(3);
            }
            $dataProvider = new ActiveDataProvider([
                'query' => $query,
@@ -64,6 +79,8 @@ class CasesController extends Controller{
            return $this->render('index',[
                'dataProvider'=>$dataProvider,
                'id'=>$id,
+               'tou'=>$tou,
+               'category'=>$category,
        ]);
            
        }else {
@@ -75,6 +92,8 @@ class CasesController extends Controller{
        return $this->render('index',[
            'dataProvider'=>$dataProvider,
            'id'=>$id,
+           'tou'=>$tou,
+           'category'=>$category,
        ]); 
        }
     }

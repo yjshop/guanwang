@@ -1,19 +1,17 @@
 <?php
-
-use common\models\CarouselItem;
-use common\models\CaseCategory;
 use yii\helpers\Url;
-
-$tou      = CarouselItem::find()->where(['status' => 1, 'carousel_id' => 2])->orderBy('sort asc')->one();
-$category = CaseCategory::find()->orderBy('id asc')->all();
 ?>
 
 
 
 <!--  头部banner -->
+<?php if(empty($tou)):?>
+<!-- 不显示 -->
+<?php else: ?>
 <div class="banner am-g">
-<img src="<?=$tou['image']?>">
+<img src="<?=$tou['image'] ?>">   
 </div>
+<?php endif; ?>
 
 
 <div class="example-box example-wrap">
@@ -59,9 +57,10 @@ if ($id == $a['id']):
   <ul class="anli-m am-show-sm-only">
 
   </ul>
+  <div id="loading"></div>
 </div>
    <!-- 分页开始 -->
-            <div class="page">
+    <div class="page am-hide-sm-only" >
 
       <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
       <?=\yii\widgets\LinkPager::widget([
@@ -78,7 +77,7 @@ if ($id == $a['id']):
     'options'          => ['class' => 'pager'],
 ]);?>
       <?php endif;?>
-            </div>
+     </div>
 
 
   </div>
@@ -120,6 +119,8 @@ $this->registerJs(<<<JS
     // 首次加载
     var JSONstr=null;
     var imgData=[];
+    
+
     //下一页
     var next;
     //其他信息
@@ -129,12 +130,19 @@ $this->registerJs(<<<JS
     //已经进行第一次请求
     var flag2=false;
 
-   $.ajax('http://www.guangwang.com/api/v1/cases/index?per-page=2&page=1', {
-    dataType: 'json'
+   $.ajax('/api/v1/cases/index?per-page=2&page=1', {
+    dataType: 'json',
+    beforeSend:function(){
+      
+      $("#loading").html('加载中...');
+      
+    }
+
   }).done(function (data) {
 
      //第一次请求已完成
       flag2=true;
+      $("#loading").empty();
 
 
       next=data._links.next;
@@ -142,7 +150,7 @@ $this->registerJs(<<<JS
 
       $.each(data.items,function(index,value){
 
-        imgData.push(value.cover);
+         imgData.push({cover:value.cover,id:value.id});
       })
        imgLoad(imgData);
 
@@ -166,15 +174,21 @@ $this->registerJs(<<<JS
       if(flag2&&message.currentPage<message.pageCount){
         imgData=[];
       $.ajax(next.href, {
-    dataType: 'json'
+    dataType: 'json',
+     beforeSend:function(){
+      
+      $("#loading").html('加载中...');
+      
+    }
   }).done(function (data) {
 
+      $("#loading").empty();
       next=data._links.next;
       message=data._meta;
 
       $.each(data.items,function(index,value){
 
-        imgData.push(value.cover);
+        imgData.push({cover:value.cover,id:value.id});
       })
        imgLoad(imgData);
 
@@ -183,6 +197,8 @@ $this->registerJs(<<<JS
   }).always(function () {
 
   });
+}else{
+   $("#loading").html('没有更多案例了 ^_^');
 }
 
 
@@ -196,10 +212,10 @@ function imgLoad(data){
 
             //滑动时只加载一次
             flag=0;
-
+            console.log(data);
             for(var i=0;i<data.length;i++){
 
-              itemss=$('<li class="anli-box"><img src="'+data[i]+'"></li>');
+              itemss=$('<li class="anli-box"><a href="/cases/view?id='+data[i].id+'"><img src="'+data[i].cover+'"></a></li>');
 
               $('.anli-m').append(itemss).masonry( 'appended',itemss);
 

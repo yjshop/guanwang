@@ -130,10 +130,14 @@ img {
 }
 
 .mgt60 {
-    margin-top: 30px;
+    margin-top: 10px;
     padding-left: 15px;
 }
 
+.mgt20 {
+    margin-top: 20px;
+    padding-left: 15px;
+}
 .line {
     width: 30px;
     height: 3px;
@@ -145,6 +149,7 @@ img {
     padding: 15px 0;
     border: none;
     margin-bottom: 0;
+    background-color: #fff;
 }
 
 .am-container {
@@ -1344,8 +1349,8 @@ header li ul.child {
 	width:100%;
 }
 .detail-r .update .bd ul li a {
-    color:#9d9d9d;
-    font-size: 1.2rem;
+    color:#666;
+    font-size: 1.3rem;
     width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;

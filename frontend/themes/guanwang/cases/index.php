@@ -1,20 +1,19 @@
 <?php
-
-use common\models\CarouselItem;
-use common\models\CaseCategory;
 use yii\helpers\Url;
-
-$tou      = CarouselItem::find()->where(['status' => 1, 'carousel_id' => 2])->orderBy('sort asc')->one();
-$category = CaseCategory::find()->orderBy('id asc')->all();
+use function Qiniu\setWithoutEmpty;
 ?>
 
 
 
 <!--  头部banner -->
+<?php if(empty($tou)):?>
+<!-- 不显示 -->
+<?php else: ?>
+<!-- 显示 -->
 <div class="banner am-g">
 <img src="<?=$tou['image']?>">
 </div>
-
+<?php endif; ?>
 
 <div class="example-box example-wrap">
 <div class="am-container">
@@ -113,7 +112,7 @@ $this->registerJs(<<<JS
     //已经进行第一次请求
     var flag2=false;
 
-   $.ajax('http://www.guangwang.com/api/v1/cases/index?per-page=2&page=1', {
+   $.ajax('/api/v1/cases/index?per-page=2&page=1', {
     dataType: 'json'
   }).done(function (data) {
 

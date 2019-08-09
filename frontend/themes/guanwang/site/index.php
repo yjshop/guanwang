@@ -16,21 +16,10 @@ background-image: url(storage/images/system1.png);
   
     <div class="swiper-container">
     <div class="swiper-wrapper">
-       <div class="swiper-slide">
-    
-      <div class="am-g ">
-        <div class="am-u-md-4 banner-l">
-          <img alt="易扩展，模块化设计，安全性高，插件丰富" src="<?= $carouselitem[0]['image'] ?>">
-      </div>
-      <div class="am-u-md-8 banner-r">
-          <h1>国内领先开源小程序商城系统</h1>
-          <span>安全稳定</span><span>快速拥有</span><span>助您畅享电商红利</span>
-      </div>
-    
-      </div>
-    </div> 
-      <div class="swiper-slide"><img src="<?= $carouselitem[1]['image'] ?>"></div>
-    <div class="swiper-slide"><img src="<?= $carouselitem[2]['image'] ?>"></div>
+  
+    <?php foreach ($image as $img): ?>
+    <div class="swiper-slide"><img src="<?= $img['image'] ?>"></div>
+    <?php endforeach;?>
 
       <!-- <div class="swiper-pagination"></div> -->
     </div>

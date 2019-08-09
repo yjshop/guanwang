@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\Url;
+
 ?>
     <div class="slide page-heading">
         <div class="container">
@@ -18,7 +20,7 @@
              <form action="" method="POST" class="ng-pristine ng-valid">
                         <div class="search-block m_20">
                             <div class="input-group input-group">
-                                <input name="domain" type="text" class="form-control" wt-autofocus="" value="" placeholder="请输入您要查询的域名或者小程序的ID">
+                                <input name="domain" type="text" class="form-control" wt-autofocus="" value="" placeholder="请输入要查询的域名或小程序的ID" style="font-size: 12px;">
                                 <input name="_csrf" type="hidden" value="<?=yii::$app->request->csrfToken?>">
                                 <span class="input-group-btn">
                                     <button class="btn btn-success" type="submit"> &nbsp;点击查询&nbsp; </button>
@@ -29,7 +31,7 @@
                                 <b>友情提示：</b>
                                 <p>1、为了您的合法权益，请购买正版程序</p>
                                 <p>2、购买正版授权，享受官方贴心服务，技术问题再无后顾之忧！</p>
-                                <p>3、盗版程序有风险，使用需谨慎！<a href="http://www.jihexian.com/article/detail/id/79.html" target="_blank">详情查看&gt;</a></p>
+                                <p>3、盗版程序有风险，使用需谨慎！<a href="<?= Url::to(['article/detail','id'=>79]) ?>" target="_blank">详情查看&gt;</a></p>
                                 <?php else:?>
                                  <p><?=$label?></p>
                                 <?php endif;?>

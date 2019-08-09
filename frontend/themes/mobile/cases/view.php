@@ -2,13 +2,17 @@
 use yii\helpers\Url;
 use common\models\Article;
 use common\models\Cases;
+use kartik\helpers\Html;
 /* @var $this yii\web\View */
-?>
- <!--  头部banner -->
- <div class="banner am-g">
+?> 
+<!--  头部banner -->
+<?php if(empty($tou)):?>
+<!-- 不显示 -->
+<?php else: ?>
+<div class="banner am-g">
 <img src="<?=$tou['image'] ?>">   
- </div>
-
+</div>
+<?php endif; ?>
 
 <!-- 案例介绍 -->
 <div class="detail-box">
@@ -30,19 +34,27 @@ use common\models\Cases;
 <!-- 更多案例 -->
 <div class="more-cases">
 	<h1 class="big-title">更多案例</h1>
+	
 	<div class="am-container">
-		<ul class="am-g">
+		<div class="case-list am-u-sm-12">
+		    <div data-am-widget="slider" class="am-slider am-slider-b3" data-am-slider='{&quot;controlNav&quot;:false}'>
+		<ul class="am-slides">
 		
 		<?php foreach ($top2 as $vo):?>
-			<li class="am-u-lg-3"><a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> <div class="am-thumbnail">
-     		<div class="img-cover"> <img src="<?=$vo['cover']?>" alt=<?=$vo['title']?>/></div>
-     			 <h3 class="am-thumbnail-caption"><?=$vo['title']?></h3>
-     			 <p></p>
-    			</div>
+			<li> <a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> 
+     		 <img src="<?=$vo['cover']?>" alt=<?=$vo['title']?>/>
+
+     		    <div class="am-slider-desc"><?=$vo['title']?></div>
+
+
+     			 
+    			
     			</a>
 			</li>
        <?php endforeach;?>
 
 		</ul>
 	</div>
+	</div>
+</div>
 </div>
