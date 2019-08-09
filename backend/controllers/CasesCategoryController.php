@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Cases;
-use common\models\CasesSearch;
+use common\models\CaseCategory;
+use common\models\CaseCategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use common\models\CaseCategory;
 
 /**
- * CasesController implements the CRUD actions for Cases model.
+ * CasesCategoryController implements the CRUD actions for CaseCategory model.
  */
-class CasesController extends Controller
+class CasesCategoryController extends Controller
 {
     /**
      * @inheritdoc
@@ -29,28 +28,14 @@ class CasesController extends Controller
             ],
         ];
     }
-  
-    
-    public function actions()
-    {
-        return [
-            'ajax-update-field' => [
-                'class' => 'common\\actions\\AjaxUpdateFieldAction',
-                'allowFields' => ['status', 'is_top'],
-                'findModel' => [$this, 'findModel']
-            ],
-            'switcher' => [
-                'class' => 'backend\widgets\grid\SwitcherAction'
-            ]
-        ];
-    }
+
     /**
-     * Lists all Cases models.
+     * Lists all CaseCategory models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CasesSearch();
+        $searchModel = new CaseCategorySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -58,22 +43,9 @@ class CasesController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
-    
-    public function actionCategory()
-    { 
-        $model = new caseCategory();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            
-            return $this->redirect(['index']);
-        } else {
-            return $this->render('category', [
-                'model' => $model,
-            ]);
-        }
-    }
 
     /**
-     * Displays a single Cases model.
+     * Displays a single CaseCategory model.
      * @param integer $id
      * @return mixed
      */
@@ -85,21 +57,16 @@ class CasesController extends Controller
     }
 
     /**
-     * Creates a new Cases model.
+     * Creates a new CaseCategory model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Cases();
+        $model = new CaseCategory();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            
-            /* $data=Yii::$app->request->post();
-            $data['Cases']['cover']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
-            $data['Cases']['qr_cover']='https://image.jihexian.com/'.$data['Article']['qr_code']['path'];
-            $model->load($data);
-            $model->save(); */
-            
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -108,7 +75,7 @@ class CasesController extends Controller
     }
 
     /**
-     * Updates an existing Cases model.
+     * Updates an existing CaseCategory model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -116,20 +83,18 @@ class CasesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $data = CaseCategory::findAll($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'data' =>$data,
             ]);
         }
     }
 
     /**
-     * Deletes an existing Cases model.
+     * Deletes an existing CaseCategory model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -142,15 +107,15 @@ class CasesController extends Controller
     }
 
     /**
-     * Finds the Cases model based on its primary key value.
+     * Finds the CaseCategory model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Cases the loaded model
+     * @return CaseCategory the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function findModel($id)
+    protected function findModel($id)
     {
-        if (($model = Cases::findOne($id)) !== null) {
+        if (($model = CaseCategory::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

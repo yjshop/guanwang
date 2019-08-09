@@ -73,7 +73,7 @@ use yii\helpers\Url;
 	</div>
 
 	<ul class="plug-img ">
-	<?php foreach ($market_img as $mun): ?>
+	<?php foreach ($img1 as $mun): ?>
 		<li>
 			<img src="<?= $mun['image'] ?>">
 		</li>

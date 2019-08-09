@@ -98,7 +98,7 @@ use yii\helpers\Url;
     <div class="am-tab-panel am-active">
       <div class="am-g">
 <?php foreach ($img1 as $mun): ?>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
     <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
   </div>
 <?php endforeach;?> 
@@ -109,7 +109,7 @@ use yii\helpers\Url;
     <div class="am-tab-panel">
       <div class="am-g">
 <?php foreach ($img2 as $mun): ?>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
     <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
   </div>
 <?php endforeach;?>
@@ -120,7 +120,7 @@ use yii\helpers\Url;
   <div class="am-tab-panel">
       <div class="am-g">
 <?php foreach ($img3 as $mun): ?>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
     <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
   </div>
 <?php endforeach;?>

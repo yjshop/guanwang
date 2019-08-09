@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $this->beginBlock('content-header') ?>
 <?= $this->title . ' ' . Html::a(Yii::t('app', '创建案例'), ['create'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
-<?= Html::a(Yii::t('app', '添加分类'), ['category'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
+<?= Html::a(Yii::t('app', '添加分类'), ['cases-category/index'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
 <?php $this->endBlock() ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
