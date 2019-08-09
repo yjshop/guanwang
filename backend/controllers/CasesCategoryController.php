@@ -2,63 +2,51 @@
 
 namespace backend\controllers;
 
-use common\models\Page;
 use Yii;
-use yii\data\ActiveDataProvider;
-use yii\filters\VerbFilter;
+use common\models\CaseCategory;
+use common\models\CaseCategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use common\models\PageCategory;
+use yii\filters\VerbFilter;
 
 /**
- * PageController implements the CRUD actions for Page model.
+ * CasesCategoryController implements the CRUD actions for CaseCategory model.
  */
-class PageController extends Controller
+class CasesCategoryController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];
     }
+
     /**
-     * Lists all Page models.
-     *
+     * Lists all CaseCategory models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Page::find(),
-        ]);
+        $searchModel = new CaseCategorySearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
-    
-    public function actionCategory()
-    {  
-        $model = new PageCategory();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
-        } else {
-            return $this->render('category', [
-                'model' => $model,
-            ]);
-        }
-    }
 
     /**
-     * Displays a single Page model.
-     *
-     * @param int $id
-     *
+     * Displays a single CaseCategory model.
+     * @param integer $id
      * @return mixed
      */
     public function actionView($id)
@@ -69,18 +57,16 @@ class PageController extends Controller
     }
 
     /**
-     * Creates a new Page model.
+     * Creates a new CaseCategory model.
      * If creation is successful, the browser will be redirected to the 'view' page.
-     *
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Page();
-        $editor = request('editor') ? : config('page_editor_type');
-        $model->markdown = $editor == 'markdown' ? 1 : 0;
+        $model = new CaseCategory();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -89,11 +75,9 @@ class PageController extends Controller
     }
 
     /**
-     * Updates an existing Page model.
+     * Updates an existing CaseCategory model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     *
-     * @param int $id
-     *
+     * @param integer $id
      * @return mixed
      */
     public function actionUpdate($id)
@@ -101,7 +85,7 @@ class PageController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -110,11 +94,9 @@ class PageController extends Controller
     }
 
     /**
-     * Deletes an existing Page model.
+     * Deletes an existing CaseCategory model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     *
-     * @param int $id
-     *
+     * @param integer $id
      * @return mixed
      */
     public function actionDelete($id)
@@ -125,18 +107,15 @@ class PageController extends Controller
     }
 
     /**
-     * Finds the Page model based on its primary key value.
+     * Finds the CaseCategory model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     *
-     * @param int $id
-     *
-     * @return Page the loaded model
-     *
+     * @param integer $id
+     * @return CaseCategory the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Page::findOne($id)) !== null) {
+        if (($model = CaseCategory::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             'id',
+            'category_id',
             [
                 'attribute' => 'use_layout',
                 'value' => function ($model) {

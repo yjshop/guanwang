@@ -60,12 +60,16 @@ class CasesController extends Controller
     }
     
     public function actionCategory()
-    {
-       
-       //$category = CaseCategory::find(); 
-        return $this->render('category',[
+    { 
+        $model = new caseCategory();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             
-        ]);
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('category', [
+                'model' => $model,
+            ]);
+        }
     }
 
     /**

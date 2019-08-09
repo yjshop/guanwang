@@ -71,11 +71,11 @@ class SiteController extends Controller
         ]);
         if (!(new \Detection\MobileDetect())->isMobile())
         {
-           $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->limit(3)->all();
+           $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->all();
            $categories = Category::find()->orderBy('id asc')->limit(6)->asArray()->all(); 
         }else {
             //手机端分类
-            $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>9])->orderBy('sort asc')->limit(3)->all();
+            $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>9])->orderBy('sort asc')->all();
             $categories = Category::find()->orderBy('id asc')->limit(2)->asArray()->all();
         }
   
@@ -94,20 +94,27 @@ class SiteController extends Controller
     }
     
     public function actionProduct(){
+        //判断是否是手机端
         if (!(new \Detection\MobileDetect())->isMobile())
         {
             $head_img = CarouselItem::find()->where(['carousel_id'=>4,'status'=>1])->orderBy('sort asc')->one();
         }else{
             $head_img = CarouselItem::find()->where(['carousel_id'=>12,'status'=>1])->orderBy('sort asc')->one();
         }
-       $market_img = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
-       $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+        
+        $img1 = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+        $img2 = CarouselItem::find()->where(['carousel_id'=>13,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+        $img3 = CarouselItem::find()->where(['carousel_id'=>14,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+
+       $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->orderBy('sort asc')->all();
        $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();
        $order_img = CarouselItem::find()->where(['carousel_id'=>8,'status'=>1])->orderBy('sort asc')->one();
         
         return $this->render('product',[
             'head_img'=>$head_img,
-            'market_img'=>$market_img,
+            'img1'=>$img1,
+            'img2'=>$img2,
+            'img3'=>$img3,
             'detail_img'=>$detail_img,
             'pay_img'=>$pay_img,
             'order_img'=>$order_img,    

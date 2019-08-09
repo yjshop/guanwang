@@ -1,6 +1,6 @@
 <?php
+use common\models\CarouselItem;
 use yii\helpers\Url;
-
 ?>
 <div class="product-wrap">
    <!--  轮播图 -->
@@ -22,13 +22,13 @@ use yii\helpers\Url;
 	<div class="am-container">
 		<div class="am-g">
 			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/huojian.png'); ?>"><h2>流畅度</h2></div>
-				<p>超流畅app原生开发</p>
+				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/huojian.png'); ?>"><h2>用户体验感</h2></div>
+				<p>精心优化，设计符合现代操作习惯</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/gongneng.png'); ?>"><h2>功能性</h2></div>
-				<p>超流畅app原生开发</p>
+				<p>功能丰富多样，完全满足电子商务运营的需求</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
@@ -38,17 +38,17 @@ use yii\helpers\Url;
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/tuozhan.png'); ?>"><h2>拓展性</h2></div>
-				<p>支持开源与源码选购</p>
+				<p>支持开源与源码选购，支持二次开发与定制</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinpai.png'); ?>"><h2>品牌性</h2></div>
-				<p>域名服务器及品牌独立</p>
+				<p>全站内容自主控制，树立自己的品牌</p>
 
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/shouhou.png'); ?>"><h2>售后技术</h2></div>
-				<p>6*12h售后保障</p>
+				<p>6*12h售后保障，版本更新迭代</p>
 
 			</div>
 
@@ -68,20 +68,53 @@ use yii\helpers\Url;
 <p>丰富的营销插件扩展让你的平台不管需求如何、体量多大，都能轻松组合应对</p>
 
 <div class="am-container">
-	
-	<div class="plug-btn  ">
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="1">限时秒杀</button>
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="2">三级分销</button>
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="3">优惠券</button>
-	</div>
 
-	<ul class="plug-img ">
-	<?php foreach ($market_img as $mun): ?>
-		<li>
-			<img src="<?= $mun['image'] ?>">
-		</li>
-	<?php endforeach;?>
-	</ul>
+<div class="am-tabs" data-am-tabs>
+  <ul class="am-tabs-nav am-nav am-nav-tabs">
+    <li class="am-active"><a href="javascript: void(0)">限时秒杀</a></li>
+    <li><a href="javascript: void(0)">三级分销</a></li>
+    <li><a href="javascript: void(0)">优惠券</a></li>
+  </ul>
+
+  <div class="am-tabs-bd">
+
+    <div class="am-tab-panel am-active">
+      <div class="am-g">
+<?php foreach ($img1 as $mun): ?>
+  <div class="col-sm-3">
+    <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
+  </div>
+<?php endforeach;?> 
+</div>
+    </div>
+
+
+    <div class="am-tab-panel">
+      <div class="am-g">
+<?php foreach ($img2 as $mun): ?>
+  <div class="col-sm-3">
+    <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
+  </div>
+<?php endforeach;?>
+
+</div>
+    </div>
+
+  <div class="am-tab-panel">
+      <div class="am-g">
+<?php foreach ($img3 as $mun): ?>
+  <div class="col-sm-3">
+    <img class="am-thumbnail" src="<?= $mun['image'] ?>" alt="<?= $mun['caption'] ?>"/>
+  </div>
+<?php endforeach;?>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
 
   <div class="plug-img am-show-sm-only">
     <img src="<?php echo Url::to('@web/storage/images/huiyuan1.jpg');?>">
@@ -155,6 +188,7 @@ use yii\helpers\Url;
      <?php foreach ($detail_img as $num1): ?>
     <li data-thumb="<?=$num1['image']?>">
       <img src="<?=$num1['image']?>">
+      <p><?= $num1['caption'] ?></p>
     </li>
     <?php endforeach;?>
   </ul>
@@ -248,7 +282,7 @@ use yii\helpers\Url;
    <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/xin.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">7 x 12h售后支持</figcaption>
+      <figcaption class="am-thumbnail-caption">6 x 12h售后支持</figcaption>
     </figure>
   </div>
 </div>
@@ -329,7 +363,12 @@ $this->registerJs(<<<JS
     //   },
     // });
 
-     
+
+
+
+
+
+
 
 
 
