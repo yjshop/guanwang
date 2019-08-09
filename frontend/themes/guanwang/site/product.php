@@ -70,9 +70,9 @@ use yii\helpers\Url;
 <div class="am-container">
 	
 	<div class="plug-btn  ">
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="1">限时秒杀</button>
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="2">三级分销</button>
-		<button type="button" class="am-btn  am-btn-primary st-btn" value="3">优惠券</button>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>5]); ?>">限时秒杀</a>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>13]); ?>">三级分销</a>
+		<a class="am-btn  am-btn-primary st-btn" href="<?=Url::to(['site/product','market_id'=>14]); ?>">优惠券</a>
 	</div>
 
 	<ul class="plug-img ">

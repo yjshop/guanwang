@@ -11,6 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $this->beginBlock('content-header'); ?>
 <?= $this->title . ' ' . Html::a(Yii::t('app', '新页面'), ['create'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
+<?= Html::a(Yii::t('app', '添加分类'), ['category'], ['class' => 'btn btn-primary btn-flat btn-xs']) ?>
 <?php $this->endBlock(); ?>
 <div class="box box-primary">
     <div class="box-body">
@@ -19,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             'id',
+            'category_id',
             [
                 'attribute' => 'use_layout',
                 'value' => function ($model) {

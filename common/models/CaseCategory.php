@@ -46,10 +46,10 @@ class CaseCategory extends \yii\db\ActiveRecord
         return [
             'id' => 'Id',
             'pid' => 'Pid',
-            'title' => 'Title',
+            'title' => '分类名称',
             'slu' => 'Slu',
-            'create_time' => 'Create Time',
-            'update_time' => 'Update Time',
+            'create_time' => '创建时间',
+            'update_time' => '更新时间',
             'module' => 'Module',
         ];
     }

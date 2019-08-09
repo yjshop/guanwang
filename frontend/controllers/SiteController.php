@@ -100,7 +100,13 @@ class SiteController extends Controller
         }else{
             $head_img = CarouselItem::find()->where(['carousel_id'=>12,'status'=>1])->orderBy('sort asc')->one();
         }
-       $market_img = CarouselItem::find()->where(['carousel_id'=>5,'status'=>1])->limit(4)->orderBy('sort asc')->all();
+        if(!empty(yii::$app->request->getQueryString('market_id')))
+        {
+            $market_id = yii::$app->getRequest()->getQueryParam('market_id');   
+        }else{
+            $market_id = 5;
+        }
+        $market_img = CarouselItem::find()->where(['carousel_id'=>$market_id,'status'=>1])->limit(4)->orderBy('sort asc')->all();
        $detail_img = CarouselItem::find()->where(['carousel_id'=>6,'status'=>1])->orderBy('sort asc')->all();
        $pay_img = CarouselItem::find()->where(['carousel_id'=>7,'status'=>1])->orderBy('sort asc')->one();
        $order_img = CarouselItem::find()->where(['carousel_id'=>8,'status'=>1])->orderBy('sort asc')->one();

@@ -3,6 +3,7 @@
 namespace common\models;
 use common\behaviors\CommentBehavior;
 use common\behaviors\MetaBehavior;
+use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\HtmlPurifier;
 use yii\helpers\StringHelper;
@@ -32,6 +33,7 @@ class Page extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['category_id'],'integer'],
             [['content', 'title', 'slug'], 'required'],
             [['content'], 'string'],
             ['markdown', 'default', 'value' => $this->getIsMarkdown()],
@@ -74,7 +76,8 @@ class Page extends \yii\db\ActiveRecord
             'use_layout' => '是否使用布局',
             'content' => '内容',
             'title' => '标题',
-            'slug' => '标识'
+            'slug' => '标识',
+            'category_id'=>'分类',
         ];
     }
 

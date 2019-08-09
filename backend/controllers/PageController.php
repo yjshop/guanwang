@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use common\models\PageCategory;
 
 /**
  * PageController implements the CRUD actions for Page model.
@@ -39,6 +40,18 @@ class PageController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
+    }
+    
+    public function actionCategory()
+    {  
+        $model = new PageCategory();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('category', [
+                'model' => $model,
+            ]);
+        }
     }
 
     /**
