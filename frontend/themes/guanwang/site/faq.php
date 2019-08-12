@@ -1,4 +1,6 @@
 <?php
+use common\models\Page;
+
 ?>
 <!-- 主体 -->
 <div class="faq-wrap">
@@ -21,21 +23,23 @@
  <div class="am-tabs" data-am-tabs>
 
     <ul class="am-tabs-nav am-nav am-nav-tabs">
-    <li class="am-active"><a href="#tab1">小程序</a></li>
-    <li><a href="#tab2">微商城</a></li>
-    <li><a href="#tab3">单商户</a></li>
-    <li><a href="#tab4">多商户</a></li>
-     <li><a href="#tab5">三级分销</a></li>
+    <?php foreach ($category as $k=>$cg):?>
+    <li><a href="#tab<?=$n=($k+1) ?>"><?=$cg['title'] ?></a></li>
+    <?php endforeach; ?>
+    
+<!--   am-activ -->
+<!--     <li><a href="#tab3">单商户</a></li> -->
+<!--     <li><a href="#tab4">多商户</a></li> -->
+<!--      <li><a href="#tab5">三级分销</a></li> -->
   </ul>
 
-   <div class="am-tabs-bd">
-
-
+ <div class="am-tabs-bd">
+   
   <!-- 选项卡 -->
-      <div class="am-tab-panel am-fade am-in am-active" id="tab1">
-                <div id="web-mobile" class="slide services ">
-       
-          
+ <?php foreach ($category as $k=>$cg): ?>
+    <div class="am-tab-panel am-fade am-in am-active" id="tab<?=$n=($k+1) ?>">
+       <div id="web-mobile" class="slide services "> 
+          <?php $help = Page::find()->where(['use_layout'=>1,'slug' =>'help','category_id'=>$cg['id']])->orderBy('id asc')->all(); ?>
             <div class="row">
                <?php foreach ($help as $mun): ?>
                 <div class="faq-question"><?= $mun['title'] ?></div>
@@ -48,35 +52,11 @@
         
     </div>
       </div>
-
-
-
- <!-- 选项卡 -->
-         <div class="am-tab-panel am-fade" id="tab2">
-     2
-    </div>
-
- <!-- 选项卡 -->
-   <div class="am-tab-panel am-fade" id="tab3">
-    3
-    </div>
-
-
- <!-- 选项卡 -->
-     <div class="am-tab-panel am-fade" id="tab4">
-        4
-     </div>
-
-
- <!-- 选项卡 -->
-      <div class="am-tab-panel am-fade" id="tab5">
-        5
-      </div>
-
-
+ <?php endforeach; ?>
+ </div>
    </div>
 </div>
-
+</div>
 
 
 

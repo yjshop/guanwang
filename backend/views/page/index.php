@@ -1,5 +1,6 @@
 <?php
 
+use common\models\CaseCategory;
 use yii\grid\GridView;
 use yii\helpers\Html;
 
@@ -19,7 +20,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             'id',
-            'category_id',
+            [
+                'attribute'=>'category_id',
+                'value'=>'caseCategory.title',
+                'filter'=>CaseCategory::find()
+                ->select(['title','id'])
+                ->orderBy('id')
+                ->indexBy('id')
+                ->column(),
+            ],
             [
                 'attribute' => 'use_layout',
                 'value' => function ($model) {

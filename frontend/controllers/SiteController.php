@@ -14,6 +14,7 @@ use common\models\Cases;
 use common\models\Carousel;
 use api\modules\v1\models\CarouselItem;
 use common\models\Page;
+use common\models\CaseCategory;
 
 /**
  * Site controller.
@@ -123,10 +124,11 @@ class SiteController extends Controller
     
     public function actionFaq(){
         
-        $help = Page::find()->where(['use_layout'=>1,'slug' =>'help'])->orderBy('id asc')->all();
+       // $help = Page::find()->where(['use_layout'=>1,'slug' =>'help'])->orderBy('id asc')->all();
+        $category = CaseCategory::find()->all();
         
         return $this->render('faq',[
-            'help' => $help,
+            'category' => $category,
         ]);
     }
     /**

@@ -20,11 +20,13 @@ $category = ArrayHelper::map($pp, 'id', 'title');
     <?php $form = ActiveForm::begin(); ?>
     <div class="col-lg-9">
         <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-        <?php if ($model->isNewRecord): ?>
-         <?=  $form->field($model, 'category_id')->dropDownList($category); ?>
+        <?=  $form->field($model, 'category_id')->dropDownList($category); ?>
+        
+        <?php if ($model->isNewRecord): ?> 
         <?= Html::dropDownList('choose-editor', request('editor') ? : config('page_editor_type'), config('editor_type_list'), ['id' => 'choose-editor']) ?>
         <?php endif; ?>
-        <?= $form->field($model, 'content')->widget(\common\widgets\EditorWidget::className(), $model->isNewRecord ? ['type' => request('editor') ? : config('page_editor_type')] : ['isMarkdown' => $model->markdown]) ?>
+        
+        <?= $form->field($model, 'content')->widget(\common\widgets\EditorWidget::className(), $model->isNewRecord ? ['type' => request('editor') ? : config('page_editor_type')] : ['isMarkdown' => 1]) ?>
 
     </div>
     <div class="col-lg-3">

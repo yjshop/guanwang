@@ -111,4 +111,10 @@ class Page extends \yii\db\ActiveRecord
 
         return [$title, $description, $model->keywords];
     }
+    
+    public function getCaseCategory(){
+        // hasOne要求返回两个参数 第一个参数是关联表的类名 第二个参数是两张表的关联关系
+        // 这里id是casesCategory表的id, 关联cases表的id
+        return $this->hasOne(CaseCategory::className(), ['id' => 'category_id']);
+    }
 }
