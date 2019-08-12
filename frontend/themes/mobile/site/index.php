@@ -308,6 +308,7 @@ background-image: url(storage/images/system1.png);
 </div>
 
 <!-- 成功案例 -->
+
  <div class="anli am-container index-anli-bg" style ="background-image: url('<?php echo Url::to('@web/storage/images/anlia01.png') ?>');">
   <h1 class="big-title ">成功案例</h1>
   <div class="line "></div>

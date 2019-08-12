@@ -10,7 +10,7 @@ class VisitorController extends Controller
     {
         
         if(Yii::$app->request->isPost){
-            $domain=Yii::$app->request->post('domain');
+            $domain = Yii::$app->request->post('domain');
             $count=Visitor::find()->where(['or',['status'=>1,'domain'=>$domain],['status'=>1,'app_id'=>$domain]])->count();
             if($count>0){
                 $label = "恭喜您使用的是正版授权的软件！！！";
