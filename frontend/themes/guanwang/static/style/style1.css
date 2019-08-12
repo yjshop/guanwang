@@ -1020,6 +1020,15 @@ a.tag:hover {
        }
 
 
+       .faq-title{
+        margin-top: 50px;
+       }
+
+      .faq-wrap .am-nav-tabs>li>a{
+        font-size: 18px;
+      }
+
+
 
 
 }
