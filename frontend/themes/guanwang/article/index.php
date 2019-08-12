@@ -23,8 +23,8 @@ if(isset($category)) {
             <!-- <div class="am-slider am-slider-default" data-am-flexslider> -->
             <div data-am-widget="slider" class="am-slider am-slider-b2" data-am-slider='{&quot;controlNav&quot;:false}' data-am-flexslider>
                 <ul class="am-slides">
-                    <li><img src="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg" /></li>
-                    <li><img src="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg" /></li>
+                    <li><img src="<?php echo Url::to('@web/storage/images/01.jpg'); ?>" /></li>
+                    <li><img src="<?php echo Url::to('@web/storage/images/02.jpg'); ?>" /></li>
                 </ul>
             </div>
             <!--   幻灯片结束 -->
