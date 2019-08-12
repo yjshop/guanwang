@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use common\models\Article;
+use yii\helpers\Html;
 /* @var $this yii\web\View */
 echo "
 <style type = 'text/css'>
@@ -17,7 +18,7 @@ background-image: url(storage/images/system1.png);
     <div class="swiper-container swiper1">
     <div class="swiper-wrapper">
     <?php foreach ($image as $img): ?>
-      <div class="swiper-slide"><img src="<?= $img['image'] ?>"></div>
+      <div class="swiper-slide"><img src="<?= $img->image ?>"></div>
     <?php endforeach; ?>
     </div>
     <!-- Add Pagination -->
@@ -317,8 +318,8 @@ background-image: url(storage/images/system1.png);
    <div class="swiper-container swiper2">
     <div class="swiper-wrapper">
      <?php foreach ($case as $vv): ?>
-      <div class="swiper-slide"><img src="<?=$vv['cover']?>">
-          <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><?=$vv['title']?></a>      
+      <div class="swiper-slide"><img src="<?=$vv->cover?>">
+          <a href="<?=Url::to(['cases/view','id'=>$vv->id])?>"><?=Html::encode($vv->title)?></a>      
       </div>
       <?php endforeach; ?>
     </div>
@@ -369,12 +370,12 @@ background-image: url(storage/images/system1.png);
       <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
       <?php if($key<1&&!empty($article)):?>
       <div class="news-box1 ">
-         <a class="update " href="<?=Url::to(['article/detail','id'=>$article[0]['id']])?>">
+         <a class="update " href="<?=Url::to(['article/detail','id'=>$article[0]->id])?>">
           <div class="img-box ">
              <img src="/storage/images/news01.jpg" alt="资讯图片">
           </div>
-          <h4><?= $article[0]['title'] ?></h4>
-          <p><?= $article[0]['title'] ?></p>
+          <h4><?=Html::encode($article[0]->title) ?></h4>
+          <p><?=Html::encode($article[0]->title) ?></p>
         </a>
      </div>
      <?php else:?>
@@ -383,7 +384,7 @@ background-image: url(storage/images/system1.png);
         <div class="news-box2">
            <?php foreach ($article as $kk=>$vo):?>
            <ul>
-             <li class="news-des "> <a href="<?=Url::to(['article/detail','id'=>$vo['id']])?>"><?=$vo['title']?>"</a></li>
+             <li class="news-des "> <a href="<?=Url::to(['article/detail','id'=>$vo->id])?>"><?=Html::encode($vo->title) ?></a></li>
            </ul>
            <?php endforeach;?>      
            

@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Html;
 use yii\helpers\Url;
 use common\models\Article;
 /* @var $this yii\web\View */
@@ -18,7 +19,7 @@ background-image: url(storage/images/system1.png);
     <div class="swiper-wrapper">
   
     <?php foreach ($image as $img): ?>
-    <div class="swiper-slide"><img src="<?= $img['image'] ?>"></div>
+    <div class="swiper-slide"><img src="<?= $img->image ?>"></div>
     <?php endforeach;?>
 
       <!-- <div class="swiper-pagination"></div> -->
@@ -287,11 +288,11 @@ background-image: url(storage/images/system1.png);
   <ul class="anli-pc">
   <?php foreach ($case as $vv): ?> 
     <li class="am-u-md-3 am-u-sm-4 ">
-      <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"> <img alt="<?=$vv['title']?>" src="<?=$vv['cover']?>"></a>
+      <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"> <img alt="<?=Html::encode($vv->title) ?>" src="<?=$vv->cover?>"></a>
       <div class="code-img-box ">
         <div>
-          <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><img alt="<?=$vv['title']?>" src="<?= $vv['qr_cover'] ?>"></a>
-          <p class="name"><a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><?=$vv['title']?></a></p>
+          <a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><img alt="<?=Html::encode($vv->title) ?>" src="<?= $vv->qr_cover ?>"></a>
+          <p class="name"><a href="<?=Url::to(['cases/view','id'=>$vv['id']])?>"><?=Html::encode($vv->title) ?></a></p>
           <p>微信扫码查看案例</p>
         </div>
       </div>
@@ -350,19 +351,19 @@ background-image: url(storage/images/system1.png);
          <?php if($key<3&&!empty($article)):?>
          	
         <div class="news-box1">
-               <a class="update " href="<?=Url::to(['article/detail','id'=>$article[0]['id']])?>">
+               <a class="update " href="<?=Url::to(['article/detail','id'=>$article[0]->id])?>">
                <div class="img-box ">
-                   <img src="<?php echo Url::to('@web/storage/images/news01.jpg'); ?>" alt="<?=$article[0]['title']?> ">
+                   <img src="<?php echo Url::to('@web/storage/images/news01.jpg'); ?>" alt="<?=Html::encode($article[0]->title) ?> ">
                </div>
-			   <h4> <?=$article[0]['title']?></h4>
-               <p class="desc"><?=$article[0]['title']?></p>
+			   <h4> <?=Html::encode($article[0]->title) ?></h4>
+               <p class="desc"><?=Html::encode($article[0]->title) ?></p>
                </a>
          <?php else:?>
           <div class="news-box2">   
           <!--列表-->
          <?php foreach ($article as $kk=>$vo):?>
           <ul>
-            <li class="news-des "> <a href="<?=Url::to(['article/detail','id'=>$vo['id']])?>"><?=$vo['title']?></a></li>
+            <li class="news-des "> <a href="<?=Url::to(['article/detail','id'=>$vo->id])?>"><?=Html::encode($vo->title) ?></a></li>
          </ul>  
          <?php endforeach;?>   
           

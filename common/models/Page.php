@@ -73,9 +73,9 @@ class Page extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'use_layout' => '是否使用布局',
-            'content' => '内容',
-            'title' => '标题',
+            'use_layout' => '是否显示',
+            'content' => '回答',
+            'title' => '问题',
             'slug' => '标识',
             'category_id'=>'分类',
         ];

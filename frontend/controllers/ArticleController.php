@@ -15,6 +15,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii;
+use GuzzleHttp\Psr7\LimitStream;
 class ArticleController extends Controller
 {
     /**
@@ -28,6 +29,8 @@ class ArticleController extends Controller
     {
         // 热门标签
         $hotTags = TagService::hot();
+        
+        $case = Article::find()->where(['category_id'=>41])->limit(5)->orderBy('id asc')->all();
         
         //如果搜索条件存在
         if(Yii::$app->request->isPost)
@@ -64,7 +67,8 @@ class ArticleController extends Controller
             return $this->render('index', [
                 'dataProvider' => $dataProvider,
                 'category' => $category,
-                'hotTags' => $hotTags
+                'hotTags' => $hotTags,
+                'case'=>$case,
             ]);
                     
         }else {
@@ -101,7 +105,8 @@ class ArticleController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'category' => $category,
-            'hotTags' => $hotTags
+            'hotTags' => $hotTags,
+            'case'=>$case,
         ]);
     }
     }
@@ -146,6 +151,8 @@ class ArticleController extends Controller
     {  
         $id = Yii::$app->request->get('id');
         
+        $case = Article::find()->where(['category_id'=>41])->limit(5)->orderBy('id desc')->all();
+        
         $model = Article::find()->published()->andWhere(['id' => $id])->one();
         if ($model === null) {
             throw new NotFoundHttpException('not found');
@@ -163,6 +170,7 @@ class ArticleController extends Controller
 
         return $this->render($model->module . '/Detail', [
             'model' => $model,
+            'case' =>$case,
             'hots' => $hots,
             'next' => $next,
             'prev' => $prev

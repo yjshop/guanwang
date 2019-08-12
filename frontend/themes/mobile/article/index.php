@@ -110,7 +110,9 @@ if(isset($category)) {
                     <div class="bd">
                         <ul>
                            
-                            <li><a href="/article/detail/id/360.html">几何线小程序商城系统2018年最后一周开发更新日志</a></li>
+                        <?php foreach ($case as $i): ?>
+                          <li><a href="<?=Url::to(['article/detail','id'=>$i->id]) ?>"><?= Html::encode($i->title) ?></a></li>
+                        <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>

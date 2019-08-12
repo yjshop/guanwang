@@ -313,11 +313,13 @@ use yii\helpers\Url;
 		<h2>小程序申请</h2>
 		<p class="am-hide-sm-only">小程序制作从提出需求到小程序制作报价，再到小程序制作，每一步都是规范和专业的</p>
 	</div>
+	<a href="<?=Url::to(['site/faq']); ?>">
 	<div class="am-u-lg-4 am-u-sm-4">
 		<div class="sup-img"><img src="<?php echo Url::to('@web/storage/images/wenti.png');?>"></div>
 		<h2>常见问题</h2>
 		<p class="am-hide-sm-only">什么是小程序定制，你们的报价如何，等小程序建设常见问题</p>
 	</div>
+	</a>
 	<div class="am-u-lg-4 am-u-sm-4">
 		<div class="sup-img"><img src="<?php echo Url::to('@web/storage/images/baozhang.png');?>"></div>
 		<h2>售后保障</h2>
