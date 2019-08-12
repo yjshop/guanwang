@@ -15,6 +15,8 @@
     <li class="am-active"><a href="#tab1">授权查询</a></li>
     <li><a href="#tab2">套餐价格</a></li>
     <li><a href="#tab3">用户须知</a></li>
+    <li><a href="#tab4">购买流程</a></li>
+     <li><a href="#tab5">功能列表</a></li>
   </ul>
 
 
@@ -224,13 +226,19 @@
 
 
     <div class="am-tab-panel am-fade" id="tab3">
-      我就这样告别山下的家，我实在不愿轻易让眼泪留下。我以为我并不差不会害怕，我就这样自己照顾自己长大。我不想因为现实把头低下，我以为我并不差能学会虚假。怎样才能够看穿面具里的谎话？别让我的真心散的像沙。如果有一天我变得更复杂，还能不能唱出歌声里的那幅画？
+     一、商业授权
+    1.1永久授权，您只需购买一次商业授权且绑定唯一域名，该授权永久有效。
+    1.2正版许可，获得唯一授权码，避免法律纠纷，永无后顾之忧。
     </div>
 
 
 
 
-
+      <div class="am-tab-panel am-fade am-in" id="tab4">
+      </div>
+                <img src="" alt="购买流程">
+        <div class="am-tab-panel am-fade am-in" id="tab5">
+      </div>
 
 
 
