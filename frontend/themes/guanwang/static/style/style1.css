@@ -1360,7 +1360,7 @@ a.tag:hover {
     }
     /*常见问题*/
     .slide.page-heading h3 {
-        font-size: 25px !important;
+        font-size: 21px !important;
         /*padding: */
     }
     .slide.page-heading {
@@ -1388,6 +1388,11 @@ a.tag:hover {
     }
     .am-nav>li.am-active>a, .am-nav>li.am-active>a:focus, .am-nav>li.am-active>a:hover {
         background-color: #31b3a4;
+    }
+
+
+    .faq-wrap .am-nav>li.am-active>a{
+        background-color: white;
     }
     ins {
         display: none!important;
