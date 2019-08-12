@@ -1,5 +1,7 @@
 <?php
 use common\models\Page;
+use yii\helpers\Html;
+use yii\helpers\HtmlPurifier;
 
 ?>
 <!-- 主体 -->
@@ -24,7 +26,7 @@ use common\models\Page;
 
     <ul class="am-tabs-nav am-nav am-nav-tabs">
     <?php foreach ($category as $k=>$cg):?>
-    <li><a href="#tab<?=$n=($k+1) ?>"><?=$cg['title'] ?></a></li>
+    <li><a href="#tab<?=$n=($k+1) ?>"><?=Html::encode($cg->title)?></a></li>
     <?php endforeach; ?>
     
 <!--   am-activ -->
@@ -39,28 +41,23 @@ use common\models\Page;
  <?php foreach ($category as $k=>$cg): ?>
     <div class="am-tab-panel am-fade am-in am-active" id="tab<?=$n=($k+1) ?>">
        <div id="web-mobile" class="slide services "> 
-          <?php $help = Page::find()->where(['use_layout'=>1,'slug' =>'help','category_id'=>$cg['id']])->orderBy('id asc')->all(); ?>
+          <?php $help = Page::find()->where(['use_layout'=>1,'slug' =>'help','category_id'=>$cg->id])->orderBy('id asc')->all(); ?>
             <div class="row">
                <?php foreach ($help as $mun): ?>
-                <div class="faq-question"><?= $mun['title'] ?></div>
+                <div class="faq-question"><?=Html::encode($mun->title)?></div>
                 <div class="faq-answer">
                     <img src="\storage\images\faq-answer.png">
-                    <?= $mun['content'] ?>
+                    <?= HtmlPurifier::process($mun->content) ?>
                 </div>
                 <?php endforeach; ?>
-            </div>
-        
-    </div>
+            </div>   
       </div>
+    </div>
  <?php endforeach; ?>
  </div>
    </div>
 </div>
 </div>
-
-
-
-
 
     <div id="web-mobile" class="slide services ">
     </div>

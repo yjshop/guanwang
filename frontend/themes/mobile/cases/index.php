@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\helpers\Html;
 ?>
 
 
@@ -9,7 +10,7 @@ use yii\helpers\Url;
 <!-- 不显示 -->
 <?php else: ?>
 <div class="banner am-g">
-<img src="<?=$tou['image'] ?>">   
+<img src="<?=$tou->image ?>">   
 </div>
 <?php endif; ?>
 
@@ -26,14 +27,14 @@ use yii\helpers\Url;
 <?php foreach ($category as $a): ?>
 <?php
 $show = "";
-if ($id == $a['id']):
+if ($id == $a->id):
     {
         $show = 'btn-active';
     }
     ?>
   <?php endif;?>
 
-<button type="button" class="am-btn  am-btn-primary am-btn-lg <?php echo $show ?>"><a href="<?=Url::to(['cases/index', 'category_id' => $a['id']])?>"><?=$a['title']?></a></button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg <?php echo $show ?>"><a href="<?=Url::to(['cases/index', 'category_id' => $a->id])?>"><?=Html::encode($a->title)?></a></button>
 
 <!-- btn-active -->
 <?php endforeach;?>

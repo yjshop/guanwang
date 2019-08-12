@@ -3,6 +3,7 @@ use yii\helpers\Url;
 use common\models\Article;
 use common\models\Cases;
 use kartik\helpers\Html;
+use yii\helpers\HtmlPurifier;
 /* @var $this yii\web\View */
 ?> 
 <!--  头部banner -->
@@ -10,19 +11,19 @@ use kartik\helpers\Html;
 <!-- 不显示 -->
 <?php else: ?>
 <div class="banner am-g">
-<img src="<?=$tou['image'] ?>">   
+<img src="<?=$tou->image ?>">   
 </div>
 <?php endif; ?>
 
 <!-- 案例介绍 -->
 <div class="detail-box">
-	<h1 class="big-title"><?php echo ($data['title']);?></h1>
+	<h1 class="big-title"><?=\yii\helpers\Html::encode($data->title);?></h1>
 <div class="am-container">
 
 <article class="am-article">
 
   <div class="am-article-bd">
-<?php echo ($data['content']);?>
+  <?= HtmlPurifier::process($data['content']);?>
   </div>
 
 </article>
@@ -41,14 +42,11 @@ use kartik\helpers\Html;
 		<ul class="am-slides">
 		
 		<?php foreach ($top2 as $vo):?>
-			<li> <a href="<?=Url::to(['cases/view','id'=>$vo['id']])?>"> 
-     		 <img src="<?=$vo['cover']?>" alt=<?=$vo['title']?>/>
+			<li> <a href="<?=Url::to(['cases/view','id'=>$vo->id])?>"> 
+     		 <img src="<?=$vo->cover?>" alt="<?=\yii\helpers\Html::encode($vo->title)?>"/>
 
-     		    <div class="am-slider-desc"><?=$vo['title']?></div>
-
-
-     			 
-    			
+     		    <div class="am-slider-desc"><?=\yii\helpers\Html::encode($vo->title)?></div>
+   			
     			</a>
 			</li>
        <?php endforeach;?>

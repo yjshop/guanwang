@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Html;
 use yii\helpers\Url;
 use function Qiniu\setWithoutEmpty;
 ?>
@@ -27,14 +28,14 @@ use function Qiniu\setWithoutEmpty;
 <?php foreach ($category as $a): ?>
 <?php
 $show = "";
-if ($id == $a['id']):
+if ($id == $a->id):
     {
         $show = 'btn-active';
     }
     ?>
   <?php endif;?>
 
-<button type="button" class="am-btn  am-btn-primary am-btn-lg <?php echo $show ?>"><a href="<?=Url::to(['cases/index', 'category_id' => $a['id']])?>"><?=$a['title']?></a></button>
+<button type="button" class="am-btn  am-btn-primary am-btn-lg <?php echo $show ?>"><a href="<?=Url::to(['cases/index', 'category_id' => $a->id])?>"><?=Html::encode($a->title)?></a></button>
 
 <!-- btn-active -->
 <?php endforeach;?>
@@ -99,10 +100,12 @@ $this->registerJs(<<<JS
       $(this).children('.shadow').hide();
     })
 
- if($(window).width()<=600){
+  if($(window).width()<=600){
     // 首次加载
     var JSONstr=null;
     var imgData=[];
+    
+
     //下一页
     var next;
     //其他信息
@@ -113,11 +116,18 @@ $this->registerJs(<<<JS
     var flag2=false;
 
    $.ajax('/api/v1/cases/index?per-page=2&page=1', {
-    dataType: 'json'
+    dataType: 'json',
+    beforeSend:function(){
+      
+      $("#loading").html('加载中...');
+      
+    }
+
   }).done(function (data) {
 
      //第一次请求已完成
       flag2=true;
+      $("#loading").empty();
 
 
       next=data._links.next;
@@ -125,7 +135,7 @@ $this->registerJs(<<<JS
 
       $.each(data.items,function(index,value){
 
-        imgData.push(value.cover);
+         imgData.push({cover:value.cover,id:value.id});
       })
        imgLoad(imgData);
 
@@ -149,15 +159,21 @@ $this->registerJs(<<<JS
       if(flag2&&message.currentPage<message.pageCount){
         imgData=[];
       $.ajax(next.href, {
-    dataType: 'json'
+    dataType: 'json',
+     beforeSend:function(){
+      
+      $("#loading").html('加载中...');
+      
+    }
   }).done(function (data) {
 
+      $("#loading").empty();
       next=data._links.next;
       message=data._meta;
 
       $.each(data.items,function(index,value){
 
-        imgData.push(value.cover);
+        imgData.push({cover:value.cover,id:value.id});
       })
        imgLoad(imgData);
 
@@ -166,6 +182,8 @@ $this->registerJs(<<<JS
   }).always(function () {
 
   });
+}else{
+   $("#loading").html('没有更多案例了 ^_^');
 }
 
 
@@ -179,9 +197,11 @@ function imgLoad(data){
 
             //滑动时只加载一次
             flag=0;
-            var itemss
+            console.log(data);
             for(var i=0;i<data.length;i++){
-                itemss=$('<li class="anli-box"><img src="'+data[i]+'"></li>');
+
+              itemss=$('<li class="anli-box"><a href="/cases/view?id='+data[i].id+'"><img src="'+data[i].cover+'"></a></li>');
+
               $('.anli-m').append(itemss).masonry( 'appended',itemss);
 
             }

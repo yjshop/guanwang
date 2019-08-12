@@ -100,11 +100,9 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
                     </div>
                     <div class="bd">
                         <ul>
-                            <li><a href="/article/detail/id/365.html">几何线微信商城系统2019年第三周开发动态</a></li>
-                            <li><a href="/article/detail/id/364.html">关于《电子商务法》商家必须知道的这几点要求</a></li>
-                            <li><a href="/article/detail/id/363.html">几何线商城系统2019年第二周开发动态</a></li>
-                            <li><a href="/article/detail/id/361.html">2019年第一周几何线微信商城模块更新日志</a></li>
-                            <li><a href="/article/detail/id/360.html">几何线小程序商城系统2018年最后一周开发更新日志</a></li>
+                        <?php foreach ($case as $i): ?>
+                            <li><a href="<?=Url::to(['article/detail','id'=>$i->id]) ?>"><?= Html::encode($i->title) ?></a></li>
+                        <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
