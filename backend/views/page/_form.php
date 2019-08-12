@@ -5,7 +5,6 @@ use common\models\PageCategory;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use yii\base\Object;
 use common\models\CaseCategory;
 
 /* @var $this yii\web\View */
