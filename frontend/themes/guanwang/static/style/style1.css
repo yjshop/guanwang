@@ -959,12 +959,22 @@ a.tag:hover {
     background-color: white;
     border-color: white;
 }
+.visitor-wrap .am-nav-tabs>li>a{
+    font-size: 18px;
 
 
+}
 
+.visitor-wrap .am-tabs-bd{
+    margin-top: 20px;
+}
 
+/*常见问题*/
 
-
+.faq-wrap ul.am-nav-tabs{
+    display: flex;
+    justify-content: center;
+}
 
 
 
@@ -991,6 +1001,25 @@ a.tag:hover {
     position: relative;
     overflow: hidden;
         }
+
+
+       .visitor-wrap .slide.services{
+          padding-top: 10px;
+       }
+     
+
+       .visitor-wrap .am-panel-primary>.am-panel-hd{
+        padding: 15px;
+    font-size: 18px
+    border:none;
+       }
+
+       .visitor-wrap .am-panel-primary>.am-panel-bd{
+        font-size: 16px;
+        color: #8E8E8E;
+       }
+
+
 
 
 }

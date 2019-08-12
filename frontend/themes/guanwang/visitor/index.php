@@ -11,6 +11,8 @@ use yii\helpers\Url;
         </div>       
     </div>
  <div class="am-container">
+
+
    <div class="am-tabs" data-am-tabs>
 
     <ul class="am-tabs-nav am-nav am-nav-tabs">
@@ -79,7 +81,7 @@ use yii\helpers\Url;
         <div class="am-u-md-6">
 
             <div class="am-panel am-panel-primary">
-             <div class="am-panel-hd">商业授权用户</div>
+             <div class="am-panel-hd" >商业授权用户</div>
             <div class="am-panel-bd">
            商业授权用户是由几何线电商系统商业运营授权许可证，经过认证后您将拥有商业授权的用户身份，并且享有使用几何线电商系统进行商业运营的合法权利。适合所有正在使用或将要使用几何线免费商城系统的网商用户选择！
             </div>
@@ -90,7 +92,7 @@ use yii\helpers\Url;
         <div class="am-u-md-6">
             
              <div class="am-panel am-panel-primary">
-             <div class="am-panel-hd">非商业授权用户</div>
+             <div class="am-panel-hd" >非商业授权用户</div>
             <div class="am-panel-bd">
             未经几何线电商系统授权的用户，仅供从事学习研究之用，不具备商业运作的合法性，如果未获取授权而从事商业行为，几何线保留对其使用系统停止升级、关闭、甚至对其商业运作行为媒体曝光和追究法律责任的起诉权利。
             </div>
@@ -130,7 +132,7 @@ use yii\helpers\Url;
 
   <div class="am-tab-panel am-fade am-in" id="tab2">
     
-     <h2 class="title2">B2C单商户版</h2>
+    <!--  <h2 class="title2">B2C单商户版</h2>
 
     <ul class="am-g price-list">
      
@@ -209,24 +211,9 @@ use yii\helpers\Url;
   </li>
    
  
-</ul>
+</ul> -->
          
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -242,11 +229,13 @@ use yii\helpers\Url;
 
 
       <div class="am-tab-panel am-fade am-in" id="tab4">
+            <img src="" alt="购买流程">
       </div>
-                <img src="" alt="购买流程">
+               
         <div class="am-tab-panel am-fade am-in" id="tab5">
-      </div>
-
+            功能列表
+         </div>
+</div>
 
 
    <div id="web-mobile" class="slide services ">
