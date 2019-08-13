@@ -15,6 +15,7 @@ use yii\helpers\Url;
       <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: &#39;#doc-topbar-collapse&#39;}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
       <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
+        <li>
          <?php
         $navItems = \common\models\Nav::getItems('header');
         \yii\widgets\Spaceless::begin();
@@ -25,7 +26,7 @@ use yii\helpers\Url;
         ]);
         \yii\widgets\Spaceless::end();
         ?>
-             
+        </li>                             
         </ul>
       </div> 
     </div>

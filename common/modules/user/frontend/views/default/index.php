@@ -11,6 +11,7 @@ use yii\helpers\Url;
  */
 $this->title = '个人中心';
 ?>
+<div class="my-col-md" >
 <div class="col-md-3">
     <div class="panel panel-default">
         <div class="panel-body" style="background: url(http://www.yiichina.com/images/user-bg.jpg); background-size:100% 120px; background-repeat:no-repeat;">
@@ -70,4 +71,5 @@ $this->title = '个人中心';
         <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 </div>

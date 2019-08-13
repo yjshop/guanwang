@@ -55,7 +55,7 @@ JS
 <?= $this->render('_header') ?>
 
 
-<!--删除的面包屑位置-->
+<!--面包屑位置-->
      <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
     <div class="am-container mgt60">
     <?= Breadcrumbs::widget([
@@ -68,6 +68,7 @@ JS
     <?= $content ?>
 
 <?= $this->render('_footer') ?>
+
 <?php if(Yii::$app->user->isGuest): ?>
     <?= $this->render('_login') ?>
 <?php endif; ?>

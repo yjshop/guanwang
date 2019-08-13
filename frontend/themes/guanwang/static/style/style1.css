@@ -1506,3 +1506,15 @@ a.tag:hover {
     font-size: 22px;
 }
 }
+
+.my-col-md{
+    height: 800px;
+}
+.col-md-9,.col-md-3{
+    margin-top: 10px;
+}
+.site-signup ,.site-login{
+    margin-left: 35%;
+    margin-top: 40px;
+    height: 700px;
+}

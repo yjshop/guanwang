@@ -15,7 +15,7 @@ use common\models\Article;
             ],
         ]) ?>
         <div class="row">
-            <?php if ($this->beginCache('category-article-list', ['dependency' => ['class' => 'yii\caching\DbDependency', 'sql' => "SELECT MAX(updated_at) FROM {{%article}}"]])): ?>
+       <?php if ($this->beginCache('category-article-list', ['dependency' => ['class' => 'yii\caching\DbDependency', 'sql' => "SELECT MAX(updated_at) FROM {{%article}}"]])): ?>
         <?php foreach ($categories as $category):?>
             <div class="col-md-6">
                 <div class="panel panel-default">

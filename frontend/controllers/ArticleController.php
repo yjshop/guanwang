@@ -35,8 +35,7 @@ class ArticleController extends Controller
         //如果搜索条件存在
         if(Yii::$app->request->isPost)
         {
-            $title=Yii::$app->request->post('title');
-            $query = Article::find()->where(['like','title',$title])->published();
+            $query = Article::find()->where(['like','title',Yii::$app->request->post('title')])->published();
             $category = null;
             if (!empty($cate)) {
                 $category = Category::findByIdOrSlug($cate);
@@ -147,9 +146,8 @@ class ArticleController extends Controller
      * @return string
      * @throws NotFoundHttpException
      */
-    public function actionDetail()
+    public function actionDetail($id)
     {  
-        $id = Yii::$app->request->get('id');
         
         $case = Article::find()->where(['category_id'=>41])->limit(5)->orderBy('id desc')->all();
         
