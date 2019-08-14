@@ -22,7 +22,7 @@ $this->title = '授权管理';
             </div>
             <div class="panel-body">
                 <div class="alert alert-info">
-                    <p><?= Yii::t('app', 'You can connect multiple accounts to be able to log in using them') ?>.</p>
+                    <p><?= Yii::t('app', '您可以连接多个帐户以使用它们登录您可以连接多个帐户以使用它们登录') ?>.</p>
                 </div>
                 <?php $auth = AuthChoice::begin([
                     'baseAuthUrl' => ['/user/security/auth'],

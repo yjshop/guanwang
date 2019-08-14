@@ -73,14 +73,14 @@ use yii\helpers\Url;
                             'label' => Html::icon('cog') . ' 账户设置',
                             'url' => ['/user/settings/profile'],
                         ],
-                        [
-                            'label' => Html::icon('book') . ' 我的投稿',
-                            'url' => ['/user/default/article-list'],
-                        ],
-                        [
-                            'label' => Html::icon('star') . ' 我的收藏',
-                            'url' => ['/user/default/favourite'],
-                        ],
+//                         [
+//                             'label' => Html::icon('book') . ' 我的投稿',
+//                             'url' => ['/user/default/article-list'],
+//                         ],
+//                         [
+//                             'label' => Html::icon('star') . ' 我的收藏',
+//                             'url' => ['/user/default/favourite'],
+//                         ],
                         [
                             'label' => Html::icon('sign-out') . ' 退出',
                             'url' => ['/user/security/logout'],
