@@ -1510,7 +1510,9 @@ a.tag:hover {
 .col-md-9,.col-md-3{
     margin-top: 10px;
 }
-.site-signup ,.site-login,{
+
+.site-signup,.site-login,.site-request-password-reset{
+	
     margin-left: 35%;
     margin-top: 40px;
     height: 700px;
