@@ -11,7 +11,7 @@ use common\modules\user\widgets\AuthChoice;
 $this->title = '授权管理';
 ?>
 
-<div class="row">
+<div class="container profile">
     <div class="col-md-3">
         <?= $this->render('../_menu') ?>
     </div>
