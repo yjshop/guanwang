@@ -57,7 +57,7 @@ JS
 
 <!--面包屑位置-->
      <?php if (!(new \Detection\MobileDetect())->isMobile()): ?>
-    <div class="am-container mgt60">
+    <div class="am-container ">
     <?= Breadcrumbs::widget([
         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
     ]) ?>

@@ -4347,7 +4347,7 @@ a:focus {
 }
 .slide.page-heading {
     background-color: #704884;
-    padding: 140px 0 40px;
+    padding: 70px 0 70px 0;
     text-align: center
 }
 .slide.page-heading .container {
