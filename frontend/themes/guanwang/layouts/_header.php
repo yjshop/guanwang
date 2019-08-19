@@ -7,7 +7,12 @@ use yii\bootstrap\Nav;
 use yii\helpers\Url;
 ?>
 
-
+<style type="text/css">
+    .mgt7{margin-top: 7px;}
+    .mgt10{margin-top: 10px;}
+    .navbar-right li a {padding-bottom: 0;}
+    .l-text{margin-top: 6px;}
+</style>
    <!-- 头部 -->
     <header class="am-topbar am-topbar-fixed-top">
     <div class="am-container bg-f8">
@@ -21,7 +26,7 @@ use yii\helpers\Url;
         \yii\widgets\Spaceless::begin();
         echo \yii\widgets\Menu::widget([
             'items' => $navItems,
-            'options' => ['class' => 'am-nav am-nav-pills am-topbar-nav'],
+            'options' => ['class' => 'am-nav am-nav-pills am-topbar-nav mgt7'],
             'activeCssClass' => 'am-active'
         ]);
         \yii\widgets\Spaceless::end();
@@ -39,6 +44,7 @@ use yii\helpers\Url;
             <?php
             $rightMenuItems = [];
             $noticeNum = Yii::$app->notify->getNoReadNum();
+
 //             if ($noticeNum > 0) {
 //                 $rightMenuItems[] = [
 //                     'label' => '<i class="fa fa-bell"></i> <span class="badge">' . $noticeNum . '</span>',
@@ -55,9 +61,14 @@ use yii\helpers\Url;
 //                     'url' => ['/user/default/notice']
 //                 ];
 //             }
+
             if (Yii::$app->user->isGuest) {
-                $rightMenuItems[] = ['label' => Yii::t('common', 'Signup'), 'url' => ['/user/registration/signup']];
-                $rightMenuItems[] = ['label' => Yii::t('common', 'Login'), 'url' => ['/user/security/login']];
+                $rightMenuItems[] = ['label' => Yii::t('common', 'Signup'), 'url' => ['/user/registration/signup'],'linkOptions' => [
+                        'class' => 'l-text'
+                    ]];
+                $rightMenuItems[] = ['label' => Yii::t('common', 'Login'), 'url' => ['/user/security/login'],'linkOptions' => [
+                        'class' => 'l-text'
+                    ]];
             } else {
                 $rightMenuItems[] = [
                     'label' => Html::img(Yii::$app->user->identity->getAvatar(32), ['width' => 32, 'height' => 32]),
