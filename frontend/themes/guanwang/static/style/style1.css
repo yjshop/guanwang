@@ -1002,7 +1002,7 @@ a.tag:hover {
     color: white !important;
 
 }
-.profile button[type=submit]{
+.profile button[type=submit],.profile button[type=button], .site-login button[type=submit],.site-signup button[type=submit]{
     border-color:#31b3a4 !important;
     background-color:#31b3a4 !important;
 }
@@ -1022,6 +1022,10 @@ a.tag:hover {
         margin-bottom: 5px;
       }
 
+
+      .user-module input[type=button],.user-module button[type=submit]{
+        color: white;
+      }
 
 
 
