@@ -39,22 +39,22 @@ use yii\helpers\Url;
             <?php
             $rightMenuItems = [];
             $noticeNum = Yii::$app->notify->getNoReadNum();
-            if ($noticeNum > 0) {
-                $rightMenuItems[] = [
-                    'label' => '<i class="fa fa-bell"></i> <span class="badge">' . $noticeNum . '</span>',
-                    'items' => [
-                        [
-                            'label' => $noticeNum . '条新消息',
-                            'url' => ['/user/default/notice']
-                        ]
-                    ]
-                ];
-            } else {
-                $rightMenuItems[] = [
-                    'label' => '<i class="fa fa-bell"></i>',
-                    'url' => ['/user/default/notice']
-                ];
-            }
+//             if ($noticeNum > 0) {
+//                 $rightMenuItems[] = [
+//                     'label' => '<i class="fa fa-bell"></i> <span class="badge">' . $noticeNum . '</span>',
+//                     'items' => [
+//                         [
+//                             'label' => $noticeNum . '条新消息',
+//                             'url' => ['/user/default/notice']
+//                         ]
+//                     ]
+//                 ];
+//             } else {
+//                 $rightMenuItems[] = [
+//                     'label' => '<i class="fa fa-bell"></i>',
+//                     'url' => ['/user/default/notice']
+//                 ];
+//             }
             if (Yii::$app->user->isGuest) {
                 $rightMenuItems[] = ['label' => Yii::t('common', 'Signup'), 'url' => ['/user/registration/signup']];
                 $rightMenuItems[] = ['label' => Yii::t('common', 'Login'), 'url' => ['/user/security/login']];
@@ -86,7 +86,7 @@ use yii\helpers\Url;
                             'url' => ['/user/security/logout'],
                             'linkOptions' => ['data-method' => 'post'],
                         ]
-                    ]
+                    ],
                 ];
             }
 
