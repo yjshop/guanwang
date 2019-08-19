@@ -21,7 +21,7 @@ $this->title = '头像设置';
 
 ?>
 
-<div class="container user-module">
+<div class="container user-module profile">
 	<div class="row">
 		<div class="col-md-3">
             <?= $this->render('../_menu')?>

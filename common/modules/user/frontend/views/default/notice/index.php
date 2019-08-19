@@ -8,7 +8,9 @@
 /**
  * @var $this \yii\web\View;
  */
-$this->title = '我的通知';
+$this->title = '我的通知'; ?>
+<div class="am-container">
+<?php
 $this->params['breadcrumbs'][] = $this->title;
 ?>
             <?= \yii\widgets\ListView::widget([
@@ -24,3 +26,4 @@ $this->params['breadcrumbs'][] = $this->title;
                     'class' => 'media-list'
                 ]
             ]) ?>
+</div>

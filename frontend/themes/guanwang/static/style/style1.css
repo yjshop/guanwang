@@ -978,7 +978,65 @@ a.tag:hover {
 
 
 
+/*头部*/
+
+.navbar-right li  a.l-text{
+
+    position: relative;
+    line-height: 50px;
+    padding: 0 20px;
+
+}
+
+.navbar-right li  a.l-text:hover{
+    background-color: white;
+}
+
+
+
+.dropdown-menu > .active > a,.nav-pills > li.active > a{
+    background-color: #31b3a4 !important;
+}
+
+.dropdown-menu > .active > a:hover,.nav-pills > li.active > a:hover,.profile-user a.btn:hover{
+    color: white !important;
+
+}
+.profile button[type=submit]{
+    border-color:#31b3a4 !important;
+    background-color:#31b3a4 !important;
+}
+
+.user-info li{
+    padding: 5px 0;
+}
+
+.pull-right a{
+        font-size: 16px;
+     }
+     .stat li{
+        padding:10px 5px 0;
+     }
+      .stat li h3{
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+
+
+
 @media screen and (min-width: 970px) {
+
+
+
+     .profile{
+        min-height: 645px;
+     }
+     .media-list{
+        min-height: 565px;
+     }
+
+
     .feature .am-slider-default .am-viewport ul li {
         height: 600px;
     }
@@ -1002,7 +1060,11 @@ a.tag:hover {
     overflow: hidden;
         }
 
+    .visitor-wrap{
+        min-height: 645px;
 
+
+    }
        .visitor-wrap .slide.services{
           padding-top: 10px;
        }

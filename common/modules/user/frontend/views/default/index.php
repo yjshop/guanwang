@@ -22,9 +22,9 @@ $this->title = '个人中心';
                 <h1><?= Html::encode($user->username) ?></h1>
                 <span class="label label-primary"><?= $user->getLevel()['nick'] ?></span>
                 <p><?= $user->profile->signature?></p>
-                <div class="button">
-                    <a class="follow btn btn-xs <?php if((new \common\models\Friend())->isFollow($user->id)): ?>btn-danger <?php else: ?>btn-success <?php endif; ?> <?php if ($user->id == Yii::$app->user->id): ?>disabled<?php endif; ?>" href="<?= Url::to(['/friend/follow', 'id' => $user->id]) ?>"><?php if (!(new \common\models\Friend())->isFollow($user->id)): ?><i class="fa fa-plus"></i> 关注Ta <?php else: ?>取消关注 <?php endif; ?></a>
-                    <a class="btn btn-xs btn-primary<?php if ($user->id == Yii::$app->user->id):?> disabled<?php endif; ?>" href="<?= Url::to(['/message/default/create', 'id' => $user->id]) ?>"><i class="fa fa-envelope"></i> 发私信</a>
+                <div >
+                    <a class="follow btn btn-xs <?php if((new \common\models\Friend())->isFollow($user->id)): ?>btn-danger <?php else: ?>btn-success <?php endif; ?> <?php if ($user->id == Yii::$app->user->id): ?><?php endif; ?>" href="<?= Url::to(['/friend/follow', 'id' => $user->id]) ?>"><?php if (!(new \common\models\Friend())->isFollow($user->id)): ?><i class="fa fa-plus"></i> 关注Ta <?php else: ?>取消关注 <?php endif; ?></a>
+                    <a class="btn btn-xs btn-primary<?php if ($user->id == Yii::$app->user->id):?> <?php endif; ?>" href="<?= Url::to(['/message/default/create', 'id' => $user->id]) ?>"><i class="fa fa-envelope"></i> 发私信</a>
                 </div>
                 <ul class="stat">
                     <li>金钱<h3><?= $user->profile->money ?></h3></li>
@@ -36,8 +36,8 @@ $this->title = '个人中心';
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <div class="panel-title">个人信息</div>
-            <span class="pull-right"><a href="<?= Url::to(['/user/settings/profile']) ?>" title="" data-toggle="tooltip" data-original-title="点击修改个人信息"><i class="fa fa-cog"></i> </a></span>
+            <div class="panel-title">个人信息  <span class="pull-right"><a href="<?= Url::to(['/user/settings/profile']) ?>" title="" data-toggle="tooltip" data-original-title="点击修改个人信息"><i class="fa fa-cog"></i> </a></span></div>
+           
         </div>
         <div class="panel-body">
             <ul class="user-info">

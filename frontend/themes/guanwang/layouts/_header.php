@@ -34,7 +34,7 @@ use yii\helpers\Url;
         </li>
         
         <!-- 登录模块 -->
-        <li>
+        <li style="position: relative; left: 45%;" >
         <?php \yii\widgets\Pjax::begin([
         'id' => 'header-container',
         'linkSelector' => false,

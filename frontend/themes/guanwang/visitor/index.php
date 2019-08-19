@@ -113,11 +113,11 @@ use yii\helpers\Url;
              <div class="am-u-md-6">永久授权</div>
               <div class="am-u-md-6">永久授权</div> -->
 <div class="am-u-md-12 visitor-advantage">
-<button type="button" class="am-btn am-btn-primary am-btn-lg">主色按钮</button>
-<button type="button" class="am-btn am-btn-secondary am-btn-lg">次色按钮</button>
-<button type="button" class="am-btn am-btn-success am-btn-lg">绿色按钮</button>
-<button type="button" class="am-btn am-btn-warning am-btn-lg">橙色按钮</button>
-<button type="button" class="am-btn am-btn-danger am-btn-lg">红色按钮</button>
+<button type="button" class="am-btn am-btn-primary am-btn-lg">永久授权</button>
+<button type="button" class="am-btn am-btn-secondary am-btn-lg">正版许可</button>
+<button type="button" class="am-btn am-btn-primary am-btn-lg">彰显品牌】</button>
+<button type="button" class="am-btn am-btn-secondary am-btn-lg">独享功能</button>
+<button type="button" class="am-btn am-btn-primary am-btn-lg">技术支持</button>
 
 
     </div>
@@ -220,9 +220,7 @@ use yii\helpers\Url;
 
 
     <div class="am-tab-panel am-fade" id="tab3">
-     一、商业授权
-    1.1永久授权，您只需购买一次商业授权且绑定唯一域名，该授权永久有效。
-    1.2正版许可，获得唯一授权码，避免法律纠纷，永无后顾之忧。
+    用户须知
     </div>
 
 
@@ -239,12 +237,12 @@ use yii\helpers\Url;
 
 
    <div id="web-mobile" class="slide services ">
-        <div class="container">
+     <!--    <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-6"></div>
                 <div class="col-xs-12 col-md-6"></div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 
