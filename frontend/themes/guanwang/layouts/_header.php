@@ -93,12 +93,18 @@ use yii\helpers\Url;
 //                             'url' => ['/user/default/favourite'],
 //                         ],
                         [
+                            'label' => Html::icon('user') . ' 消息',
+                            'url' => ['/user/default/notice'],
+                        ],
+                        [
                             'label' => Html::icon('sign-out') . ' 退出',
                             'url' => ['/user/security/logout'],
                             'linkOptions' => ['data-method' => 'post'],
                         ]
                     ],
+                    
                 ];
+                
             }
 
             $this->params['rightMenuItems'] = $rightMenuItems;
