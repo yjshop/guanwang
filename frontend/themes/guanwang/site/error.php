@@ -9,6 +9,8 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
+
+<div class="am-container">
 <div class="site-error">
 
     <h1>页面找不到了</h1>
@@ -26,4 +28,5 @@ $this->title = $name;
     </div>
 
 
+</div>
 </div>

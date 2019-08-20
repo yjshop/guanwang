@@ -9,74 +9,79 @@
     .mgt10{margin-top: 10px;}
     .navbar-right li a {padding-bottom: 0;}
     .l-text{margin-top: 6px;}
+
+
+    .modal.fade.in{
+        top:100px;  
+    }
 </style>
 
-<!-- 登录 -->
+
+
+
+
+
+
+
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
+  <div class="modal-dialog modal-sm" role="document" style="width: 350px;">
 <div class="modal-content">
 
 
+<ul class="nav nav-tabs nav-justified">
+  <li ><a href="#qr-login"  data-toggle="tab">扫码登录/注册</a></li>
+    <li ><a href="#site-login"  data-toggle="tab">手机号登录/注册</a></li>
+
+    <!-- <li><a href="#site-signup"  data-toggle="tab"> 注册</a></li> -->
+</ul>
 
 
 
-     <div class="site-login">
+<div class="tab-content">
+
+    <!-- 二维码登录 -->
+    <div class="qr-login  tab-pane fade in active" id="qr-login">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>二维码登录</h3>
+                <p>请用微信扫一扫登录</p>
+                <img src="" alt="二维码">
+                <p style="color: rgb(153, 153, 153); margin-top: 20px;">其他登录方式</p>
+                <p><a href="#" id="login-other">手机号登录</a></a></p>
+
+            </div> 
+        </div>
+    </div>
+
+    <!-- 帐号登录 -->
+     <div class="site-login  tab-pane fade in " id="site-login">
 
     <div class="row">
         <div class="col-lg-12">
 
              <form method="post" action="/user/security/login"  class="am-form am-form-horizontal">
-               <!-- <div class="am-form-group">
-                <label for="doc-ipt-3" class="col-sm-2 am-form-label">用户名</label>
-                <div class="col-sm-10">
-                  <input type="text" name="username" id="doc-ipt-3" placeholder="输入你的电子邮件">
-                </div>
-              </div>
-
-              <div class="am-form-group">
-                <label for="doc-ipt-pwd-2" class="col-sm-2 am-form-label">密码</label>
-                <div class="col-sm-10">
-                  <input type="password" name="password" id="doc-ipt-pwd-2" placeholder="设置一个密码吧">
-                </div>
-              </div>
-              <div class="am-form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="rememberMe"> 记住我
-                    </label>
-                  </div>
-                </div>
-              </div> -->
 
 
     <div class="form-group">
-    <label for="exampleInputEmail1">用户名/邮箱</label>
+    <label for="exampleInputEmail1">手机号</label>
     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入您的电子邮件或手机">
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">密码</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入您的密码" name="password">
-  </div>
 
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> 记住我
-    </label>
-  </div>
-  <button type="submit" class="btn btn-primary">登录</button>
 
-  <div class="login-footer">
-  <p><a href="">忘记密码？</a></p>
-  <p><a href="" data-toggle="modal" data-target="#signup">立即注册</a></p>
+
+ <div class="form-group">
+ <label for="exampleInputPassword1">验证码</label>
+  <div class="input-group">
+
+  <input type="text" class="form-control" placeholder="请输入短信验证码">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">获取验证码</button>
+      </span>
+    </div>
 </div>
 
-
-
-
-
-
-
+ 
+  <button type="submit" class="btn btn-primary" style="margin-top: 20px;">登录</button>
 
              </form>
             <?=\common\modules\user\widgets\AuthChoice::widget([
@@ -88,24 +93,14 @@
     </div>
 </div>
 
-
-    </div>
-  </div>
-</div>
 <!-- 登录end -->
 
 
 
-
-
 <!-- 注册 -->
-<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
 
 
-
-    <div class="site-signup">
+<!--     <div class="site-signup tab-pane fade" id="site-signup">
 
     <div class="row">
         <div class="col-lg-12">
@@ -137,30 +132,21 @@
                     <button type="submit" class="btn btn-primary" name="signup-button">注册</button>
                     
                 </div>
-                    <p class="signup-footer">&nbsp;&nbsp;已有帐号? <a href="/user/login">马上登录</a></p>
+                    <p class="signup-footer">已有帐号? <a href="#"  id="login-im">马上登录</a></p>
             </form>
         </div>
     </div>
 </div>
+ -->
 
 
 
 
-
-
-
+<!-- 注册end -->
+    </div>
   </div>
   </div>
 </div>
-<!-- 注册end -->
-
-
-
-
-
-
-
-
 
 
 
@@ -185,7 +171,7 @@
          <li><a href="/book/default/index">帮助文档</a></li>
          <li><a href="/article?cate=study">新闻中心</a></li>
          <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
-         <li><a href="" data-toggle="modal" data-target="#login">登录</a>/<a href="" data-toggle="modal" data-target="#signup">注册</a></li>
+         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
 
 
 
@@ -198,3 +184,47 @@
     </div>
 </header>
 <!-- <div style="width: 100%;height: 80px;" class="am-hide-sm-only"></div> -->
+
+
+
+<?php
+$this->registerJs(<<<JS
+
+    //导航登录按钮
+$('#btn-login').click(function(){
+    $('a[href="#qr-login"]').tab('show')
+     
+    })
+
+//导航注册按钮
+$('#btn-signup').click(function(){
+   
+
+     $(' a[href="#site-login"]').tab('show')
+
+        
+    })
+
+
+// $('#login-im').click(function(){
+
+        
+//      $('a[href="#site-login"]').tab('show')
+
+//     })
+
+// $('#signup-im').click(function(){
+
+//      $('a[href="#site-signup"]').tab('show')
+
+//     })
+
+$('#login-other').click(function(){
+
+     $('a[href="#site-login"]').tab('show')
+
+    })
+
+JS
+);
+?>
