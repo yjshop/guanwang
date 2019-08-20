@@ -1028,10 +1028,57 @@ a.tag:hover {
       }
 
 
+      .col-md-9,.col-md-3{
+    margin-top: 10px;
+}
 
+.site-signup, .site-login, .site-request-password-reset{
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 320px;
+    margin-top: 15%;
+
+}
+
+.site-login button[type=submit]{
+    width:100%;
+}
+
+.site-login .login-footer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.site-login .checkbox, .radio{
+    padding-left:0;
+}
+
+
+
+
+.site-signup{
+
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 400px;
+    margin-top: 10%;
+}
+
+.site-signup button[type=submit]{
+    width:100%;
+}
+
+.site-signup .signup-footer{
+    margin-top: 10px;
+}
 @media screen and (min-width: 970px) {
 
-
+    header .am-topbar-nav>li>a{
+        display: inline;
+    }
 
      .profile{
         min-height: 645px;
@@ -1571,15 +1618,17 @@ a.tag:hover {
 .feature .dingdan .tl .am-slider ul li p{
     font-size: 22px;
 }
-}
 
-.col-md-9,.col-md-3{
-    margin-top: 10px;
-}
-
-.site-signup,.site-login,.site-request-password-reset{
-	
+/*.site-signup,.site-login,.site-request-password-reset{
+    
     margin-left: 35%;
     margin-top: 40px;
     height: 700px;
 }
+*/
+
+
+
+}
+
+

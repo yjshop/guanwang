@@ -13,7 +13,7 @@ $this->title = Yii::t('common', 'Login');
 
     <div class="row">
         <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'login-form','action' => ['user/security/login']]); ?>
 
                 <?= $form->field($model, 'username') ?>
 
