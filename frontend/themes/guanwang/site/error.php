@@ -13,7 +13,17 @@ $this->title = $name;
 <div class="am-container">
 <div class="site-error">
 
-    <h1>页面找不到了</h1>
+
+    <div class="jumbotron" style="min-height: 600px; background-color: white;">
+  <h1>404  页面找不到了</h1>
+  <!-- <h2>404</h2> -->
+ <!--  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+</div>
+
+
+
+
+  
     <div class="error-search">
         <form action="<?= url(['/search']) ?>" method="get">
             <div class="input-group">
