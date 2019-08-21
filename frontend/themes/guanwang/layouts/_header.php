@@ -62,6 +62,7 @@ use yii\helpers\Url;
     <div class="form-group">
     <label for="exampleInputEmail1">手机号</label>
     <input type="text"  name="mobile"  class="form-control"  id="mobile" placeholder="请输入您的手机号码">
+
   </div>
 
 
@@ -73,9 +74,11 @@ use yii\helpers\Url;
   <input type="text"  name="verifyCode" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
 
+
    
 
         <button class="btn btn-default" type="button"  id="codeBtn" data-toggle="modal" data-target="#verification">获取验证码</button>
+
 
       </span>
     </div>
@@ -147,7 +150,7 @@ use yii\helpers\Url;
 
 
 <!-- 滑动验证码 -->
-<div class="modal fade1" id="verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade fade1" id="verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" style="width: 320px;">
         <div class="modal-content">
             <!-- <div class="modal-header">
@@ -288,8 +291,10 @@ use yii\helpers\Url;
             }
 
            function checkCode(){
-        	   var verifyCode = $("input[name*='verifyCode']").val();    
+
+        	     var verifyCode = $("input[name*='verifyCode']").val();    
              	 if(verifyCode.length===0){
+
                       mobileValid = false ;
                       alert("验证码不能为空");
                       return false;     
@@ -302,6 +307,7 @@ use yii\helpers\Url;
 <?php
 $this->registerJs(<<<JS
 
+   
 
 
     //导航登录按钮
@@ -326,16 +332,41 @@ $('#login-other').click(function(){
     })
 
 
+$('#verification').on('show.bs.modal', function () {
+      
 
+         $("#verification").modal('hide')
+        
+})
 
  jigsaw.init(document.getElementById('verify'), function () {
+
     document.getElementById('verify-msg').innerHTML = '成功！'
+
     setTimeout(function (){
+         alert(112);
          $("#verification").modal('hide');
+
        sendcode(1)  
         }, 1000)
 
   })
+
+
+
+    $('#verification').on('hide.bs.modal', function () {
+ document.getElementById('verify-msg').innerHTML = ''
+ $('#verify').empty()
+   jigsaw.init(document.getElementById('verify'), function () {
+    document.getElementById('verify-msg').innerHTML = '验证成功！'
+    setTimeout(function (){
+
+         $("#verification").modal('hide');
+
+        }, 1000)
+
+  })
+})
 
 
 

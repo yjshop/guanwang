@@ -213,8 +213,14 @@ class SecurityController extends Controller
                 Yii::$app->response->format = 'json';
                 return ['msg' => '登录成功'];
             }
-            return $this->goBack();
-        } 
+             return $this->goHome();
+        }else{
+     
+             if (Yii::$app->request->isAjax) {
+             Yii::$app->response->format = 'json';
+             return ['msg' =>json_encode(current($model->errors)) ];
+            }
+        }
 
     }
 
