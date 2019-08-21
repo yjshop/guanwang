@@ -134,10 +134,12 @@ class ArticleController extends Controller
         ]);
         // 热门标签
         $hotTags = Tag::find()->orderBy('article desc')->all();
+        $case = Article::find()->where(['category_id'=>41])->limit(5)->orderBy('id asc')->all();
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'tag' => $tag,
-            'hotTags' => $hotTags
+            'hotTags' => $hotTags,
+            'case'=>$case,
         ]);
     }
     /**

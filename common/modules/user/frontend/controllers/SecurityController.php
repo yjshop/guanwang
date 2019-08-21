@@ -22,6 +22,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
+use common\modules\user\models\MobileLogin;
 
 class SecurityController extends Controller
 {
@@ -198,6 +199,23 @@ class SecurityController extends Controller
                 'module' => $this->module
             ]);
         }
+    }
+    
+    public function actionMobileLogin()
+    {
+        if (!\Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+        $model = new MobileLogin();
+   
+        if ($model->load(Yii::$app->request->post(),'') && $model->login()) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = 'json';
+                return ['msg' => '登录成功'];
+            }
+            return $this->goBack();
+        } 
+
     }
 
     /**

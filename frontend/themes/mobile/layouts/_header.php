@@ -1,4 +1,7 @@
 <?php
+use yii\helpers\Html;
+use yii\helpers\Url;
+
 /**
  * @var \yii\web\View $this
  */
@@ -29,7 +32,8 @@
 
 
 <ul class="nav nav-tabs nav-justified">
-  <li ><a href="#qr-login"  data-toggle="tab">扫码登录/注册</a></li>
+  <li ><a href="#qr-login"  data-toggle="tab">扫码登录</a></li>
+
     <li ><a href="#site-login"  data-toggle="tab">手机号登录/注册</a></li>
 
     <!-- <li><a href="#site-signup"  data-toggle="tab"> 注册</a></li> -->
@@ -59,7 +63,7 @@
     <div class="row">
         <div class="col-lg-12">
 
-             <form method="post" action="/user/security/login"  class="am-form am-form-horizontal">
+       <form method="post" action="/user/security/mobiile-login.html"  class="am-form am-form-horizontal">
 
 
     <div class="form-group">
@@ -150,6 +154,7 @@
 
 
 
+
 <!-- 滑动验证码 -->
 <div class="modal fade" id="verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -181,17 +186,29 @@
 
         <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
 
-          <li class="am-active"><a href="/">首页</a></li>
-          <li><a href="/site/product">产品中心</a></li>
-         <li><a href="/site/#">源码</a></li>
-         <li><a href="/visitor">授权</a></li>
-         <li><a href="/cases">成功案例</a></li>
-         <li><a href="/book/default/index">帮助文档</a></li>
-         <li><a href="/article?cate=study">新闻中心</a></li>
-         <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
-         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+          <li><a href="/">首页</a></li>
+          <li><a href="/site/product.html">产品中心</a></li>
+          <li><a href="/visitor.html">授权</a></li>
+          <li><a href="/cases.html">成功案例</a></li>
+          <li><a href="/book/default/index.html">帮助文档</a></li>
+          <li><a href="/article/study.html">新闻中心</a></li>
+          <li><a href="/page/slug/aboutus.html">关于我们</a></li>
+          <?php if(yii::$app->user->isGuest):?>
+          <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+         <?php else:?>
+          <li class="am-dropdown" data-am-dropdown="">
+              <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;"><?= Yii::$app->user->identity->username?> <span class="am-icon-caret-down"></span></a>
 
-
+               <ul  class="am-dropdown-content">
+                <li><a href="<?=Url::to(['/user/default/index', 'id' => Yii::$app->user->id])?>" tabindex="-1"><i class="fa fa-user"></i> 个人主页</a></li>
+                <li><a href="<?=Url::to(['/user/settings/profile'])?>" tabindex="-1"><i class="fa fa-cog"></i> 账户设置</a></li>
+                <!--<li><a href="" tabindex="-1"><i class="fa fa-book"></i> 我的投稿</a></li> -->
+                <li><a href="<?=Url::to( ['/user/default/article-list'])?>" tabindex="-1"><i class="fa fa-star"></i> 我的收藏</a></li>
+                 <li><a href="<?=Url::to(['/user/security/logout'])?>" data-method="post" tabindex="-1"><i class="fa fa-sign-out"></i> 退出账号</a> </li>
+                </ul>         
+          </li>
+      
+         <?php endif;?>
 
 
 

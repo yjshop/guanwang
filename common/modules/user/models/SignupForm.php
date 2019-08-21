@@ -29,7 +29,7 @@ class SignupForm extends Model
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\modules\user\models\User', 'message' => '邮箱已被注册'],
-
+            ['mobile', 'unique', 'targetClass' => '\common\modules\user\models\User', 'message' => '邮箱已被注册'],
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
         ];

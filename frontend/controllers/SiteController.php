@@ -1,12 +1,12 @@
 <?php
 
 namespace frontend\controllers;
-
+use Yii;
 use common\models\Category;
 use common\models\Article;
+use common\models\SmsLog;
 use common\models\Tag;
 use frontend\services\TagService;
-use Yii;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -15,7 +15,8 @@ use common\models\Carousel;
 use api\modules\v1\models\CarouselItem;
 use common\models\Page;
 use common\models\CaseCategory;
-
+use common\components\alisms\BaseSms;
+use frontend\models\LoginForm;
 /**
  * Site controller.
  */
@@ -149,5 +150,78 @@ class SiteController extends Controller
         }
 
         return $urls;
+    }
+    
+    public function actionSms(){
+        
+        \Yii::$app->response->format = 'json';
+        $mobile = \Yii::$app->request->post('mobile');
+        $scene = \Yii::$app->request->post('scene');
+          if (empty($mobile)) {
+         return ['status'=>0,'msg'=>'手机号不能为空'];
+         }
+         $sms = SmsLog::find()->where(['mobile'=>$mobile,'scene'=>$scene])->one();
+         $now = time();
+         if (!empty($sms)&&$sms['created_at']>$now-60) {
+         return ['status'=>0,'msg'=>'请勿频繁操作！'];
+         }
+ /*         $ip=Yii::$app->request->userIP;
+         if(yii::$app->seesion->get($ip)){
+             if(time()-yii::$app->seesion->get('time')<60){
+                 return ['status'=>0,'msg'=>'请勿频繁操作！'];
+             }
+         }
+         yii::$app->session->set($ip,time()); */
+         
+         $code = strval(rand(100000, 999999));
+         $data = array();
+         $data['code'] = $code;
+         $baseSms =  new BaseSms();
+         $result = $baseSms->sendSms($mobile, 'SMS_170348536','几何线', $data);
+         // $result = $baseSms->sendSms($mobile, $templateCode,$signName, $templateParam);
+         if ($result['status']==0) {
+         return $result;
+         }
+         
+         if(empty($sms)){
+         $sms = new SmsLog();
+         $sms->mobile = $mobile;
+         }
+         $sms->scene = $scene;
+         $sms->code = $code;
+         $sms->created_at = time();
+         $sms->status=1;
+         if ($result['status']==0) {
+         $sms->status=0;
+         $sms->error_msg = $result['msg'];
+         }else{
+         $sms->status=1;
+         }
+         if (!$sms->save()) {
+         $result['status']=0;
+         $result['msg'] = current($sms->getErrors());
+         }
+         return $result; 
+    }
+    
+    /**
+     * Logs in a user.
+     *
+     * @return mixed
+     */
+    public function actionLogin()
+    {
+        $data=yii::$app->request->post();
+             $model = new LoginForm();
+            
+            if ($model->load($data,'') && $model->login()) {
+             
+             return ['status'=>1,'msg'=>'成功'];
+            } else{
+                return ['status'=>0,'msg'=>'失败'];
+            }
+
+       
+       
     }
 }
