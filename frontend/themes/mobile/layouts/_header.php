@@ -13,18 +13,18 @@
 
     .modal.fade.in{
         top:100px;  
+
     }
+     .modal.fade1.in{
+        top:200px;
+     }
 </style>
 
 
 
 
-
-
-
-
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-sm" role="document" style="width: 350px;">
+<div class="modal-dialog modal-sm" role="document" style="width: 350px;">
 <div class="modal-content">
 
 
@@ -75,7 +75,7 @@
 
   <input type="text" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">获取验证码</button>
+        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#verification">获取验证码</button>
       </span>
     </div>
 </div>
@@ -151,20 +151,35 @@
 
 
 <!-- 滑动验证码 -->
-<div class="modal fade" id="verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade fade1" id="verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="width: 320px;">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <!-- <div class="modal-header">
+               
                 <h4 class="modal-title" id="myModalLabel">滑动验证</h4>
-            </div>
-            <div class="verify"></div>
+            </div> -->
+            <div id="verify"></div>
+            <p id="verify-msg" style="margin-top:10px;text-align: center;"></p>
            
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
 
 <!-- 滑动验证码end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -189,14 +204,9 @@
          <li><a href="/book/default/index">帮助文档</a></li>
          <li><a href="/article?cate=study">新闻中心</a></li>
          <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
-         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
-
-
-
-
-
-
+         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
         </ul>
+
 
       </div>
     </div>
@@ -204,9 +214,10 @@
 <!-- <div style="width: 100%;height: 80px;" class="am-hide-sm-only"></div> -->
 
 
-
 <?php
 $this->registerJs(<<<JS
+
+
 
     //导航登录按钮
 $('#btn-login').click(function(){
@@ -224,24 +235,29 @@ $('#btn-signup').click(function(){
     })
 
 
-// $('#login-im').click(function(){
-
-        
-//      $('a[href="#site-login"]').tab('show')
-
-//     })
-
-// $('#signup-im').click(function(){
-
-//      $('a[href="#site-signup"]').tab('show')
-
-//     })
 
 $('#login-other').click(function(){
 
      $('a[href="#site-login"]').tab('show')
 
     })
+
+
+
+
+ jigsaw.init(document.getElementById('verify'), function () {
+    document.getElementById('verify-msg').innerHTML = '验证成功！'
+    setTimeout(function (){
+         $("#verification").modal('hide');
+
+        }, 1000)
+
+  })
+  $('#verification').on('hide.bs.modal', function () {
+ document.getElementById('verify-msg').innerHTML = ''
+})
+
+
 
 JS
 );
