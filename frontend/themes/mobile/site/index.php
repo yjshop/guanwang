@@ -364,7 +364,7 @@ background-image: url(storage/images/system1.png);
   <?php foreach ($categories as $key => $value): ?>
     <div class="am-u-md-4 am-u-sm-12 ">
       <div class="box-top ">
-        <h3><?=$value['title']?></h3>
+        <h3><?=$value['title']?>     <a href="<?=Url::to(['article/index','cate'=>$value['slug']])?>">更多&gt;&gt;</a></h3>
       </div>
       
       <?php $article = Article::find()->published()->where(['category_id'=>$value['id'],'status'=>1])->orderBy('id desc')->limit(5)->all();?>
@@ -393,9 +393,7 @@ background-image: url(storage/images/system1.png);
         </div>  
      <?php endif;?>
      
-     <div class="box-footer ">
-              <a href="<?=Url::to(['article/index','cate'=>$value['slug']])?>">更多&gt;&gt;</a>
-     </div>
+
 
    </div>
   <?php endforeach; ?>      

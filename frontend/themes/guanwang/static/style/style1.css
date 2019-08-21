@@ -1,6 +1,8 @@
 ﻿/*
 公共样式*/
-
+.banner-img img{
+    width: 100%;
+}
 a {
     color: black;
 }
@@ -292,13 +294,14 @@ ul li a.sideBox-2 div img {
     position: relative;
 }
 .news .box-top h3 a {
-    padding: 5px 10px;
+    padding: 4px 7px;
     background-color: #31b3a4;
     color: #fff;
     border-radius: 5px;
-    position: relative;
-    right: -188px;
-    top: 0px;
+    position: absolute;
+    right: 1px;
+    top: -2px;
+    font-size: 12px;
 }
 .news .box-top h3 a:hover {
     color: white !important;
@@ -737,6 +740,20 @@ ul.anli-pc li {
 .news-list .search .am-icon-search {
     color: white;
 }
+
+.tags a.label:hover{
+    color: white !important;
+}
+.news-list .tab a{
+    color: black;
+}
+.news-list .tab a.active{
+    color: white;
+}
+.news-list  .tab a{
+    font-size: 15px;
+}
+
 /*文章详情*/
 
 .news-detail .am-input-group .am-form-field:first-child {
@@ -897,8 +914,8 @@ a.update:hover p, a.update:hover h4 {
     text-decoration: none!important;
 }
 .tag {
-    border-color: #31b3a4;
-    background-color: #31b3a4;
+   /* border-color: #31b3a4;
+    background-color: #31b3a4;*/
 }
 a.tag:hover {
     color: white !important;
