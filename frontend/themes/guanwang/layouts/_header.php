@@ -45,7 +45,7 @@ use yii\helpers\Url;
             <div class="col-lg-12">
                 <h3>二维码登录</h3>
                 <p>请用微信扫一扫登录</p>
-                <img src="" alt="二维码">
+                      <img src="" alt="二维码" width="180">
                 <p style="color: rgb(153, 153, 153); margin-top: 20px;">其他登录方式</p>
                 <p><a href="#" id="login-other">手机号登录</a></a></p>
 
@@ -181,7 +181,7 @@ use yii\helpers\Url;
           <li><a href="/visitor.html">授权</a></li>
           <li><a href="/cases.html">成功案例</a></li>
           <li><a href="/book/default/index.html">帮助文档</a></li>
-          <li><a href="/article/study.html">新闻中心</a></li>
+          <li><a href="/cate/study.html">新闻中心</a></li>
           <li><a href="/page/slug/aboutus.html">关于我们</a></li>
           <?php if(yii::$app->user->isGuest):?>
           <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
@@ -292,8 +292,8 @@ use yii\helpers\Url;
 
            function checkCode(){
 
-        	     var verifyCode = $("input[name*='verifyCode']").val();    
-             	 if(verifyCode.length===0){
+               var verifyCode = $("input[name*='verifyCode']").val();    
+               if(verifyCode.length===0){
 
                       mobileValid = false ;
                       alert("验证码不能为空");
@@ -301,25 +301,54 @@ use yii\helpers\Url;
                   } 
                  return true;
            }
+
+
+function checkLogin(){
+  $.ajax({ 
+    type : "POST", //提交方式 
+      url : '/wx/check-login.html',//路径 
+     /*  data : { 
+        "scene_id" : ""
+      }, */
+      success : function(data) {
+        var result = JSON.parse(data);
+        if (result.flag) { 
+            window.location.reload();
+          } else { 
+            
+          } 
+      } 
+  }); 
+}
+
    </script>
 <?php $this->endBlock() ?>  
 
 <?php
 $this->registerJs(<<<JS
 
-   
-
-
     //导航登录按钮
 $('#btn-login').click(function(){
-    $('a[href="#qr-login"]').tab('show')  
-    })
+   
+     $.ajax({ 
+      type : "POST", //提交方式 
+        url : '/wx/qrcode.html',//路径 
+       /*  data : { 
+          "scene_id" : ""
+        }, */
+        success : function(data) {
+          $('#qr-login').find('img').attr('src',data);
+        } 
+    });
+      checkLoginId = setInterval(checkLogin,5000);  
+       $('a[href="#qr-login"]').tab('show')
+    });
 
 
 //导航注册按钮
 $('#btn-signup').click(function(){
      $(' a[href="#site-login"]').tab('show')    
-    })
+    });
 
 
 
@@ -342,12 +371,11 @@ $('#verification').on('show.bs.modal', function () {
  jigsaw.init(document.getElementById('verify'), function () {
 
     document.getElementById('verify-msg').innerHTML = '成功！'
-
+   
     setTimeout(function (){
-         alert(112);
+         
          $("#verification").modal('hide');
 
-       sendcode(1)  
         }, 1000)
 
   })
@@ -359,6 +387,7 @@ $('#verification').on('show.bs.modal', function () {
  $('#verify').empty()
    jigsaw.init(document.getElementById('verify'), function () {
     document.getElementById('verify-msg').innerHTML = '验证成功！'
+     sendcode(1);  
     setTimeout(function (){
 
          $("#verification").modal('hide');

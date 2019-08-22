@@ -168,7 +168,7 @@ class ArticleController extends Controller
         $prev = Article::find()->andWhere(['<', 'id', $id])->orderBy('id desc')->one();
    
 
-        return $this->render($model->module . '/Detail', [
+        return $this->render($model->module . '/detail', [
             'model' => $model,
             'case' =>$case,
             'hots' => $hots,

@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%token}}".
@@ -24,15 +26,29 @@ class Token extends \yii\db\ActiveRecord
         return '{{%token}}';
     }
 
+    
+    public function behaviors(){
+        return [
+            
+            [
+                'class'=>TimestampBehavior::className(),
+                'attributes'=>[
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['create_time'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['update_time'],
+                ]
+            ]
+            
+          
+        ];
+    }
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id', 'create_time', 'update_time'], 'integer'],
-            [['scene_id', 'wx_openid', 'sid'], 'string', 'max' => 255],
+            [[ 'create_time', 'update_time','scene_id'], 'integer'],
+            [['wx_openid', 'sid'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,8 +61,8 @@ class Token extends \yii\db\ActiveRecord
             'id' => 'ID',
             'scene_id' => 'Scene ID',
             'wx_openid' => 'Wx Openid',
-            'create_time' => 'Create Time',
-            'update_time' => 'Update Time',
+            'create_time' => '创建时间',
+            'update_time' => '修改时间',
             'sid' => 'Sid',
         ];
     }

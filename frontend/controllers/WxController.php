@@ -13,11 +13,12 @@ use common\components\weixin\BaseWechat;
 use common\models\Token;
 use common\modules\user\models\Auth;
 use common\modules\user\models\User;
-class WxController  {
-   
+use yii\web\Controller;
+class WxController extends Controller  {
+    public $enableCsrfValidation = false;
     
     //获取登录二维码
-    public function qrcode(){
+    public function actionQrcode(){
     
         if (yii::$app->user->isGuest){
             $scene_id = $this->get_scene_id();
@@ -27,7 +28,8 @@ class WxController  {
             echo $url;
         }
     }	
-    public function actionReceive($param) {
+    public function actionReceive() {
+
       $weObj=new BaseWechat();
       $flag = $weObj->valid();
       if ($flag){
@@ -46,21 +48,21 @@ class WxController  {
                   $userInfo = $weObj->getUserInfo($openid);
                   switch ($event){
                       case \Wechat::EVENT_SCAN:
-                          if($eventKey=1000){
-                              $weObj->text('登录成功')->reply();
-                              break;
-                          }else{
+                        
                               //扫码登录，记录openid
                              // M('token')->where(array('cd'=>$eventKey))->save(array('wx_openid'=>$openid));
                              Token::updateAll(['wx_openid'=>$openid],['scene_id'=>$eventKey]);
-                              $this->setUser($openid,$userInfo);
+                              $flag=$this->setUser($openid,$userInfo);
+                              if($flag){
+                                  $weObj->text('登录成功')->reply();
+                              }
+                            
                               break;
-                          }        
+                            
                       case \Wechat::EVENT_SUBSCRIBE:
                           //关注记录，新增记录并记录openid
                           $this->setUser($openid,$userInfo);
-                          $eventKey = explode("_", $eventKey);//关注事件需要处理字符串
-                        //  M('token')->where(array('scene_id'=>$eventKey[1]))->save(array('wx_openid'=>$openid));
+                          $eventKey = explode("_", $eventKey);//关注事件需要处理字符串        
                           Token::updateAll(['wx_openid'=>$openid],['scene_id'=>$eventKey[1]]);
                           $weObj->text("Hi，欢迎来到几何线系统")->reply();
                           break;
@@ -108,32 +110,29 @@ class WxController  {
                 ]);
                 if ($auth->save()) {
                     $transaction->commit();
+                    return true;
                 } else {
-                    Yii::$app->getSession()->setFlash('error', [
-                        Yii::t('app', 'Unable to save account: {errors}', [
-                            'errors' => json_encode($auth->getErrors()),
-                        ]),
-                    ]);
+                    return false;
                 }
             } else {
-                Yii::$app->getSession()->setFlash('error', [
-                    Yii::t('app', 'Unable to save user: {errors}', [
-                        'errors' => json_encode($user->getErrors()),
-                    ]),
-                ]);
+
+               return false;
             }
         }
+        return true;
     }
    
     
     //检查是否已经扫码
-    public function checkLogin(){
+    public function actionCheckLogin(){
+        session_start();
         $sessionId = session_id();
-        $token=Token::find()->where(['sid'=>$sessionId])->select(['wx_openid'])->one();
+        $token=Token::find()->where(['sid'=>$sessionId])->one();
         $auth = Auth::find()->where([
             'source' => 'wx-qrcode',
             'source_id' => $token['wx_openid'],
         ])->one(); 
+       
         if (!empty($auth)){
             $user=$auth->user;
             if ( yii::$app->user->login($user)){
@@ -147,6 +146,24 @@ class WxController  {
         
     }
     
+    public function actionMenu(){
+        $weObj=new BaseWechat();
+        $newmenu =  array(
+            "button"=>
+            array(
+                array('name'=>'我要试用','sub_button'=>array(array('type'=>'click','name'=>'试用账号','key'=>'MENU_KEY_TEST_ACCOUNT'),array('type'=>'miniprogram','name'=>'小程序','url'=>'https://www.jihexian.com/index/product.html','appid'=>'wx84c9e531ab77b5c7','pagepath'=>'pages/home/home'))),
+                //array('type'=>'click','name'=>'试用账号','key'=>'MENU_KEY_TEST_ACCOUNT'),
+                //array('name'=>'产品中心','sub_button'=>array(array('type'=>'view','name'=>'小程序商城系统','url'=>'https://www.jihexian.com/site/product.html'),array('type'=>'view','name'=>'婚庆系统','url'=>'https://www.jihexian.com/index/functions.html'))),
+                array('type'=>'view','name'=>'产品中心','url'=>'https://www.jihexian.com/site/product.html'),
+                array('type'=>'view','name'=>'关于我们','url'=>'http://www.test.com/page/slug/aboutus.html')
+                )
+        );
+        
+        $result = $weObj->createMenu($newmenu);
+        echo $result;
+    }
+    
+    
     private  function get_scene_id(){
         $sessionId = session_id();
         $token=Token::find()->where(['sid'=>$sessionId])->one();
@@ -154,14 +171,14 @@ class WxController  {
         if (empty($token)){
             $model=new Token();
             $model->scene_id=$scene_id;
-            $model->create_time=$now;
-            $model->update_time=$now;
+          
             $model->sid=$sessionId;
-            $model->add();
+            $model->save();
+         
         }else{
             $sceneId = $token['scene_id'];
             $sceneTime = $token['update_time'];
-            if (($sceneTime+6000)>=$now){//十分钟
+            if (($sceneTime+6000)<$now){//十分钟
                 //session('scene_id',$sceneId);
                 //session('scene_time',$sceneTime);
                 return $sceneId;
@@ -169,10 +186,9 @@ class WxController  {
                 //session('scene_id',$scene_id);
                 //session('scene_time',$now);
                 //生成scene_id并记录到token表
-                $data=Token::find()->wehre(['sid'=>$sessionId])->one();
+                $data=Token::find()->where(['sid'=>$sessionId])->one();
                 $data->scene_id=$scene_id;
-                $data->create_time=$now;
-                $data->update_time=$now;
+           
                 $data->save();
             }
         }
