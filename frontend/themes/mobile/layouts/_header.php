@@ -1,4 +1,7 @@
 <?php
+use yii\helpers\Html;
+use yii\helpers\Url;
+
 /**
  * @var \yii\web\View $this
  */
@@ -12,25 +15,27 @@
 
 
     .modal.fade.in{
-        top:100px;  
+        top:100px;
+        left: 25px;
 
     }
      .modal.fade1.in{
         top:200px;
+         left: 40px;
+
      }
 </style>
-
-
-
 
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog modal-sm" role="document" style="width: 350px;">
 <div class="modal-content">
 
 
-<ul class="nav nav-tabs nav-justified">
-  <li ><a href="#qr-login"  data-toggle="tab">扫码登录/注册</a></li>
-    <li ><a href="#site-login"  data-toggle="tab">手机号登录/注册</a></li>
+<ul class="nav nav-tabs">
+  <li style="width: 50%;
+  text-align: center;"><a href="#qr-login"  data-toggle="tab">扫码登录/注册</a></li>
+    <li style="width: 50%;
+  text-align: center;"><a href="#site-login"  data-toggle="tab">手机号登录/注册</a></li>
 
     <!-- <li><a href="#site-signup"  data-toggle="tab"> 注册</a></li> -->
 </ul>
@@ -45,7 +50,7 @@
             <div class="col-lg-12">
                 <h3>二维码登录</h3>
                 <p>请用微信扫一扫登录</p>
-                <img src="" alt="二维码">
+                      <img src="" alt="二维码" width="180">
                 <p style="color: rgb(153, 153, 153); margin-top: 20px;">其他登录方式</p>
                 <p><a href="#" id="login-other">手机号登录</a></a></p>
 
@@ -59,12 +64,11 @@
     <div class="row">
         <div class="col-lg-12">
 
-             <form method="post" action="/user/security/login"  class="am-form am-form-horizontal">
-
-
     <div class="form-group">
     <label for="exampleInputEmail1">手机号</label>
+
     <input type="text" name="mobile" class="form-control" id="exampleInputEmail1" placeholder="请输入您的电子邮件或手机">
+
   </div>
 
 
@@ -73,22 +77,19 @@
  <label for="exampleInputPassword1">验证码</label>
   <div class="input-group">
 
-  <input type="text" class="form-control" placeholder="请输入短信验证码">
+  <input type="text"  name="verifyCode" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
+
         <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
+
       </span>
     </div>
 </div>
 
  
-  <button type="submit" class="btn btn-primary" style="margin-top: 20px;">登录</button>
+  <button type="submit"   onclick="login()" class="btn btn-primary" style="margin-top: 20px;">登录</button>
 
-             </form>
-            <?=\common\modules\user\widgets\AuthChoice::widget([
-    'id'          => 'auth-login',
-    'baseAuthUrl' => ['/user/security/auth'],
-    'popupMode'   => true,
-]);?>
+
         </div>
     </div>
 </div>
@@ -167,25 +168,6 @@
 
 <!-- 滑动验证码end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <!-- 头部 -->
     <header class="am-topbar am-topbar-fixed-top">
     <div class="am-container bg-f8">
@@ -196,6 +178,7 @@
 
         <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
 
+
           <li class="am-active"><a href="/">首页</a></li>
           <li><a href="/site/product">产品中心</a></li>
          <li><a href="/site/#">源码</a></li>
@@ -205,6 +188,7 @@
          <li><a href="/article?cate=study">新闻中心</a></li>
          <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
          <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+
         </ul>
 
 
@@ -298,39 +282,58 @@
             }
 
            function checkCode(){
+
                var verifyCode = $("input[name*='verifyCode']").val();    
-                 if(verifyCode.length===0){
+               if(verifyCode.length===0){
+
                       mobileValid = false ;
                       alert("验证码不能为空");
                       return false;     
                   } 
                  return true;
            }
+
+
+function checkLogin(){
+  $.ajax({ 
+    type : "POST", //提交方式 
+      url : '/wx/check-login.html',//路径 
+     /*  data : { 
+        "scene_id" : ""
+      }, */
+      success : function(data) {
+        var result = JSON.parse(data);
+        if (result.flag) { 
+            window.location.reload();
+          } else { 
+            
+          } 
+      } 
+  }); 
+}
+
    </script>
 <?php $this->endBlock() ?>  
 
+
 <?php
 $this->registerJs(<<<JS
-
-   
-
-
-    //导航登录按钮
 $('#btn-login').click(function(){
-    $('a[href="#qr-login"]').tab('show')
-     
-    })
+   
+     $.ajax({ 
+      type : "POST", 
+        url : '/wx/qrcode.html',
+        success : function(data) {
+          $('#qr-login').find('img').attr('src',data);
+        } 
+    });
+      checkLoginId = setInterval(checkLogin,5000);  
+       $('a[href="#qr-login"]').tab('show')
+    });
 
-//导航注册按钮
 $('#btn-signup').click(function(){
-
-
-     $(' a[href="#site-login"]').tab('show')
-
-        
-    })
-
-
+     $(' a[href="#site-login"]').tab('show')    
+    });
 
 $('#login-other').click(function(){
 
@@ -339,24 +342,36 @@ $('#login-other').click(function(){
     })
 
 
+$('#verification').on('show.bs.modal', function () {
+      
 
-//弹出滑动验证码判断
+         $("#verification").modal('hide')
+        
+})
+
+ //弹出滑动验证码判断
     $('#get-verify').click(function(){
 
         if(checkMobile()){
+
     
             $("#verification").modal('show')
-        }
 
+        }
 
         })
 
+
  jigsaw.init(document.getElementById('verify'), function () {
+
     document.getElementById('verify-msg').innerHTML = '验证成功！'
-     sendcode(1)
+    
+
     setTimeout(function (){
+
         
          $("#verification").modal('hide')
+
         }, 1000)
 
   })
@@ -368,10 +383,12 @@ $('#login-other').click(function(){
  $('#verify').empty()
    jigsaw.init(document.getElementById('verify'), function () {
     document.getElementById('verify-msg').innerHTML = '验证成功！'
+
     sendcode(1)
+
     setTimeout(function (){
 
-         $("#verification").modal('hide');
+         $("#verification").modal('hide')
 
         }, 1000)
 
@@ -383,3 +400,4 @@ $('#login-other').click(function(){
 JS
 );
 ?>
+

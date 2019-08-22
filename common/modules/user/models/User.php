@@ -58,11 +58,11 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $scenarios = parent::scenarios();
         return array_merge($scenarios, [
-            'register' => ['username', 'email', 'password'],
-            'connect'  => ['username', 'email'],
-            'create'   => ['username', 'email', 'password'],
-            'update'   => ['username', 'email', 'password'],
-            'settings' => ['username', 'email', 'password'],
+            'register' => ['username', 'email','mobile', 'password'],
+            'connect'  => ['username', 'email','mobile'],
+            'create'   => ['username', 'email','mobile', 'password'],
+            'update'   => ['username', 'email', 'mobile','password'],
+            'settings' => ['username', 'email', 'mobile','password'],
             'resetPassword' => ['password']
         ]);
     }
@@ -86,6 +86,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'username' => '用户名',
+            'mobile'=>'手机号',
             'password' => '密码',
             'email' => '邮箱',
             'created_at' => '注册时间',
@@ -129,10 +130,17 @@ class User extends ActiveRecord implements IdentityInterface
             ->andWhere(['blocked_at' => null])
             ->one();
     }
+    
+    public static function findByMobile($mobile)
+    {
+        return static::find()->where(['mobile' => $mobile])
+        ->andWhere(['blocked_at' => null])
+        ->one();
+    }
 
     public static function findByUsernameOrEmail($login)
     {
-        return static::find()->where(['or', 'username = "' . $login . '"', 'email = "' . $login . '"'])
+        return static::find()->where(['or', 'username = "' . $login . '"','mobile = "' . $login . '"',  'email = "' . $login . '"'])
             ->andWhere(['blocked_at' => null])
             ->one();
     }

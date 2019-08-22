@@ -9,10 +9,18 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            
             'rules' => [
                 '/' => 'site/index',
-                '<controller:\w+>' => '<controller>/index',
-            ]
+                'index/product' => 'site/product',
+               'detail/<id:\d+>' => 'article/detail',
+               'cate/<cate:\w+>' => 'article/index',
+             
+               'tag/<name:\w+>' => 'article/tag',
+               'page/slug/<slug:\w+>'=>'page/slug',
+              '<controller:\w+>' => '<controller>/index',
+            ],
+             'suffix' => '.html',
         ]
     ],
 ];

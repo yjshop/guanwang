@@ -1443,7 +1443,11 @@ a
 {
     text-decoration: none;
 
+<<<<<<< HEAD
     color: #272727;
+=======
+    color: ##272727;
+>>>>>>> 8290aa08f318742e714ce92e642b00df5f02c0f0
 }
 a:hover,
 a:focus

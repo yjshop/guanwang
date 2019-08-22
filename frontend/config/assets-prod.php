@@ -8,19 +8,19 @@ return [
     'yii\bootstrap\BootstrapAsset' => [
         'sourcePath' => null,
         'css'=>[
-          // 'http://image.51siyuan.cn/static/css/bootstrap.min.css'
+           'http://image.51siyuan.cn/static/css/bootstrap.min.css'
         ]
     ],
     'yii\bootstrap\BootstrapPluginAsset' => [
         'sourcePath' => null,
         'js' => [
-           // '//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js'
+            '//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js'
         ]
     ],
     'yii\web\JqueryAsset' => [
         'sourcePath' => null,
         'js' => [
-            //'//cdn.bootcss.com/jquery/1.9.1/jquery.min.js '
+            '//cdn.bootcss.com/jquery/1.9.1/jquery.min.js '
         ]
     ],
 ];

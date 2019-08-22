@@ -121,7 +121,7 @@ use yii\helpers\Url;
     
         <div><img src="<?php echo Url::to('@web/storage/images/phone1.png') ?>" ></div>
        <div><p>服务热线</p>
-        <p>0777-1234567</p>
+        <p>0777-2110336</p>
       </div>
         </a>  
 
