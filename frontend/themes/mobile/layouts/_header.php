@@ -177,7 +177,7 @@ use yii\helpers\Url;
         <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
 
           <li><a href="/">首页</a></li>
-          <li><a href="/site/product.html">产品中心</a></li>
+          <li><a href="/index/product.html">产品中心</a></li>
           <li><a href="/visitor.html">授权</a></li>
           <li><a href="/cases.html">成功案例</a></li>
           <li><a href="/book/default/index.html">帮助文档</a></li>

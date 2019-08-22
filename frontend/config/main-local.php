@@ -12,8 +12,10 @@ $config = [
             
             'rules' => [
                 '/' => 'site/index',
+                'index/product' => 'site/product',
                'detail/<id:\d+>' => 'article/detail',
                'cate/<cate:\w+>' => 'article/index',
+             
                'tag/<name:\w+>' => 'article/tag',
                'page/slug/<slug:\w+>'=>'page/slug',
               '<controller:\w+>' => '<controller>/index',

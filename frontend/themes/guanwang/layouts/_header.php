@@ -73,17 +73,11 @@ use yii\helpers\Url;
 
   <input type="text"  name="verifyCode" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
-<<<<<<< HEAD
-        <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
-=======
 
-
-   
 
         <button class="btn btn-default" type="button"  id="codeBtn" data-toggle="modal" data-target="#verification">获取验证码</button>
 
 
->>>>>>> 51bca396be3faa5adf9b3e357e9fd28dd1dfcef7
       </span>
     </div>
 </div>
@@ -181,7 +175,7 @@ use yii\helpers\Url;
         <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
 
           <li><a href="/">首页</a></li>
-          <li><a href="/site/product.html">产品中心</a></li>
+          <li><a href="/index/product.html">产品中心</a></li>
           <li><a href="/visitor.html">授权</a></li>
           <li><a href="/cases.html">成功案例</a></li>
           <li><a href="/book/default/index.html">帮助文档</a></li>
