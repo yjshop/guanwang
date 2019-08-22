@@ -1,10 +1,10 @@
-﻿/*
+/*
 公共样式*/
 .banner-img img{
     width: 100%;
 }
 a {
-    color: black;
+    color: #272727;
 }
 .am-with-topbar-fixed-top {
     padding-top: 80px;
@@ -752,6 +752,7 @@ ul.anli-pc li {
 }
 .news-list  .tab a{
     font-size: 15px;
+    
 }
 
 /*文章详情*/

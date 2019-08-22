@@ -73,17 +73,9 @@ use yii\helpers\Url;
 
   <input type="text"  name="verifyCode" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
-<<<<<<< HEAD
+
         <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
-=======
 
-
-   
-
-        <button class="btn btn-default" type="button"  id="codeBtn" data-toggle="modal" data-target="#verification">获取验证码</button>
-
-
->>>>>>> 51bca396be3faa5adf9b3e357e9fd28dd1dfcef7
       </span>
     </div>
 </div>
@@ -367,7 +359,7 @@ $('#login-other').click(function(){
     $('#get-verify').click(function(){
 
         if(checkMobile()){
-            console.log(123)
+            
             $("#verification").modal('show');
         }
 
