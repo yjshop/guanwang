@@ -39,7 +39,6 @@ class RegistrationController extends Controller
                 }
             }
         }
-
         return $this->render('signup', [
             'model' => $model,
             'module' => $this->module

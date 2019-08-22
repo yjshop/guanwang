@@ -270,19 +270,19 @@ use yii\helpers\Url;
   <div class="am-u-lg-3  am-u-sm-6">
     <a href="#" class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/ren.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">100+开发人员</figcaption>
+      <figcaption class="am-thumbnail-caption">20+开发人员</figcaption>
     </a>
   </div>
   <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/kehu.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">5000+商业用户</figcaption>
+      <figcaption class="am-thumbnail-caption">100+商业用户</figcaption>
     </figure>
   </div>
    <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/xin.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">6 x 12h售后支持</figcaption>
+      <figcaption class="am-thumbnail-caption">7 x 24h售后支持</figcaption>
     </figure>
   </div>
 </div>

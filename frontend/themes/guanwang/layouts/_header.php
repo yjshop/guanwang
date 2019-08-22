@@ -1,4 +1,7 @@
 <?php
+use yii\helpers\Html;
+use yii\helpers\Url;
+
 /**
  * @var \yii\web\View $this
  */
@@ -19,9 +22,6 @@
         top:200px;
      }
 </style>
-
-
-
 
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog modal-sm" role="document" style="width: 350px;">
@@ -45,7 +45,7 @@
             <div class="col-lg-12">
                 <h3>二维码登录</h3>
                 <p>请用微信扫一扫登录</p>
-                <img src="" alt="二维码">
+                      <img src="" alt="二维码" width="180">
                 <p style="color: rgb(153, 153, 153); margin-top: 20px;">其他登录方式</p>
                 <p><a href="#" id="login-other">手机号登录</a></a></p>
 
@@ -59,12 +59,10 @@
     <div class="row">
         <div class="col-lg-12">
 
-             <form method="post" action="/user/security/login"  class="am-form am-form-horizontal">
-
-
     <div class="form-group">
     <label for="exampleInputEmail1">手机号</label>
-    <input type="text" name="mobile" class="form-control" id="exampleInputEmail1" placeholder="请输入您的电子邮件或手机">
+    <input type="text"  name="mobile"  class="form-control"  id="mobile" placeholder="请输入您的手机号码">
+
   </div>
 
 
@@ -73,22 +71,19 @@
  <label for="exampleInputPassword1">验证码</label>
   <div class="input-group">
 
-  <input type="text" class="form-control" placeholder="请输入短信验证码">
+  <input type="text"  name="verifyCode" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
+
         <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
+
       </span>
     </div>
 </div>
 
  
-  <button type="submit" class="btn btn-primary" style="margin-top: 20px;">登录</button>
+  <button type="submit"   onclick="login()" class="btn btn-primary" style="margin-top: 20px;">登录</button>
 
-             </form>
-            <?=\common\modules\user\widgets\AuthChoice::widget([
-    'id'          => 'auth-login',
-    'baseAuthUrl' => ['/user/security/auth'],
-    'popupMode'   => true,
-]);?>
+
         </div>
     </div>
 </div>
@@ -167,25 +162,6 @@
 
 <!-- 滑动验证码end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <!-- 头部 -->
     <header class="am-topbar am-topbar-fixed-top">
     <div class="am-container bg-f8">
@@ -196,15 +172,29 @@
 
         <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
 
-          <li class="am-active"><a href="/">首页</a></li>
-          <li><a href="/site/product">产品中心</a></li>
-         <li><a href="/site/#">源码</a></li>
-         <li><a href="/visitor">授权</a></li>
-         <li><a href="/cases">成功案例</a></li>
-         <li><a href="/book/default/index">帮助文档</a></li>
-         <li><a href="/article?cate=study">新闻中心</a></li>
-         <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
-         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+          <li><a href="/">首页</a></li>
+          <li><a href="/site/product.html">产品中心</a></li>
+          <li><a href="/visitor.html">授权</a></li>
+          <li><a href="/cases.html">成功案例</a></li>
+          <li><a href="/book/default/index.html">帮助文档</a></li>
+          <li><a href="/cate/study.html">新闻中心</a></li>
+          <li><a href="/page/slug/aboutus.html">关于我们</a></li>
+          <?php if(yii::$app->user->isGuest):?>
+          <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+         <?php else:?>
+          <li class="am-dropdown" data-am-dropdown="">
+              <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;"><?= Yii::$app->user->identity->username?> <span class="am-icon-caret-down"></span></a>
+
+               <ul  class="am-dropdown-content">
+                <li><a href="<?=Url::to(['/user/default/index', 'id' => Yii::$app->user->id])?>" tabindex="-1"><i class="fa fa-user"></i> 个人主页</a></li>
+                <li><a href="<?=Url::to(['/user/settings/profile'])?>" tabindex="-1"><i class="fa fa-cog"></i> 账户设置</a></li>
+                <!--<li><a href="" tabindex="-1"><i class="fa fa-book"></i> 我的投稿</a></li> -->
+                <li><a href="<?=Url::to( ['/user/default/article-list'])?>" tabindex="-1"><i class="fa fa-star"></i> 我的收藏</a></li>
+                 <li><a href="<?=Url::to(['/user/security/logout'])?>" data-method="post" tabindex="-1"><i class="fa fa-sign-out"></i> 退出账号</a> </li>
+                </ul>         
+          </li>
+      
+         <?php endif;?>
         </ul>
 
 
@@ -298,37 +288,63 @@
             }
 
            function checkCode(){
+
                var verifyCode = $("input[name*='verifyCode']").val();    
-                 if(verifyCode.length===0){
+               if(verifyCode.length===0){
+
                       mobileValid = false ;
                       alert("验证码不能为空");
                       return false;     
                   } 
                  return true;
            }
+
+
+function checkLogin(){
+  $.ajax({ 
+    type : "POST", //提交方式 
+      url : '/wx/check-login.html',//路径 
+     /*  data : { 
+        "scene_id" : ""
+      }, */
+      success : function(data) {
+        var result = JSON.parse(data);
+        if (result.flag) { 
+            window.location.reload();
+          } else { 
+            
+          } 
+      } 
+  }); 
+}
+
    </script>
 <?php $this->endBlock() ?>  
 
 <?php
 $this->registerJs(<<<JS
 
-   
-
-
     //导航登录按钮
 $('#btn-login').click(function(){
-    $('a[href="#qr-login"]').tab('show')
-     
-    })
+   
+     $.ajax({ 
+      type : "POST", //提交方式 
+        url : '/wx/qrcode.html',//路径 
+       /*  data : { 
+          "scene_id" : ""
+        }, */
+        success : function(data) {
+          $('#qr-login').find('img').attr('src',data);
+        } 
+    });
+      checkLoginId = setInterval(checkLogin,5000);  
+       $('a[href="#qr-login"]').tab('show')
+    });
+
 
 //导航注册按钮
 $('#btn-signup').click(function(){
 
-
-     $(' a[href="#site-login"]').tab('show')
-
-        
-    })
 
 
 
@@ -344,19 +360,26 @@ $('#login-other').click(function(){
     $('#get-verify').click(function(){
 
         if(checkMobile()){
+
     
             $("#verification").modal('show')
+
         }
 
 
         })
 
+
  jigsaw.init(document.getElementById('verify'), function () {
+
     document.getElementById('verify-msg').innerHTML = '验证成功！'
      sendcode(1)
+
     setTimeout(function (){
+
         
          $("#verification").modal('hide')
+
         }, 1000)
 
   })
@@ -368,10 +391,12 @@ $('#login-other').click(function(){
  $('#verify').empty()
    jigsaw.init(document.getElementById('verify'), function () {
     document.getElementById('verify-msg').innerHTML = '验证成功！'
+
     sendcode(1)
+
     setTimeout(function (){
 
-         $("#verification").modal('hide');
+         $("#verification").modal('hide')
 
         }, 1000)
 
