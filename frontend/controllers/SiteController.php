@@ -74,11 +74,11 @@ class SiteController extends Controller
         if (!(new \Detection\MobileDetect())->isMobile())
         {
            $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>1])->orderBy('sort asc')->all();
-           $categories = Category::find()->orderBy('id asc')->limit(6)->all(); 
+           $categories = Category::find()->orderBy(['sort' => SORT_ASC])->limit(6)->all(); 
         }else {
             //手机端分类
             $image = CarouselItem::find()->where(['status'=>1,'carousel_id'=>9])->orderBy('sort asc')->all();
-            $categories = Category::find()->orderBy('id asc')->limit(2)->all();
+            $categories = Category::find()->orderBy(['sort' => SORT_ASC])->limit(2)->all();
         }
   
 
