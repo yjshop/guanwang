@@ -16,7 +16,7 @@
   border: 1px solid #e4e7eb;
 }
 
-.sliderContainer_active .slider {
+.sliderContainer_active .verifyslider {
   height: 38px;
   top: -1px;
   border: 1px solid #1991FA;
@@ -27,7 +27,7 @@
   border-width: 1px;
 }
 
-.sliderContainer_success .slider {
+.sliderContainer_success .verifyslider {
   height: 38px;
   top: -1px;
   border: 1px solid #52CCBA;
@@ -44,7 +44,7 @@
   background-position: 0 0 !important;
 }
 
-.sliderContainer_fail .slider {
+.sliderContainer_fail .verifyslider {
   height: 38px;
   top: -1px;
   border: 1px solid #f57a7a;
@@ -73,7 +73,7 @@
   background: #D1E9FE;
 }
 
-.slider {
+.verifyslider {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,11 +85,11 @@
   transition: background .2s linear;
 }
 
-.slider:hover {
+.verifyslider:hover {
   background: #1991FA;
 }
 
-.slider:hover .sliderIcon {
+.verifyslider:hover .sliderIcon {
   background-position: 0 -13px;
 }
 
