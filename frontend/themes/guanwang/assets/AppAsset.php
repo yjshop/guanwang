@@ -8,19 +8,20 @@ class AppAsset extends AssetBundle
 {
     public $sourcePath = '@frontend/themes/guanwang/static';
     public $css        = [
+        'style/jigsaw.css',
         'style/amazeui.min.css',
         'style/iconfont.css',
-
         'style/style.min.css',
         'style/swiper.min.css',
         'style/phone.min.css',
         'style/authorization.css',
         'style/main.min.css',
         'style/style1.css',
-        'style/jigsaw.css',
+        
 
     ];
     public $js = [
+         'js/jigsaw.js',
         'js/amazeui.min.js',
         'js/modernizr.min.js',
         'js/amazeui.ie8polyfill.min.js',
@@ -28,8 +29,7 @@ class AppAsset extends AssetBundle
         'js/app.js',
         'js/masonry.min.js',
         'js/imagesloaded.min.js',
-        'js/jigsaw.js',
-
+       
     ];
     public $depends = [
         'yii\web\YiiAsset',

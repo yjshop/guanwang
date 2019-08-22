@@ -93,7 +93,7 @@
       const sliderContainer = createElement('div')
       const refreshIcon = createElement('div')
       const sliderMask = createElement('div')
-      const slider = createElement('div')
+      const verifyslider = createElement('div')
       const sliderIcon = createElement('span')
       const text = createElement('span')
 
@@ -101,7 +101,7 @@
       sliderContainer.className = 'sliderContainer'
       refreshIcon.className = 'refreshIcon'
       sliderMask.className = 'sliderMask'
-      slider.className = 'slider'
+      verifyslider.className = 'verifyslider'
       sliderIcon.className = 'sliderIcon'
       text.innerHTML = '向右滑动滑块填充拼图'
       text.className = 'sliderText'
@@ -110,8 +110,8 @@
       el.appendChild(canvas)
       el.appendChild(refreshIcon)
       el.appendChild(block)
-      slider.appendChild(sliderIcon)
-      sliderMask.appendChild(slider)
+      verifyslider.appendChild(sliderIcon)
+      sliderMask.appendChild(verifyslider)
       sliderContainer.appendChild(sliderMask)
       sliderContainer.appendChild(text)
       el.appendChild(sliderContainer)
@@ -121,7 +121,7 @@
         block,
         sliderContainer,
         refreshIcon,
-        slider,
+        verifyslider,
         sliderMask,
         sliderIcon,
         text,
@@ -163,7 +163,7 @@
       }
 
       let originX, originY, trail = [], isMouseDown = false
-      this.slider.addEventListener('mousedown', function (e) {
+      this.verifyslider.addEventListener('mousedown', function (e) {
         originX = e.x, originY = e.y
         isMouseDown = true
       })
@@ -172,7 +172,7 @@
         const moveX = e.x - originX
         const moveY = e.y - originY
         if (moveX < 0 || moveX + 38 >= w) return false
-        this.slider.style.left = moveX + 'px'
+        this.verifyslider.style.left = moveX + 'px'
         var blockLeft = (w - 40 - 20) / (w - 40) * moveX
         this.block.style.left = blockLeft + 'px'
 
@@ -220,7 +220,7 @@
 
     reset() {
       this.sliderContainer.className = 'sliderContainer'
-      this.slider.style.left = 0
+      this.verifyslider.style.left = 0
       this.block.style.left = 0
       this.sliderMask.style.width = 0
       this.clean()

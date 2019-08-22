@@ -75,8 +75,10 @@ use yii\helpers\Url;
       <span class="input-group-btn">
 
 
-        <button class="btn btn-default" type="button"  id="codeBtn" data-toggle="modal" data-target="#verification">获取验证码</button>
+      
 
+
+        <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
 
       </span>
     </div>
@@ -208,8 +210,9 @@ use yii\helpers\Url;
 <script>
 // 验证码倒计时
             var countdown=60; 
-            function sendcode(scene){                
-                    var obj = $("#codeBtn");
+            function sendcode(scene){      
+                       
+                    var obj = $("#get-verify");
                     var mobile = $("input[name*='mobile']").val();     
                     if(checkMobile()&obj.attr('disabled')!='disabled'){
                         $.ajax({
@@ -361,8 +364,10 @@ $('#login-other').click(function(){
     $('#get-verify').click(function(){
 
         if(checkMobile()){
-            console.log(123)
-            $("#verification").modal('show');
+
+    
+            $("#verification").modal('show')
+
         }
 
 
@@ -371,8 +376,9 @@ $('#login-other').click(function(){
 
  jigsaw.init(document.getElementById('verify'), function () {
 
-    document.getElementById('verify-msg').innerHTML = '成功！'
-   
+    document.getElementById('verify-msg').innerHTML = '验证成功！'
+     sendcode(1)
+
     setTimeout(function (){
 
         
@@ -389,10 +395,12 @@ $('#login-other').click(function(){
  $('#verify').empty()
    jigsaw.init(document.getElementById('verify'), function () {
     document.getElementById('verify-msg').innerHTML = '验证成功！'
-     sendcode(1);  
+
+    sendcode(1)
+
     setTimeout(function (){
 
-         $("#verification").modal('hide');
+         $("#verification").modal('hide')
 
         }, 1000)
 
