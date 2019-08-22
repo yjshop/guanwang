@@ -64,7 +64,7 @@
 
     <div class="form-group">
     <label for="exampleInputEmail1">手机号</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入您的电子邮件或手机">
+    <input type="text" name="mobile" class="form-control" id="exampleInputEmail1" placeholder="请输入您的电子邮件或手机">
   </div>
 
 
@@ -75,7 +75,7 @@
 
   <input type="text" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#verification">获取验证码</button>
+        <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
       </span>
     </div>
 </div>
@@ -204,7 +204,7 @@
          <li><a href="/book/default/index">帮助文档</a></li>
          <li><a href="/article?cate=study">新闻中心</a></li>
          <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
-         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
         </ul>
 
 
@@ -212,11 +212,107 @@
     </div>
 </header>
 <!-- <div style="width: 100%;height: 80px;" class="am-hide-sm-only"></div> -->
+<?php $this->beginBlock('js') ?>  
+<script>
+// 验证码倒计时
+            var countdown=60; 
+            function sendcode(scene){      
+                       
+                    var obj = $("#get-verify");
+                    var mobile = $("input[name*='mobile']").val();     
+                    if(checkMobile()&obj.attr('disabled')!='disabled'){
+                        $.ajax({
+                           type:'post',
+                           dataType:'json',
+                           url:"/site/sms.html",
+                           data:{'mobile':mobile,'scene':scene},
+                           success:function(e){
+                               settime(obj);                    
+                           }
+                        }) 
+                    }           
+                     
+            }
 
+            function login(scene){ 
+                var verifyCode = $("input[name*='verifyCode']").val();    
+                  var mobile = $("input[name*='mobile']").val(); 
+                
+                   if(  checkMobile()&checkCode()){
+                       $.ajax({
+                          type:'post',
+                          dataType:'json',
+                          url:"/user/security/mobile-login.html",
+                          data:{'mobile':mobile,'verifyCode':verifyCode},
+                          success:function(e){
+                             // alert(e.msg);
+                              location.reload();
+                          }
+                       }) 
+                   }  
+    
+            }
+    
+            
+            function settime(obj) { //发送验证码倒计时
+                if (countdown == 0) { 
+                    obj.attr('disabled',false); 
+                    obj.html("获取验证码");
+                    countdown = 60; 
+                    return;
+                } else { 
+                    obj.attr('disabled',true);
+                   
+                    if(countdown<10){
+                        obj.html("重新发送(0" + countdown + ")");
+                    }else{
+                         obj.html("重新发送(" + countdown + ")");
+                    }
+                    countdown--; 
+            
+                } 
+            setTimeout(function() { 
+                settime(obj) }
+                ,1000) 
+            }
+            //手机号验证
+            function checkMobile(){
+             
+                var mobile = $("input[name*='mobile']").val();
+                var reg = /^1(3|4|5|7|8)\d{9}$/;
+                if(mobile.length===0){
+                    mobileValid = false ;
+                    alert("请输入11位手机号！");
+                    return false;     
+                }else if(mobile.length===11){ 
+                    if(!reg.test(mobile)){
+                        alert("手机号格式错误！");
+                    }else{
+                        return true;                           
+                    }                    
+                }else{
+                    alert("请输入11位手机号！");
+                    return false;     
+                }
+                
+            }
+
+           function checkCode(){
+               var verifyCode = $("input[name*='verifyCode']").val();    
+                 if(verifyCode.length===0){
+                      mobileValid = false ;
+                      alert("验证码不能为空");
+                      return false;     
+                  } 
+                 return true;
+           }
+   </script>
+<?php $this->endBlock() ?>  
 
 <?php
 $this->registerJs(<<<JS
 
+   
 
 
     //导航登录按钮
@@ -227,7 +323,7 @@ $('#btn-login').click(function(){
 
 //导航注册按钮
 $('#btn-signup').click(function(){
-   
+
 
      $(' a[href="#site-login"]').tab('show')
 
@@ -244,17 +340,42 @@ $('#login-other').click(function(){
 
 
 
+//弹出滑动验证码判断
+    $('#get-verify').click(function(){
+
+        if(checkMobile()){
+    
+            $("#verification").modal('show')
+        }
+
+
+        })
 
  jigsaw.init(document.getElementById('verify'), function () {
     document.getElementById('verify-msg').innerHTML = '验证成功！'
+     sendcode(1)
     setTimeout(function (){
+        
+         $("#verification").modal('hide')
+        }, 1000)
+
+  })
+
+
+
+    $('#verification').on('hide.bs.modal', function () {
+ document.getElementById('verify-msg').innerHTML = ''
+ $('#verify').empty()
+   jigsaw.init(document.getElementById('verify'), function () {
+    document.getElementById('verify-msg').innerHTML = '验证成功！'
+    sendcode(1)
+    setTimeout(function (){
+
          $("#verification").modal('hide');
 
         }, 1000)
 
   })
-  $('#verification').on('hide.bs.modal', function () {
- document.getElementById('verify-msg').innerHTML = ''
 })
 
 
