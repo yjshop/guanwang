@@ -28,7 +28,7 @@ background-image: url(storage/images/system1.png);
        <div class="banner-footer">
         <div class="am-container">
         <div class="am-g">
-          <div class="am-u-lg-4 footer-style"><a href=""><h3>新零售线下商城系统</h3>
+      <!--     <div class="am-u-lg-4 footer-style"><a href=""><h3>新零售线下商城系统</h3>
         <p>线下门店拓客神器</p>
 
           </a></div>
@@ -36,7 +36,7 @@ background-image: url(storage/images/system1.png);
             <p>打造专属"SAAS云商城"</p></a></div>
           <div class="am-u-lg-4 footer-style"><a href=""><h3>多端融合</h3>
             <p>一键搭建H5+微信公众号+小程序商城</p></a></div>
-        </div>
+        </div> -->
       </div>
     </div>
     </div>
