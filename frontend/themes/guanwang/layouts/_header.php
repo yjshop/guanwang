@@ -73,6 +73,9 @@ use yii\helpers\Url;
 
   <input type="text"  name="verifyCode" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
+<<<<<<< HEAD
+        <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
+=======
 
 
    
@@ -80,6 +83,7 @@ use yii\helpers\Url;
         <button class="btn btn-default" type="button"  id="codeBtn" data-toggle="modal" data-target="#verification">获取验证码</button>
 
 
+>>>>>>> 51bca396be3faa5adf9b3e357e9fd28dd1dfcef7
       </span>
     </div>
 </div>
@@ -347,9 +351,6 @@ $('#btn-login').click(function(){
 
 //导航注册按钮
 $('#btn-signup').click(function(){
-     $(' a[href="#site-login"]').tab('show')    
-    });
-
 
 
 
@@ -361,20 +362,27 @@ $('#login-other').click(function(){
     })
 
 
-$('#verification').on('show.bs.modal', function () {
-      
 
-         $("#verification").modal('hide')
-        
-})
+//弹出滑动验证码判断
+    $('#get-verify').click(function(){
+
+        if(checkMobile()){
+            console.log(123)
+            $("#verification").modal('show');
+        }
+
+
+        })
+
 
  jigsaw.init(document.getElementById('verify'), function () {
 
     document.getElementById('verify-msg').innerHTML = '成功！'
    
     setTimeout(function (){
-         
-         $("#verification").modal('hide');
+
+        
+         $("#verification").modal('hide')
 
         }, 1000)
 
