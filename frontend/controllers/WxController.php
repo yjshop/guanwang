@@ -125,7 +125,7 @@ class WxController extends Controller  {
     
     //检查是否已经扫码
     public function actionCheckLogin(){
-        session_start();
+       // session_start();
         $sessionId = session_id();
         $token=Token::find()->where(['sid'=>$sessionId])->one();
         $auth = Auth::find()->where([

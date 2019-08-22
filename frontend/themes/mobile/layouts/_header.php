@@ -75,10 +75,10 @@ use yii\helpers\Url;
       <span class="input-group-btn">
 
 
-   
+      
 
-        <button class="btn btn-default" type="button"  id="codeBtn" data-toggle="modal" data-target="#verification">获取验证码</button>
 
+        <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
 
       </span>
     </div>
@@ -184,7 +184,7 @@ use yii\helpers\Url;
           <li><a href="/cate/study.html">新闻中心</a></li>
           <li><a href="/page/slug/aboutus.html">关于我们</a></li>
           <?php if(yii::$app->user->isGuest):?>
-          <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>/<a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+          <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
          <?php else:?>
           <li class="am-dropdown" data-am-dropdown="">
               <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;"><?= Yii::$app->user->identity->username?> <span class="am-icon-caret-down"></span></a>
@@ -210,8 +210,9 @@ use yii\helpers\Url;
 <script>
 // 验证码倒计时
             var countdown=60; 
-            function sendcode(scene){                
-                    var obj = $("#codeBtn");
+            function sendcode(scene){      
+                       
+                    var obj = $("#get-verify");
                     var mobile = $("input[name*='mobile']").val();     
                     if(checkMobile()&obj.attr('disabled')!='disabled'){
                         $.ajax({
@@ -324,18 +325,14 @@ function checkLogin(){
    </script>
 <?php $this->endBlock() ?>  
 
+
 <?php
 $this->registerJs(<<<JS
-
-    //导航登录按钮
 $('#btn-login').click(function(){
    
      $.ajax({ 
-      type : "POST", //提交方式 
-        url : '/wx/qrcode.html',//路径 
-       /*  data : { 
-          "scene_id" : ""
-        }, */
+      type : "POST", 
+        url : '/wx/qrcode.html',
         success : function(data) {
           $('#qr-login').find('img').attr('src',data);
         } 
@@ -344,15 +341,9 @@ $('#btn-login').click(function(){
        $('a[href="#qr-login"]').tab('show')
     });
 
-
-//导航注册按钮
 $('#btn-signup').click(function(){
      $(' a[href="#site-login"]').tab('show')    
     });
-
-
-
-
 
 $('#login-other').click(function(){
 
@@ -368,13 +359,28 @@ $('#verification').on('show.bs.modal', function () {
         
 })
 
+ //弹出滑动验证码判断
+    $('#get-verify').click(function(){
+
+        if(checkMobile()){
+
+    
+            $("#verification").modal('show')
+
+        }
+
+        })
+
+
  jigsaw.init(document.getElementById('verify'), function () {
 
-    document.getElementById('verify-msg').innerHTML = '成功！'
-   
+    document.getElementById('verify-msg').innerHTML = '验证成功！'
+    
+
     setTimeout(function (){
-         
-         $("#verification").modal('hide');
+
+        
+         $("#verification").modal('hide')
 
         }, 1000)
 
@@ -387,10 +393,12 @@ $('#verification').on('show.bs.modal', function () {
  $('#verify').empty()
    jigsaw.init(document.getElementById('verify'), function () {
     document.getElementById('verify-msg').innerHTML = '验证成功！'
-     sendcode(1);  
+
+    sendcode(1)
+
     setTimeout(function (){
 
-         $("#verification").modal('hide');
+         $("#verification").modal('hide')
 
         }, 1000)
 
@@ -402,3 +410,4 @@ $('#verification').on('show.bs.modal', function () {
 JS
 );
 ?>
+

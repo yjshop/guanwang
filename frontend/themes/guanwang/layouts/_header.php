@@ -325,18 +325,14 @@ function checkLogin(){
    </script>
 <?php $this->endBlock() ?>  
 
+
 <?php
 $this->registerJs(<<<JS
-
-    //导航登录按钮
 $('#btn-login').click(function(){
    
      $.ajax({ 
-      type : "POST", //提交方式 
-        url : '/wx/qrcode.html',//路径 
-       /*  data : { 
-          "scene_id" : ""
-        }, */
+      type : "POST", 
+        url : '/wx/qrcode.html',
         success : function(data) {
           $('#qr-login').find('img').attr('src',data);
         } 
@@ -345,12 +341,9 @@ $('#btn-login').click(function(){
        $('a[href="#qr-login"]').tab('show')
     });
 
-
-//导航注册按钮
 $('#btn-signup').click(function(){
-
-
-
+     $(' a[href="#site-login"]').tab('show')    
+    });
 
 $('#login-other').click(function(){
 
@@ -359,8 +352,14 @@ $('#login-other').click(function(){
     })
 
 
+$('#verification').on('show.bs.modal', function () {
+      
 
-//弹出滑动验证码判断
+         $("#verification").modal('hide')
+        
+})
+
+ //弹出滑动验证码判断
     $('#get-verify').click(function(){
 
         if(checkMobile()){
@@ -370,14 +369,13 @@ $('#login-other').click(function(){
 
         }
 
-
         })
 
 
  jigsaw.init(document.getElementById('verify'), function () {
 
     document.getElementById('verify-msg').innerHTML = '验证成功！'
-     sendcode(1)
+    
 
     setTimeout(function (){
 
@@ -412,3 +410,4 @@ $('#login-other').click(function(){
 JS
 );
 ?>
+
