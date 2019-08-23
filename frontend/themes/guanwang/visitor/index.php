@@ -5,17 +5,24 @@ use yii\helpers\Url;
 ?>
 
 <div class="visitor-wrap">
-    <div class="slide page-heading">
+ <!--    <div class="slide page-heading">
         <div class="container">
             <h3>域名授权中心</h3>
         </div>       
-    </div>
+    </div> -->
+
+<div class="banner-img">
+  <img src="/storage/images/banner03.jpg" alt="">
+  <div class="page-title">域名授权中心</div>
+</div>
+
+
  <div class="am-container">
 
 
    <div class="am-tabs" data-am-tabs>
 
-    <ul class="am-tabs-nav am-nav am-nav-tabs">
+    <ul class="am-tabs-nav am-nav am-nav-tabs" style="margin-top: 60px;">
     <li class="am-active"><a href="#tab1">授权查询</a></li>
     <li><a href="#tab2">套餐价格</a></li>
     <li><a href="#tab3">用户须知</a></li>
@@ -37,7 +44,7 @@ use yii\helpers\Url;
       
             <div class="row">
                 <div class="faq-header">
-                    <h4 class="faq-title">授权查询</h4>
+                    <h1>授权查询</h1>
                 </div>
             </div>
 

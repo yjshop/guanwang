@@ -4214,21 +4214,21 @@ fieldset[disabled] .btn-primary.active
 .btn-success
 {
     color: #fff;
-    border-color: #4cae4c;
-    background-color: #5cb85c;
+    border-color: #31b3a4;
+    background-color: #31b3a4;
 }
 .btn-success:focus,
 .btn-success.focus
 {
     color: #fff;
     border-color: #255625;
-    background-color: #449d44;
+    background-color:#008B8B;
 }
 .btn-success:hover
 {
     color: #fff;
     border-color: #398439;
-    background-color: #449d44;
+    background-color:#008B8B;
 }
 .btn-success:active,
 .btn-success.active,
