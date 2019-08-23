@@ -15,11 +15,14 @@ use yii\helpers\Url;
 
 
     .modal.fade.in{
-        top:100px;  
+        top:100px;
+        left: 25px;
 
     }
      .modal.fade1.in{
         top:200px;
+         left: 40px;
+
      }
 </style>
 
@@ -28,9 +31,11 @@ use yii\helpers\Url;
 <div class="modal-content">
 
 
-<ul class="nav nav-tabs nav-justified">
-  <li ><a href="#qr-login"  data-toggle="tab">扫码登录/注册</a></li>
-    <li ><a href="#site-login"  data-toggle="tab">手机号登录/注册</a></li>
+<ul class="nav nav-tabs">
+  <li style="width: 50%;
+  text-align: center;"><a href="#qr-login"  data-toggle="tab">扫码登录/注册</a></li>
+    <li style="width: 50%;
+  text-align: center;"><a href="#site-login"  data-toggle="tab">手机号登录/注册</a></li>
 
     <!-- <li><a href="#site-signup"  data-toggle="tab"> 注册</a></li> -->
 </ul>
@@ -61,7 +66,8 @@ use yii\helpers\Url;
 
     <div class="form-group">
     <label for="exampleInputEmail1">手机号</label>
-    <input type="text"  name="mobile"  class="form-control"  id="mobile" placeholder="请输入您的手机号码">
+
+    <input type="text" name="mobile" class="form-control" id="exampleInputEmail1" placeholder="请输入您的电子邮件或手机">
 
   </div>
 
@@ -73,10 +79,6 @@ use yii\helpers\Url;
 
   <input type="text"  name="verifyCode" class="form-control" placeholder="请输入短信验证码">
       <span class="input-group-btn">
-
-
-      
-
 
         <button class="btn btn-default" type="button"  id="get-verify" data-target="#verification">获取验证码</button>
 
@@ -176,29 +178,17 @@ use yii\helpers\Url;
 
         <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
 
-          <li><a href="/">首页</a></li>
-          <li><a href="/index/product.html">产品中心</a></li>
-          <li><a href="/visitor.html">授权</a></li>
-          <li><a href="/cases.html">成功案例</a></li>
-          <li><a href="/book/default/index.html">帮助文档</a></li>
-          <li><a href="/cate/study.html">新闻中心</a></li>
-          <li><a href="/page/slug/aboutus.html">关于我们</a></li>
-          <?php if(yii::$app->user->isGuest):?>
-          <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
-         <?php else:?>
-          <li class="am-dropdown" data-am-dropdown="">
-              <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;"><?= Yii::$app->user->identity->username?> <span class="am-icon-caret-down"></span></a>
 
-               <ul  class="am-dropdown-content">
-                <li><a href="<?=Url::to(['/user/default/index', 'id' => Yii::$app->user->id])?>" tabindex="-1"><i class="fa fa-user"></i> 个人主页</a></li>
-                <li><a href="<?=Url::to(['/user/settings/profile'])?>" tabindex="-1"><i class="fa fa-cog"></i> 账户设置</a></li>
-                <!--<li><a href="" tabindex="-1"><i class="fa fa-book"></i> 我的投稿</a></li> -->
-                <li><a href="<?=Url::to( ['/user/default/article-list'])?>" tabindex="-1"><i class="fa fa-star"></i> 我的收藏</a></li>
-                 <li><a href="<?=Url::to(['/user/security/logout'])?>" data-method="post" tabindex="-1"><i class="fa fa-sign-out"></i> 退出账号</a> </li>
-                </ul>         
-          </li>
-      
-         <?php endif;?>
+          <li class="am-active"><a href="/">首页</a></li>
+          <li><a href="/site/product">产品中心</a></li>
+         <li><a href="/site/#">源码</a></li>
+         <li><a href="/visitor">授权</a></li>
+         <li><a href="/cases">成功案例</a></li>
+         <li><a href="/book/default/index">帮助文档</a></li>
+         <li><a href="/article?cate=study">新闻中心</a></li>
+         <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
+         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+
         </ul>
 
 
