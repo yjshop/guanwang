@@ -45,7 +45,7 @@ use yii\helpers\Url;
             <div class="col-lg-12">
                 <h3>二维码登录</h3>
                 <p>请用微信扫一扫登录</p>
-                      <img src="" alt="二维码" width="180">
+                      <img src="/storage/images/gzh.jpg" alt="微信二维码" width="180">
                 <p style="color: rgb(153, 153, 153); margin-top: 20px;">其他登录方式</p>
                 <p><a href="#" id="login-other">手机号登录</a></a></p>
 
