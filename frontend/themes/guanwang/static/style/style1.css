@@ -967,6 +967,33 @@ a.tag:hover {
 .visitor-wrap .am-tabs-bd {
     margin-top: 20px;
 }
+
+
+.visitor-wrap .am-btn-primary {
+    color: #fff;
+    background-color: #31b3a4;
+    border-color: #31b3a4;
+
+}
+
+
+.visitor-wrap .am-btn-secondary {
+    color: #fff;
+    background-color: #008B8B;
+    border-color: #008B8B;
+}
+
+.visitor-wrap .am-panel-primary>.am-panel-hd{
+        color: #fff;
+    background-color: #31b3a4;
+    border-color: #31b3a4;
+}
+
+
+.visitor-wrap .am-panel-primary{
+        border-color: #31b3a4;
+        box-shadow: 5px 5px 5px 5px #AFEEEE;
+}
 /*常见问题*/
 
 .faq-wrap ul.am-nav-tabs {
