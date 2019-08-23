@@ -16,18 +16,19 @@ use yii\helpers\Url;
 
     .modal.fade.in{
         top:100px;
-        left: 25px;
-
+     
+      
+        
     }
      .modal.fade1.in{
         top:200px;
-         left: 40px;
+         left: 10%;
 
      }
 </style>
 
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-<div class="modal-dialog modal-sm" role="document" style="width: 350px;">
+<div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
 
 
@@ -50,7 +51,7 @@ use yii\helpers\Url;
             <div class="col-lg-12">
                 <h3>二维码登录</h3>
                 <p>请用微信扫一扫登录</p>
-                      <img src="/storage/images/gzh.jpg" alt="微信二维码" width="180">
+                      <img src="/storage/images/gzh.jpg" alt="微信二维码" style="width: 150px;height: 150px;">
                 <p style="color: rgb(153, 153, 153); margin-top: 20px;">其他登录方式</p>
                 <p><a href="#" id="login-other">手机号登录</a></a></p>
 
@@ -153,7 +154,7 @@ use yii\helpers\Url;
 
 <!-- 滑动验证码 -->
 <div class="modal fade fade1" id="verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="width: 320px;">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <!-- <div class="modal-header">
                
@@ -176,19 +177,33 @@ use yii\helpers\Url;
       <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
 
 
-        <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
+         <ul class="am-nav am-nav-pills am-topbar-nav mgt7">
 
+          <li><a href="/">首页</a></li>
+          <li><a href="/index/product.html">产品中心</a></li>
+          <li><a href="/visitor.html">授权</a></li>
+          <li><a href="/cases.html">成功案例</a></li>
+          <li><a href="/book/default/index.html">帮助文档</a></li>
+          <li><a href="/cate/study.html">新闻中心</a></li>
+          <li><a href="/page/slug/aboutus.html">关于我们</a></li>
+          <?php if(yii::$app->user->isGuest):?>
+          <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a>
+          </li>
+          <li> <a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
+         <?php else:?>
+          <li class="am-dropdown" data-am-dropdown="">
+              <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;"><?= Yii::$app->user->identity->username?> <span class="am-icon-caret-down"></span></a>
 
-          <li class="am-active"><a href="/">首页</a></li>
-          <li><a href="/site/product">产品中心</a></li>
-         <li><a href="/site/#">源码</a></li>
-         <li><a href="/visitor">授权</a></li>
-         <li><a href="/cases">成功案例</a></li>
-         <li><a href="/book/default/index">帮助文档</a></li>
-         <li><a href="/article?cate=study">新闻中心</a></li>
-         <li><a href="/page/slug?slug=aboutus">关于我们</a></li>
-         <li><a href="" data-toggle="modal" data-target="#login" id="btn-login">登录</a><a href="" data-toggle="modal" data-target="#login" id="btn-signup">注册</a></li>
-
+               <ul  class="am-dropdown-content">
+                <li><a href="<?=Url::to(['/user/default/index', 'id' => Yii::$app->user->id])?>" tabindex="-1"><i class="fa fa-user"></i> 个人主页</a></li>
+                <li><a href="<?=Url::to(['/user/settings/profile'])?>" tabindex="-1"><i class="fa fa-cog"></i> 账户设置</a></li>
+                <!--<li><a href="" tabindex="-1"><i class="fa fa-book"></i> 我的投稿</a></li> -->
+                <li><a href="<?=Url::to( ['/user/default/article-list'])?>" tabindex="-1"><i class="fa fa-star"></i> 我的收藏</a></li>
+                 <li><a href="<?=Url::to(['/user/security/logout'])?>" data-method="post" tabindex="-1"><i class="fa fa-sign-out"></i> 退出账号</a> </li>
+                </ul>         
+          </li>
+      
+         <?php endif;?>
         </ul>
 
 
