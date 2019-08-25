@@ -26,6 +26,15 @@ list($this->title, $this->params['seo_site_keywords'], $this->params['seo_site_d
                 <h1><?= Html::encode($model->title) ?></h1>
                 <p> <span class="time"><a href="<?= Url::to(['/user/default/index', 'id' => $model->user_id]) ?>"><?= Html::icon('user')?> <?= $model->user->username?></a> </span>
                     <span class="time"><?= Html::icon('clock-o')?> <?= date('Y-m-d', $model->created_at) ?></span><span class="time">来源：</span></span><span class="time"> <?= Html::icon('eye')?> <?= $model->trueView?>次浏览</span>
+                  <!--     <span class="comments"><a href="#comments"><?= Html::icon('comments-o')?> <?= $model->commentTotal ?>条评论</a></span> -->
+                    <span class="favourites"><?= Html::a(Html::icon($model->isFavourite ? 'star' : 'star-o') . ' <em>' . $model->favourite . '</em>', ['/favourite'], [
+                            'data-params' => [
+                                'id' => $model->id
+                            ],
+                            'data-toggle' => 'tooltip',
+                            'data-original-title' => '收藏'
+                        ])?>
+            </span>
                 </p>
 
             </div>

@@ -5,3 +5,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # Otherwise forward the request to index.php
 RewriteRule . index.php
+RedirectMatch 301 ^/([a,A])rticle/detail/id/([0-9]+).html$ /detail/$2.html  
