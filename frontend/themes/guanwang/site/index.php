@@ -35,8 +35,8 @@ background-image: url(storage/images/system1.png);
           <div class="am-u-lg-4 footer-style"><a href=""><h3>云商城系统</h3>
             <p>打造专属"SAAS云商城"</p></a></div>
           <div class="am-u-lg-4 footer-style"><a href=""><h3>多端融合</h3>
-            <p>一键搭建H5+微信公众号+小程序商城</p></a></div>
-        </div> -->
+            <p>一键搭建H5+微信公众号+小程序商城</p></a></div> -->
+        </div>
       </div>
     </div>
     </div>
