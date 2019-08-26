@@ -122,7 +122,7 @@ use yii\helpers\Url;
 <div class="am-u-md-12 visitor-advantage">
 <button type="button" class="am-btn am-btn-primary am-btn-lg">永久授权</button>
 <button type="button" class="am-btn am-btn-secondary am-btn-lg">正版许可</button>
-<button type="button" class="am-btn am-btn-primary am-btn-lg">彰显品牌】</button>
+<button type="button" class="am-btn am-btn-primary am-btn-lg">彰显品牌</button>
 <button type="button" class="am-btn am-btn-secondary am-btn-lg">独享功能</button>
 <button type="button" class="am-btn am-btn-primary am-btn-lg">技术支持</button>
 

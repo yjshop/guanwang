@@ -35,11 +35,11 @@ use common\models\Page;
         <div style="display: inline-block;">
          <p class="tit">咨询热线</p> 
             <?php $s=Page::findOne(['slug'=>'phone']) ?>
-         <p class="tel"><?= $s->content?></p>
+         <p class="tel"><?= Yii::$app->config->get('TEL')?></p>
          
          <?php $qq=Page::findOne(['slug'=>'qq']) ?>
 
-         <p class="qq tel-hide" onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=<?=$qq->content ?>&site=qq&menu=yes'">在线QQ咨询</p>
+         <p class="qq tel-hide" onclick="window.location.href='http://wpa.qq.com/msgrd?v=3&uin=<?= Yii::$app->config->get('qq')?>&site=qq&menu=yes'">在线QQ咨询</p>
         </div>
       </div>
     </div>
@@ -125,7 +125,7 @@ use common\models\Page;
     
         <div><img src="<?php echo Url::to('@web/storage/images/phone1.png') ?>" ></div>
        <div><p>服务热线</p> 
-       <p class="tel"><?= $s->content?></p>
+       <p class="tel"><?= Yii::$app->config->get('TEL')?></p>
       </div>
         </a>  
 

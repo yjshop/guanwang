@@ -48,7 +48,7 @@ use yii\helpers\Url;
 			</div>
 			<div class="am-u-md-2 am-u-sm-6">
 				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/shouhou.png'); ?>"><h2>售后技术</h2></div>
-				<p>6*12h售后保障，版本更新迭代</p>
+				<p>7*24h售后保障，版本更新迭代</p>
 
 			</div>
 
@@ -256,8 +256,8 @@ use yii\helpers\Url;
 
 <div class="pro-expert">
 	<div class="am-container">
-	<h1 class="big-title">020系统专家，几何线品质保障</h1>
-	<p>几何线成立于2015年，目前拥有进百人的团队规模，专注于服务创业者</p>
+	<h1 class="big-title">商城系统专家，几何线品质保障</h1>
+	<p>几何线成立于2015年，专注于服务创业者</p>
 
 	<div class="am-g">
   <div class="am-u-lg-3 am-u-sm-6">

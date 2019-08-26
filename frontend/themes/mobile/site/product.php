@@ -18,36 +18,35 @@ use yii\helpers\Url;
 <div class="pro-adv am-hide-sm-only">
 	<div class="am-container">
 		<div class="am-g">
-			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/huojian.png'); ?>"><h2>流畅度</h2></div>
-				<p>超流畅app原生开发</p>
+		  <div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/huojian.png'); ?>"><h2>用户体验感</h2></div>
+        <p>精心优化，设计符合现代操作习惯</p>
 
-			</div>
-			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/gongneng.png'); ?>"><h2>功能性</h2></div>
-				<p>超流畅app原生开发</p>
+      </div>
+      <div class="am-u-md-2 am-u-sm-6">
+        <div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/gongneng.png'); ?>"><h2>功能性</h2></div>
+        <p>功能丰富多样，完全满足电子商务运营的需求</p>
 
-			</div>
-			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinzhi.png'); ?>"><h2>品质感</h2></div>
-				<p>精致的界面与完善的流程</p>
+      </div>
+      <div class="am-u-md-2 am-u-sm-6">
+        <div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinzhi.png'); ?>"><h2>品质感</h2></div>
+        <p>精致的界面与完善的流程</p>
 
-			</div>
-			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/tuozhan.png'); ?>"><h2>拓展性</h2></div>
-				<p>支持开源与源码选购</p>
+      </div>
+      <div class="am-u-md-2 am-u-sm-6">
+        <div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/tuozhan.png'); ?>"><h2>拓展性</h2></div>
+        <p>支持开源与源码选购，支持二次开发与定制</p>
 
-			</div>
-			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinpai.png'); ?>"><h2>品牌性</h2></div>
-				<p>域名服务器及品牌独立</p>
+      </div>
+      <div class="am-u-md-2 am-u-sm-6">
+        <div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/pinpai.png'); ?>"><h2>品牌性</h2></div>
+        <p>全站内容自主控制，树立自己的品牌</p>
 
-			</div>
-			<div class="am-u-md-2 am-u-sm-6">
-				<div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/shouhou.png'); ?>"><h2>售后技术</h2></div>
-				<p>6*12h售后保障</p>
+      </div>
+      <div class="am-u-md-2 am-u-sm-6">
+        <div class="pro-adv-top"><img src="<?php echo Url::to('@web/storage/images/shouhou.png'); ?>"><h2>售后技术</h2></div>
+        <p>7*24h售后保障，版本更新迭代</p>
 
-			</div>
+      </div>
 
 
 		</div>
@@ -221,7 +220,7 @@ use yii\helpers\Url;
 <div class="pro-expert">
 	<div class="am-container">
 	<h1 class="big-title">020系统专家，几何线品质保障</h1>
-	<p>几何线成立于2015年，目前拥有进百人的团队规模，专注于服务创业者</p>
+	<p>几何线成立于2015年，专注于帮助创业者快速、低成本地建立自己的电商平台</p>
 
 	<div class="am-g">
   <div class="am-u-lg-3 am-u-sm-6">
@@ -234,36 +233,25 @@ use yii\helpers\Url;
   <div class="am-u-lg-3  am-u-sm-6">
     <a href="#" class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/ren.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">100+开发人员</figcaption>
+      <figcaption class="am-thumbnail-caption">20+开发人员</figcaption>
     </a>
   </div>
   <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/kehu.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">5000+商业用户</figcaption>
+      <figcaption class="am-thumbnail-caption">100+商业用户</figcaption>
     </figure>
   </div>
    <div class="am-u-lg-3  am-u-sm-6">
     <figure class="am-thumbnail">
       <img src="<?php echo Url::to('@web/storage/images/xin.png');?>" alt=""/>
-      <figcaption class="am-thumbnail-caption">7 x 12h售后支持</figcaption>
+      <figcaption class="am-thumbnail-caption">7 x 24h售后支持</figcaption>
     </figure>
   </div>
 </div>
 
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- 服务支持 -->

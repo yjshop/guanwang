@@ -15,7 +15,10 @@ $config = [
                 'index/product' => 'site/product',
                'detail/<id:\d+>' => 'article/detail',
                'cate/<cate:\w+>' => 'article/index',
-             
+               'cates/cate-<category_id:\d+>' => 'cases/index',
+                'cates/view-<id:\d+>' => 'cases/view',
+                'book/id-<id:\d+>'=>'book/default/view',
+                'book/chapter-<id:\d+>'=>'book/default/chapter',
                'tag/<name:\w+>' => 'article/tag',
                'page/slug/<slug:\w+>'=>'page/slug',
               '<controller:\w+>' => '<controller>/index',
