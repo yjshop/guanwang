@@ -8,7 +8,8 @@ class AppAsset extends AssetBundle
 {
     public $sourcePath = '@frontend/themes/guanwang/static';
     public $css        = [
-        'style/jigsaw.css',
+        // 'style/jigsaw.css',
+        // 'style/verify.css',
         'style/amazeui.min.css',
         'style/iconfont.css',
         'style/style.min.css',
@@ -21,7 +22,8 @@ class AppAsset extends AssetBundle
 
     ];
     public $js = [
-         'js/jigsaw.js',
+         // 'js/jigsaw.js',
+        'js/jq_slideImage.js',
         'js/amazeui.min.js',
         'js/modernizr.min.js',
         'js/amazeui.ie8polyfill.min.js',

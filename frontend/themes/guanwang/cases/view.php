@@ -41,8 +41,8 @@ use yii\helpers\HtmlPurifier;
 		
 		<?php foreach ($top2 as $vo):?>
 			<li class="am-u-lg-3"><a href="<?=Url::to(['cases/view','id'=>$vo->id])?>"> <div class="am-thumbnail">
-     		<div class="img-cover"> <img src="<?=$vo->cover?>" alt=<?=$vo->title?>/></div>
-     			 <h3 class="am-thumbnail-caption"><?=$vo->title?></h3>
+     		<div class="img-cover"> <img src="<?=$vo->cover?>" alt="<?=Html::encode($data->title)?>" /></div>
+     			 <h3 class="am-thumbnail-caption"><?=Html::encode($vo->title)?></h3>
      			 <p></p>
     			</div>
     			</a>

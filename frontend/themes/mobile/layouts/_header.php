@@ -22,7 +22,7 @@ use yii\helpers\Url;
     }
      .modal.fade1.in{
         top:200px;
-         left: 10%;
+        
 
      }
 </style>
@@ -51,7 +51,9 @@ use yii\helpers\Url;
             <div class="col-lg-12">
                 <h3>二维码登录</h3>
                 <p>请用微信扫一扫登录</p>
+
                       <img src="/storage/images/gzh.jpg" alt="微信二维码" style="width: 150px;height: 150px;">
+
                 <p style="color: rgb(153, 153, 153); margin-top: 20px;">其他登录方式</p>
                 <p><a href="#" id="login-other">手机号登录</a></a></p>
 
@@ -154,7 +156,7 @@ use yii\helpers\Url;
 
 <!-- 滑动验证码 -->
 <div class="modal fade fade1" id="verification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog" style="width: 300px; margin: 0 auto;">
         <div class="modal-content">
             <!-- <div class="modal-header">
                
@@ -166,6 +168,10 @@ use yii\helpers\Url;
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
+
+
+
+
 
 <!-- 滑动验证码end -->
 
@@ -364,6 +370,7 @@ $('#verification').on('show.bs.modal', function () {
         
 })
 
+
  //弹出滑动验证码判断
     $('#get-verify').click(function(){
 
@@ -377,40 +384,67 @@ $('#verification').on('show.bs.modal', function () {
         })
 
 
- jigsaw.init(document.getElementById('verify'), function () {
+//  jigsaw.init(document.getElementById('verify'), function () {
 
-    document.getElementById('verify-msg').innerHTML = '验证成功！'
+//     document.getElementById('verify-msg').innerHTML = '验证成功！'
     
 
-    setTimeout(function (){
+//     setTimeout(function (){
 
         
-         $("#verification").modal('hide')
+//          $("#verification").modal('hide')
 
-        }, 1000)
+//         }, 1000)
 
-  })
-
-
-
-    $('#verification').on('hide.bs.modal', function () {
- document.getElementById('verify-msg').innerHTML = ''
- $('#verify').empty()
-   jigsaw.init(document.getElementById('verify'), function () {
-    document.getElementById('verify-msg').innerHTML = '验证成功！'
-
-    sendcode(1)
-
-    setTimeout(function (){
-
-         $("#verification").modal('hide')
-
-        }, 1000)
-
-  })
-})
+//   })
 
 
+
+//     $('#verification').on('hide.bs.modal', function () {
+//  document.getElementById('verify-msg').innerHTML = ''
+//  $('#verify').empty()
+//    jigsaw.init(document.getElementById('verify'), function () {
+//     document.getElementById('verify-msg').innerHTML = '验证成功！'
+
+//     sendcode(1)
+
+//     setTimeout(function (){
+
+//          $("#verification").modal('hide')
+
+//         }, 1000)
+
+//   })
+// })
+
+
+
+
+
+var mySlideImage = new SlideImageVerify('#verify',{
+            slideImage:['http://www.guanwang.com/storage/images/jiudian.png'],
+            slideAreaNum:1,
+           
+            getSuccessState:function (res) {
+               document.getElementById('verify-msg').innerHTML = '验证成功！'
+               sendcode(1)
+
+
+           setTimeout(function (){
+
+            $("#verification").modal('hide')
+            document.getElementById('verify-msg').innerHTML = ''
+            mySlideImage.resetSlide()
+            
+
+            }, 1000)
+
+
+
+
+
+            }
+        })
 
 JS
 );

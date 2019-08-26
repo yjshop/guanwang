@@ -16,6 +16,12 @@ a:focus, a:hover {
 [class*=am-u-]:last-child {
     float: left !important;
 }
+
+.am-article-bd img{
+    display: inline;
+}
+
+
 /*侧边客服*/
 
 .sideBox {
